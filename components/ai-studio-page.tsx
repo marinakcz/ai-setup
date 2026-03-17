@@ -423,8 +423,8 @@ export default function AiStudioPage() {
               className="font-body font-bold leading-none tracking-wide text-foreground mb-5"
               style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
             >
-              Popíšeš,{" "}
-              <span className="text-primary">AI postaví</span>
+              Od nápadu{" "}
+              <span className="text-primary">k produktu</span>
             </h1>
 
             <p className="text-base text-muted-foreground leading-relaxed max-w-lg mx-auto">
