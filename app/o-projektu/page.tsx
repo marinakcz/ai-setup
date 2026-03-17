@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { SiteFooter } from "@/components/site-footer"
 
 export const metadata: Metadata = {
   title: "O projektu",
@@ -125,18 +126,7 @@ export default function AboutPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="relative z-10 border-t border-border py-10">
-        <div className="max-w-[1408px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="font-body font-bold text-sm tracking-[0.25em] text-primary">AI STUDIO</span>
-          <div className="flex gap-6 font-mono text-xs text-muted-foreground">
-            <Link href="/kontakty" className="hover:text-foreground transition-colors">Kontakty</Link>
-            <Link href="/poptavka" className="hover:text-foreground transition-colors">Poptávka</Link>
-            <Link href="/ochrana-udaju" className="hover:text-foreground transition-colors">Ochrana údajů</Link>
-            <Link href="/setup" className="hover:text-foreground transition-colors" title="Setup">π</Link>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }
