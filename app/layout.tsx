@@ -1,11 +1,11 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Manrope } from "next/font/google";
+import { JetBrains_Mono, Manrope } from "next/font/google";
 
-const ibmPlexMono = IBM_Plex_Mono({
+const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body
-        className={`${ibmPlexMono.variable} ${manrope.variable} antialiased`}
+        className={`${jetbrainsMono.variable} ${manrope.variable} antialiased`}
         suppressHydrationWarning={true}
       >
         {children}
