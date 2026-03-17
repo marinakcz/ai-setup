@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
@@ -260,6 +261,104 @@ function SectionHeader({ tag, title, subtitle }: { tag: string; title: string; s
   )
 }
 
+function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEGORIES[number]; index: number }) {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <div
+      className={`rounded-2xl border transition-colors duration-200 ${open ? "border-primary/25 bg-primary/[0.02]" : "border-border bg-card/50 hover:border-border/80"}`}
+      style={{ animationDelay: `${index * 80}ms` }}
+    >
+      {/* Header — logo strip + toggle */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center gap-4 px-5 py-4 cursor-pointer group"
+        aria-expanded={open}
+      >
+        <span className="font-mono text-[11px] text-primary/80 tracking-[0.2em] uppercase shrink-0 w-28 text-left">
+          {category.label}
+        </span>
+
+        {/* Animated logo strip */}
+        <div className="flex items-center gap-2 flex-1 overflow-hidden">
+          {category.items.map((sw, i) => {
+            const LogoComponent = SOFTWARE_LOGOS[sw.name]
+            return LogoComponent ? (
+              <div
+                key={i}
+                className="w-9 h-9 rounded-xl border border-border/60 bg-background/50 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:border-border hover:scale-110"
+                title={sw.name}
+                style={{ animationDelay: `${i * 60}ms` }}
+              >
+                <div className="w-6 h-6 flex items-center justify-center [&>svg]:w-6 [&>svg]:h-6">
+                  <LogoComponent />
+                </div>
+              </div>
+            ) : null
+          })}
+        </div>
+
+        {/* Count + chevron */}
+        <div className="flex items-center gap-2 shrink-0">
+          <span className="font-mono text-[11px] text-muted-foreground">{category.items.length}</span>
+          <svg
+            viewBox="0 0 24 24"
+            className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </div>
+      </button>
+
+      {/* Expandable detail */}
+      <div
+        className="grid transition-[grid-template-rows] duration-300 ease-out"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <div className="px-5 pb-5 pt-1">
+            <div className="h-px bg-border/40 mb-4" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {category.items.map((sw, i) => {
+                const LogoComponent = SOFTWARE_LOGOS[sw.name]
+                return (
+                  <div
+                    key={i}
+                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-background/50 transition-colors"
+                  >
+                    {LogoComponent && (
+                      <div className="w-8 h-8 rounded-lg border border-border/60 bg-background flex items-center justify-center shrink-0 mt-0.5">
+                        <div className="w-5 h-5 flex items-center justify-center [&>svg]:w-5 [&>svg]:h-5">
+                          <LogoComponent />
+                        </div>
+                      </div>
+                    )}
+                    <div className="min-w-0">
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-mono text-xs font-medium text-foreground">{sw.name}</span>
+                        {sw.version && (
+                          <span className="font-mono text-[10px] text-primary/70">{sw.version}</span>
+                        )}
+                      </div>
+                      <p className="text-[11px] text-muted-foreground leading-relaxed mt-0.5">{sw.desc}</p>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 // ─── Main page ──────────────────────────────────────────────────────────────
 
 export default function AiStudioPage() {
@@ -499,37 +598,9 @@ export default function AiStudioPage() {
             subtitle="Každý nástroj má svou roli. Orchestrace, AI modely, infrastruktura, služby."
           />
 
-          <div className="space-y-8 max-w-4xl mx-auto">
+          <div className="space-y-3 max-w-4xl mx-auto">
             {SOFTWARE_CATEGORIES.map((cat, ci) => (
-              <div key={ci}>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="font-mono text-[11px] text-primary/70 tracking-[0.2em] uppercase">{cat.label}</span>
-                  <div className="flex-1 h-px bg-border/60" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {cat.items.map((sw, i) => {
-                    const LogoComponent = SOFTWARE_LOGOS[sw.name]
-                    return (
-                      <div key={i} className="p-5 rounded-2xl border border-border bg-card hover:border-primary/30 transition-colors">
-                        <div className="flex items-center gap-3 mb-2.5">
-                          {LogoComponent && (
-                            <div className="w-10 h-10 rounded-xl border border-border bg-background flex items-center justify-center shrink-0">
-                              <LogoComponent />
-                            </div>
-                          )}
-                          <div>
-                            <div className="font-mono text-sm font-medium text-foreground">{sw.name}</div>
-                            {sw.version && (
-                              <div className="font-mono text-[11px] text-primary/80">{sw.version}</div>
-                            )}
-                          </div>
-                        </div>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{sw.desc}</p>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
+              <SoftwareCategory key={ci} category={cat} index={ci} />
             ))}
           </div>
         </div>
