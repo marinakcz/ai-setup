@@ -629,15 +629,14 @@ export default function AiStudioPage() {
             subtitle="Všechno běží lokálně na jednom stroji. Cloud jen pro deploy a databázi."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          <div className="flex items-center justify-center gap-6 max-w-2xl mx-auto">
             {[
               {
                 name: "Mac mini M4",
                 tag: "hlavní stroj",
                 highlight: true,
-                lines: ["Apple M4 · 10 jader", "24 GB RAM · 512 GB SSD", "Orchestrátor, agenti, Docker"],
                 icon: (
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                     <rect x="2" y="3" width="20" height="14" rx="2" />
                     <path d="M8 21h8M12 17v4" />
                   </svg>
@@ -645,11 +644,10 @@ export default function AiStudioPage() {
               },
               {
                 name: "NAS",
-                tag: "offline zálohy",
+                tag: "zálohy",
                 highlight: false,
-                lines: ["7 TB · SMB sdílení", "Zálohy projektů a konfigurace"],
                 icon: (
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                     <rect x="2" y="3" width="20" height="18" rx="2" />
                     <path d="M2 9h20M2 15h20" />
                   </svg>
@@ -659,25 +657,19 @@ export default function AiStudioPage() {
                 name: "Cloud",
                 tag: "produkce",
                 highlight: false,
-                lines: ["GitHub — verzovaný kód", "Supabase — databáze", "Vercel — produkční deploy"],
                 icon: (
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                     <path d="M18 10a4 4 0 00-7.5-2A3.5 3.5 0 004 11.5 3 3 0 005 17h12a3 3 0 001-5.8z" />
                   </svg>
                 ),
               },
             ].map((hw, i) => (
-              <div key={i} className={`p-6 rounded-2xl border text-center ${hw.highlight ? "border-primary/25 bg-primary/[0.03]" : "border-border bg-card"}`}>
-                <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center mx-auto mb-3 ${hw.highlight ? "border-primary/20 bg-card text-primary" : "border-border bg-background text-muted-foreground"}`}>
+              <div key={i} className="flex flex-col items-center text-center">
+                <div className={`w-14 h-14 rounded-2xl border flex items-center justify-center mb-3 ${hw.highlight ? "border-primary/25 bg-primary/[0.04] text-primary" : "border-border bg-card text-muted-foreground"}`}>
                   {hw.icon}
                 </div>
                 <div className="font-mono text-sm font-medium text-foreground">{hw.name}</div>
-                <div className={`font-mono text-[10px] mt-0.5 mb-3 ${hw.highlight ? "text-primary/80" : "text-muted-foreground"}`}>{hw.tag}</div>
-                <div className="space-y-1">
-                  {hw.lines.map((line, j) => (
-                    <div key={j} className="text-xs text-muted-foreground">{line}</div>
-                  ))}
-                </div>
+                <div className={`font-mono text-[11px] mt-0.5 ${hw.highlight ? "text-primary/80" : "text-muted-foreground"}`}>{hw.tag}</div>
               </div>
             ))}
           </div>
