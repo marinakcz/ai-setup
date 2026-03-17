@@ -104,6 +104,23 @@ function QwenLogo() {
     </svg>
   )
 }
+function ObsidianLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+      <path d="M12 2L6 7v10l6 5 6-5V7l-6-5z" fill="#7C3AED" opacity={0.15} stroke="#7C3AED" strokeWidth={1.2} strokeLinejoin="round" />
+      <path d="M12 8v8M9 11l3 3 3-3" stroke="#7C3AED" strokeWidth={1.2} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+function TelegramLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+      <circle cx="12" cy="12" r="10" fill="#26A5E4" opacity={0.12} stroke="#26A5E4" strokeWidth={1.2} />
+      <path d="M5 12l3.5 2L10 18l2-5 7-6" stroke="#26A5E4" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8.5 14L10 18" stroke="#26A5E4" strokeWidth={1.3} strokeLinecap="round" />
+    </svg>
+  )
+}
 
 const SOFTWARE_LOGOS: Record<string, () => React.ReactNode> = {
   "Node.js": NodejsLogo,
@@ -119,6 +136,8 @@ const SOFTWARE_LOGOS: Record<string, () => React.ReactNode> = {
   "GitHub CLI": GitHubLogo,
   "Vercel CLI": VercelLogo,
   "Qwen3-8B": QwenLogo,
+  "Obsidian": ObsidianLogo,
+  "Telegram Bot": TelegramLogo,
 }
 
 const SOFTWARE_CATEGORIES = [
@@ -153,6 +172,8 @@ const SOFTWARE_CATEGORIES = [
       { name: "Firecrawl", version: "", desc: "JS-capable web scraping (stránky, sazby, monitoring)" },
       { name: "Supabase", version: "", desc: "PostgreSQL — tasks, projects, agent memory" },
       { name: "Resend", version: "", desc: "Emaily — rate alerts, weekly digest" },
+      { name: "Obsidian", version: "", desc: "Sdílené poznámky — kontext, plány, rozhodnutí (user + agent)" },
+      { name: "Telegram Bot", version: "", desc: "Notifikace a statusy — kanál per projekt" },
     ],
   },
 ]
