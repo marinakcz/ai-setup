@@ -160,6 +160,48 @@
   }
 }
 
+/* ── Hero staggered entry ── */
+.hero-stagger .stagger-1,
+.hero-stagger .stagger-2,
+.hero-stagger .stagger-3,
+.hero-stagger .stagger-4,
+.hero-stagger .stagger-5 {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-stagger .stagger-1 { animation-delay: 0.1s; }
+.hero-stagger .stagger-2 { animation-delay: 0.25s; }
+.hero-stagger .stagger-3 { animation-delay: 0.45s; }
+.hero-stagger .stagger-4 { animation-delay: 0.65s; }
+.hero-stagger .stagger-5 { animation-delay: 0.85s; }
+
+/* ── Logo breathe / float ── */
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.logo-float {
+  animation: logoFloat 5s ease-in-out infinite;
+}
+
+/* ── Scroll reveal ── */
+.reveal-group .reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-group.revealed .reveal-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Smooth scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Hide Next.js badge */
 body nextjs-portal {
   display: none;
