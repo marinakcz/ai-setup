@@ -665,11 +665,11 @@ export default function AiStudioPage() {
               },
             ].map((hw, i) => (
               <div key={i} className="flex flex-col items-center text-center">
-                <div className={`w-14 h-14 rounded-2xl border flex items-center justify-center mb-3 ${hw.highlight ? "border-primary/25 bg-primary/[0.04] text-primary" : "border-border bg-card text-muted-foreground"}`}>
+                <div className="w-14 h-14 rounded-2xl border border-border bg-card flex items-center justify-center mb-3 text-foreground">
                   {hw.icon}
                 </div>
                 <div className="font-mono text-sm font-medium text-foreground">{hw.name}</div>
-                <div className={`font-mono text-[11px] mt-0.5 ${hw.highlight ? "text-primary/80" : "text-muted-foreground"}`}>{hw.tag}</div>
+                <div className="font-mono text-[11px] mt-0.5 text-muted-foreground">{hw.tag}</div>
               </div>
             ))}
           </div>
