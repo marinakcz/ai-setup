@@ -261,6 +261,28 @@ function SectionHeader({ tag, title, subtitle }: { tag: string; title: string; s
   )
 }
 
+function LogoWithTooltip({ name, children }: { name: string; children: React.ReactNode }) {
+  const [show, setShow] = useState(false)
+
+  return (
+    <span
+      className="relative w-10 h-10 rounded-xl border border-border/60 bg-background/50 flex items-center justify-center shrink-0 transition-all duration-200 hover:border-primary/40 hover:scale-110 text-foreground"
+      onMouseEnter={() => setShow(true)}
+      onMouseLeave={() => setShow(false)}
+    >
+      <span className="w-6 h-6 flex items-center justify-center [&>svg]:w-6 [&>svg]:h-6">
+        {children}
+      </span>
+      <span
+        aria-hidden="true"
+        className={`pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-2.5 py-1 rounded-lg bg-foreground text-background text-[11px] font-mono whitespace-nowrap transition-all duration-150 ${show ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+      >
+        {name}
+      </span>
+    </span>
+  )
+}
+
 function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEGORIES[number]; index: number }) {
   const [open, setOpen] = useState(false)
 
@@ -272,30 +294,21 @@ function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEG
       {/* Header — logo strip + toggle */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center gap-4 px-5 py-4 cursor-pointer group"
+        className="w-full flex items-center gap-4 px-5 py-4 cursor-pointer group overflow-visible"
         aria-expanded={open}
       >
         <span className="font-mono text-[11px] text-primary/80 tracking-[0.2em] uppercase shrink-0 w-28 text-left">
           {category.label}
         </span>
 
-        {/* Animated logo strip */}
-        <div className="flex items-center gap-2 flex-1 overflow-hidden">
+        {/* Logo strip */}
+        <div className="flex items-center gap-2.5 flex-1 min-w-0">
           {category.items.map((sw, i) => {
             const LogoComponent = SOFTWARE_LOGOS[sw.name]
             return LogoComponent ? (
-              <div
-                key={i}
-                className="relative w-9 h-9 rounded-xl border border-border/60 bg-background/50 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:border-border hover:scale-110 group/tip text-primary"
-                style={{ animationDelay: `${i * 60}ms` }}
-              >
-                <div className="w-6 h-6 flex items-center justify-center [&>svg]:w-6 [&>svg]:h-6">
-                  <LogoComponent />
-                </div>
-                <span aria-hidden="true" className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 transition-all duration-150 group-hover/tip:opacity-100 group-hover/tip:scale-100">
-                  {sw.name}
-                </span>
-              </div>
+              <LogoWithTooltip key={i} name={sw.name}>
+                <LogoComponent />
+              </LogoWithTooltip>
             ) : null
           })}
         </div>
@@ -515,7 +528,7 @@ export default function AiStudioPage() {
       <section id="architektura" aria-label="Architektura" className="relative z-10 py-24 border-t border-border">
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeader
-            tag="01 — Architektura"
+            tag="01 / Architektura"
             title="KDO CO DĚLÁ"
             subtitle="Jeden hlavní agent přijme úkol a deleguje ho specialistovi. Každý agent má přístup k 50+ nástrojům přes MCP protokol."
           />
@@ -594,7 +607,7 @@ export default function AiStudioPage() {
       <section id="sw" aria-label="Software" className="relative z-10 py-24 border-t border-border" style={{ background: "hsl(var(--card) / 0.4)" }}>
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeader
-            tag="02 — Software"
+            tag="02 / Software"
             title="CO TO POUŽÍVÁ"
             subtitle="Každý nástroj má svou roli. Orchestrace, AI modely, infrastruktura, služby."
           />
@@ -611,7 +624,7 @@ export default function AiStudioPage() {
       <section id="hw" aria-label="Hardware" className="relative z-10 py-24 border-t border-border">
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeader
-            tag="03 — Hardware"
+            tag="03 / Hardware"
             title="NA ČEM TO BĚŽÍ"
             subtitle="Všechno běží lokálně na jednom stroji. Cloud jen pro deploy a databázi."
           />
