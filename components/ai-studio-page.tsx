@@ -423,8 +423,8 @@ export default function AiStudioPage() {
               className="font-body font-bold leading-none tracking-wide text-foreground mb-5"
               style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
             >
-              POPÍŠEŠ,{" "}
-              <span className="text-primary">AI POSTAVÍ</span>
+              Popíšeš,{" "}
+              <span className="text-primary">AI postaví</span>
             </h1>
 
             <p className="text-base text-muted-foreground leading-relaxed max-w-lg mx-auto">
@@ -436,7 +436,13 @@ export default function AiStudioPage() {
           {/* ── Flow pipeline ── */}
           <div className="relative max-w-4xl mx-auto">
             {/* Connecting line — desktop */}
-            <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-px" style={{ background: "linear-gradient(90deg, transparent, hsl(var(--primary) / 0.25) 15%, hsl(var(--primary) / 0.25) 85%, transparent)" }} />
+            <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-px bg-border/40">
+              {/* Animated light pulse traveling along the line */}
+              <div
+                className="absolute top-0 h-px w-1/3 animate-flow-pulse"
+                style={{ background: "linear-gradient(90deg, transparent, hsl(var(--primary) / 0.8), hsl(var(--primary)), hsl(var(--primary) / 0.8), transparent)" }}
+              />
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-3">
               {[
@@ -490,8 +496,11 @@ export default function AiStudioPage() {
                 },
               ].map((step, i) => (
                 <div key={i} className="flex flex-col items-center text-center relative">
-                  {/* Step dot */}
-                  <div className="w-16 h-16 rounded-2xl border border-border bg-card flex items-center justify-center mb-3 relative z-10 text-primary hover:border-primary/40 transition-colors">
+                  {/* Step icon with staggered glow pulse */}
+                  <div
+                    className="w-16 h-16 rounded-2xl border border-border bg-card flex items-center justify-center mb-3 relative z-10 text-primary hover:border-primary/40 transition-colors animate-step-glow"
+                    style={{ animationDelay: `${i * 0.6}s` }}
+                  >
                     {step.icon}
                   </div>
                   {/* Mobile arrow between steps */}
@@ -529,7 +538,7 @@ export default function AiStudioPage() {
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeader
             tag="01 / Architektura"
-            title="KDO CO DĚLÁ"
+            title="Kdo co dělá"
             subtitle="Jeden hlavní agent přijme úkol a deleguje ho specialistovi. Každý agent má přístup k 50+ nástrojům přes MCP protokol."
           />
 
@@ -608,7 +617,7 @@ export default function AiStudioPage() {
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeader
             tag="02 / Software"
-            title="CO TO POUŽÍVÁ"
+            title="Co to používá"
             subtitle="Každý nástroj má svou roli. Orchestrace, AI modely, infrastruktura, služby."
           />
 
@@ -625,7 +634,7 @@ export default function AiStudioPage() {
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeader
             tag="03 / Hardware"
-            title="NA ČEM TO BĚŽÍ"
+            title="Na čem to běží"
             subtitle="Všechno běží lokálně na jednom stroji. Cloud jen pro deploy a databázi."
           />
 
