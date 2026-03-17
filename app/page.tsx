@@ -268,8 +268,8 @@ export default function Home() {
           <span className="font-body font-bold text-sm tracking-[0.25em] text-primary">AI STUDIO</span>
           <div className="flex gap-6 font-mono text-xs text-muted-foreground">
             <Link href="/o-projektu" className="hover:text-foreground transition-colors">O projektu</Link>
-            <Link href="/setup" className="hover:text-foreground transition-colors">Setup</Link>
             <Link href="/ochrana-udaju" className="hover:text-foreground transition-colors">Ochrana údajů</Link>
+            <Link href="/setup" className="hover:text-foreground transition-colors" title="Setup">π</Link>
           </div>
         </div>
       </footer>

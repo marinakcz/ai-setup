@@ -133,6 +133,7 @@ export default function AboutPage() {
             <Link href="/kontakty" className="hover:text-foreground transition-colors">Kontakty</Link>
             <Link href="/poptavka" className="hover:text-foreground transition-colors">Poptávka</Link>
             <Link href="/ochrana-udaju" className="hover:text-foreground transition-colors">Ochrana údajů</Link>
+            <Link href="/setup" className="hover:text-foreground transition-colors" title="Setup">π</Link>
           </div>
         </div>
       </footer>

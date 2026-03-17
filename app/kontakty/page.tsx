@@ -79,6 +79,7 @@ export default function ContactPage() {
             <Link href="/o-projektu" className="hover:text-foreground transition-colors">O projektu</Link>
             <Link href="/poptavka" className="hover:text-foreground transition-colors">Poptávka</Link>
             <Link href="/ochrana-udaju" className="hover:text-foreground transition-colors">Ochrana údajů</Link>
+            <Link href="/setup" className="hover:text-foreground transition-colors" title="Setup">π</Link>
           </div>
         </div>
       </footer>

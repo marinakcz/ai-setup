@@ -42,6 +42,7 @@ export default function PrivacyPage() {
             <Link href="/o-projektu" className="hover:text-foreground transition-colors">O projektu</Link>
             <Link href="/kontakty" className="hover:text-foreground transition-colors">Kontakty</Link>
             <Link href="/poptavka" className="hover:text-foreground transition-colors">Poptávka</Link>
+            <Link href="/setup" className="hover:text-foreground transition-colors" title="Setup">π</Link>
           </div>
         </div>
       </footer>
