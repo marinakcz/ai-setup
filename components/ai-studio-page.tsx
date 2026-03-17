@@ -297,7 +297,7 @@ function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEG
         className="w-full flex items-center gap-4 px-5 py-4 cursor-pointer group overflow-visible"
         aria-expanded={open}
       >
-        <span className="font-mono text-[11px] text-primary/80 tracking-[0.2em] uppercase shrink-0 w-28 text-left">
+        <span className="font-mono text-xs text-primary tracking-[0.2em] uppercase shrink-0 w-28 text-left">
           {category.label}
         </span>
 
@@ -357,7 +357,7 @@ function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEG
                       <div className="flex items-baseline gap-2">
                         <span className="font-mono text-sm font-medium text-foreground">{sw.name}</span>
                         {sw.version && (
-                          <span className="font-mono text-[11px] text-primary/80">{sw.version}</span>
+                          <span className="font-mono text-xs text-primary">{sw.version}</span>
                         )}
                       </div>
                       <p className="text-xs text-muted-foreground leading-relaxed mt-1">{sw.desc}</p>
@@ -478,7 +478,7 @@ export default function AiStudioPage() {
                     </div>
                   )}
                   <div className="font-mono text-xs font-medium text-foreground mb-0.5">{step.title}</div>
-                  <div className="text-[11px] text-muted-foreground leading-relaxed">{step.desc}</div>
+                  <div className="text-xs text-muted-foreground leading-relaxed">{step.desc}</div>
                 </div>
               ))}
             </div>
@@ -514,7 +514,7 @@ export default function AiStudioPage() {
                 </svg>
               </div>
               <div className="font-mono text-xs font-semibold text-primary">Master Agent</div>
-              <div className="text-[11px] text-muted-foreground mt-1">Přijme úkol, rozhodne kdo ho vyřeší</div>
+              <div className="text-xs text-muted-foreground mt-1">Přijme úkol, rozhodne kdo ho vyřeší</div>
             </div>
           </div>
 
@@ -559,7 +559,7 @@ export default function AiStudioPage() {
                   {agent.icon}
                 </div>
                 <div className="font-mono text-xs font-medium text-foreground mb-0.5">{agent.name}</div>
-                <div className="text-[11px] text-muted-foreground leading-relaxed">{agent.desc}</div>
+                <div className="text-xs text-muted-foreground leading-relaxed">{agent.desc}</div>
               </div>
             ))}
           </div>
@@ -640,7 +640,7 @@ export default function AiStudioPage() {
                   {hw.icon}
                 </div>
                 <div className="font-mono text-xs font-medium text-foreground">{hw.name}</div>
-                <div className="font-mono text-[10px] mt-0.5 text-muted-foreground">{hw.tag}</div>
+                <div className="font-mono text-xs mt-0.5 text-muted-foreground">{hw.tag}</div>
               </div>
             ))}
           </div>
