@@ -435,12 +435,15 @@ export default function AiStudioPage() {
 
           {/* ── Flow pipeline ── */}
           <div className="relative max-w-4xl mx-auto">
-            {/* Connecting line — desktop */}
-            <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-px bg-border/40">
-              {/* Animated light pulse traveling along the line */}
+            {/* Connecting line — desktop, from center of first to center of last tile */}
+            <div className="hidden md:block absolute top-8 h-px bg-border/40" style={{ left: "10%", right: "10%" }}>
+              {/* Animated light pulse: starts at first tile, ends at last */}
               <div
-                className="absolute top-0 h-px w-1/3 animate-flow-pulse"
-                style={{ background: "linear-gradient(90deg, transparent, hsl(var(--primary) / 0.8), hsl(var(--primary)), hsl(var(--primary) / 0.8), transparent)" }}
+                className="absolute top-0 h-px animate-flow-pulse"
+                style={{
+                  width: "20%",
+                  background: "linear-gradient(90deg, transparent, hsl(var(--primary) / 0.7), hsl(var(--primary)), hsl(var(--primary) / 0.7), transparent)",
+                }}
               />
             </div>
 
@@ -498,7 +501,7 @@ export default function AiStudioPage() {
                 <div key={i} className="flex flex-col items-center text-center relative">
                   {/* Step icon with staggered glow pulse */}
                   <div
-                    className="w-16 h-16 rounded-2xl border border-border bg-card flex items-center justify-center mb-3 relative z-10 text-primary hover:border-primary/40 transition-colors animate-step-glow"
+                    className="w-16 h-16 rounded-2xl border border-border bg-card flex items-center justify-center mb-3 relative z-10 text-primary transition-all duration-300 animate-step-glow hover:border-primary/50 hover:shadow-[0_0_20px_4px_hsl(var(--primary)/0.2)]"
                     style={{ animationDelay: `${i * 0.6}s` }}
                   >
                     {step.icon}
@@ -652,7 +655,7 @@ export default function AiStudioPage() {
                 ),
               },
               {
-                name: "NAS",
+                name: "Synology NAS",
                 tag: "zálohy",
                 highlight: false,
                 icon: (
