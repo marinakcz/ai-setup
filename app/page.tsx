@@ -257,11 +257,11 @@ export default function Home() {
             <div className="reveal-item" style={{ transitionDelay: "200ms" }}>
               <Link
                 href="/poptavka"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-background font-mono text-xs tracking-[0.15em] font-medium hover:brightness-110 transition-all duration-300"
+                className="group inline-flex items-center gap-4 px-10 py-4.5 rounded-full bg-primary text-background font-mono text-sm tracking-[0.18em] font-semibold hover:brightness-110 hover:shadow-[0_0_30px_rgba(240,88,35,0.35)] transition-all duration-300"
               >
                 OZVĚTE SE
-                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
+                <svg viewBox="0 0 24 24" className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M4 12h16M13 5l7 7-7 7" />
                 </svg>
               </Link>
             </div>
