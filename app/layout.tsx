@@ -65,19 +65,6 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <SiteNav />
-        {/* Subtle animated blob background */}
-        <div className="fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
-          <div className="mix-blend-difference">
-            <div
-              className="animate-blob absolute top-[-20%] right-[-15%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] rounded-full"
-              style={{ background: "linear-gradient(180deg, hsl(0 0% 10%), hsl(0 0% 16%))", filter: "blur(80px)" }}
-            />
-            <div
-              className="animate-blob-slow absolute bottom-[-20%] left-[-10%] w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] rounded-full"
-              style={{ background: "linear-gradient(135deg, hsl(14 20% 8%), hsl(0 0% 12%))", filter: "blur(100px)" }}
-            />
-          </div>
-        </div>
         {children}
       </body>
     </html>

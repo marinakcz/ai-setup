@@ -142,10 +142,10 @@ export default function Home() {
     <div className="relative min-h-screen">
       <main>
         {/* Hero */}
-        <section className="relative z-10 pt-28 pb-20 min-h-[92vh] flex flex-col justify-center">
+        <section className="relative z-10 pt-32 pb-24 min-h-[95vh] flex flex-col justify-center">
           <div className="max-w-[1408px] mx-auto px-6 w-full">
             {/* Tag + Headline */}
-            <div className="text-center mb-16 hero-stagger">
+            <div className="text-center mb-20 hero-stagger">
               <p className="font-mono text-xs tracking-[0.2em] text-primary mb-5 stagger-1">
                 <ScrambleTag text="/ AI STUDIO" delay={300} />
               </p>
@@ -155,7 +155,7 @@ export default function Home() {
             </div>
 
             {/* Logo with parallax */}
-            <div className="flex justify-center mb-20 stagger-3" ref={logoParallax}>
+            <div className="flex justify-center mb-24 stagger-3" ref={logoParallax}>
               <div className="relative w-[clamp(260px,42vw,700px)] aspect-[956/538] logo-float">
                 <Image
                   src="/mascot.svg"
@@ -168,7 +168,7 @@ export default function Home() {
             </div>
 
             {/* Subtitle */}
-            <div className="text-center mb-5 stagger-4">
+            <div className="text-center mb-6 stagger-4">
               <p className="font-body font-normal text-[clamp(1rem,1.8vw,2rem)] leading-[1.7]">
                 <span className="text-foreground">Experimentální AI studio, kde technologie násobí </span>
                 <br className="hidden md:inline" />
@@ -191,12 +191,12 @@ export default function Home() {
         <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-border" />
 
         {/* Three pillars */}
-        <section className="relative z-10 py-20 md:py-28">
+        <section className="relative z-10 py-24 md:py-32">
           <div
             className="max-w-[1408px] mx-auto px-6 reveal-group"
             ref={pillarsRef}
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
               {PILLARS.map((pillar, i) => (
                 <div
                   key={pillar.tag}
@@ -222,7 +222,7 @@ export default function Home() {
         <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-border" />
 
         {/* CTA */}
-        <section className="relative z-10 py-24 md:py-36">
+        <section className="relative z-10 py-28 md:py-40">
           <div
             className="max-w-[1408px] mx-auto px-6 text-center reveal-group"
             ref={ctaRef}
