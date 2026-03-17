@@ -3,6 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useCallback } from "react"
+import { AmbientSwirl } from "@/components/ambient-swirl"
 
 const PILLARS = [
   {
@@ -142,8 +143,9 @@ export default function Home() {
     <div className="relative min-h-screen">
       <main>
         {/* Hero */}
-        <section className="relative z-10 pt-32 pb-24 min-h-[95vh] flex flex-col justify-center">
-          <div className="max-w-[1408px] mx-auto px-6 w-full">
+        <section className="relative z-10 pt-32 pb-24 min-h-[95vh] flex flex-col justify-center overflow-hidden">
+          <AmbientSwirl />
+          <div className="max-w-[1408px] mx-auto px-6 w-full relative z-10">
             {/* Tag + Headline */}
             <div className="text-center mb-20 hero-stagger">
               <p className="font-mono text-xs tracking-[0.2em] text-primary mb-5 stagger-1">
