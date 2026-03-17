@@ -499,7 +499,7 @@ export default function AiStudioPage() {
       <section id="architektura" aria-label="Architektura" className="relative z-10 py-24 border-t border-border">
         <div className="max-w-[1408px] mx-auto px-6">
           <SectionHeader
-            tag="01 / Architektura"
+            tag="ARCHITEKTURA"
             title="Kdo co dělá"
             subtitle="Jeden hlavní agent přijme úkol a deleguje ho specialistovi. Každý agent má přístup k 50+ nástrojům přes MCP protokol."
           />
@@ -578,7 +578,7 @@ export default function AiStudioPage() {
       <section id="sw" aria-label="Software" className="relative z-10 py-24 border-t border-border" style={{ background: "hsl(var(--card) / 0.4)" }}>
         <div className="max-w-[1408px] mx-auto px-6">
           <SectionHeader
-            tag="02 / Software"
+            tag="SOFTWARE"
             title="Co to používá"
             subtitle="Každý nástroj má svou roli. Orchestrace, AI modely, infrastruktura, služby."
           />
@@ -595,7 +595,7 @@ export default function AiStudioPage() {
       <section id="hw" aria-label="Hardware" className="relative z-10 py-24 border-t border-border">
         <div className="max-w-[1408px] mx-auto px-6">
           <SectionHeader
-            tag="03 / Hardware"
+            tag="HARDWARE"
             title="Na čem to běží"
             subtitle="Všechno běží lokálně na jednom stroji. Cloud jen pro deploy a databázi."
           />

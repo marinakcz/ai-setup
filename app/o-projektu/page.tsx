@@ -14,7 +14,7 @@ export default function AboutPage() {
 
         {/* Intro */}
         <section className="mb-24">
-          <p className="font-mono text-xs text-primary/80 tracking-[0.2em] uppercase mb-4">O projektu</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ O PROJEKTU</p>
           <h1 className="font-body font-bold text-3xl sm:text-4xl text-foreground leading-tight mb-6">
             Ahoj, jsem Pavel.
           </h1>
@@ -25,7 +25,7 @@ export default function AboutPage() {
 
         {/* What I do */}
         <section className="mb-24">
-          <p className="font-mono text-[11px] text-primary/70 tracking-[0.2em] uppercase mb-6">Celou dobu dělám jedno</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ CELOU DOBU DĚLÁM JEDNO</p>
           <div className="space-y-2">
             <p className="font-body font-bold text-2xl sm:text-3xl text-foreground">Pochopit problém.</p>
             <p className="font-body font-bold text-2xl sm:text-3xl text-foreground">Navrhnout řešení.</p>
@@ -63,7 +63,7 @@ export default function AboutPage() {
 
         {/* New reality */}
         <section className="mb-24">
-          <p className="font-mono text-[11px] text-primary/70 tracking-[0.2em] uppercase mb-6">Nová realita</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ NOVÁ REALITA</p>
           <h2 className="font-body font-bold text-xl sm:text-2xl text-foreground leading-tight mb-4">
             Rychlejší realizace neznamená méně přemýšlení.
           </h2>
@@ -75,7 +75,7 @@ export default function AboutPage() {
 
         {/* Why this exists */}
         <section className="mb-24">
-          <p className="font-mono text-[11px] text-primary/70 tracking-[0.2em] uppercase mb-6">Proto vzniklo</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ PROTO VZNIKLO</p>
           <h2 className="font-body font-bold text-3xl sm:text-4xl text-foreground mb-6">
             Levou zadní.
           </h2>
