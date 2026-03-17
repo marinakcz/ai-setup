@@ -36,23 +36,17 @@ export default function Home() {
               </h1>
             </div>
 
-            {/* LEVOU [mascot] ZADNÍ */}
-            <div className="flex items-center justify-center gap-0 mb-16">
-              <span className="font-body font-extrabold text-[clamp(3rem,8vw,6.5rem)] leading-none text-foreground tracking-tight">
-                LEVOU
-              </span>
-              <div className="relative w-[clamp(150px,25vw,400px)] aspect-square mx-[-1rem]">
+            {/* Logo */}
+            <div className="flex justify-center mb-16">
+              <div className="relative w-[clamp(300px,60vw,960px)] aspect-[956/538]">
                 <Image
                   src="/mascot.svg"
-                  alt="Levou Zadní maskot"
+                  alt="Levou Zadní"
                   fill
                   className="object-contain"
                   priority
                 />
               </div>
-              <span className="font-body font-extrabold text-[clamp(3rem,8vw,6.5rem)] leading-none text-foreground tracking-tight">
-                ZADNÍ
-              </span>
             </div>
 
             {/* Subtitle */}
