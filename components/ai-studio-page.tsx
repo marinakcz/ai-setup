@@ -250,12 +250,12 @@ const SOFTWARE_CATEGORIES = [
 function SectionHeader({ tag, title, subtitle }: { tag: string; title: string; subtitle?: string }) {
   return (
     <div className="text-center mb-14">
-      <span className="font-mono text-xs text-primary tracking-[0.25em] uppercase block mb-3">{tag}</span>
-      <h2 className="font-body font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground leading-none tracking-wide">
+      <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ {tag}</p>
+      <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">{subtitle}</p>
+        <p className="mt-3 font-body font-normal text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground max-w-2xl mx-auto">{subtitle}</p>
       )}
     </div>
   )
@@ -381,28 +381,16 @@ export default function AiStudioPage() {
 
       {/* ── HERO ────────────────────────────────────────────────── */}
       <main>
-      <section aria-label="Úvod" className="relative z-10 min-h-screen flex items-center pt-14 overflow-hidden">
-        <div
-          className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, hsl(var(--primary) / 0.06) 0%, transparent 70%)" }}
-        />
+      <section aria-label="Úvod" className="relative z-10 min-h-[95vh] flex items-center pt-32 pb-24 overflow-hidden">
+        <div className="max-w-[1408px] mx-auto px-6 w-full">
+          <div className="text-center mb-20">
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ AI STUDIO</p>
 
-        <div className="max-w-[1408px] mx-auto px-6 w-full py-28">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-primary/25 bg-primary/5 font-mono text-xs text-primary mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              AI STUDIO
-            </div>
-
-            <h1
-              className="font-body font-bold leading-none tracking-wide text-foreground mb-5"
-              style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
-            >
-              Od nápadu{" "}
-              <span className="text-primary">k produktu</span>
+            <h1 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground mb-4">
+              Od nápadu k produktu
             </h1>
 
-            <p className="text-base text-muted-foreground leading-relaxed max-w-lg mx-auto">
+            <p className="font-body font-normal text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground max-w-lg mx-auto">
               Napíšeš jednou větou co potřebuješ. AI Studio vybere agenta,
               napíše kód, otestuje a nasadí. Ty mezitím děláš něco jiného.
             </p>
@@ -411,7 +399,7 @@ export default function AiStudioPage() {
           {/* ── Flow pipeline ── */}
           <div className="relative max-w-4xl mx-auto">
             {/* Connecting line — desktop, from center of first to center of last tile */}
-            <div className="hidden md:block absolute top-8 h-px bg-border/40" style={{ left: "10%", right: "10%" }}>
+            <div className="hidden md:block absolute top-6 h-px bg-border/40" style={{ left: "10%", right: "10%" }}>
               {/* Animated light pulse: starts at first tile, ends at last */}
               <div
                 className="absolute top-0 h-px animate-flow-pulse"
@@ -476,7 +464,7 @@ export default function AiStudioPage() {
                 <div key={i} className="flex flex-col items-center text-center relative">
                   {/* Step icon with staggered glow pulse */}
                   <div
-                    className="w-16 h-16 rounded-2xl border border-border bg-card flex items-center justify-center mb-3 relative z-10 text-primary transition-all duration-300 animate-step-glow hover:border-primary/50 hover:shadow-[0_0_20px_4px_hsl(var(--primary)/0.2)]"
+                    className="w-12 h-12 rounded-xl border border-border bg-card flex items-center justify-center mb-3 relative z-10 text-primary transition-all duration-300 animate-step-glow hover:border-primary/50"
                     style={{ animationDelay: `${i * 0.6}s` }}
                   >
                     {step.icon}
@@ -489,8 +477,8 @@ export default function AiStudioPage() {
                       </svg>
                     </div>
                   )}
-                  <div className="font-mono text-sm font-medium text-foreground mb-1">{step.title}</div>
-                  <div className="text-xs text-muted-foreground leading-relaxed">{step.desc}</div>
+                  <div className="font-mono text-xs font-medium text-foreground mb-0.5">{step.title}</div>
+                  <div className="text-[11px] text-muted-foreground leading-relaxed">{step.desc}</div>
                 </div>
               ))}
             </div>
@@ -505,10 +493,6 @@ export default function AiStudioPage() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 pointer-events-none select-none" aria-hidden="true">
-          <div className="w-px h-10 bg-gradient-to-b from-transparent to-foreground" />
-          <span className="font-mono text-[10px] tracking-[0.3em] uppercase">Scroll</span>
-        </div>
       </section>
 
       {/* ── ARCHITECTURE ────────────────────────────────────────── */}
@@ -523,14 +507,14 @@ export default function AiStudioPage() {
           {/* Master agent */}
           <div className="max-w-md mx-auto mb-6">
             <div className="p-5 rounded-2xl border border-primary/25 bg-primary/[0.03] text-center">
-              <div className="w-12 h-12 rounded-2xl border border-primary/20 bg-card flex items-center justify-center mx-auto mb-3 text-primary">
+              <div className="w-10 h-10 rounded-xl border border-primary/20 bg-card flex items-center justify-center mx-auto mb-2 text-primary">
                 <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="3" />
                   <path d="M12 1v4M12 19v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M1 12h4M19 12h4M4.2 19.8l2.8-2.8M17 7l2.8-2.8" />
                 </svg>
               </div>
-              <div className="font-mono text-sm font-semibold text-primary">Master Agent</div>
-              <div className="text-xs text-muted-foreground mt-1">Přijme úkol, rozhodne kdo ho vyřeší</div>
+              <div className="font-mono text-xs font-semibold text-primary">Master Agent</div>
+              <div className="text-[11px] text-muted-foreground mt-1">Přijme úkol, rozhodne kdo ho vyřeší</div>
             </div>
           </div>
 
@@ -571,11 +555,11 @@ export default function AiStudioPage() {
               },
             ].map((agent, i) => (
               <div key={i} className="p-5 rounded-2xl border border-border bg-card text-center hover:border-primary/30 transition-colors">
-                <div className="w-12 h-12 rounded-2xl border border-border bg-background flex items-center justify-center mx-auto mb-3 text-primary">
+                <div className="w-10 h-10 rounded-xl border border-border bg-background flex items-center justify-center mx-auto mb-2 text-primary">
                   {agent.icon}
                 </div>
-                <div className="font-mono text-sm font-medium text-foreground mb-1">{agent.name}</div>
-                <div className="text-xs text-muted-foreground leading-relaxed">{agent.desc}</div>
+                <div className="font-mono text-xs font-medium text-foreground mb-0.5">{agent.name}</div>
+                <div className="text-[11px] text-muted-foreground leading-relaxed">{agent.desc}</div>
               </div>
             ))}
           </div>
@@ -652,11 +636,11 @@ export default function AiStudioPage() {
               },
             ].map((hw, i) => (
               <div key={i} className="flex flex-col items-center text-center">
-                <div className="w-14 h-14 rounded-2xl border border-border bg-card flex items-center justify-center mb-3 text-foreground">
+                <div className="w-10 h-10 rounded-xl border border-border bg-card flex items-center justify-center mb-2 text-foreground">
                   {hw.icon}
                 </div>
-                <div className="font-mono text-sm font-medium text-foreground">{hw.name}</div>
-                <div className="font-mono text-[11px] mt-0.5 text-muted-foreground">{hw.tag}</div>
+                <div className="font-mono text-xs font-medium text-foreground">{hw.name}</div>
+                <div className="font-mono text-[10px] mt-0.5 text-muted-foreground">{hw.tag}</div>
               </div>
             ))}
           </div>
