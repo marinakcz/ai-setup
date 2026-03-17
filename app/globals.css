@@ -160,6 +160,11 @@
   }
 }
 
+/* ── Scramble dud characters ── */
+.scramble-dud {
+  color: hsl(var(--muted-foreground));
+}
+
 /* ── Hero staggered entry ── */
 .hero-stagger .stagger-1,
 .hero-stagger .stagger-2,

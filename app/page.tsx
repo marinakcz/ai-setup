@@ -25,7 +25,7 @@ const PILLARS = [
 
 const TAGS = ["PROTOTYPY", "MVP", "AI NÁSTROJE", "EXPERIMENTY"]
 
-const SCRAMBLE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*"
+const SCRAMBLE_CHARS = "!<>-_\\/[]{}—=+*^?#________"
 
 function useScramble(text: string, delay = 0) {
   const ref = useRef<HTMLSpanElement>(null)
@@ -41,45 +41,66 @@ function useScramble(text: string, delay = 0) {
         hasRun.current = true
         observer.unobserve(el)
 
-        const original = text
-        const duration = 800
-        const startTime = performance.now() + delay
-        let frame: number
+        const randomChar = () =>
+          SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)]
 
-        const animate = (now: number) => {
-          const elapsed = now - startTime
-          if (elapsed < 0) {
-            el.textContent = original.replace(/[^ /]/g, () =>
-              SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)]
-            )
-            frame = requestAnimationFrame(animate)
+        // Build queue: each character gets a random start/end frame
+        const oldText = el.innerText
+        const length = Math.max(oldText.length, text.length)
+        const queue: { from: string; to: string; start: number; end: number; char?: string }[] = []
+        for (let i = 0; i < length; i++) {
+          const from = oldText[i] || ""
+          const to = text[i] || ""
+          const start = Math.floor(Math.random() * 40)
+          const end = start + Math.floor(Math.random() * 40)
+          queue.push({ from, to, start, end })
+        }
+
+        let frame = 0
+        let frameReq: number
+        const delayFrames = Math.floor(delay / 16)
+
+        const update = () => {
+          if (frame < delayFrames) {
+            frame++
+            frameReq = requestAnimationFrame(update)
             return
           }
 
-          const progress = Math.min(elapsed / duration, 1)
-          const revealed = Math.floor(progress * original.length)
+          const currentFrame = frame - delayFrames
+          let output = ""
+          let complete = 0
 
-          let result = ""
-          for (let i = 0; i < original.length; i++) {
-            if (original[i] === " " || original[i] === "/") {
-              result += original[i]
-            } else if (i < revealed) {
-              result += original[i]
+          for (let i = 0; i < queue.length; i++) {
+            const { from, to, start, end } = queue[i]
+            let { char } = queue[i]
+
+            if (currentFrame >= end) {
+              complete++
+              output += to
+            } else if (currentFrame >= start) {
+              if (!char || Math.random() < 0.28) {
+                char = randomChar()
+                queue[i].char = char
+              }
+              output += `<span class="scramble-dud">${char}</span>`
             } else {
-              result += SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)]
+              output += from
             }
           }
-          el.textContent = result
 
-          if (progress < 1) {
-            frame = requestAnimationFrame(animate)
+          el.innerHTML = output
+
+          if (complete === queue.length) {
+            el.innerHTML = text
           } else {
-            el.textContent = original
+            frame++
+            frameReq = requestAnimationFrame(update)
           }
         }
 
-        frame = requestAnimationFrame(animate)
-        return () => cancelAnimationFrame(frame)
+        frameReq = requestAnimationFrame(update)
+        return () => cancelAnimationFrame(frameReq)
       },
       { threshold: 0.3 }
     )
