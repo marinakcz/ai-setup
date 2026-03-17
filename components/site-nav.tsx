@@ -22,7 +22,7 @@ export function SiteNav() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between relative z-10">
+      <div className="max-w-5xl mx-auto px-6 h-14 mt-6 flex items-center justify-between relative z-10">
         <Link
           href="/"
           onClick={() => setOpen(false)}
