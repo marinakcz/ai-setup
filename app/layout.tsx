@@ -2,7 +2,8 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { SiteNav } from "@/components/site-nav";
-import { JetBrains_Mono, Manrope } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 
 const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
@@ -11,9 +12,16 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const manrope = Manrope({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin", "latin-ext"],
+const hkGroteskWide = localFont({
+  src: [
+    { path: "../public/fonts/HKGroteskWide-Light.otf", weight: "300", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-Regular.otf", weight: "400", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-Medium.otf", weight: "500", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-SemiBold.otf", weight: "600", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-Bold.otf", weight: "700", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-ExtraBold.otf", weight: "800", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-Black.otf", weight: "900", style: "normal" },
+  ],
   variable: "--font-body",
   display: "swap",
 });
@@ -53,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body
-        className={`${jetbrainsMono.variable} ${manrope.variable} antialiased`}
+        className={`${jetbrainsMono.variable} ${hkGroteskWide.variable} antialiased`}
         suppressHydrationWarning={true}
       >
         <SiteNav />
