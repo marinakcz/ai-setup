@@ -169,7 +169,7 @@ export default function Home() {
           <div className="max-w-[1408px] mx-auto px-6 w-full relative z-10">
             {/* Tag + Headline */}
             <div className="text-center mb-20 hero-stagger">
-              <p className="font-mono text-xs tracking-[0.2em] text-primary mb-5 stagger-1">
+              <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 stagger-1">
                 <ScrambleTag text="/ AI STUDIO" delay={300} />
               </p>
               <h1 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground stagger-2">
@@ -226,7 +226,7 @@ export default function Home() {
                   className="reveal-item group"
                   style={{ transitionDelay: `${i * 150}ms` }}
                 >
-                  <p className="font-mono text-xs tracking-[0.2em] text-primary mb-5">
+                  <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
                     <ScrambleTag text={`/ ${pillar.tag}`} delay={i * 200} />
                   </p>
                   <h3 className="font-body font-semibold text-[clamp(1.25rem,1.6vw,1.75rem)] leading-snug text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
