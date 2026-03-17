@@ -19,7 +19,10 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ai-setup-alpha.vercel.app"),
-  title: "AI Studio — Autonomní systém AI agentů",
+  title: {
+    default: "AI Studio — Autonomní systém AI agentů",
+    template: "%s — AI Studio",
+  },
   description:
     "Zadejte úkol, AI Studio ho naplánuje, napíše kód, verzuje v Gitu a nasadí na Vercel — zcela automaticky.",
   icons: {
