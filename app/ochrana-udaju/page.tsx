@@ -35,10 +35,14 @@ export default function PrivacyPage() {
         </div>
       </main>
 
-      <footer className="relative z-10 border-t border-border py-8">
-        <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
-          <span className="font-body font-bold text-lg tracking-[0.2em] text-primary">AI STUDIO</span>
-          <Link href="/kontakty" className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors">Kontakty</Link>
+      <footer className="relative z-10 border-t border-border py-10">
+        <div className="max-w-[1408px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <span className="font-body font-bold text-sm tracking-[0.25em] text-primary">AI STUDIO</span>
+          <div className="flex gap-6 font-mono text-xs text-muted-foreground">
+            <Link href="/o-projektu" className="hover:text-foreground transition-colors">O projektu</Link>
+            <Link href="/kontakty" className="hover:text-foreground transition-colors">Kontakty</Link>
+            <Link href="/poptavka" className="hover:text-foreground transition-colors">Poptávka</Link>
+          </div>
         </div>
       </footer>
     </div>
