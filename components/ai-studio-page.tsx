@@ -122,6 +122,51 @@ function TelegramLogo() {
   )
 }
 
+function FigmaLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+      <rect x="7" y="2" width="5" height="7" rx="2.5" fill="#F24E1E" opacity={0.2} stroke="#F24E1E" strokeWidth={1} />
+      <rect x="12" y="2" width="5" height="7" rx="2.5" fill="#A259FF" opacity={0.2} stroke="#A259FF" strokeWidth={1} />
+      <rect x="7" y="9" width="5" height="7" rx="2.5" fill="#1ABCFE" opacity={0.2} stroke="#1ABCFE" strokeWidth={1} />
+      <circle cx="14.5" cy="12.5" r="2.5" fill="#0ACF83" opacity={0.2} stroke="#0ACF83" strokeWidth={1} />
+      <rect x="7" y="16" width="5" height="7" rx="2.5" fill="#0ACF83" opacity={0.2} stroke="#0ACF83" strokeWidth={1} />
+    </svg>
+  )
+}
+function PlaywrightLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+      <circle cx="12" cy="12" r="9" stroke="#2EAD33" strokeWidth={1.2} fill="#2EAD33" opacity={0.12} />
+      <path d="M8 9v6M11 8v8M14 10v4M17 9v6" stroke="#2EAD33" strokeWidth={1.5} strokeLinecap="round" />
+    </svg>
+  )
+}
+function LighthouseLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+      <path d="M12 2L8 10h3v6l4-8h-3V2z" fill="#F9BC2C" opacity={0.2} stroke="#F9BC2C" strokeWidth={1.2} strokeLinejoin="round" />
+      <path d="M6 20h12" stroke="#F9BC2C" strokeWidth={1.2} strokeLinecap="round" />
+    </svg>
+  )
+}
+function A11yLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+      <circle cx="12" cy="12" r="9" stroke="#0578D4" strokeWidth={1.2} fill="#0578D4" opacity={0.12} />
+      <circle cx="12" cy="7" r="1.5" fill="#0578D4" opacity={0.5} />
+      <path d="M8 10.5h8M12 10.5v5M10 18l2-2.5 2 2.5" stroke="#0578D4" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+function SentryLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+      <path d="M12 3l8 14H14.5M12 3L4 17h5.5M12 3v8" stroke="#362D59" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="12" cy="17" r="3" stroke="#362D59" strokeWidth={1.2} fill="#362D59" opacity={0.12} />
+    </svg>
+  )
+}
+
 const SOFTWARE_LOGOS: Record<string, () => React.ReactNode> = {
   "Node.js": NodejsLogo,
   "Docker": DockerLogo,
@@ -138,6 +183,13 @@ const SOFTWARE_LOGOS: Record<string, () => React.ReactNode> = {
   "Qwen3-8B": QwenLogo,
   "Obsidian": ObsidianLogo,
   "Telegram Bot": TelegramLogo,
+  "Figma": FigmaLogo,
+  "Playwright": PlaywrightLogo,
+  "Lighthouse": LighthouseLogo,
+  "A11y": A11yLogo,
+  "Sentry": SentryLogo,
+  "GitHub": GitHubLogo,
+  "Vercel": VercelLogo,
 }
 
 const SOFTWARE_CATEGORIES = [
@@ -174,6 +226,19 @@ const SOFTWARE_CATEGORIES = [
       { name: "Resend", version: "", desc: "Emaily — rate alerts, weekly digest" },
       { name: "Obsidian", version: "", desc: "Sdílené poznámky — kontext, plány, rozhodnutí (user + agent)" },
       { name: "Telegram Bot", version: "", desc: "Notifikace a statusy — kanál per projekt" },
+    ],
+  },
+  {
+    label: "MCP servery",
+    items: [
+      { name: "Figma", version: "", desc: "Design tokeny, screenshoty, proměnné" },
+      { name: "GitHub", version: "", desc: "PR, issues, repo management" },
+      { name: "Playwright", version: "", desc: "Testování stránek, a11y snapshots, screenshoty" },
+      { name: "Lighthouse", version: "", desc: "Performance, SEO, a11y skóre, Core Web Vitals" },
+      { name: "A11y", version: "", desc: "WCAG audit, kontrast, ARIA validace" },
+      { name: "Supabase", version: "setup", desc: "MCP připojení — potřebuje Personal Access Token" },
+      { name: "Vercel", version: "setup", desc: "MCP připojení — OAuth autentizace při prvním spuštění" },
+      { name: "Sentry", version: "setup", desc: "Error tracking — potřebuje Auth token" },
     ],
   },
 ]
@@ -412,8 +477,8 @@ export default function AiStudioPage() {
           {/* MCP tools bar */}
           <div className="max-w-4xl mx-auto p-4 rounded-2xl border border-border bg-card/50 text-center">
             <div className="text-xs text-muted-foreground">
-              <span className="text-foreground font-medium">60+ MCP nástrojů</span>
-              {" — "}soubory, git, GitHub, Docker, Vercel, web scraping, AI modely, lokální LLM, emaily, databáze
+              <span className="text-foreground font-medium">8 MCP serverů</span>
+              {" — "}Figma, GitHub, Playwright, Lighthouse, A11y, Supabase, Vercel, Sentry
             </div>
           </div>
         </div>
