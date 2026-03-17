@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useCallback } from "react"
 import { AmbientSwirl } from "@/components/ambient-swirl"
+import { PrimaryButton } from "@/components/primary-button"
 
 const PILLARS = [
   {
@@ -255,15 +256,7 @@ export default function Home() {
               pro dobré nápady.
             </h2>
             <div className="reveal-item" style={{ transitionDelay: "200ms" }}>
-              <Link
-                href="/poptavka"
-                className="group inline-flex items-center gap-5 px-10 py-4.5 rounded-xl bg-primary text-primary-foreground font-mono text-sm tracking-[0.18em] font-semibold hover:opacity-90 transition-all duration-300"
-              >
-                OZVĚTE SE
-                <svg viewBox="0 0 40 24" className="w-10 h-6 transition-all duration-300 group-hover:w-14 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M0 12h36M28 5l8 7-8 7" />
-                </svg>
-              </Link>
+              <PrimaryButton href="/poptavka" arrow>Ozvěte se</PrimaryButton>
             </div>
           </div>
         </section>
