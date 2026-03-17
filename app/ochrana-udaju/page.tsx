@@ -9,19 +9,6 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="relative min-h-screen">
-      <div className="fixed inset-0 dot-grid opacity-[0.14] pointer-events-none z-0" />
-
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 bg-background/75 backdrop-blur-xl">
-        <div className="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
-          <Link href="/" className="font-body font-bold text-xl tracking-[0.15em] text-primary hover:opacity-80 transition-opacity">
-            AI STUDIO
-          </Link>
-          <Link href="/" className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors py-3 px-1">
-            Zpět
-          </Link>
-        </div>
-      </nav>
-
       <main className="relative z-10 max-w-3xl mx-auto px-6 pt-32 pb-24">
         <p className="font-mono text-xs text-primary/80 tracking-[0.2em] uppercase mb-4">Právní informace</p>
         <h1 className="font-body font-bold text-3xl sm:text-4xl text-foreground leading-tight mb-12">

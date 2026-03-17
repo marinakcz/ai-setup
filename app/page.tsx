@@ -38,27 +38,9 @@ const METHODS = [
 export default function Home() {
   return (
     <div className="relative min-h-screen">
-      <div className="fixed inset-0 dot-grid opacity-[0.14] pointer-events-none z-0" />
-
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 bg-background/75 backdrop-blur-xl">
-        <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-          <span className="font-body font-bold text-xl tracking-[0.15em] text-primary">AI STUDIO</span>
-          <div className="hidden md:flex items-center gap-6 font-mono text-xs text-muted-foreground">
-            <Link href="/o-projektu" className="py-3 px-1 hover:text-foreground transition-colors">O projektu</Link>
-            <Link href="/setup" className="py-3 px-1 hover:text-foreground transition-colors">Setup</Link>
-            <Link href="/poptavka" className="py-3 px-1 hover:text-foreground transition-colors">Kontakty</Link>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero */}
       <main>
         <section className="relative z-10 min-h-screen flex items-center pt-14">
-          <div
-            className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none"
-            style={{ background: "radial-gradient(circle, hsl(var(--primary) / 0.06) 0%, transparent 70%)" }}
-          />
           <div className="max-w-5xl mx-auto px-6 w-full py-28">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-primary/25 bg-primary/5 font-mono text-xs text-primary mb-8">
