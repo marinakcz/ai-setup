@@ -405,7 +405,7 @@ export default function AiStudioPage() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-25 pointer-events-none select-none">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 pointer-events-none select-none" aria-hidden="true">
           <div className="w-px h-10 bg-gradient-to-b from-transparent to-foreground" />
           <span className="font-mono text-[10px] tracking-[0.3em] uppercase">Scroll</span>
         </div>
@@ -609,7 +609,7 @@ export default function AiStudioPage() {
             <p className="font-mono text-xs text-muted-foreground">
               Mac mini M4 · Claude Agent SDK · Gemini · Docker · Vercel
             </p>
-            <p className="font-mono text-[10px] text-muted-foreground/70 mt-1">
+            <p className="font-mono text-[10px] text-muted-foreground mt-1">
               Built with AI. Humans safe.
             </p>
           </div>

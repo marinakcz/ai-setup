@@ -1,6 +1,6 @@
 {
   "/": {
-    "title": "Macaly Template Starter",
-    "description": "A website built with Macaly"
+    "title": "AI Studio — Autonomní systém AI agentů",
+    "description": "Zadejte úkol, AI Studio ho naplánuje, napíše kód, verzuje v Gitu a nasadí na Vercel — zcela automaticky."
   }
 }
