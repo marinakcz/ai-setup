@@ -229,7 +229,7 @@ export default function Home() {
                   <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
                     <ScrambleTag text={`/ ${pillar.tag}`} delay={i * 200} />
                   </p>
-                  <h3 className="font-body font-semibold text-[clamp(1.25rem,1.6vw,1.75rem)] leading-snug text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                  <h2 className="font-body font-semibold text-[clamp(1.25rem,1.6vw,1.75rem)] leading-snug text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
                     {pillar.title}
                   </h3>
                   <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground">

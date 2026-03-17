@@ -52,12 +52,23 @@ export default function ContactPage() {
           </a>
         </div>
 
-        {/* Legal info */}
-        <div className="space-y-2 text-sm text-muted-foreground">
-          <p>Mgr. Pavel Martinovský, Hlavenec 177, 294 76 Praha-východ</p>
-          <p>ICO: 06054251, Nejsem plátce DPH.</p>
-          <p>Jsem zapsán v Živnostenském rejstříku Městského úřadu v Brandýse nad Labem.</p>
-          <p className="pt-2 text-muted-foreground/70">&copy; 1999&mdash;2025</p>
+        {/* Identifikační a fakturační údaje */}
+        <div className="border-t border-border pt-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h2 className="font-body font-semibold text-lg text-foreground leading-snug">
+                Identifikační<br />a fakturační údaje
+              </h2>
+            </div>
+            <div className="space-y-1 text-sm text-muted-foreground">
+              <p className="text-foreground font-medium">Marek Malík</p>
+              <p>Železné 53, Tišnov 666 01</p>
+            </div>
+            <div className="space-y-1 text-sm text-muted-foreground">
+              <p>IČO: 04080009, Nejsem plátce DPH.</p>
+              <p>Jsem zapsán v živnostenském rejstříku na Městském úřadě v Tišnově.</p>
+            </div>
+          </div>
         </div>
       </main>
 
