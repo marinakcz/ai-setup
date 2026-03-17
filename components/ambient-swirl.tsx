@@ -3,32 +3,21 @@
 import { useEffect, useRef } from "react"
 import { createNoise3D } from "simplex-noise"
 
-const PARTICLE_COUNT = 400
-const PARTICLE_PROP_COUNT = 9
-const PARTICLE_PROPS_LENGTH = PARTICLE_COUNT * PARTICLE_PROP_COUNT
-const RANGE_Y = 100
-const BASE_TTL = 50
-const RANGE_TTL = 150
-const BASE_SPEED = 0.1
-const RANGE_SPEED = 1.4
-const BASE_RADIUS = 1
-const RANGE_RADIUS = 2.5
-const BASE_HUE = 10
-const RANGE_HUE = 30
-const NOISE_STEPS = 8
-const X_OFF = 0.00125
-const Y_OFF = 0.00125
-const Z_OFF = 0.0005
+const NODE_COUNT = 60
+const CONNECTION_DIST = 150
+const CODE_CHARS = ["{}", "=>", "//", "fn", "AI", ">>", "&&", "::","<>", "01", "**", "$$"]
+const BASE_SPEED = 0.3
+const RANGE_SPEED = 0.4
 
-const TAU = 2 * Math.PI
-const rand = (n: number) => n * Math.random()
-const randRange = (n: number) => n - rand(2 * n)
-const fadeInOut = (t: number, m: number) => {
-  const hm = 0.5 * m
-  return Math.abs((t + hm) % m - hm) / hm
+interface Node {
+  x: number
+  y: number
+  vx: number
+  vy: number
+  radius: number
+  char: string | null
+  alpha: number
 }
-const lerp = (n1: number, n2: number, speed: number) =>
-  (1 - speed) * n1 + speed * n2
 
 export function AmbientSwirl() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -37,148 +26,134 @@ export function AmbientSwirl() {
     const container = containerRef.current
     if (!container) return
 
-    const canvasA = document.createElement("canvas")
-    const canvasB = document.createElement("canvas")
-    canvasB.style.cssText =
-      "position:absolute;top:0;left:0;width:100%;height:100%;"
-    container.appendChild(canvasB)
-
-    const ctxA = canvasA.getContext("2d")!
-    const ctxB = canvasB.getContext("2d")!
-    const center: number[] = []
+    const canvas = document.createElement("canvas")
+    canvas.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%;"
+    container.appendChild(canvas)
+    const ctx = canvas.getContext("2d")!
 
     const noise3D = createNoise3D()
-    const particleProps = new Float32Array(PARTICLE_PROPS_LENGTH)
+    let nodes: Node[] = []
     let tick = 0
     let animFrame: number
+    let w = 0
+    let h = 0
 
     function resize() {
-      const w = container!.offsetWidth
-      const h = container!.offsetHeight
-      canvasA.width = w
-      canvasA.height = h
-      canvasB.width = w
-      canvasB.height = h
-      center[0] = 0.5 * w
-      center[1] = 0.5 * h
+      w = container!.offsetWidth
+      h = container!.offsetHeight
+      canvas.width = w
+      canvas.height = h
     }
 
-    function initParticle(i: number) {
-      const x = rand(canvasA.width)
-      const y = center[1] + randRange(RANGE_Y)
-      particleProps.set(
-        [
-          x, y, 0, 0, 0,
-          BASE_TTL + rand(RANGE_TTL),
-          BASE_SPEED + rand(RANGE_SPEED),
-          BASE_RADIUS + rand(RANGE_RADIUS),
-          BASE_HUE + rand(RANGE_HUE),
-        ],
-        i
-      )
-    }
-
-    function initParticles() {
-      for (let i = 0; i < PARTICLE_PROPS_LENGTH; i += PARTICLE_PROP_COUNT) {
-        initParticle(i)
-      }
-    }
-
-    function drawParticles() {
-      for (let i = 0; i < PARTICLE_PROPS_LENGTH; i += PARTICLE_PROP_COUNT) {
-        const i2 = 1 + i,
-          i3 = 2 + i,
-          i4 = 3 + i,
-          i5 = 4 + i,
-          i6 = 5 + i,
-          i7 = 6 + i,
-          i8 = 7 + i,
-          i9 = 8 + i
-
-        const x = particleProps[i]
-        const y = particleProps[i2]
-        const n =
-          noise3D(x * X_OFF, y * Y_OFF, tick * Z_OFF) * NOISE_STEPS * TAU
-        const vx = lerp(particleProps[i3], Math.cos(n), 0.5)
-        const vy = lerp(particleProps[i4], Math.sin(n), 0.5)
-        let life = particleProps[i5]
-        const ttl = particleProps[i6]
-        const speed = particleProps[i7]
-        const x2 = x + vx * speed
-        const y2 = y + vy * speed
-        const radius = particleProps[i8]
-        const hue = particleProps[i9]
-
-        ctxA.save()
-        ctxA.lineCap = "round"
-        ctxA.lineWidth = radius
-        ctxA.strokeStyle = `hsla(${hue},100%,60%,${fadeInOut(life, ttl)})`
-        ctxA.beginPath()
-        ctxA.moveTo(x, y)
-        ctxA.lineTo(x2, y2)
-        ctxA.stroke()
-        ctxA.closePath()
-        ctxA.restore()
-
-        life++
-        particleProps[i] = x2
-        particleProps[i2] = y2
-        particleProps[i3] = vx
-        particleProps[i4] = vy
-        particleProps[i5] = life
-
-        if (
-          x2 > canvasA.width ||
-          x2 < 0 ||
-          y2 > canvasA.height ||
-          y2 < 0 ||
-          life > ttl
-        ) {
-          initParticle(i)
-        }
+    function initNodes() {
+      nodes = []
+      for (let i = 0; i < NODE_COUNT; i++) {
+        const hasChar = Math.random() < 0.3
+        nodes.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * BASE_SPEED,
+          vy: (Math.random() - 0.5) * BASE_SPEED,
+          radius: hasChar ? 0 : 1.5 + Math.random() * 1.5,
+          char: hasChar ? CODE_CHARS[Math.floor(Math.random() * CODE_CHARS.length)] : null,
+          alpha: 0.15 + Math.random() * 0.35,
+        })
       }
     }
 
     function draw() {
       tick++
-      ctxA.clearRect(0, 0, canvasA.width, canvasA.height)
-      ctxB.fillStyle = "hsla(0,0%,5%,1)"
-      ctxB.fillRect(0, 0, canvasB.width, canvasB.height)
+      ctx.clearRect(0, 0, w, h)
 
-      drawParticles()
+      // Update nodes with noise-influenced movement
+      for (const node of nodes) {
+        const n = noise3D(node.x * 0.002, node.y * 0.002, tick * 0.0003)
+        node.vx += Math.cos(n * Math.PI * 2) * 0.02
+        node.vy += Math.sin(n * Math.PI * 2) * 0.02
 
-      // Glow
-      ctxB.save()
-      ctxB.filter = "blur(8px) brightness(200%)"
-      ctxB.globalCompositeOperation = "lighter"
-      ctxB.drawImage(canvasA, 0, 0)
-      ctxB.restore()
+        // Dampen
+        node.vx *= 0.99
+        node.vy *= 0.99
 
-      ctxB.save()
-      ctxB.filter = "blur(4px) brightness(200%)"
-      ctxB.globalCompositeOperation = "lighter"
-      ctxB.drawImage(canvasA, 0, 0)
-      ctxB.restore()
+        // Clamp speed
+        const speed = Math.sqrt(node.vx * node.vx + node.vy * node.vy)
+        const maxSpeed = BASE_SPEED + RANGE_SPEED
+        if (speed > maxSpeed) {
+          node.vx = (node.vx / speed) * maxSpeed
+          node.vy = (node.vy / speed) * maxSpeed
+        }
 
-      // Render
-      ctxB.save()
-      ctxB.globalCompositeOperation = "lighter"
-      ctxB.drawImage(canvasA, 0, 0)
-      ctxB.restore()
+        node.x += node.vx
+        node.y += node.vy
+
+        // Wrap around
+        if (node.x < -20) node.x = w + 20
+        if (node.x > w + 20) node.x = -20
+        if (node.y < -20) node.y = h + 20
+        if (node.y > h + 20) node.y = -20
+      }
+
+      // Draw connections
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x
+          const dy = nodes[i].y - nodes[j].y
+          const dist = Math.sqrt(dx * dx + dy * dy)
+
+          if (dist < CONNECTION_DIST) {
+            const alpha = (1 - dist / CONNECTION_DIST) * 0.12
+            ctx.strokeStyle = `rgba(240, 88, 35, ${alpha})`
+            ctx.lineWidth = 0.5
+            ctx.beginPath()
+            ctx.moveTo(nodes[i].x, nodes[i].y)
+            ctx.lineTo(nodes[j].x, nodes[j].y)
+            ctx.stroke()
+          }
+        }
+      }
+
+      // Draw nodes
+      for (const node of nodes) {
+        if (node.char) {
+          // Code character
+          ctx.font = "10px 'JetBrains Mono', monospace"
+          ctx.fillStyle = `rgba(240, 88, 35, ${node.alpha * 0.6})`
+          ctx.textAlign = "center"
+          ctx.textBaseline = "middle"
+          ctx.fillText(node.char, node.x, node.y)
+        } else {
+          // Dot
+          ctx.beginPath()
+          ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2)
+          ctx.fillStyle = `rgba(240, 88, 35, ${node.alpha})`
+          ctx.fill()
+        }
+      }
+
+      // Occasional pulse on a random connection (signal traveling)
+      if (tick % 90 === 0) {
+        const pulseNode = nodes[Math.floor(Math.random() * nodes.length)]
+        ctx.beginPath()
+        ctx.arc(pulseNode.x, pulseNode.y, 8, 0, Math.PI * 2)
+        ctx.fillStyle = "rgba(240, 88, 35, 0.08)"
+        ctx.fill()
+      }
 
       animFrame = requestAnimationFrame(draw)
     }
 
     resize()
-    initParticles()
+    initNodes()
     draw()
 
-    window.addEventListener("resize", resize)
+    window.addEventListener("resize", () => {
+      resize()
+      initNodes()
+    })
 
     return () => {
       cancelAnimationFrame(animFrame)
-      window.removeEventListener("resize", resize)
-      if (canvasB.parentNode) canvasB.parentNode.removeChild(canvasB)
+      if (canvas.parentNode) canvas.parentNode.removeChild(canvas)
     }
   }, [])
 
