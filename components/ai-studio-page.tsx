@@ -6,7 +6,7 @@
 // SVG logo components
 function NodejsLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M12 2l9.2 5.3v10.6L12 23.2 2.8 17.9V7.3L12 2z" fill="#3C873A" opacity={0.15} />
       <path d="M12 2l9.2 5.3v10.6L12 23.2 2.8 17.9V7.3L12 2z" stroke="#3C873A" strokeWidth={1.2} fill="none" />
       <text x="12" y="14.5" textAnchor="middle" fill="#3C873A" fontSize="7" fontFamily="monospace" fontWeight="bold">JS</text>
@@ -15,7 +15,7 @@ function NodejsLogo() {
 }
 function DockerLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M4 11h3v3H4zM8 11h3v3H8zM12 11h3v3h-3zM8 7h3v3H8zM12 7h3v3h-3zM16 11h3v3h-3zM12 3h3v3h-3z" fill="#2496ED" opacity={0.2} stroke="#2496ED" strokeWidth={0.8} />
       <path d="M1.5 13.5c0 0 1.5 6 10.5 6s11-4 11-4-1-3-4-3.5" stroke="#2496ED" strokeWidth={1.2} strokeLinecap="round" />
     </svg>
@@ -23,7 +23,7 @@ function DockerLogo() {
 }
 function AgentSdkLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <circle cx="12" cy="7" r="3" stroke="#D4A574" strokeWidth={1.2} fill="#D4A574" opacity={0.15} />
       <circle cx="5" cy="18" r="2.5" stroke="#D4A574" strokeWidth={1.2} fill="#D4A574" opacity={0.15} />
       <circle cx="12" cy="18" r="2.5" stroke="#D4A574" strokeWidth={1.2} fill="#D4A574" opacity={0.15} />
@@ -34,7 +34,7 @@ function AgentSdkLogo() {
 }
 function ClaudeLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z" fill="#D4A574" opacity={0.12} stroke="#D4A574" strokeWidth={1.2} />
       <path d="M9 10c0-1.5 1.3-3 3-3s3 1.5 3 3" stroke="#D4A574" strokeWidth={1.5} strokeLinecap="round" />
       <circle cx="9.5" cy="13" r="1" fill="#D4A574" />
@@ -44,7 +44,7 @@ function ClaudeLogo() {
 }
 function OpenAILogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" fill="#10A37F" opacity={0.12} stroke="#10A37F" strokeWidth={1.2} />
       <path d="M8 12l2.5-4h3L16 12l-2.5 4h-3L8 12z" stroke="#10A37F" strokeWidth={1.3} strokeLinejoin="round" />
     </svg>
@@ -52,21 +52,21 @@ function OpenAILogo() {
 }
 function SupabaseLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M13.5 21.5c-.4.5-1.3.1-1.3-.6V14h7.3c1 0 1.5-1.1.9-1.8L11.5 2.5c-.4-.5-1.3-.1-1.3.6V10H3c-1 0-1.5 1.1-.9 1.8l8.9 9.7z" fill="#3ECF8E" opacity={0.15} stroke="#3ECF8E" strokeWidth={1} />
     </svg>
   )
 }
 function GitHubLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69C6.73 19.91 6.14 18 6.14 18c-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0112 6.8c.85 0 1.7.11 2.5.34 1.9-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.16.59.67.5A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" fill="hsl(var(--foreground))" opacity={0.7} />
     </svg>
   )
 }
 function VercelLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M12 3l10 18H2L12 3z" fill="hsl(var(--foreground))" opacity={0.7} />
     </svg>
   )
@@ -74,7 +74,7 @@ function VercelLogo() {
 
 function GeminiLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" fill="#4285F4" opacity={0.12} stroke="#4285F4" strokeWidth={1.2} />
       <path d="M12 6v12M6 12h12M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#4285F4" strokeWidth={1} strokeLinecap="round" opacity={0.6} />
     </svg>
@@ -82,7 +82,7 @@ function GeminiLogo() {
 }
 function FirecrawlLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M12 2c-1 4-4 6-4 10a4 4 0 008 0c0-4-3-6-4-10z" fill="#FF6B35" opacity={0.15} stroke="#FF6B35" strokeWidth={1.2} />
       <path d="M12 22v-4" stroke="#FF6B35" strokeWidth={1.2} strokeLinecap="round" />
     </svg>
@@ -90,7 +90,7 @@ function FirecrawlLogo() {
 }
 function ResendLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <rect x="3" y="5" width="18" height="14" rx="2" stroke="hsl(var(--foreground))" strokeWidth={1.2} opacity={0.7} />
       <path d="M3 7l9 5 9-5" stroke="hsl(var(--foreground))" strokeWidth={1.2} opacity={0.5} />
     </svg>
@@ -98,7 +98,7 @@ function ResendLogo() {
 }
 function QwenLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <rect x="3" y="3" width="18" height="18" rx="4" stroke="#8B5CF6" strokeWidth={1.2} fill="#8B5CF6" opacity={0.12} />
       <path d="M8 12h8M12 8v8" stroke="#8B5CF6" strokeWidth={1.5} strokeLinecap="round" />
     </svg>
@@ -106,7 +106,7 @@ function QwenLogo() {
 }
 function ObsidianLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M12 2L6 7v10l6 5 6-5V7l-6-5z" fill="#7C3AED" opacity={0.15} stroke="#7C3AED" strokeWidth={1.2} strokeLinejoin="round" />
       <path d="M12 8v8M9 11l3 3 3-3" stroke="#7C3AED" strokeWidth={1.2} strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -114,7 +114,7 @@ function ObsidianLogo() {
 }
 function TelegramLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <circle cx="12" cy="12" r="10" fill="#26A5E4" opacity={0.12} stroke="#26A5E4" strokeWidth={1.2} />
       <path d="M5 12l3.5 2L10 18l2-5 7-6" stroke="#26A5E4" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
       <path d="M8.5 14L10 18" stroke="#26A5E4" strokeWidth={1.3} strokeLinecap="round" />
@@ -124,7 +124,7 @@ function TelegramLogo() {
 
 function FigmaLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <rect x="7" y="2" width="5" height="7" rx="2.5" fill="#F24E1E" opacity={0.2} stroke="#F24E1E" strokeWidth={1} />
       <rect x="12" y="2" width="5" height="7" rx="2.5" fill="#A259FF" opacity={0.2} stroke="#A259FF" strokeWidth={1} />
       <rect x="7" y="9" width="5" height="7" rx="2.5" fill="#1ABCFE" opacity={0.2} stroke="#1ABCFE" strokeWidth={1} />
@@ -135,7 +135,7 @@ function FigmaLogo() {
 }
 function PlaywrightLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <circle cx="12" cy="12" r="9" stroke="#2EAD33" strokeWidth={1.2} fill="#2EAD33" opacity={0.12} />
       <path d="M8 9v6M11 8v8M14 10v4M17 9v6" stroke="#2EAD33" strokeWidth={1.5} strokeLinecap="round" />
     </svg>
@@ -143,7 +143,7 @@ function PlaywrightLogo() {
 }
 function LighthouseLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M12 2L8 10h3v6l4-8h-3V2z" fill="#F9BC2C" opacity={0.2} stroke="#F9BC2C" strokeWidth={1.2} strokeLinejoin="round" />
       <path d="M6 20h12" stroke="#F9BC2C" strokeWidth={1.2} strokeLinecap="round" />
     </svg>
@@ -151,7 +151,7 @@ function LighthouseLogo() {
 }
 function A11yLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <circle cx="12" cy="12" r="9" stroke="#0578D4" strokeWidth={1.2} fill="#0578D4" opacity={0.12} />
       <circle cx="12" cy="7" r="1.5" fill="#0578D4" opacity={0.5} />
       <path d="M8 10.5h8M12 10.5v5M10 18l2-2.5 2 2.5" stroke="#0578D4" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
@@ -160,7 +160,7 @@ function A11yLogo() {
 }
 function SentryLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+    <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M12 3l8 14H14.5M12 3L4 17h5.5M12 3v8" stroke="#362D59" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
       <circle cx="12" cy="17" r="3" stroke="#362D59" strokeWidth={1.2} fill="#362D59" opacity={0.12} />
     </svg>
@@ -266,6 +266,11 @@ export default function AiStudioPage() {
   return (
     <div className="relative min-h-screen">
 
+      {/* Skip link */}
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg focus:text-sm focus:font-medium">
+        Přeskočit na obsah
+      </a>
+
       <div className="fixed inset-0 dot-grid opacity-[0.14] pointer-events-none z-0" />
 
       {/* ── NAV ─────────────────────────────────────────────────── */}
@@ -278,7 +283,7 @@ export default function AiStudioPage() {
               ["sw", "Software"],
               ["hw", "Hardware"],
             ].map(([id, label]) => (
-              <a key={id} href={`#${id}`} className="hover:text-foreground transition-colors duration-200">
+              <a key={id} href={`#${id}`} className="py-3 px-1 hover:text-foreground transition-colors duration-200">
                 {label}
               </a>
             ))}
@@ -287,7 +292,8 @@ export default function AiStudioPage() {
       </nav>
 
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <section className="relative z-10 min-h-screen flex items-center pt-14 overflow-hidden">
+      <main id="main-content">
+      <section aria-label="Úvod" className="relative z-10 min-h-screen flex items-center pt-14 overflow-hidden">
         <div
           className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, hsl(var(--primary) / 0.06) 0%, transparent 70%)" }}
@@ -325,7 +331,7 @@ export default function AiStudioPage() {
                   title: "Zadáš úkol",
                   desc: "Česky, anglicky — jak chceš",
                   icon: (
-                    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
                     </svg>
                   ),
@@ -334,7 +340,7 @@ export default function AiStudioPage() {
                   title: "AI plánuje",
                   desc: "Vybere agenta, rozloží na kroky",
                   icon: (
-                    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M12 2a4 4 0 014 4c0 1.5-.8 2.8-2 3.4V11h3a3 3 0 013 3v1.6c1.2.6 2 1.9 2 3.4a4 4 0 11-6-3.4V14a1 1 0 00-1-1h-3v-3.6A4 4 0 0112 2z" />
                       <circle cx="6" cy="18" r="4" />
                     </svg>
@@ -344,7 +350,7 @@ export default function AiStudioPage() {
                   title: "Agenti pracují",
                   desc: "Kód, testy, obsah — co je třeba",
                   icon: (
-                    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
                     </svg>
                   ),
@@ -353,7 +359,7 @@ export default function AiStudioPage() {
                   title: "Build + test",
                   desc: "Izolovaný sandbox, nic nerozbije",
                   icon: (
-                    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M21 16V8a2 2 0 00-1-1.7l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.7l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
                       <path d="M3.3 7L12 12l8.7-5M12 22V12" />
                     </svg>
@@ -363,7 +369,7 @@ export default function AiStudioPage() {
                   title: "Živě na webu",
                   desc: "GitHub repo + Vercel URL",
                   icon: (
-                    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <circle cx="12" cy="12" r="10" />
                       <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" />
                     </svg>
@@ -378,7 +384,7 @@ export default function AiStudioPage() {
                   {/* Mobile arrow between steps */}
                   {i < 4 && (
                     <div className="md:hidden py-1">
-                      <svg width="12" height="16" viewBox="0 0 12 16" fill="none">
+                      <svg width="12" height="16" viewBox="0 0 12 16" fill="none" aria-hidden="true">
                         <path d="M6 0v12M3 9l3 4 3-4" stroke="hsl(var(--primary) / 0.3)" strokeWidth={1.2} strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
@@ -406,7 +412,7 @@ export default function AiStudioPage() {
       </section>
 
       {/* ── ARCHITECTURE ────────────────────────────────────────── */}
-      <section id="architektura" className="relative z-10 py-24 border-t border-border">
+      <section id="architektura" aria-label="Architektura" className="relative z-10 py-24 border-t border-border">
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeader
             tag="01 — Architektura"
@@ -418,7 +424,7 @@ export default function AiStudioPage() {
           <div className="max-w-md mx-auto mb-6">
             <div className="p-5 rounded-2xl border border-primary/25 bg-primary/[0.03] text-center">
               <div className="w-12 h-12 rounded-2xl border border-primary/20 bg-card flex items-center justify-center mx-auto mb-3 text-primary">
-                <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="3" />
                   <path d="M12 1v4M12 19v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M1 12h4M19 12h4M4.2 19.8l2.8-2.8M17 7l2.8-2.8" />
                 </svg>
@@ -440,7 +446,7 @@ export default function AiStudioPage() {
                 name: "Domain Operator",
                 desc: "Workflow, scraping, obsah, SEO, monitoring, reporty",
                 icon: (
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M12 20V10M18 20V4M6 20v-4" />
                   </svg>
                 ),
@@ -449,7 +455,7 @@ export default function AiStudioPage() {
                 name: "Builder",
                 desc: "Generuje kód, buildí v sandboxu, deploy na GitHub + Vercel",
                 icon: (
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
                   </svg>
                 ),
@@ -458,7 +464,7 @@ export default function AiStudioPage() {
                 name: "General Executor",
                 desc: "Research, analýza, soubory, emaily, obrázky — cokoliv dalšího",
                 icon: (
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.7-3.7a6 6 0 01-7.4 7.4l-6 6a2.1 2.1 0 01-3-3l6-6a6 6 0 017.4-7.4l-3.7 3.7z" />
                   </svg>
                 ),
@@ -485,7 +491,7 @@ export default function AiStudioPage() {
       </section>
 
       {/* ── SOFTWARE ────────────────────────────────────────────── */}
-      <section id="sw" className="relative z-10 py-24 border-t border-border" style={{ background: "hsl(var(--card) / 0.4)" }}>
+      <section id="sw" aria-label="Software" className="relative z-10 py-24 border-t border-border" style={{ background: "hsl(var(--card) / 0.4)" }}>
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeader
             tag="02 — Software"
@@ -530,7 +536,7 @@ export default function AiStudioPage() {
       </section>
 
       {/* ── HARDWARE ────────────────────────────────────────────── */}
-      <section id="hw" className="relative z-10 py-24 border-t border-border">
+      <section id="hw" aria-label="Hardware" className="relative z-10 py-24 border-t border-border">
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeader
             tag="03 — Hardware"
@@ -546,7 +552,7 @@ export default function AiStudioPage() {
                 highlight: true,
                 lines: ["Apple M4 · 10 jader", "24 GB RAM · 512 GB SSD", "Orchestrátor, agenti, Docker"],
                 icon: (
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5}>
+                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                     <rect x="2" y="3" width="20" height="14" rx="2" />
                     <path d="M8 21h8M12 17v4" />
                   </svg>
@@ -558,7 +564,7 @@ export default function AiStudioPage() {
                 highlight: false,
                 lines: ["7 TB · SMB sdílení", "Zálohy projektů a konfigurace"],
                 icon: (
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5}>
+                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                     <rect x="2" y="3" width="20" height="18" rx="2" />
                     <path d="M2 9h20M2 15h20" />
                   </svg>
@@ -570,7 +576,7 @@ export default function AiStudioPage() {
                 highlight: false,
                 lines: ["GitHub — verzovaný kód", "Supabase — databáze", "Vercel — produkční deploy"],
                 icon: (
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5}>
+                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                     <path d="M18 10a4 4 0 00-7.5-2A3.5 3.5 0 004 11.5 3 3 0 005 17h12a3 3 0 001-5.8z" />
                   </svg>
                 ),
@@ -593,6 +599,8 @@ export default function AiStudioPage() {
         </div>
       </section>
 
+      </main>
+
       {/* ── FOOTER ──────────────────────────────────────────────── */}
       <footer className="relative z-10 border-t border-border py-10">
         <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -601,7 +609,7 @@ export default function AiStudioPage() {
             <p className="font-mono text-xs text-muted-foreground">
               Mac mini M4 · Claude Agent SDK · Gemini · Docker · Vercel
             </p>
-            <p className="font-mono text-[10px] text-muted-foreground/50 mt-1">
+            <p className="font-mono text-[10px] text-muted-foreground/70 mt-1">
               Built with AI. Humans safe.
             </p>
           </div>

@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"],
+      "env": {
+        "PLAYWRIGHT_MCP_HEADLESS": "true"
+      }
+    },
+    "lighthouse": {
+      "command": "npx",
+      "args": ["lighthouse-mcp"]
+    },
+    "a11y": {
+      "command": "npx",
+      "args": ["a11y-mcp"]
+    },
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
+    },
+    "supabase": {
+      "command": "npx",
+      "args": ["-y", "@supabase/mcp-server-supabase@latest", "--access-token", "${SUPABASE_PAT}"]
+    },
+    "vercel": {
+      "type": "http",
+      "url": "https://mcp.vercel.com"
+    },
+    "sentry": {
+      "type": "http",
+      "url": "https://mcp.sentry.dev/mcp"
+    }
+  }
+}
