@@ -17,7 +17,7 @@ export default function InquiryPage() {
 
   return (
     <div className="relative min-h-screen">
-      <main className="relative z-10 max-w-3xl mx-auto px-6 pt-32 pb-24">
+      <main className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24">
         <p className="font-mono text-xs text-primary/80 tracking-[0.2em] uppercase mb-4">Poptávkový formulář</p>
         <h1 className="font-body font-bold text-3xl sm:text-4xl text-foreground leading-tight mb-3">
           Napište mi
@@ -121,7 +121,7 @@ export default function InquiryPage() {
       </main>
 
       <footer className="relative z-10 border-t border-border py-8">
-        <div className="max-w-3xl mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
           <span className="font-body font-bold text-lg tracking-[0.2em] text-primary">AI STUDIO</span>
           <Link href="/ochrana-udaju" className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors">Ochrana údajů</Link>
         </div>

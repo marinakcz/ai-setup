@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="relative min-h-screen">
-      <main className="relative z-10 max-w-3xl mx-auto px-6 pt-32 pb-24">
+      <main className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24">
         <h1 className="font-body font-bold text-3xl sm:text-4xl lg:text-5xl text-primary leading-tight mb-4">
           Plánujete nový projekt?
         </h1>
@@ -61,19 +61,19 @@ export default function ContactPage() {
               </h2>
             </div>
             <div className="space-y-1 text-sm text-muted-foreground">
-              <p className="text-foreground font-medium">Marek Malík</p>
-              <p>Železné 53, Tišnov 666 01</p>
+              <p className="text-foreground font-medium">Mgr. Pavel Martinovský</p>
+              <p>Hlavenec 177, 294 76 Praha-východ</p>
             </div>
             <div className="space-y-1 text-sm text-muted-foreground">
-              <p>IČO: 04080009, Nejsem plátce DPH.</p>
-              <p>Jsem zapsán v živnostenském rejstříku na Městském úřadě v Tišnově.</p>
+              <p>IČO: 06054251, Nejsem plátce DPH.</p>
+              <p>Jsem zapsán v Živnostenském rejstříku Městského úřadu v Brandýse nad Labem.</p>
             </div>
           </div>
         </div>
       </main>
 
       <footer className="relative z-10 border-t border-border py-8">
-        <div className="max-w-3xl mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
           <span className="font-body font-bold text-lg tracking-[0.2em] text-primary">AI STUDIO</span>
           <Link href="/ochrana-udaju" className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors">Ochrana údajů</Link>
         </div>

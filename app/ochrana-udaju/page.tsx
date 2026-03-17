@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="relative min-h-screen">
-      <main className="relative z-10 max-w-3xl mx-auto px-6 pt-32 pb-24">
+      <main className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24">
         <p className="font-mono text-xs text-primary/80 tracking-[0.2em] uppercase mb-4">Právní informace</p>
         <h1 className="font-body font-bold text-3xl sm:text-4xl text-foreground leading-tight mb-12">
           Ochrana osobních údajů
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
       </main>
 
       <footer className="relative z-10 border-t border-border py-8">
-        <div className="max-w-3xl mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
           <span className="font-body font-bold text-lg tracking-[0.2em] text-primary">AI STUDIO</span>
           <Link href="/kontakty" className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors">Kontakty</Link>
         </div>
