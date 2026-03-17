@@ -2,10 +2,10 @@ import Link from "next/link"
 
 const NAV_ITEMS = [
   { href: "/setup", label: "Setup", desc: "Architektura, software, hardware" },
-  { href: "/about", label: "O projektu", desc: "Co je AI Studio a proč existuje" },
-  { href: "/contact", label: "Kontakty", desc: "Jak se spojit" },
-  { href: "/feedback", label: "Popravkový formulář", desc: "Nahlásit chybu nebo navrhnout změnu" },
-  { href: "/privacy", label: "Ochrana osobních údajů", desc: "GDPR a zpracování dat" },
+  { href: "/o-projektu", label: "O projektu", desc: "Co je AI Studio a proč existuje" },
+  { href: "/kontakty", label: "Kontakty", desc: "Jak se spojit" },
+  { href: "/popravky", label: "Popravkový formulář", desc: "Nahlásit chybu nebo navrhnout změnu" },
+  { href: "/ochrana-udaju", label: "Ochrana osobních údajů", desc: "GDPR a zpracování dat" },
 ]
 
 export default function Home() {
