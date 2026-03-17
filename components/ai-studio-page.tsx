@@ -4,71 +4,71 @@ import { useState } from "react"
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
-// SVG logo components
+// SVG logo components — monochrome, inherit color via currentColor
 function NodejsLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <path d="M12 2l9.2 5.3v10.6L12 23.2 2.8 17.9V7.3L12 2z" fill="#3C873A" opacity={0.15} />
-      <path d="M12 2l9.2 5.3v10.6L12 23.2 2.8 17.9V7.3L12 2z" stroke="#3C873A" strokeWidth={1.2} fill="none" />
-      <text x="12" y="14.5" textAnchor="middle" fill="#3C873A" fontSize="7" fontFamily="monospace" fontWeight="bold">JS</text>
+      <path d="M12 2l9.2 5.3v10.6L12 23.2 2.8 17.9V7.3L12 2z" fill="currentColor" opacity={0.12} />
+      <path d="M12 2l9.2 5.3v10.6L12 23.2 2.8 17.9V7.3L12 2z" stroke="currentColor" strokeWidth={1.2} fill="none" />
+      <text x="12" y="14.5" textAnchor="middle" fill="currentColor" fontSize="7" fontFamily="monospace" fontWeight="bold">JS</text>
     </svg>
   )
 }
 function DockerLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <path d="M4 11h3v3H4zM8 11h3v3H8zM12 11h3v3h-3zM8 7h3v3H8zM12 7h3v3h-3zM16 11h3v3h-3zM12 3h3v3h-3z" fill="#2496ED" opacity={0.2} stroke="#2496ED" strokeWidth={0.8} />
-      <path d="M1.5 13.5c0 0 1.5 6 10.5 6s11-4 11-4-1-3-4-3.5" stroke="#2496ED" strokeWidth={1.2} strokeLinecap="round" />
+      <path d="M4 11h3v3H4zM8 11h3v3H8zM12 11h3v3h-3zM8 7h3v3H8zM12 7h3v3h-3zM16 11h3v3h-3zM12 3h3v3h-3z" fill="currentColor" opacity={0.15} stroke="currentColor" strokeWidth={0.8} />
+      <path d="M1.5 13.5c0 0 1.5 6 10.5 6s11-4 11-4-1-3-4-3.5" stroke="currentColor" strokeWidth={1.2} strokeLinecap="round" />
     </svg>
   )
 }
 function AgentSdkLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <circle cx="12" cy="7" r="3" stroke="#D4A574" strokeWidth={1.2} fill="#D4A574" opacity={0.15} />
-      <circle cx="5" cy="18" r="2.5" stroke="#D4A574" strokeWidth={1.2} fill="#D4A574" opacity={0.15} />
-      <circle cx="12" cy="18" r="2.5" stroke="#D4A574" strokeWidth={1.2} fill="#D4A574" opacity={0.15} />
-      <circle cx="19" cy="18" r="2.5" stroke="#D4A574" strokeWidth={1.2} fill="#D4A574" opacity={0.15} />
-      <path d="M12 10v5.5M9.5 16l-3 0M14.5 16l3 0" stroke="#D4A574" strokeWidth={1.2} strokeLinecap="round" />
+      <circle cx="12" cy="7" r="3" stroke="currentColor" strokeWidth={1.2} fill="currentColor" opacity={0.12} />
+      <circle cx="5" cy="18" r="2.5" stroke="currentColor" strokeWidth={1.2} fill="currentColor" opacity={0.12} />
+      <circle cx="12" cy="18" r="2.5" stroke="currentColor" strokeWidth={1.2} fill="currentColor" opacity={0.12} />
+      <circle cx="19" cy="18" r="2.5" stroke="currentColor" strokeWidth={1.2} fill="currentColor" opacity={0.12} />
+      <path d="M12 10v5.5M9.5 16l-3 0M14.5 16l3 0" stroke="currentColor" strokeWidth={1.2} strokeLinecap="round" />
     </svg>
   )
 }
 function ClaudeLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z" fill="#D4A574" opacity={0.12} stroke="#D4A574" strokeWidth={1.2} />
-      <path d="M9 10c0-1.5 1.3-3 3-3s3 1.5 3 3" stroke="#D4A574" strokeWidth={1.5} strokeLinecap="round" />
-      <circle cx="9.5" cy="13" r="1" fill="#D4A574" />
-      <circle cx="14.5" cy="13" r="1" fill="#D4A574" />
+      <path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z" fill="currentColor" opacity={0.1} stroke="currentColor" strokeWidth={1.2} />
+      <path d="M9 10c0-1.5 1.3-3 3-3s3 1.5 3 3" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" />
+      <circle cx="9.5" cy="13" r="1" fill="currentColor" />
+      <circle cx="14.5" cy="13" r="1" fill="currentColor" />
     </svg>
   )
 }
 function OpenAILogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" fill="#10A37F" opacity={0.12} stroke="#10A37F" strokeWidth={1.2} />
-      <path d="M8 12l2.5-4h3L16 12l-2.5 4h-3L8 12z" stroke="#10A37F" strokeWidth={1.3} strokeLinejoin="round" />
+      <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" fill="currentColor" opacity={0.1} stroke="currentColor" strokeWidth={1.2} />
+      <path d="M8 12l2.5-4h3L16 12l-2.5 4h-3L8 12z" stroke="currentColor" strokeWidth={1.3} strokeLinejoin="round" />
     </svg>
   )
 }
 function SupabaseLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <path d="M13.5 21.5c-.4.5-1.3.1-1.3-.6V14h7.3c1 0 1.5-1.1.9-1.8L11.5 2.5c-.4-.5-1.3-.1-1.3.6V10H3c-1 0-1.5 1.1-.9 1.8l8.9 9.7z" fill="#3ECF8E" opacity={0.15} stroke="#3ECF8E" strokeWidth={1} />
+      <path d="M13.5 21.5c-.4.5-1.3.1-1.3-.6V14h7.3c1 0 1.5-1.1.9-1.8L11.5 2.5c-.4-.5-1.3-.1-1.3.6V10H3c-1 0-1.5 1.1-.9 1.8l8.9 9.7z" fill="currentColor" opacity={0.12} stroke="currentColor" strokeWidth={1} />
     </svg>
   )
 }
 function GitHubLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69C6.73 19.91 6.14 18 6.14 18c-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0112 6.8c.85 0 1.7.11 2.5.34 1.9-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.16.59.67.5A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" fill="hsl(var(--foreground))" opacity={0.7} />
+      <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69C6.73 19.91 6.14 18 6.14 18c-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0112 6.8c.85 0 1.7.11 2.5.34 1.9-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.16.59.67.5A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" fill="currentColor" opacity={0.7} />
     </svg>
   )
 }
 function VercelLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <path d="M12 3l10 18H2L12 3z" fill="hsl(var(--foreground))" opacity={0.7} />
+      <path d="M12 3l10 18H2L12 3z" fill="currentColor" opacity={0.7} />
     </svg>
   )
 }
@@ -76,49 +76,49 @@ function VercelLogo() {
 function GeminiLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" fill="#4285F4" opacity={0.12} stroke="#4285F4" strokeWidth={1.2} />
-      <path d="M12 6v12M6 12h12M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#4285F4" strokeWidth={1} strokeLinecap="round" opacity={0.6} />
+      <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" fill="currentColor" opacity={0.1} stroke="currentColor" strokeWidth={1.2} />
+      <path d="M12 6v12M6 12h12M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" strokeWidth={1} strokeLinecap="round" opacity={0.6} />
     </svg>
   )
 }
 function FirecrawlLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <path d="M12 2c-1 4-4 6-4 10a4 4 0 008 0c0-4-3-6-4-10z" fill="#FF6B35" opacity={0.15} stroke="#FF6B35" strokeWidth={1.2} />
-      <path d="M12 22v-4" stroke="#FF6B35" strokeWidth={1.2} strokeLinecap="round" />
+      <path d="M12 2c-1 4-4 6-4 10a4 4 0 008 0c0-4-3-6-4-10z" fill="currentColor" opacity={0.12} stroke="currentColor" strokeWidth={1.2} />
+      <path d="M12 22v-4" stroke="currentColor" strokeWidth={1.2} strokeLinecap="round" />
     </svg>
   )
 }
 function ResendLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <rect x="3" y="5" width="18" height="14" rx="2" stroke="hsl(var(--foreground))" strokeWidth={1.2} opacity={0.7} />
-      <path d="M3 7l9 5 9-5" stroke="hsl(var(--foreground))" strokeWidth={1.2} opacity={0.5} />
+      <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth={1.2} />
+      <path d="M3 7l9 5 9-5" stroke="currentColor" strokeWidth={1.2} opacity={0.5} />
     </svg>
   )
 }
 function QwenLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="4" stroke="#8B5CF6" strokeWidth={1.2} fill="#8B5CF6" opacity={0.12} />
-      <path d="M8 12h8M12 8v8" stroke="#8B5CF6" strokeWidth={1.5} strokeLinecap="round" />
+      <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" strokeWidth={1.2} fill="currentColor" opacity={0.1} />
+      <path d="M8 12h8M12 8v8" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" />
     </svg>
   )
 }
 function ObsidianLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <path d="M12 2L6 7v10l6 5 6-5V7l-6-5z" fill="#7C3AED" opacity={0.15} stroke="#7C3AED" strokeWidth={1.2} strokeLinejoin="round" />
-      <path d="M12 8v8M9 11l3 3 3-3" stroke="#7C3AED" strokeWidth={1.2} strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12 2L6 7v10l6 5 6-5V7l-6-5z" fill="currentColor" opacity={0.1} stroke="currentColor" strokeWidth={1.2} strokeLinejoin="round" />
+      <path d="M12 8v8M9 11l3 3 3-3" stroke="currentColor" strokeWidth={1.2} strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
 function TelegramLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="10" fill="#26A5E4" opacity={0.12} stroke="#26A5E4" strokeWidth={1.2} />
-      <path d="M5 12l3.5 2L10 18l2-5 7-6" stroke="#26A5E4" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M8.5 14L10 18" stroke="#26A5E4" strokeWidth={1.3} strokeLinecap="round" />
+      <circle cx="12" cy="12" r="10" fill="currentColor" opacity={0.1} stroke="currentColor" strokeWidth={1.2} />
+      <path d="M5 12l3.5 2L10 18l2-5 7-6" stroke="currentColor" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8.5 14L10 18" stroke="currentColor" strokeWidth={1.3} strokeLinecap="round" />
     </svg>
   )
 }
@@ -126,44 +126,44 @@ function TelegramLogo() {
 function FigmaLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <rect x="7" y="2" width="5" height="7" rx="2.5" fill="#F24E1E" opacity={0.2} stroke="#F24E1E" strokeWidth={1} />
-      <rect x="12" y="2" width="5" height="7" rx="2.5" fill="#A259FF" opacity={0.2} stroke="#A259FF" strokeWidth={1} />
-      <rect x="7" y="9" width="5" height="7" rx="2.5" fill="#1ABCFE" opacity={0.2} stroke="#1ABCFE" strokeWidth={1} />
-      <circle cx="14.5" cy="12.5" r="2.5" fill="#0ACF83" opacity={0.2} stroke="#0ACF83" strokeWidth={1} />
-      <rect x="7" y="16" width="5" height="7" rx="2.5" fill="#0ACF83" opacity={0.2} stroke="#0ACF83" strokeWidth={1} />
+      <rect x="7" y="2" width="5" height="7" rx="2.5" fill="currentColor" opacity={0.15} stroke="currentColor" strokeWidth={1} />
+      <rect x="12" y="2" width="5" height="7" rx="2.5" fill="currentColor" opacity={0.1} stroke="currentColor" strokeWidth={1} />
+      <rect x="7" y="9" width="5" height="7" rx="2.5" fill="currentColor" opacity={0.1} stroke="currentColor" strokeWidth={1} />
+      <circle cx="14.5" cy="12.5" r="2.5" fill="currentColor" opacity={0.15} stroke="currentColor" strokeWidth={1} />
+      <rect x="7" y="16" width="5" height="7" rx="2.5" fill="currentColor" opacity={0.1} stroke="currentColor" strokeWidth={1} />
     </svg>
   )
 }
 function PlaywrightLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" stroke="#2EAD33" strokeWidth={1.2} fill="#2EAD33" opacity={0.12} />
-      <path d="M8 9v6M11 8v8M14 10v4M17 9v6" stroke="#2EAD33" strokeWidth={1.5} strokeLinecap="round" />
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth={1.2} fill="currentColor" opacity={0.1} />
+      <path d="M8 9v6M11 8v8M14 10v4M17 9v6" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" />
     </svg>
   )
 }
 function LighthouseLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <path d="M12 2L8 10h3v6l4-8h-3V2z" fill="#F9BC2C" opacity={0.2} stroke="#F9BC2C" strokeWidth={1.2} strokeLinejoin="round" />
-      <path d="M6 20h12" stroke="#F9BC2C" strokeWidth={1.2} strokeLinecap="round" />
+      <path d="M12 2L8 10h3v6l4-8h-3V2z" fill="currentColor" opacity={0.15} stroke="currentColor" strokeWidth={1.2} strokeLinejoin="round" />
+      <path d="M6 20h12" stroke="currentColor" strokeWidth={1.2} strokeLinecap="round" />
     </svg>
   )
 }
 function A11yLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" stroke="#0578D4" strokeWidth={1.2} fill="#0578D4" opacity={0.12} />
-      <circle cx="12" cy="7" r="1.5" fill="#0578D4" opacity={0.5} />
-      <path d="M8 10.5h8M12 10.5v5M10 18l2-2.5 2 2.5" stroke="#0578D4" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth={1.2} fill="currentColor" opacity={0.1} />
+      <circle cx="12" cy="7" r="1.5" fill="currentColor" opacity={0.5} />
+      <path d="M8 10.5h8M12 10.5v5M10 18l2-2.5 2 2.5" stroke="currentColor" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
 function SentryLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
-      <path d="M12 3l8 14H14.5M12 3L4 17h5.5M12 3v8" stroke="#362D59" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="12" cy="17" r="3" stroke="#362D59" strokeWidth={1.2} fill="#362D59" opacity={0.12} />
+      <path d="M12 3l8 14H14.5M12 3L4 17h5.5M12 3v8" stroke="currentColor" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="12" cy="17" r="3" stroke="currentColor" strokeWidth={1.2} fill="currentColor" opacity={0.1} />
     </svg>
   )
 }
@@ -286,13 +286,13 @@ function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEG
             return LogoComponent ? (
               <div
                 key={i}
-                className="relative w-9 h-9 rounded-xl border border-border/60 bg-background/50 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:border-border hover:scale-110 group/tip"
+                className="relative w-9 h-9 rounded-xl border border-border/60 bg-background/50 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:border-border hover:scale-110 group/tip text-primary"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
                 <div className="w-6 h-6 flex items-center justify-center [&>svg]:w-6 [&>svg]:h-6">
                   <LogoComponent />
                 </div>
-                <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 transition-all duration-150 group-hover/tip:opacity-100 group-hover/tip:scale-100">
+                <span aria-hidden="true" className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 transition-all duration-150 group-hover/tip:opacity-100 group-hover/tip:scale-100">
                   {sw.name}
                 </span>
               </div>
@@ -300,9 +300,8 @@ function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEG
           })}
         </div>
 
-        {/* Count + chevron */}
-        <div className="flex items-center gap-2 shrink-0">
-          <span className="font-mono text-[11px] text-muted-foreground">{category.items.length}</span>
+        {/* Chevron */}
+        <div className="shrink-0">
           <svg
             viewBox="0 0 24 24"
             className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`}
@@ -332,10 +331,10 @@ function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEG
                 return (
                   <div
                     key={i}
-                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-background/50 transition-colors"
+                    className="flex items-start gap-3 p-3.5 rounded-xl hover:bg-background/50 transition-colors"
                   >
                     {LogoComponent && (
-                      <div className="w-8 h-8 rounded-lg border border-border/60 bg-background flex items-center justify-center shrink-0 mt-0.5">
+                      <div className="w-9 h-9 rounded-lg border border-border/60 bg-background flex items-center justify-center shrink-0 mt-0.5 text-primary [&_svg]:!opacity-100">
                         <div className="w-5 h-5 flex items-center justify-center [&>svg]:w-5 [&>svg]:h-5">
                           <LogoComponent />
                         </div>
@@ -343,12 +342,12 @@ function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEG
                     )}
                     <div className="min-w-0">
                       <div className="flex items-baseline gap-2">
-                        <span className="font-mono text-xs font-medium text-foreground">{sw.name}</span>
+                        <span className="font-mono text-sm font-medium text-foreground">{sw.name}</span>
                         {sw.version && (
-                          <span className="font-mono text-[10px] text-primary/70">{sw.version}</span>
+                          <span className="font-mono text-[11px] text-primary/80">{sw.version}</span>
                         )}
                       </div>
-                      <p className="text-[11px] text-muted-foreground leading-relaxed mt-0.5">{sw.desc}</p>
+                      <p className="text-xs text-muted-foreground leading-relaxed mt-1">{sw.desc}</p>
                     </div>
                   </div>
                 )
