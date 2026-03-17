@@ -638,7 +638,7 @@ export default function AiStudioPage() {
             subtitle="Všechno běží lokálně na jednom stroji. Cloud jen pro deploy a databázi."
           />
 
-          <div className="flex items-center justify-center gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-3 gap-6 max-w-md mx-auto">
             {[
               {
                 name: "Mac mini M4",
