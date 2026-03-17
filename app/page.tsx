@@ -256,7 +256,7 @@ export default function Home() {
               pro dobré nápady.
             </h2>
             <div className="reveal-item" style={{ transitionDelay: "200ms" }}>
-              <PrimaryButton href="/poptavka" arrow>Ozvěte se</PrimaryButton>
+              <PrimaryButton href="/poptavka">Ozvěte se</PrimaryButton>
             </div>
           </div>
         </section>
