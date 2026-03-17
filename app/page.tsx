@@ -19,7 +19,7 @@ const PILLARS = [
   {
     tag: "FAST VALIDATION",
     title: "Rychlé experimenty",
-    desc: "Nápady převádíme brzo do praxe, abychom mohli ověřit, jestli dávají smysl.",
+    desc: "Nápady převádíme brzo do praxe, abychom rychle ověřili, co funguje.",
   },
 ]
 
