@@ -414,7 +414,7 @@ export default function AiStudioPage() {
               {[
                 {
                   title: "Zadáš úkol",
-                  desc: "Česky, anglicky — jak chceš",
+                  desc: "Česky nebo anglicky",
                   icon: (
                     <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
@@ -423,7 +423,7 @@ export default function AiStudioPage() {
                 },
                 {
                   title: "AI plánuje",
-                  desc: "Vybere agenta, rozloží na kroky",
+                  desc: "Vybere agenta a kroky",
                   icon: (
                     <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M12 2a4 4 0 014 4c0 1.5-.8 2.8-2 3.4V11h3a3 3 0 013 3v1.6c1.2.6 2 1.9 2 3.4a4 4 0 11-6-3.4V14a1 1 0 00-1-1h-3v-3.6A4 4 0 0112 2z" />
@@ -433,7 +433,7 @@ export default function AiStudioPage() {
                 },
                 {
                   title: "Agenti pracují",
-                  desc: "Kód, testy, obsah — co je třeba",
+                  desc: "Kód testy obsah",
                   icon: (
                     <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
@@ -441,8 +441,8 @@ export default function AiStudioPage() {
                   ),
                 },
                 {
-                  title: "Build + test",
-                  desc: "Izolovaný sandbox, nic nerozbije",
+                  title: "Build a test",
+                  desc: "Bezpečný sandbox",
                   icon: (
                     <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M21 16V8a2 2 0 00-1-1.7l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.7l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
@@ -452,7 +452,7 @@ export default function AiStudioPage() {
                 },
                 {
                   title: "Živě na webu",
-                  desc: "GitHub repo + Vercel URL",
+                  desc: "Repo a URL",
                   icon: (
                     <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <circle cx="12" cy="12" r="10" />
