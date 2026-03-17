@@ -379,40 +379,15 @@ export default function AiStudioPage() {
   return (
     <div className="relative min-h-screen">
 
-      {/* Skip link */}
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg focus:text-sm focus:font-medium">
-        Přeskočit na obsah
-      </a>
-
-      <div className="fixed inset-0 dot-grid opacity-[0.14] pointer-events-none z-0" />
-
-      {/* ── NAV ─────────────────────────────────────────────────── */}
-      <nav aria-label="Hlavní navigace" className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 bg-background/75 backdrop-blur-xl">
-        <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-          <span className="font-body font-bold text-2xl tracking-[0.15em] text-primary">AI STUDIO</span>
-          <div className="hidden md:flex items-center gap-7 font-mono text-xs text-muted-foreground">
-            {[
-              ["architektura", "Architektura"],
-              ["sw", "Software"],
-              ["hw", "Hardware"],
-            ].map(([id, label]) => (
-              <a key={id} href={`#${id}`} className="py-3 px-1 hover:text-foreground transition-colors duration-200">
-                {label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
-
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <main id="main-content">
+      <main>
       <section aria-label="Úvod" className="relative z-10 min-h-screen flex items-center pt-14 overflow-hidden">
         <div
           className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, hsl(var(--primary) / 0.06) 0%, transparent 70%)" }}
         />
 
-        <div className="max-w-5xl mx-auto px-6 w-full py-28">
+        <div className="max-w-[1408px] mx-auto px-6 w-full py-28">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-primary/25 bg-primary/5 font-mono text-xs text-primary mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
@@ -538,7 +513,7 @@ export default function AiStudioPage() {
 
       {/* ── ARCHITECTURE ────────────────────────────────────────── */}
       <section id="architektura" aria-label="Architektura" className="relative z-10 py-24 border-t border-border">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-[1408px] mx-auto px-6">
           <SectionHeader
             tag="01 / Architektura"
             title="Kdo co dělá"
@@ -617,7 +592,7 @@ export default function AiStudioPage() {
 
       {/* ── SOFTWARE ────────────────────────────────────────────── */}
       <section id="sw" aria-label="Software" className="relative z-10 py-24 border-t border-border" style={{ background: "hsl(var(--card) / 0.4)" }}>
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-[1408px] mx-auto px-6">
           <SectionHeader
             tag="02 / Software"
             title="Co to používá"
@@ -634,7 +609,7 @@ export default function AiStudioPage() {
 
       {/* ── HARDWARE ────────────────────────────────────────────── */}
       <section id="hw" aria-label="Hardware" className="relative z-10 py-24 border-t border-border">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-[1408px] mx-auto px-6">
           <SectionHeader
             tag="03 / Hardware"
             title="Na čem to běží"
@@ -692,15 +667,12 @@ export default function AiStudioPage() {
 
       {/* ── FOOTER ──────────────────────────────────────────────── */}
       <footer className="relative z-10 border-t border-border py-10">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="font-body font-bold text-xl tracking-[0.2em] text-primary">AI STUDIO</span>
-          <div className="text-right">
-            <p className="font-mono text-xs text-muted-foreground">
-              Mac mini M4 · Claude Agent SDK · Gemini · Docker · Vercel
-            </p>
-            <p className="font-mono text-[10px] text-muted-foreground mt-1">
-              Built with AI. Humans safe.
-            </p>
+        <div className="max-w-[1408px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <span className="font-body font-bold text-sm tracking-[0.25em] text-primary">AI STUDIO</span>
+          <div className="flex gap-6 font-mono text-xs text-muted-foreground">
+            <a href="/o-projektu" className="hover:text-foreground transition-colors">O projektu</a>
+            <a href="/kontakty" className="hover:text-foreground transition-colors">Kontakty</a>
+            <a href="/ochrana-udaju" className="hover:text-foreground transition-colors">Ochrana údajů</a>
           </div>
         </div>
       </footer>
