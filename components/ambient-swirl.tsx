@@ -3,16 +3,16 @@
 import { useEffect, useRef } from "react"
 import { createNoise3D } from "simplex-noise"
 
-const PARTICLE_COUNT = 500
+const PARTICLE_COUNT = 400
 const PARTICLE_PROP_COUNT = 9
 const PARTICLE_PROPS_LENGTH = PARTICLE_COUNT * PARTICLE_PROP_COUNT
 const RANGE_Y = 100
 const BASE_TTL = 50
 const RANGE_TTL = 150
 const BASE_SPEED = 0.1
-const RANGE_SPEED = 1.5
+const RANGE_SPEED = 1.4
 const BASE_RADIUS = 1
-const RANGE_RADIUS = 3
+const RANGE_RADIUS = 2.5
 const BASE_HUE = 10
 const RANGE_HUE = 30
 const NOISE_STEPS = 8
