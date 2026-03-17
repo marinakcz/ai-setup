@@ -47,7 +47,7 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-6 font-mono text-xs text-muted-foreground">
             <Link href="/o-projektu" className="py-3 px-1 hover:text-foreground transition-colors">O projektu</Link>
             <Link href="/setup" className="py-3 px-1 hover:text-foreground transition-colors">Setup</Link>
-            <Link href="/kontakty" className="py-3 px-1 hover:text-foreground transition-colors">Kontakty</Link>
+            <Link href="/poptavka" className="py-3 px-1 hover:text-foreground transition-colors">Kontakty</Link>
           </div>
         </div>
       </nav>
@@ -79,7 +79,7 @@ export default function Home() {
               </p>
 
               <Link
-                href="/kontakty"
+                href="/poptavka"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-primary/25 bg-primary/[0.04] font-mono text-sm text-primary hover:bg-primary/[0.08] transition-colors"
               >
                 Ozvěte se
@@ -134,7 +134,7 @@ export default function Home() {
             <p className="text-lg text-foreground mb-10">Dnes už nemusíte.</p>
 
             <Link
-              href="/kontakty"
+              href="/poptavka"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-primary text-primary-foreground font-mono text-sm font-medium hover:opacity-90 transition-opacity"
             >
               Ozvěte se
