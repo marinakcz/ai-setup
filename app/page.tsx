@@ -229,23 +229,17 @@ export default function Home() {
             className="max-w-[1408px] mx-auto px-6 text-center reveal-group"
             ref={ctaRef}
           >
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-5 reveal-item">
-              <ScrambleTag text="/ AI STUDIO" />
-            </p>
-            <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground mb-5 reveal-item" style={{ transitionDelay: "120ms" }}>
-              NENECHÁVEJTE<br />
-              SVÉ NÁPADY <span className="text-muted-foreground">V ŠUPLÍKU</span>
+            <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3.5rem)] leading-[1.3] tracking-[0.04em] text-foreground mb-10 reveal-item">
+              Šuplík není místo<br />
+              pro dobré nápady.
             </h2>
-            <p className="font-body font-normal text-[clamp(1.125rem,1.6vw,1.75rem)] text-muted-foreground mb-12 reveal-item" style={{ transitionDelay: "240ms" }}>
-              Dnes už nemusíte.
-            </p>
-            <div className="reveal-item" style={{ transitionDelay: "360ms" }}>
+            <div className="reveal-item" style={{ transitionDelay: "200ms" }}>
               <Link
                 href="/poptavka"
-                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full border border-primary/30 bg-primary/[0.06] font-mono text-xs tracking-[0.15em] text-primary hover:bg-primary/[0.14] hover:border-primary/50 transition-all duration-300"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-background font-mono text-xs tracking-[0.15em] font-medium hover:brightness-110 transition-all duration-300"
               >
                 OZVĚTE SE
-                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </Link>
