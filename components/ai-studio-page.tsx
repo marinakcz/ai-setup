@@ -286,13 +286,15 @@ function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEG
             return LogoComponent ? (
               <div
                 key={i}
-                className="w-9 h-9 rounded-xl border border-border/60 bg-background/50 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:border-border hover:scale-110"
-                title={sw.name}
+                className="relative w-9 h-9 rounded-xl border border-border/60 bg-background/50 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:border-border hover:scale-110 group/tip"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
                 <div className="w-6 h-6 flex items-center justify-center [&>svg]:w-6 [&>svg]:h-6">
                   <LogoComponent />
                 </div>
+                <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 transition-all duration-150 group-hover/tip:opacity-100 group-hover/tip:scale-100">
+                  {sw.name}
+                </span>
               </div>
             ) : null
           })}
