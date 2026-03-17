@@ -1,136 +1,120 @@
+import Image from "next/image"
 import Link from "next/link"
 
-const METHODS = [
+const PILLARS = [
   {
-    title: "Designové myšlení",
     tag: "HUMAN THINKING",
-    desc: "Pomůžeme pochopit a správně definovat problém, aby řešení dávalo smysl.",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 6v6l4 2" />
-      </svg>
-    ),
+    title: "Designové myšlení",
+    desc: "Vnímáme a správně definujeme problém, aby řešení dávalo smysl.",
   },
   {
-    title: "Umělá inteligence",
     tag: "AI ACCELERATION",
-    desc: "AI výrazně rozšiřuje kapacitu a výkon, takže vývoj i hledání řešení je efektivnější.",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
+    title: "Umělá inteligence",
+    desc: "AI výrazně rozšiřuje výkon, takže cesta i hledání řešení je kratší a efektivnější.",
   },
   {
-    title: "Rychlé experimenty",
     tag: "FAST VALIDATION",
-    desc: "Nápady rychle převádíme do praxe, abychom mohli hned ověřit, jestli dávají smysl.",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-        <path d="M22 4L12 14.01l-3-3" />
-      </svg>
-    ),
+    title: "Rychlé experimenty",
+    desc: "Nápady převádíme brzo do praxe, abychom mohli ověřit, jestli dávají smysl.",
   },
 ]
+
+const TAGS = ["PROTOTYPY", "MVP", "AI NÁSTROJE", "EXPERIMENTY"]
 
 export default function Home() {
   return (
     <div className="relative min-h-screen">
-      {/* Hero */}
       <main>
-        <section className="relative z-10 min-h-screen flex items-center pt-14">
-          <div className="max-w-5xl mx-auto px-6 w-full py-28">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-primary/25 bg-primary/5 font-mono text-xs text-primary mb-8">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                AI STUDIO
-              </div>
-
-              <h1
-                className="font-body font-bold leading-none tracking-wide text-foreground mb-5"
-                style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
-              >
-                Od nápadu k produktu.{" "}
-                <span className="text-primary">Levou zadní.</span>
+        {/* Hero */}
+        <section className="relative z-10 pt-32 pb-20">
+          <div className="max-w-[1408px] mx-auto px-6 w-full">
+            {/* Tag + Headline */}
+            <div className="text-center mb-16">
+              <p className="font-mono text-base text-primary mb-4">/ AI STUDIO</p>
+              <h1 className="font-body font-extrabold text-[clamp(2rem,3.5vw,2.5rem)] leading-tight text-foreground">
+                OD NÁPADU K PRODUKTU
               </h1>
+            </div>
 
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-lg mb-10">
-                prototypy · MVP · aplikace · AI nástroje
+            {/* LEVOU [mascot] ZADNÍ */}
+            <div className="flex items-center justify-center gap-0 mb-16">
+              <span className="font-body font-extrabold text-[clamp(3rem,8vw,6.5rem)] leading-none text-foreground tracking-tight">
+                LEVOU
+              </span>
+              <div className="relative w-[clamp(150px,25vw,400px)] aspect-square mx-[-1rem]">
+                <Image
+                  src="/mascot.svg"
+                  alt="Levou Zadní maskot"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <span className="font-body font-extrabold text-[clamp(3rem,8vw,6.5rem)] leading-none text-foreground tracking-tight">
+                ZADNÍ
+              </span>
+            </div>
+
+            {/* Subtitle */}
+            <div className="text-center mb-4">
+              <p className="font-body text-[clamp(1.25rem,2.5vw,2.5rem)] leading-snug">
+                <span className="text-foreground">Experimentální AI studio, kde technologie násobí </span>
+                <span className="text-muted-foreground">lidské zkušenosti a expertízu.</span>
               </p>
+            </div>
 
-              <Link
-                href="/poptavka"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-primary/25 bg-primary/[0.04] font-mono text-sm text-primary hover:bg-primary/[0.08] transition-colors"
-              >
-                Ozvěte se
-                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
+            {/* Tags */}
+            <div className="flex items-center justify-center gap-8 font-mono text-base text-primary">
+              {TAGS.map((tag) => (
+                <span key={tag}>/ {tag}</span>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Studio */}
-        <section className="relative z-10 py-24 border-t border-border">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="max-w-2xl">
-              <p className="font-mono text-xs text-primary/80 tracking-[0.2em] uppercase mb-4">01 / Studio</p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Experimentální AI studio, kde technologie násobí lidské zkušenosti a expertízu.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* Divider */}
+        <div className="w-full h-px bg-border" />
 
-        {/* How we work */}
-        <section className="relative z-10 py-24 border-t border-border" style={{ background: "hsl(var(--card) / 0.4)" }}>
-          <div className="max-w-5xl mx-auto px-6">
-            <p className="font-mono text-xs text-primary/80 tracking-[0.2em] uppercase mb-12">02 / Jak pracujeme</p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {METHODS.map((method, i) => (
-                <div key={i} className="p-6 rounded-2xl border border-border bg-card/50">
-                  <div className="w-12 h-12 rounded-2xl border border-border bg-background flex items-center justify-center mb-5 text-primary">
-                    {method.icon}
-                  </div>
-                  <h3 className="font-body font-semibold text-lg text-foreground mb-1">{method.title}</h3>
-                  <p className="font-mono text-[10px] text-primary/70 tracking-[0.15em] uppercase mb-3">{method.tag}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{method.desc}</p>
+        {/* Three pillars */}
+        <section className="relative z-10 py-20">
+          <div className="max-w-[1408px] mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+              {PILLARS.map((pillar) => (
+                <div key={pillar.tag}>
+                  <p className="font-mono text-base text-primary mb-4">/ {pillar.tag}</p>
+                  <h3 className="font-body font-semibold text-[2rem] leading-tight text-foreground mb-4">
+                    {pillar.title}
+                  </h3>
+                  <p className="font-body text-2xl leading-relaxed text-muted-foreground">
+                    {pillar.desc}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Contact CTA */}
-        <section className="relative z-10 py-32 border-t border-border">
-          <div className="max-w-5xl mx-auto px-6 text-center">
-            <p className="font-mono text-xs text-primary/80 tracking-[0.2em] uppercase mb-6">03 / Kontakt</p>
-            <h2 className="font-body font-bold text-2xl sm:text-3xl text-foreground leading-tight mb-3">
-              Nenechávejte své nápady<br />
-              <span className="text-muted-foreground">v šuplíku.</span>
-            </h2>
-            <p className="text-lg text-foreground mb-10">Dnes už nemusíte.</p>
+        {/* Divider */}
+        <div className="w-full h-px bg-border" />
 
-            <Link
-              href="/poptavka"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-primary text-primary-foreground font-mono text-sm font-medium hover:opacity-90 transition-opacity"
-            >
-              Ozvěte se
-              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </Link>
+        {/* CTA */}
+        <section className="relative z-10 py-20">
+          <div className="max-w-[1408px] mx-auto px-6 text-center">
+            <p className="font-mono text-base text-primary mb-4">/ AI STUDIO</p>
+            <h2 className="font-body font-extrabold text-[clamp(2rem,3.5vw,2.5rem)] leading-tight text-foreground mb-4">
+              NENECHÁVEJTE<br />
+              SVÉ NÁPADY <span className="text-muted-foreground">V ŠUPLÍKU</span>
+            </h2>
+            <p className="font-body text-[2rem] text-muted-foreground">
+              Dnes už nemusíte.
+            </p>
           </div>
         </section>
       </main>
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-border py-8">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-[1408px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="font-body font-bold text-lg tracking-[0.2em] text-primary">AI STUDIO</span>
           <div className="flex gap-6 font-mono text-xs text-muted-foreground">
             <Link href="/o-projektu" className="hover:text-foreground transition-colors">O projektu</Link>

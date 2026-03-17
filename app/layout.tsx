@@ -57,16 +57,16 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <SiteNav />
-        {/* Fleava-style animated blob background */}
+        {/* Subtle animated blob background */}
         <div className="fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
           <div className="mix-blend-difference">
             <div
               className="animate-blob absolute top-[-20%] right-[-15%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] rounded-full"
-              style={{ background: "linear-gradient(180deg, hsl(215 50% 12%), hsl(215 40% 22%))", filter: "blur(80px)" }}
+              style={{ background: "linear-gradient(180deg, hsl(0 0% 10%), hsl(0 0% 16%))", filter: "blur(80px)" }}
             />
             <div
               className="animate-blob-slow absolute bottom-[-20%] left-[-10%] w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] rounded-full"
-              style={{ background: "linear-gradient(135deg, hsl(190 60% 10%), hsl(215 50% 18%))", filter: "blur(100px)" }}
+              style={{ background: "linear-gradient(135deg, hsl(14 20% 8%), hsl(0 0% 12%))", filter: "blur(100px)" }}
             />
           </div>
         </div>
