@@ -152,7 +152,7 @@ export default function Home() {
                 <ScrambleTag text="/ AI STUDIO" delay={300} />
               </p>
               <h1 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground stagger-2">
-                OD NÁPADU K PRODUKTU
+                Od nápadu k produktu
               </h1>
             </div>
 
