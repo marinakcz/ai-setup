@@ -27,7 +27,10 @@ export function SiteNav() {
           onClick={() => setOpen(false)}
           className="hover:opacity-80 transition-opacity"
         >
-          <Image src="/logo-color.svg" alt="Levou Zadní" width={120} height={30} className="h-6 w-auto" priority />
+          <span className="flex items-center gap-2 group">
+            <Image src="/logo-color.svg" alt="" width={32} height={32} className="h-8 w-8 transition-transform duration-300 group-hover:rotate-12" priority />
+            <span className="font-body font-bold text-sm tracking-[0.06em] text-foreground group-hover:text-primary transition-colors duration-300">levou zadní</span>
+          </span>
         </Link>
 
         {/* Hamburger */}
