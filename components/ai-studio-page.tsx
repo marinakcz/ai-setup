@@ -607,49 +607,26 @@ export default function AiStudioPage() {
             subtitle="Všechno běží lokálně na jednom stroji. Cloud jen pro deploy a databázi."
           />
 
-          <div className="grid grid-cols-3 gap-6 max-w-md mx-auto">
-            {[
-              {
-                name: "Mac mini M4",
-                tag: "hlavní stroj",
-                highlight: true,
-                icon: (
-                  <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-                    <rect x="2" y="3" width="20" height="14" rx="2" />
-                    <path d="M8 21h8M12 17v4" />
-                  </svg>
-                ),
-              },
-              {
-                name: "Synology NAS",
-                tag: "zálohy",
-                highlight: false,
-                icon: (
-                  <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-                    <rect x="2" y="3" width="20" height="18" rx="2" />
-                    <path d="M2 9h20M2 15h20" />
-                  </svg>
-                ),
-              },
-              {
-                name: "Cloud",
-                tag: "produkce",
-                highlight: false,
-                icon: (
-                  <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-                    <path d="M18 10a4 4 0 00-7.5-2A3.5 3.5 0 004 11.5 3 3 0 005 17h12a3 3 0 001-5.8z" />
-                  </svg>
-                ),
-              },
-            ].map((hw, i) => (
-              <div key={i} className="flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-xl border border-border bg-card flex items-center justify-center mb-2 text-foreground">
-                  {hw.icon}
-                </div>
-                <div className="font-mono text-xs font-medium text-foreground">{hw.name}</div>
-                <div className="font-mono text-xs mt-0.5 text-muted-foreground">{hw.tag}</div>
-              </div>
-            ))}
+          {/* 3D Mac Mini */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <div style={{ width: "100%", aspectRatio: "16/10", borderRadius: "12px", overflow: "hidden" }}>
+              <iframe
+                title="Apple Mac mini M4 pro"
+                allow="autoplay; fullscreen; xr-spatial-tracking"
+                allowFullScreen
+                src="https://sketchfab.com/models/c0f11a5cfc05448bbefa8c721e5fb0fd/embed?autostart=1&preload=1&ui_hint=0&ui_infos=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=1&ui_annotations=0&dnt=1"
+                style={{ width: "100%", height: "100%", border: "none", display: "block" }}
+              />
+            </div>
+          </div>
+
+          {/* Hardware labels */}
+          <div className="flex items-center justify-center gap-8 font-mono text-xs text-muted-foreground">
+            <span><span className="text-foreground font-medium">Mac mini M4</span> — hlavní stroj</span>
+            <span className="text-border">/</span>
+            <span><span className="text-foreground font-medium">Synology NAS</span> — zálohy</span>
+            <span className="text-border">/</span>
+            <span><span className="text-foreground font-medium">Cloud</span> — produkce</span>
           </div>
         </div>
       </section>
