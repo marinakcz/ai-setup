@@ -1,7 +1,33 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { SiteFooter } from "@/components/site-footer"
+
+const ROTATING_WORDS = ["tři", "pět", "deset", "dvacet", "padesát", "sto"]
+
+function RotatingWord() {
+  const [index, setIndex] = useState(0)
+  const [fade, setFade] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false)
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % ROTATING_WORDS.length)
+        setFade(true)
+      }, 300)
+    }, 2500)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <span
+      className={`inline-block text-primary font-semibold transition-all duration-300 ${fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}
+    >
+      {ROTATING_WORDS[index]}
+    </span>
+  )
+}
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
@@ -602,14 +628,18 @@ export default function AiStudioPage() {
       {/* ── HARDWARE ────────────────────────────────────────────── */}
       <section id="hw" aria-label="Hardware" className="relative z-10 py-24">
         <div className="max-w-[1408px] mx-auto px-6">
-          <SectionHeader
-            tag="HARDWARE"
-            title="Na čem to běží"
-            subtitle="Všechno běží lokálně na jednom stroji. Cloud jen pro deploy a databázi."
-          />
+          <div className="text-center mb-14">
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ HARDWARE</p>
+            <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
+              Tady bydlí AI studio.
+            </h2>
+            <p className="font-body font-normal text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.7] text-muted-foreground mt-2">
+              Malý. Ale maká za <RotatingWord />.
+            </p>
+          </div>
 
           {/* Mac Mini image */}
-          <div className="max-w-sm mx-auto mb-12">
+          <div className="max-w-sm mx-auto mb-6">
             <img
               src="/mac-mini.png"
               alt="Mac mini M4"
