@@ -114,13 +114,13 @@ export default function AboutPage() {
                 onMouseEnter={(e) => { const t = e.currentTarget.querySelector('[role=tooltip]') as HTMLElement; if (t) { t.style.opacity = '1'; t.style.transform = 'scale(1)' } }}
                 onMouseLeave={(e) => { const t = e.currentTarget.querySelector('[role=tooltip]') as HTMLElement; if (t) { t.style.opacity = '0'; t.style.transform = 'scale(0.95)' } }}
               >
-                přemýšlet správně
+                <span className="decoration-primary/40 decoration-dashed underline underline-offset-4 cursor-help">přemýšlet správně</span>
                 <span
                   role="tooltip"
                   className="pointer-events-none absolute -top-44 left-1/2 -translate-x-1/2 z-50 w-64 px-5 py-4 rounded-xl bg-card border border-border shadow-2xl transition-all duration-200"
                   style={{ opacity: 0, transform: 'scale(0.95)' }}
                 >
-                  <span className="block font-mono text-xs text-muted-foreground mb-3">Pro polovičatá rozhodnutí platí:</span>
+                  <span className="block font-mono text-xs text-muted-foreground mb-3">Pořád platí:</span>
                   <span className="flex items-center justify-center gap-3 font-mono text-base mt-1">
                     <span className="inline-flex flex-col items-center">
                       <span className="text-foreground font-medium">rozhodnutí</span>
