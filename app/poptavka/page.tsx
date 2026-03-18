@@ -243,11 +243,9 @@ export default function ContactPage() {
 
           {/* Billing */}
           <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-12" />
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 font-mono text-xs text-muted-foreground">
-            <span className="text-foreground font-medium">Mgr. Pavel Martinovský</span>
-            <span>Hlavenec 177, 294 76 Praha-východ</span>
-            <span>IČO: 06054251</span>
-            <span>Nejsem plátce DPH</span>
+          <div className="font-mono text-xs">
+            <p className="text-foreground font-medium mb-2">Mgr. Pavel Martinovský</p>
+            <p className="text-muted-foreground">Hlavenec 177, 294 76 Praha-východ · IČO: 06054251 · Nejsem plátce DPH</p>
           </div>
         </div>
       </main>
