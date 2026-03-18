@@ -131,7 +131,7 @@ export default function AboutPage() {
                     <span className="text-foreground font-bold">bordel²</span>
                   </span>
                 </span>
-              </span>.
+              </span><span className="text-primary">.</span>
             </h2>
             <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground mt-8 reveal-item" style={{ transitionDelay: "200ms" }}>
               A právě proto mě tenhle způsob práce dnes baví ještě víc.
