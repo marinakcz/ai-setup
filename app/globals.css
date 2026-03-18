@@ -162,12 +162,12 @@
 
 /* ── Hand-drawn underline ── */
 @keyframes drawLine {
-  from { stroke-dashoffset: 300; }
+  from { stroke-dashoffset: 1000; }
   to   { stroke-dashoffset: 0; }
 }
 .hand-drawn-line {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
 }
 .revealed .hand-drawn-line {
   animation: drawLine 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
