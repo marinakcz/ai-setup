@@ -22,7 +22,7 @@ export function SiteNav() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-5xl mx-auto px-6 h-14 mt-6 flex items-center justify-between relative z-10">
+      <div className="max-w-[1408px] mx-auto px-6 h-14 mt-6 flex items-center justify-between relative z-10">
         <Link
           href="/"
           onClick={() => setOpen(false)}
@@ -54,7 +54,7 @@ export function SiteNav() {
 
         {/* Main nav links — large flowing type */}
         <div className="flex-1 flex items-center">
-          <div className="max-w-5xl mx-auto px-6 w-full">
+          <div className="max-w-[1408px] mx-auto px-6 w-full">
             <div className="flex flex-wrap gap-x-[0.4em] gap-y-0 leading-[1.1]">
               {NAV_LINKS.map((link, i) => (
                 <Link
@@ -76,7 +76,7 @@ export function SiteNav() {
 
         {/* Footer in menu */}
         <div className="shrink-0 border-t border-border/40">
-          <div className="max-w-5xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="max-w-[1408px] mx-auto px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 font-mono text-xs text-muted-foreground">
               <span>marinak@marinak.cz</span>
               <span>+420 776 120 555</span>

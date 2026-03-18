@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="relative min-h-screen flex flex-col">
-      <main className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24">
+      <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-32 pb-24">
         <h1 className="font-body font-bold text-3xl sm:text-4xl lg:text-5xl text-primary leading-tight mb-4">
           Plánujete nový projekt?
         </h1>

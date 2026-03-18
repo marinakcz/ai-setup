@@ -18,7 +18,7 @@ export default function InquiryPage() {
 
   return (
     <div className="relative min-h-screen flex flex-col">
-      <main className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24">
+      <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-32 pb-24">
         <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ POPTÁVKA</p>
         <h1 className="font-body font-bold text-3xl sm:text-4xl text-foreground leading-tight mb-3">
           Napište mi
