@@ -3,32 +3,71 @@
 import { useState, useEffect, useRef } from "react"
 import { SiteFooter } from "@/components/site-footer"
 
-const NUMBERS = [3, 5, 10, 20, 50, 100]
+const FINAL_NUMBERS = [3, 5, 10, 15, 20, 42, 50, 99]
 
 function RotatingNumber() {
-  const [index, setIndex] = useState(0)
+  const [value, setValue] = useState(0)
   const [mounted, setMounted] = useState(false)
+  const [spinning, setSpinning] = useState(false)
+  const finalRef = useRef(0)
 
   useEffect(() => { setMounted(true) }, [])
 
   useEffect(() => {
     if (!mounted) return
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % NUMBERS.length)
-    }, 3000)
-    return () => clearInterval(interval)
+
+    const runCycle = () => {
+      // Pick random final number
+      finalRef.current = FINAL_NUMBERS[Math.floor(Math.random() * FINAL_NUMBERS.length)]
+      setSpinning(true)
+
+      // Spin through random 4-digit numbers
+      let ticks = 0
+      const maxTicks = 12 + Math.floor(Math.random() * 6)
+      const interval = setInterval(() => {
+        ticks++
+        if (ticks < maxTicks) {
+          // Random 2-4 digit number while spinning
+          setValue(Math.floor(Math.random() * 9000) + 1000)
+        } else {
+          // Settle on final
+          setValue(finalRef.current)
+          setSpinning(false)
+          clearInterval(interval)
+        }
+      }, 100 + ticks * 8) // Gradually slow down
+
+      return interval
+    }
+
+    // First spin
+    const firstSpin = setTimeout(() => {
+      const interval = runCycle()
+
+      // Repeat every 5s
+      const repeat = setInterval(() => {
+        runCycle()
+      }, 5000)
+
+      return () => {
+        clearInterval(interval)
+        clearInterval(repeat)
+      }
+    }, 500)
+
+    return () => clearTimeout(firstSpin)
   }, [mounted])
 
-  if (!mounted) return <span className="text-primary font-semibold">{NUMBERS[0]}</span>
+  if (!mounted) return <span className="text-primary font-semibold">10</span>
 
   const NumberFlow = require("@number-flow/react").default
   return (
     <NumberFlow
-      value={NUMBERS[index]}
+      value={value}
       className="text-primary font-semibold"
-      transformTiming={{ duration: 700, easing: "cubic-bezier(0.16, 1, 0.3, 1)" }}
-      spinTiming={{ duration: 700, easing: "cubic-bezier(0.16, 1, 0.3, 1)" }}
-      opacityTiming={{ duration: 400, easing: "ease-out" }}
+      transformTiming={{ duration: spinning ? 120 : 600, easing: spinning ? "linear" : "cubic-bezier(0.16, 1, 0.3, 1)" }}
+      spinTiming={{ duration: spinning ? 120 : 600, easing: spinning ? "linear" : "cubic-bezier(0.16, 1, 0.3, 1)" }}
+      opacityTiming={{ duration: spinning ? 80 : 350, easing: "ease-out" }}
     />
   )
 }
