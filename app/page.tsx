@@ -213,6 +213,9 @@ export default function Home() {
         </section>
 
 
+        {/* Divider */}
+        <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
         {/* Three pillars */}
         <section className="relative z-10 py-24 md:py-32">
           <div
@@ -241,6 +244,9 @@ export default function Home() {
           </div>
         </section>
 
+
+        {/* Divider */}
+        <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
         {/* CTA */}
         <section className="relative z-10 py-28 md:py-40">
