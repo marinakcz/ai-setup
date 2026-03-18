@@ -178,7 +178,7 @@ export default function AboutPage() {
               <div className="font-body font-bold text-xl text-foreground">Pavel Martinovský</div>
               <div className="font-mono text-sm text-muted-foreground mt-1">Senior UX Designer @ J&T Banka (aktuálně)</div>
               <a
-                href="https://linkedin.com/in/martinovsky"
+                href="https://www.linkedin.com/in/pavelmartinovsky/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground hover:text-primary transition-colors mt-2"

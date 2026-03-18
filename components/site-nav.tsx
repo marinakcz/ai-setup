@@ -85,7 +85,7 @@ export function SiteNav() {
             </div>
             <div className="flex gap-4 font-mono text-xs text-muted-foreground">
               <Link href="/ochrana-udaju" onClick={() => setOpen(false)} className="hover:text-foreground transition-colors">Ochrana údajů</Link>
-              <a href="https://linkedin.com/in/martinovsky" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/pavelmartinovsky/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
             </div>
           </div>
         </div>
