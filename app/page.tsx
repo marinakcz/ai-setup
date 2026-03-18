@@ -261,9 +261,9 @@ export default function Home() {
             className="max-w-[1408px] mx-auto px-6 text-center reveal-group"
             ref={ctaRef}
           >
-            <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3.5rem)] leading-[1.3] tracking-[0.04em] text-foreground mb-10 reveal-item">
-              Šuplík není místo<br />
-              pro dobré nápady.
+            <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3.5rem)] leading-[1.3] tracking-[0.04em] mb-10 reveal-item">
+              <span className="text-muted-foreground">Šuplík není místo</span><br />
+              <span className="text-foreground">pro dobré nápady.</span>
             </h2>
             <div className="reveal-item" style={{ transitionDelay: "200ms" }}>
               <PrimaryButton href="/poptavka">Pojďme se spojit</PrimaryButton>
