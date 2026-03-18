@@ -72,7 +72,13 @@ export default function AboutPage() {
               Ale spousta dobrých nápadů
             </h2>
             <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.2] text-muted-foreground mb-8">
-              skončila v šuplíku.
+              skončila{" "}
+              <span className="relative inline-block text-foreground">
+                v šuplíku.
+                <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary" viewBox="0 0 200 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M2 8 C 30 2, 50 12, 80 6 S 130 2, 160 8 S 190 4, 198 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" className="hand-drawn-line" />
+                </svg>
+              </span>
             </h2>
             <p className="font-body text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-xl">
               Protože na realizaci chyběl čas nebo zdroje.
