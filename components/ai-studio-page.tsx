@@ -3,13 +3,16 @@
 import { useState, useEffect, useRef } from "react"
 import { SiteFooter } from "@/components/site-footer"
 
-const FINAL_NUMBERS = [3, 5, 10, 15, 20, 42, 50, 99]
+const FINAL_NUMBERS = [3, 5, 7, 10, 12, 15, 20, 25, 30]
+
+function padFour(n: number) {
+  return String(n).padStart(4, "0")
+}
 
 function RotatingNumber() {
-  const [value, setValue] = useState(0)
-  const [mounted, setMounted] = useState(false)
+  const [display, setDisplay] = useState("0010")
   const [spinning, setSpinning] = useState(false)
-  const finalRef = useRef(0)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => { setMounted(true) }, [])
 
@@ -17,58 +20,53 @@ function RotatingNumber() {
     if (!mounted) return
 
     const runCycle = () => {
-      // Pick random final number
-      finalRef.current = FINAL_NUMBERS[Math.floor(Math.random() * FINAL_NUMBERS.length)]
+      const final = FINAL_NUMBERS[Math.floor(Math.random() * FINAL_NUMBERS.length)]
       setSpinning(true)
 
-      // Spin through random 4-digit numbers
       let ticks = 0
-      const maxTicks = 12 + Math.floor(Math.random() * 6)
-      const interval = setInterval(() => {
+      const maxTicks = 14 + Math.floor(Math.random() * 6)
+
+      const spin = () => {
         ticks++
         if (ticks < maxTicks) {
-          // Random 2-4 digit number while spinning
-          setValue(Math.floor(Math.random() * 9000) + 1000)
+          setDisplay(padFour(Math.floor(Math.random() * 9999) + 1))
+          setTimeout(spin, 80 + ticks * 12)
         } else {
-          // Settle on final
-          setValue(finalRef.current)
+          setDisplay(padFour(final))
           setSpinning(false)
-          clearInterval(interval)
         }
-      }, 100 + ticks * 8) // Gradually slow down
-
-      return interval
+      }
+      spin()
     }
 
-    // First spin
-    const firstSpin = setTimeout(() => {
-      const interval = runCycle()
+    const firstTimeout = setTimeout(runCycle, 500)
+    const repeat = setInterval(runCycle, 6000)
 
-      // Repeat every 5s
-      const repeat = setInterval(() => {
-        runCycle()
-      }, 5000)
-
-      return () => {
-        clearInterval(interval)
-        clearInterval(repeat)
-      }
-    }, 500)
-
-    return () => clearTimeout(firstSpin)
+    return () => {
+      clearTimeout(firstTimeout)
+      clearInterval(repeat)
+    }
   }, [mounted])
 
-  if (!mounted) return <span className="text-primary font-semibold">10</span>
+  if (!mounted) return <span className="text-primary font-semibold font-mono">0010</span>
 
+  // Render each digit separately for independent rolling
   const NumberFlow = require("@number-flow/react").default
+  const digits = display.split("").map(Number)
+
   return (
-    <NumberFlow
-      value={value}
-      className="text-primary font-semibold"
-      transformTiming={{ duration: spinning ? 120 : 600, easing: spinning ? "linear" : "cubic-bezier(0.16, 1, 0.3, 1)" }}
-      spinTiming={{ duration: spinning ? 120 : 600, easing: spinning ? "linear" : "cubic-bezier(0.16, 1, 0.3, 1)" }}
-      opacityTiming={{ duration: spinning ? 80 : 350, easing: "ease-out" }}
-    />
+    <span className="inline-flex text-primary font-semibold">
+      {digits.map((d, i) => (
+        <NumberFlow
+          key={i}
+          value={d}
+          className="inline-block"
+          transformTiming={{ duration: spinning ? 100 : 600, easing: spinning ? "linear" : "cubic-bezier(0.16, 1, 0.3, 1)" }}
+          spinTiming={{ duration: spinning ? 100 : 600, easing: spinning ? "linear" : "cubic-bezier(0.16, 1, 0.3, 1)" }}
+          opacityTiming={{ duration: spinning ? 60 : 300, easing: "ease-out" }}
+        />
+      ))}
+    </span>
   )
 }
 
