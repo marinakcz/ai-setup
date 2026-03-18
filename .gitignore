@@ -52,3 +52,9 @@ next-env.d.ts
 .npmrc
 .config
 .sudo_as_admin_successful
+
+# playwright mcp
+.playwright-mcp/
+
+# eslint
+.eslintrc.json
