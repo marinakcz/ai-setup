@@ -168,12 +168,7 @@ export default function AboutPage() {
         {/* Author */}
         <section className="mb-20 reveal-group" ref={authorRef}>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 reveal-item">
-            <div className="w-20 h-20 rounded-2xl border border-primary/20 bg-primary/[0.04] flex items-center justify-center text-primary shrink-0">
-              <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-            </div>
+            <img src="/pavel.png" alt="Pavel Martinovský" className="w-20 h-20 rounded-full shrink-0" />
             <div>
               <div className="font-body font-bold text-xl text-foreground">Pavel Martinovský</div>
               <div className="font-mono text-sm text-muted-foreground mt-1">Senior UX Designer @ J&T Banka (aktuálně)</div>
