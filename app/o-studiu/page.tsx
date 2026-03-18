@@ -39,7 +39,7 @@ export default function AboutPage() {
 
         {/* Hero intro */}
         <section className="mb-32 hero-stagger">
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 stagger-1">/ O STUDIU</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 stagger-1">/ O STUDIU A O MNĚ</p>
           <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-8 stagger-2">
             Ahoj, jsem Pavel. <span className="inline-block animate-wave">👋</span>
           </h1>
@@ -125,7 +125,7 @@ export default function AboutPage() {
                     <span className="inline-flex flex-col items-center">
                       <span className="text-foreground font-medium">rozhodnutí</span>
                       <span className="w-full h-px bg-muted-foreground/50 my-1" />
-                      <span className="text-primary font-bold">2</span>
+                      <span className="text-foreground font-bold">2</span>
                     </span>
                     <span className="text-muted-foreground">=</span>
                     <span className="text-foreground font-bold">bordel²</span>
