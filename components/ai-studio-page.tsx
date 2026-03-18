@@ -675,7 +675,7 @@ export default function AiStudioPage() {
               Tady bydlí AI studio.
             </h2>
             <p className="font-body font-normal text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.7] text-muted-foreground mt-2">
-              Malý. Ale maká za <RotatingNumber />.
+              Malý. Ale maká jako ďas, pane profesore.
             </p>
           </div>
 
