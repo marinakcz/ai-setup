@@ -201,6 +201,13 @@ export default function Home() {
               </p>
             </div>
 
+            {/* About link */}
+            <div className="text-center mb-8 stagger-5">
+              <Link href="/o-studiu" className="font-mono text-xs tracking-[0.1em] text-muted-foreground hover:text-primary transition-colors duration-300">
+                Více o studiu →
+              </Link>
+            </div>
+
             {/* Tags */}
             <div className="flex flex-wrap items-center justify-center gap-5 md:gap-8 font-mono text-xs tracking-[0.15em] text-primary stagger-5">
               {TAGS.map((tag, i) => (
