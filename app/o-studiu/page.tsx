@@ -105,10 +105,9 @@ export default function AboutPage() {
         {/* New reality */}
         <section className="mb-32 reveal-group" ref={realityRef}>
           <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item">/ NOVÁ REALITA</p>
-          <div className="max-w-3xl">
+          <div>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.5vw,2.25rem)] leading-[1.3] text-foreground mb-3 reveal-item" style={{ transitionDelay: "100ms" }}>
-              Rychlejší realizace neznamená méně přemýšlení.<br />
-              Znamená víc prostoru{" "}
+              Rychlejší realizace neznamená méně přemýšlení. Znamená víc prostoru{" "}
               <span
                 className="relative inline-block text-primary cursor-default"
                 onMouseEnter={(e) => { const t = e.currentTarget.querySelector('[role=tooltip]') as HTMLElement; if (t) { t.style.opacity = '1'; t.style.transform = 'scale(1)' } }}
