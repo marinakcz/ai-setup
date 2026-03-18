@@ -160,7 +160,7 @@ export default function AboutPage() {
               Nápady ve dvě ráno. Koupené domény. Prototypy za pár dnů.
             </p>
             <p className="font-body font-medium text-[clamp(1rem,1.3vw,1.125rem)] leading-[1.7] text-foreground/80 mt-2">
-              A někdy z toho vznikne něco většího.
+              Co dřív nemělo šanci, dnes má.
             </p>
           </div>
         </section>
