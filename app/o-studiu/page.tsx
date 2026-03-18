@@ -109,22 +109,18 @@ export default function AboutPage() {
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.5vw,2.25rem)] leading-[1.3] text-foreground mb-3 reveal-item" style={{ transitionDelay: "100ms" }}>
               Rychlejší realizace neznamená méně přemýšlení.{" "}
               Znamená víc prostoru{" "}
-              <span className="relative inline-block group cursor-default">
-                <span className="text-primary underline decoration-primary/30 underline-offset-4">přemýšlet správně</span>
-                {/* Post-it tooltip */}
-                <span className="pointer-events-none absolute -top-6 left-full ml-6 w-72 p-6 rounded-sm bg-[#f5d960] text-[#1a1a1a] shadow-2xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 origin-top-left z-50 rotate-2"
-                  style={{ fontFamily: "var(--font-hand), cursive" }}
+              <span
+                className="relative inline-block text-primary cursor-default"
+                onMouseEnter={(e) => { const t = e.currentTarget.querySelector('[role=tooltip]') as HTMLElement; if (t) { t.style.opacity = '1'; t.style.transform = 'scale(1)' } }}
+                onMouseLeave={(e) => { const t = e.currentTarget.querySelector('[role=tooltip]') as HTMLElement; if (t) { t.style.opacity = '0'; t.style.transform = 'scale(0.95)' } }}
+              >
+                přemýšlet správně
+                <span
+                  role="tooltip"
+                  className="pointer-events-none absolute -top-14 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-lg bg-foreground text-background text-sm font-mono font-normal whitespace-nowrap shadow-xl transition-all duration-200"
+                  style={{ opacity: 0, transform: 'scale(0.95)' }}
                 >
-                  <span className="block text-sm text-[#1a1a1a]/60 mb-3">Pro polovičatá rozhodnutí pořád platí:</span>
-                  <span className="block text-2xl leading-tight">
-                    <span className="opacity-50">kód</span>
-                    <br />
-                    <span className="inline-block border-b-2 border-[#1a1a1a] pb-0.5 mt-1">rozhodnutí</span>
-                    <br />
-                    <span className="text-base text-primary ml-4">2</span>
-                    <span className="ml-3">=</span>
-                    <span className="ml-3 font-bold">bordel²</span>
-                  </span>
+                  Pro polovičatá rozhodnutí platí: rozhodnutí / 2 = bordel²
                 </span>
               </span>.
             </h2>
