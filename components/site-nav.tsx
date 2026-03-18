@@ -27,9 +27,9 @@ export function SiteNav() {
           onClick={() => setOpen(false)}
           className="hover:opacity-80 transition-opacity"
         >
-          <span className="flex items-center gap-2 group">
-            <Image src="/logo-color.svg" alt="" width={32} height={32} className="h-8 w-8 transition-transform duration-300 group-hover:rotate-12" priority />
-            <span className="font-body font-bold text-sm tracking-[0.06em] text-foreground group-hover:text-primary transition-colors duration-300">levou zadní</span>
+          <span className="flex items-center gap-2.5 group">
+            <Image src="/logo-color.svg" alt="" width={56} height={56} className="h-10 w-10 transition-transform duration-300 group-hover:rotate-12" priority />
+            <span className="font-body font-bold text-base tracking-[0.04em] text-foreground group-hover:text-primary transition-colors duration-300 leading-none mt-0.5">levou zadní</span>
           </span>
         </Link>
 
