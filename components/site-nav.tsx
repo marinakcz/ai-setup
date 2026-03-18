@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import Link from "next/link"
 
 const NAV_LINKS = [
@@ -24,9 +25,9 @@ export function SiteNav() {
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="font-body font-bold text-xl tracking-[0.08em] text-foreground hover:text-primary transition-colors"
+          className="hover:opacity-80 transition-opacity"
         >
-          levouzadni
+          <Image src="/logo-bw.svg" alt="Levou Zadní" width={120} height={30} className="h-6 w-auto" priority />
         </Link>
 
         {/* Hamburger */}
