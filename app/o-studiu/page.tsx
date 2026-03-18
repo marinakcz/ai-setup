@@ -117,10 +117,22 @@ export default function AboutPage() {
                 přemýšlet správně
                 <span
                   role="tooltip"
-                  className="pointer-events-none absolute -top-14 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-lg bg-foreground text-background text-sm font-mono font-normal whitespace-nowrap shadow-xl transition-all duration-200"
+                  className="pointer-events-none absolute -top-44 left-1/2 -translate-x-1/2 z-50 w-64 px-5 py-4 rounded-xl bg-card border border-border shadow-2xl transition-all duration-200"
                   style={{ opacity: 0, transform: 'scale(0.95)' }}
                 >
-                  Pro polovičatá rozhodnutí platí: rozhodnutí / 2 = bordel²
+                  <span className="block font-mono text-xs text-muted-foreground mb-3">Pro polovičatá rozhodnutí platí:</span>
+                  <span className="block font-mono text-base text-muted-foreground text-center leading-relaxed">
+                    <span className="block text-foreground font-medium">kód</span>
+                    <span className="block mt-2">
+                      <span className="inline-block text-center">
+                        <span className="block text-foreground font-medium">rozhodnutí</span>
+                        <span className="block h-px bg-muted-foreground/50 my-1" />
+                        <span className="block text-primary font-bold">2</span>
+                      </span>
+                      <span className="inline-block mx-3 text-muted-foreground">=</span>
+                      <span className="inline-block text-foreground font-bold">bordel²</span>
+                    </span>
+                  </span>
                 </span>
               </span>.
             </h2>
