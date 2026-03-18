@@ -16,7 +16,7 @@ export default function AboutPage() {
         <section className="mb-32">
           <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ O STUDIU</p>
           <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-8">
-            Ahoj, jsem Pavel.
+            Ahoj, jsem Pavel. 👋
           </h1>
           <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-2xl">
             Digitální designer. Digitální produkty navrhuji od roku 1999.
