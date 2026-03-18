@@ -60,10 +60,10 @@ export default function AboutPage() {
             </p>
           </div>
           <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-2xl reveal-item" style={{ transitionDelay: "300ms" }}>
-            Projít celý proces od pochopení problému až po návrh a ověření řešení. Právě na tom to celé stojí.
+            A to platí i dnes.
           </p>
-          <svg className="w-[min(100%,38rem)] h-4 mt-8 text-primary reveal-item" style={{ transitionDelay: "400ms" }} viewBox="0 0 600 14" fill="none" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M2 9 C 50 3, 90 13, 150 7 S 250 2, 330 9 S 420 3, 490 8 S 550 5, 598 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" className="hand-drawn-line" />
+          <svg className="w-[min(100%,16rem)] h-3 mt-4 text-primary reveal-item" style={{ transitionDelay: "400ms" }} viewBox="0 0 250 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2 8 C 40 2, 70 12, 110 6 S 180 3, 220 7 S 240 5, 248 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" className="hand-drawn-line" />
           </svg>
         </section>
 
