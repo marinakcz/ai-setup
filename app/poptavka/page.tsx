@@ -94,7 +94,7 @@ export default function InquiryPage() {
   if (submitted) {
     return (
       <div className="relative min-h-screen flex flex-col">
-        <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-32 pb-24 w-full">
+        <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-32 pb-24 w-full text-center">
           <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ SPOJME SE</p>
           <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-4">
             Díky!
@@ -113,19 +113,19 @@ export default function InquiryPage() {
       <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-32 pb-24 w-full">
 
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-16 text-center">
           <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ SPOJME SE</p>
           <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-4">
             Napište mi
           </h1>
-          <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-xl">
+          <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground">
             Máte nápad? Projekt?<br />
             Nebo jen chcete zjistit, co dává smysl?
           </p>
         </div>
 
         {/* Form */}
-        <form className="max-w-2xl" onSubmit={handleSubmit} noValidate>
+        <form className="max-w-2xl mx-auto" onSubmit={handleSubmit} noValidate>
 
           {/* Honeypot — hidden from humans */}
           <div className="absolute -left-[9999px]" aria-hidden="true">

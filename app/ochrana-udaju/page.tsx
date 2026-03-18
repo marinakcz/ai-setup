@@ -11,28 +11,46 @@ export default function PrivacyPage() {
   return (
     <div className="relative min-h-screen flex flex-col">
       <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-32 pb-24">
-        <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ PRÁVNÍ INFORMACE</p>
-        <h1 className="font-body font-bold text-3xl sm:text-4xl text-foreground leading-tight mb-12">
-          Ochrana osobních údajů
-        </h1>
 
-        <div className="space-y-6 max-w-xl">
-          <p className="text-base text-muted-foreground leading-relaxed">
-            Tento web neshromažďuje žádné osobní údaje automaticky.
+        <div className="max-w-2xl mx-auto text-center mb-16">
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ OCHRANA ÚDAJŮ</p>
+          <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-4">
+            Osobní údaje
+          </h1>
+          <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground">
+            Krátce a srozumitelně.
           </p>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            Pokud mě kontaktujete prostřednictvím formuláře nebo e-mailem, poskytnete mi své kontaktní údaje (například jméno, e-mail nebo telefon) a obsah zprávy.
-          </p>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            Tyto údaje používám pouze za účelem odpovědi na váš dotaz nebo případně navázání spolupráce. Údaje nejsou ukládány do žádné databáze na tomto webu a jsou doručeny pouze do mé e-mailové schránky.
-          </p>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            Vaše údaje nikomu neprodávám ani nepředávám třetím stranám.
-          </p>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            Pokud máte jakýkoliv dotaz týkající se zpracování osobních údajů, můžete mě kontaktovat prostřednictvím{" "}
-            <Link href="/kontakty" className="text-primary hover:underline">e-mailu</Link>.
-          </p>
+        </div>
+
+        <div className="max-w-2xl mx-auto space-y-10">
+          <div>
+            <h2 className="font-body font-semibold text-foreground mb-2">Co sbíráme</h2>
+            <p className="font-body font-light text-muted-foreground leading-[1.8]">
+              Tento web neshromažďuje žádné osobní údaje automaticky. Žádné cookies, žádné sledování.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-body font-semibold text-foreground mb-2">Když nás kontaktujete</h2>
+            <p className="font-body font-light text-muted-foreground leading-[1.8]">
+              Pokud vyplníte formulář nebo napíšete e-mail, poskytnete nám své kontaktní údaje (jméno, e-mail, případně telefon) a obsah zprávy. Používáme je výhradně k odpovědi na váš dotaz.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-body font-semibold text-foreground mb-2">Kam údaje putují</h2>
+            <p className="font-body font-light text-muted-foreground leading-[1.8]">
+              Nikam. Údaje nejsou ukládány do databáze na tomto webu — dorazí pouze do e-mailové schránky. Nikomu je neprodáváme ani nepředáváme.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-body font-semibold text-foreground mb-2">Máte dotaz?</h2>
+            <p className="font-body font-light text-muted-foreground leading-[1.8]">
+              Ozvěte se přes{" "}
+              <Link href="/kontakty" className="text-primary hover:underline">kontaktní stránku</Link>.
+            </p>
+          </div>
         </div>
       </main>
 
