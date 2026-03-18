@@ -121,17 +121,14 @@ export default function AboutPage() {
                   style={{ opacity: 0, transform: 'scale(0.95)' }}
                 >
                   <span className="block font-mono text-xs text-muted-foreground mb-3">Pro polovičatá rozhodnutí platí:</span>
-                  <span className="block font-mono text-base text-muted-foreground text-center leading-relaxed">
-                    <span className="block text-foreground font-medium">kód</span>
-                    <span className="block mt-2">
-                      <span className="inline-block text-center">
-                        <span className="block text-foreground font-medium">rozhodnutí</span>
-                        <span className="block h-px bg-muted-foreground/50 my-1" />
-                        <span className="block text-primary font-bold">2</span>
-                      </span>
-                      <span className="inline-block mx-3 text-muted-foreground">=</span>
-                      <span className="inline-block text-foreground font-bold">bordel²</span>
+                  <span className="flex items-center justify-center gap-3 font-mono text-base mt-1">
+                    <span className="inline-flex flex-col items-center">
+                      <span className="text-foreground font-medium">rozhodnutí</span>
+                      <span className="w-full h-px bg-muted-foreground/50 my-1" />
+                      <span className="text-primary font-bold">2</span>
                     </span>
+                    <span className="text-muted-foreground">=</span>
+                    <span className="text-foreground font-bold">bordel²</span>
                   </span>
                 </span>
               </span>.
