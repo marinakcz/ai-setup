@@ -55,16 +55,16 @@ export default function AboutPage() {
             <p className="font-body font-extrabold text-[clamp(2rem,5vw,4.5rem)] leading-[1.1] text-foreground reveal-item" style={{ transitionDelay: "100ms" }}>
               Pochopit problém.
             </p>
-            <p className="font-body font-extrabold text-[clamp(2rem,5vw,4.5rem)] leading-[1.1] text-foreground reveal-item relative inline-block" style={{ transitionDelay: "200ms" }}>
+            <p className="font-body font-extrabold text-[clamp(2rem,5vw,4.5rem)] leading-[1.1] text-foreground reveal-item" style={{ transitionDelay: "200ms" }}>
               Navrhnout řešení.
-              <svg className="absolute -bottom-2 left-0 w-full h-4 text-primary" viewBox="0 0 300 14" fill="none" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M2 10 C 40 2, 70 14, 110 7 S 180 2, 220 9 S 270 4, 298 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" className="hand-drawn-line" />
-              </svg>
             </p>
           </div>
           <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-2xl reveal-item" style={{ transitionDelay: "300ms" }}>
             Projít celý proces od pochopení problému až po návrh a ověření řešení. Právě na tom to celé stojí.
           </p>
+          <svg className="w-full max-w-2xl h-4 mt-6 text-primary reveal-item" style={{ transitionDelay: "400ms" }} viewBox="0 0 600 14" fill="none" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2 10 C 50 2, 90 14, 150 7 S 250 2, 320 9 S 420 3, 480 8 S 550 4, 598 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" className="hand-drawn-line" />
+          </svg>
         </section>
 
         {/* The problem — contrast block */}
