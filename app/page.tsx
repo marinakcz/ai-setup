@@ -165,7 +165,7 @@ export default function Home() {
     <div className="relative min-h-screen flex flex-col">
       <main>
         {/* Hero */}
-        <section className="relative z-10 pt-32 pb-24 min-h-[95vh] flex flex-col justify-center">
+        <section className="relative z-10 pt-32 pb-24 min-h-[80vh] md:min-h-[95vh] flex flex-col justify-center">
           <div className="max-w-[1408px] mx-auto px-6 w-full">
             {/* Tag + Headline */}
             <div className="text-center mb-20 hero-stagger">
