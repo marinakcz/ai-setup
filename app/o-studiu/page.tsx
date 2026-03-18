@@ -62,7 +62,7 @@ export default function AboutPage() {
           <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-2xl reveal-item" style={{ transitionDelay: "300ms" }}>
             A to platí i dnes.
           </p>
-          <svg className="w-[min(100%,16rem)] h-3 mt-4 text-primary reveal-item" style={{ transitionDelay: "400ms" }} viewBox="0 0 250 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
+          <svg className="w-[min(100%,13.5rem)] h-3 mt-1 text-primary reveal-item" style={{ transitionDelay: "400ms" }} viewBox="0 0 250 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
             <path d="M2 8 C 40 2, 70 12, 110 6 S 180 3, 220 7 S 240 5, 248 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" className="hand-drawn-line" />
           </svg>
         </section>
@@ -72,13 +72,13 @@ export default function AboutPage() {
           <div className="reveal-item">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6">/ REALITA</p>
             <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.2] text-muted-foreground mb-4">
-              Ale spousta dobrých nápadů
+              A přesto spousta dobrých nápadů
             </h2>
             <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.2] text-foreground mb-8">
-              skončila v šuplíku.
+              končí v šuplíku.
             </h2>
             <p className="font-body text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-xl">
-              Protože na realizaci chyběl čas nebo zdroje.
+              Protože na realizaci chybí čas nebo zdroje.
             </p>
           </div>
         </section>
