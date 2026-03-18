@@ -165,6 +165,18 @@ export function AmbientSwirl() {
       ctxB.drawImage(canvasA, 0, 0)
       ctxB.restore()
 
+      // Edge fade — mask out top and bottom edges
+      ctxB.save()
+      ctxB.globalCompositeOperation = "destination-in"
+      const edgeFade = ctxB.createLinearGradient(0, 0, 0, canvasB.height)
+      edgeFade.addColorStop(0, "rgba(0,0,0,0)")
+      edgeFade.addColorStop(0.08, "rgba(0,0,0,1)")
+      edgeFade.addColorStop(0.92, "rgba(0,0,0,1)")
+      edgeFade.addColorStop(1, "rgba(0,0,0,0)")
+      ctxB.fillStyle = edgeFade
+      ctxB.fillRect(0, 0, canvasB.width, canvasB.height)
+      ctxB.restore()
+
       animFrame = requestAnimationFrame(draw)
     }
 
