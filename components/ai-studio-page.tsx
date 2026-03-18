@@ -3,14 +3,16 @@
 import { useState, useEffect } from "react"
 import { SiteFooter } from "@/components/site-footer"
 
-const ROTATING_NUMBERS = [3, 5, 10, 20, 50, 100]
+const FINAL_NUMBER = "10"
+const SLOT_SPEED = [120, 150] // ms per tick for each digit
+const SLOT_DURATION = [2800, 3400] // how long each digit spins before settling
 
 function RollingDigit({ digit, prev }: { digit: string; prev: string }) {
   const changed = digit !== prev
   return (
-    <span className="inline-block relative overflow-hidden" style={{ height: "1.2em", width: digit === "1" ? "0.55em" : "0.65em" }}>
+    <span className="inline-block relative overflow-hidden text-center" style={{ height: "1.2em", width: "0.65em" }}>
       <span
-        className="absolute inset-x-0 transition-all duration-500 ease-out"
+        className="absolute inset-x-0 transition-all duration-400 ease-out"
         style={{
           transform: changed ? "translateY(-120%)" : "translateY(0)",
           opacity: changed ? 0 : 1,
@@ -20,7 +22,7 @@ function RollingDigit({ digit, prev }: { digit: string; prev: string }) {
         {prev}
       </span>
       <span
-        className="absolute inset-x-0 transition-all duration-500 ease-out"
+        className="absolute inset-x-0 transition-all duration-400 ease-out"
         style={{
           transform: changed ? "translateY(0)" : "translateY(120%)",
           opacity: changed ? 1 : 0,
@@ -33,30 +35,58 @@ function RollingDigit({ digit, prev }: { digit: string; prev: string }) {
   )
 }
 
-function RotatingWord() {
-  const [index, setIndex] = useState(0)
-  const [prevIndex, setPrevIndex] = useState(0)
+function SlotDigit({ finalDigit, speed, duration }: { finalDigit: string; speed: number; duration: number }) {
+  const [current, setCurrent] = useState("0")
+  const [prev, setPrev] = useState("0")
+  const settled = useRef(false)
 
   useEffect(() => {
+    let tick = 0
+    const startTime = Date.now()
+
     const interval = setInterval(() => {
-      setPrevIndex(index)
-      setIndex((prev) => (prev + 1) % ROTATING_NUMBERS.length)
-    }, 2500)
+      const elapsed = Date.now() - startTime
+
+      if (elapsed > duration && !settled.current) {
+        settled.current = true
+        setPrev(current)
+        setCurrent(finalDigit)
+        clearInterval(interval)
+        return
+      }
+
+      tick++
+      const randomDigit = String(Math.floor(Math.random() * 10))
+      setPrev(current)
+      setCurrent(randomDigit)
+    }, speed)
+
     return () => clearInterval(interval)
-  }, [index])
+  }, [finalDigit, speed, duration])
 
-  const current = String(ROTATING_NUMBERS[index])
-  const previous = String(ROTATING_NUMBERS[prevIndex])
+  return <RollingDigit digit={current} prev={prev} />
+}
 
-  // Pad to same length
-  const maxLen = Math.max(current.length, previous.length)
-  const curr = current.padStart(maxLen, " ")
-  const prev = previous.padStart(maxLen, " ")
+function RotatingWord() {
+  const [key, setKey] = useState(0)
+
+  // Re-trigger the slot machine every 8 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setKey((k) => k + 1)
+    }, 8000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
-    <span className="inline-flex text-primary font-semibold font-mono">
-      {curr.split("").map((char, i) => (
-        <RollingDigit key={i} digit={char} prev={prev[i]} />
+    <span className="inline-flex text-primary font-semibold font-mono" key={key}>
+      {FINAL_NUMBER.split("").map((char, i) => (
+        <SlotDigit
+          key={`${key}-${i}`}
+          finalDigit={char}
+          speed={SLOT_SPEED[i]}
+          duration={SLOT_DURATION[i]}
+        />
       ))}
     </span>
   )
