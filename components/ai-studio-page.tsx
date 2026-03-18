@@ -689,14 +689,6 @@ export default function AiStudioPage() {
             />
           </div>
 
-          {/* Hardware labels */}
-          <div className="flex items-center justify-center gap-8 font-mono text-xs text-muted-foreground">
-            <span><span className="text-foreground font-medium">Mac mini M4</span> — hlavní stroj</span>
-            <span className="text-border">/</span>
-            <span><span className="text-foreground font-medium">Synology NAS</span> — zálohy</span>
-            <span className="text-border">/</span>
-            <span><span className="text-foreground font-medium">Cloud</span> — produkce</span>
-          </div>
         </div>
       </section>
 
