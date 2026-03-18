@@ -44,7 +44,7 @@ export default function AboutPage() {
             Ahoj, jsem Pavel. <span className="inline-block animate-wave">👋</span>
           </h1>
           <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-2xl stagger-3">
-            Digitální designer. Digitální produkty navrhuji od roku 1999.
+            Digitální produkty navrhuju od roku 1999.
           </p>
         </section>
 
