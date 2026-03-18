@@ -229,36 +229,14 @@ export default function ContactPage() {
         <div className="max-w-2xl mx-auto mt-24">
           <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-16" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-            <div>
-              <p className="font-mono text-xs tracking-[0.2em] text-primary mb-4">/ PŘÍMO</p>
-              <a href="mailto:marinak@marinak.cz" className="block font-body font-semibold text-xl text-foreground hover:text-primary transition-colors mb-3">
-                marinak@marinak.cz
-              </a>
-              <a href="tel:+420776120555" className="block font-body font-semibold text-xl text-foreground hover:text-primary transition-colors">
-                +420 776 120 555
-              </a>
-            </div>
-            <div>
-              <p className="font-mono text-xs tracking-[0.2em] text-primary mb-4">/ ONLINE</p>
-              <div className="space-y-3">
-                <a href="https://linkedin.com/in/martinovsky" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-body text-foreground hover:text-primary transition-colors">
-                  LinkedIn
-                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M7 17L17 7M7 7h10v10" />
-                  </svg>
-                </a>
-                <br />
-                <a href="https://twitter.com/martinovsky" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-body text-foreground hover:text-primary transition-colors">
-                  Twitter
-                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M7 17L17 7M7 7h10v10" />
-                  </svg>
-                </a>
-              </div>
-            </div>
+          <div className="mb-16">
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-4">/ PŘÍMO</p>
+            <a href="mailto:marinak@marinak.cz" className="block font-body font-semibold text-xl text-foreground hover:text-primary transition-colors mb-3">
+              marinak@marinak.cz
+            </a>
+            <a href="tel:+420776120555" className="block font-body font-semibold text-xl text-foreground hover:text-primary transition-colors">
+              +420 776 120 555
+            </a>
           </div>
 
           {/* Billing */}
