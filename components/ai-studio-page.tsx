@@ -496,8 +496,10 @@ export default function AiStudioPage() {
 
       </section>
 
+      <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
       {/* ── ARCHITECTURE ────────────────────────────────────────── */}
-      <section id="architektura" aria-label="Architektura" className="relative z-10 py-24 border-t border-border">
+      <section id="architektura" aria-label="Architektura" className="relative z-10 py-24">
         <div className="max-w-[1408px] mx-auto px-6">
           <SectionHeader
             tag="ARCHITEKTURA"
@@ -575,8 +577,10 @@ export default function AiStudioPage() {
         </div>
       </section>
 
+      <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
       {/* ── SOFTWARE ────────────────────────────────────────────── */}
-      <section id="sw" aria-label="Software" className="relative z-10 py-24 border-t border-border" style={{ background: "hsl(var(--card) / 0.4)" }}>
+      <section id="sw" aria-label="Software" className="relative z-10 py-24" style={{ background: "hsl(var(--card) / 0.4)" }}>
         <div className="max-w-[1408px] mx-auto px-6">
           <SectionHeader
             tag="SOFTWARE"
@@ -592,8 +596,10 @@ export default function AiStudioPage() {
         </div>
       </section>
 
+      <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
       {/* ── HARDWARE ────────────────────────────────────────────── */}
-      <section id="hw" aria-label="Hardware" className="relative z-10 py-24 border-t border-border">
+      <section id="hw" aria-label="Hardware" className="relative z-10 py-24">
         <div className="max-w-[1408px] mx-auto px-6">
           <SectionHeader
             tag="HARDWARE"

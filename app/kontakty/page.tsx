@@ -54,7 +54,8 @@ export default function ContactPage() {
         </div>
 
         {/* Identifikační a fakturační údaje */}
-        <div className="border-t border-border pt-16">
+        <div className="pt-16">
+          <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-16" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h2 className="font-body font-semibold text-lg text-foreground leading-snug">
