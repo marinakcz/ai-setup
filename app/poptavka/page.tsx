@@ -14,29 +14,30 @@ const INTERESTS = [
 ]
 
 function formatPhone(value: string): string {
-  // Strip everything except digits and leading +
   const hasPlus = value.startsWith("+")
-  const digits = value.replace(/\D/g, "")
+  let digits = value.replace(/\D/g, "")
   if (!digits) return hasPlus ? "+" : ""
 
-  // Format: +420 777 888 999 or 777 888 999
-  let formatted = ""
-  let d = digits
-
   if (hasPlus) {
-    // Country code (first 3 digits) then groups of 3
-    const cc = d.slice(0, 3)
-    d = d.slice(3)
-    formatted = `+${cc}`
-    if (d.length > 0) formatted += " "
+    // +420 XXX XXX XXX — max 12 digits (3 cc + 9 number)
+    digits = digits.slice(0, 12)
+    const cc = digits.slice(0, 3)
+    const rest = digits.slice(3)
+    let formatted = `+${cc}`
+    for (let i = 0; i < rest.length; i++) {
+      if (i % 3 === 0) formatted += " "
+      formatted += rest[i]
+    }
+    return formatted
   }
 
-  // Split remaining into groups of 3
-  for (let i = 0; i < d.length; i++) {
+  // Without prefix — max 9 digits, groups of 3
+  digits = digits.slice(0, 9)
+  let formatted = ""
+  for (let i = 0; i < digits.length; i++) {
     if (i > 0 && i % 3 === 0) formatted += " "
-    formatted += d[i]
+    formatted += digits[i]
   }
-
   return formatted
 }
 
@@ -44,7 +45,8 @@ export default function InquiryPage() {
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [phone, setPhone] = useState("")
   const [errors, setErrors] = useState<Record<string, string>>({})
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle")
+  const [serverError, setServerError] = useState("")
   const formStart = useRef(Date.now())
 
   const toggle = (interest: string) => {
@@ -73,25 +75,51 @@ export default function InquiryPage() {
     return errs
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = new FormData(e.currentTarget)
     const errs = validate(form)
 
     if (errs._bot) {
-      // Silently pretend success for bots
-      setSubmitted(true)
+      setStatus("sent")
       return
     }
 
     setErrors(errs)
     if (Object.keys(errs).length > 0) return
 
-    // TODO: send form data to API
-    setSubmitted(true)
+    setStatus("sending")
+    setServerError("")
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: (form.get("name") as string).trim(),
+          email: (form.get("email") as string).trim(),
+          phone: phone.trim(),
+          interests: Array.from(selected).join(", "),
+          description: (form.get("description") as string || "").trim(),
+          website: form.get("website"),
+        }),
+      })
+
+      if (!res.ok) {
+        const data = await res.json()
+        setServerError(data.error || "Něco se pokazilo.")
+        setStatus("error")
+        return
+      }
+
+      setStatus("sent")
+    } catch {
+      setServerError("Nepodařilo se odeslat. Zkuste to znovu.")
+      setStatus("error")
+    }
   }
 
-  if (submitted) {
+  if (status === "sent") {
     return (
       <div className="relative min-h-screen flex flex-col">
         <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-32 pb-24 w-full text-center">
@@ -219,10 +247,22 @@ export default function InquiryPage() {
           {/* Submit */}
           <button
             type="submit"
-            className="px-8 py-3 rounded-xl bg-primary text-primary-foreground font-mono text-sm font-medium hover:opacity-90 transition-opacity"
+            disabled={status === "sending"}
+            className="px-8 py-3 rounded-xl bg-primary text-primary-foreground font-mono text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
           >
-            Odeslat
+            {status === "sending" ? (
+              <>
+                <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                </svg>
+                Odesílám...
+              </>
+            ) : "Odeslat"}
           </button>
+          {status === "error" && serverError && (
+            <p className="font-mono text-xs text-red-400 mt-3">{serverError}</p>
+          )}
 
           <div className="h-px bg-gradient-to-r from-border/60 to-transparent mt-10 mb-6" />
 
