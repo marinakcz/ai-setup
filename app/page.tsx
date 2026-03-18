@@ -212,8 +212,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Divider — full bleed */}
-        <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-border" />
 
         {/* Three pillars */}
         <section className="relative z-10 py-24 md:py-32">
@@ -243,8 +241,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Divider — full bleed */}
-        <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-border" />
 
         {/* CTA */}
         <section className="relative z-10 py-28 md:py-40">
