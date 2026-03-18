@@ -2,7 +2,7 @@ import { Resend } from "resend"
 import { NextRequest, NextResponse } from "next/server"
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
-const TO_EMAIL = "marinak@marinak.cz"
+const TO_EMAIL = "studio@levouzadni.cz"
 const FROM_EMAIL = "studio@levouzadni.cz" // needs verified domain in Resend
 
 // Simple in-memory rate limit (per IP, 3 submissions per hour)

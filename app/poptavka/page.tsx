@@ -232,8 +232,8 @@ export default function ContactPage() {
           <div className="mb-16">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-4">/ PŘÍMO</p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-10">
-              <a href="mailto:marinak@marinak.cz" className="font-body font-semibold text-xl text-foreground hover:text-primary transition-colors">
-                marinak@marinak.cz
+              <a href="mailto:studio@levouzadni.cz" className="font-body font-semibold text-xl text-foreground hover:text-primary transition-colors">
+                studio@levouzadni.cz
               </a>
               <a href="tel:+420776120555" className="font-body font-semibold text-xl text-foreground hover:text-primary transition-colors">
                 +420 776 120 555
