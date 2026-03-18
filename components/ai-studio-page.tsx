@@ -680,7 +680,7 @@ export default function AiStudioPage() {
           </div>
 
           {/* Mac Mini image */}
-          <div className="max-w-xs mx-auto mb-6">
+          <div className="max-w-xs mx-auto mb-4">
             <img
               src="/mac-mini.png"
               alt="Mac mini M4"
@@ -688,6 +688,7 @@ export default function AiStudioPage() {
               loading="lazy"
             />
           </div>
+          <p className="text-center font-mono text-xs text-muted-foreground mb-6">+ NAS Synology — zálohy</p>
 
         </div>
       </section>
