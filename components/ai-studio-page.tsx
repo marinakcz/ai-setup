@@ -12,8 +12,9 @@ function RollingDigit({ digit, prev }: { digit: string; prev: string }) {
       <span
         className="absolute inset-x-0 transition-all duration-500 ease-out"
         style={{
-          transform: changed ? "translateY(-100%)" : "translateY(0)",
+          transform: changed ? "translateY(-120%)" : "translateY(0)",
           opacity: changed ? 0 : 1,
+          filter: changed ? "blur(4px)" : "blur(0px)",
         }}
       >
         {prev}
@@ -21,8 +22,9 @@ function RollingDigit({ digit, prev }: { digit: string; prev: string }) {
       <span
         className="absolute inset-x-0 transition-all duration-500 ease-out"
         style={{
-          transform: changed ? "translateY(0)" : "translateY(100%)",
+          transform: changed ? "translateY(0)" : "translateY(120%)",
           opacity: changed ? 1 : 0,
+          filter: changed ? "blur(0px)" : "blur(4px)",
         }}
       >
         {digit}
