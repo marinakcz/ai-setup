@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { SiteFooter } from "@/components/site-footer"
+import { MacMini3D } from "@/components/mac-mini-3d"
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
@@ -609,20 +610,7 @@ export default function AiStudioPage() {
           />
 
           {/* 3D Mac Mini */}
-          <div className="max-w-3xl mx-auto mb-12 relative">
-            <div style={{ width: "100%", aspectRatio: "16/10" }}>
-              <iframe
-                title="Apple Mac mini M4 pro"
-                allow="autoplay; fullscreen; xr-spatial-tracking"
-                allowFullScreen
-                src="https://sketchfab.com/models/c0f11a5cfc05448bbefa8c721e5fb0fd/embed?autostart=1&preload=1&transparent=1&ui_hint=0&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&ui_stop=0&ui_inspector=0&ui_controls=0&dnt=1"
-                style={{ width: "100%", height: "100%", border: "none", display: "block" }}
-              />
-            </div>
-            {/* Cover Sketchfab branding at bottom-left and hint overlay */}
-            <div className="absolute bottom-0 left-0 w-20 h-12 bg-background pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-20 h-12 bg-background pointer-events-none" />
-          </div>
+          <MacMini3D />
 
           {/* Hardware labels */}
           <div className="flex items-center justify-center gap-8 font-mono text-xs text-muted-foreground">
