@@ -156,10 +156,10 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="mt-12 py-8 px-10 rounded-xl border-l-4 border-primary bg-card/40 max-w-2xl reveal-item" style={{ transitionDelay: "400ms" }}>
-            <p className="font-body font-medium text-[clamp(1rem,1.3vw,1.125rem)] leading-[1.7] text-foreground/80 italic">
+            <p className="font-body font-medium text-[clamp(1rem,1.3vw,1.125rem)] leading-[1.7] text-foreground/80">
               Nápady ve dvě ráno. Koupené domény. Prototypy za pár dnů.
             </p>
-            <p className="font-body font-medium text-[clamp(1rem,1.3vw,1.125rem)] leading-[1.7] text-foreground/80 italic mt-2">
+            <p className="font-body font-medium text-[clamp(1rem,1.3vw,1.125rem)] leading-[1.7] text-foreground/80 mt-2">
               A někdy z toho vznikne něco většího.
             </p>
           </div>
