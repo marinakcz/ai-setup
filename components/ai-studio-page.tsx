@@ -3,28 +3,59 @@
 import { useState, useEffect } from "react"
 import { SiteFooter } from "@/components/site-footer"
 
-const ROTATING_WORDS = ["tři", "pět", "deset", "dvacet", "padesát", "sto"]
+const ROTATING_NUMBERS = [3, 5, 10, 20, 50, 100]
+
+function RollingDigit({ digit, prev }: { digit: string; prev: string }) {
+  const changed = digit !== prev
+  return (
+    <span className="inline-block relative overflow-hidden" style={{ height: "1.2em", width: digit === "1" ? "0.55em" : "0.65em" }}>
+      <span
+        className="absolute inset-x-0 transition-all duration-500 ease-out"
+        style={{
+          transform: changed ? "translateY(-100%)" : "translateY(0)",
+          opacity: changed ? 0 : 1,
+        }}
+      >
+        {prev}
+      </span>
+      <span
+        className="absolute inset-x-0 transition-all duration-500 ease-out"
+        style={{
+          transform: changed ? "translateY(0)" : "translateY(100%)",
+          opacity: changed ? 1 : 0,
+        }}
+      >
+        {digit}
+      </span>
+    </span>
+  )
+}
 
 function RotatingWord() {
   const [index, setIndex] = useState(0)
-  const [fade, setFade] = useState(true)
+  const [prevIndex, setPrevIndex] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false)
-      setTimeout(() => {
-        setIndex((prev) => (prev + 1) % ROTATING_WORDS.length)
-        setFade(true)
-      }, 300)
+      setPrevIndex(index)
+      setIndex((prev) => (prev + 1) % ROTATING_NUMBERS.length)
     }, 2500)
     return () => clearInterval(interval)
-  }, [])
+  }, [index])
+
+  const current = String(ROTATING_NUMBERS[index])
+  const previous = String(ROTATING_NUMBERS[prevIndex])
+
+  // Pad to same length
+  const maxLen = Math.max(current.length, previous.length)
+  const curr = current.padStart(maxLen, " ")
+  const prev = previous.padStart(maxLen, " ")
 
   return (
-    <span
-      className={`inline-block text-primary font-semibold transition-all duration-300 ${fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}
-    >
-      {ROTATING_WORDS[index]}
+    <span className="inline-flex text-primary font-semibold font-mono">
+      {curr.split("").map((char, i) => (
+        <RollingDigit key={i} digit={char} prev={prev[i]} />
+      ))}
     </span>
   )
 }
