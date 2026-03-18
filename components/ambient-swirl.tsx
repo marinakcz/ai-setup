@@ -142,8 +142,7 @@ export function AmbientSwirl() {
     function draw() {
       tick++
       ctxA.clearRect(0, 0, canvasA.width, canvasA.height)
-      ctxB.fillStyle = "hsla(0,0%,5%,1)"
-      ctxB.fillRect(0, 0, canvasB.width, canvasB.height)
+      ctxB.clearRect(0, 0, canvasB.width, canvasB.height)
 
       drawParticles()
 
