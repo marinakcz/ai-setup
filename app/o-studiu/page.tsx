@@ -107,12 +107,27 @@ export default function AboutPage() {
           <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item">/ NOVÁ REALITA</p>
           <div className="max-w-3xl">
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.5vw,2.25rem)] leading-[1.3] text-foreground mb-3 reveal-item" style={{ transitionDelay: "100ms" }}>
-              Rychlejší realizace neznamená méně přemýšlení.
+              Rychlejší realizace neznamená méně přemýšlení.<br />
+              Znamená víc prostoru{" "}
+              <span className="relative inline-block group cursor-default">
+                <span className="text-primary underline decoration-primary/30 underline-offset-4">přemýšlet správně</span>
+                {/* Post-it tooltip */}
+                <span className="pointer-events-none absolute -top-4 left-full ml-4 w-56 p-4 rounded-sm bg-[#f5d960] text-[#1a1a1a] shadow-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 origin-top-left z-50 rotate-2"
+                  style={{ fontFamily: "var(--font-hand), cursive" }}
+                >
+                  <span className="block text-base leading-snug">
+                    <span className="opacity-60">kód</span>
+                    <br />
+                    <span className="inline-block border-b-2 border-[#1a1a1a] pb-0.5 mt-1">rozhodnutí</span>
+                    <br />
+                    <span className="text-xs opacity-50 ml-4">2</span>
+                    <span className="ml-2">=</span>
+                    <span className="ml-2 font-bold">bordel²</span>
+                  </span>
+                </span>
+              </span>.
             </h2>
-            <p className="font-body font-extrabold text-[clamp(1.5rem,2.5vw,2.25rem)] leading-[1.3] text-primary mb-8 reveal-item" style={{ transitionDelay: "200ms" }}>
-              Naopak.
-            </p>
-            <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground reveal-item" style={{ transitionDelay: "300ms" }}>
+            <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground mt-8 reveal-item" style={{ transitionDelay: "200ms" }}>
               A právě proto mě tenhle způsob práce dnes baví ještě víc.
             </p>
           </div>

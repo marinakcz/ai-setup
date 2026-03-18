@@ -2,8 +2,15 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { SiteNav } from "@/components/site-nav";
-import { JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Caveat } from "next/font/google";
 import localFont from "next/font/local";
+
+const caveat = Caveat({
+  weight: ["400", "700"],
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-hand",
+  display: "swap",
+});
 
 const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
@@ -61,7 +68,7 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body
-        className={`${jetbrainsMono.variable} ${hkGroteskWide.variable} antialiased`}
+        className={`${jetbrainsMono.variable} ${hkGroteskWide.variable} ${caveat.variable} antialiased`}
         suppressHydrationWarning={true}
       >
         <SiteNav />
