@@ -130,7 +130,7 @@ export default function ContactPage() {
           <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-8">
             Spojme se
           </h1>
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ NAPIŠTE MI</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ NAPIŠTE</p>
           <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground">
             Máte nápad? Projekt?<br />
             Nebo jen chcete zjistit, co dává smysl?
