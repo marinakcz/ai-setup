@@ -611,7 +611,7 @@ export default function AiStudioPage() {
           {/* Mac Mini image */}
           <div className="max-w-xl mx-auto mb-12">
             <img
-              src="/mac-mini.jpg"
+              src="/mac-mini.png"
               alt="Mac mini M4"
               className="w-full h-auto"
               loading="lazy"
