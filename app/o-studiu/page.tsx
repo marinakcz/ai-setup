@@ -71,10 +71,10 @@ export default function AboutPage() {
         <section className="mb-32 reveal-group" ref={problemRef}>
           <div className="reveal-item">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6">/ REALITA</p>
-            <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.2] text-foreground mb-4">
+            <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.2] text-muted-foreground mb-4">
               Ale spousta dobrých nápadů
             </h2>
-            <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.2] text-muted-foreground mb-8">
+            <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.2] text-foreground mb-8">
               skončila v šuplíku.
             </h2>
             <p className="font-body text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-xl">
