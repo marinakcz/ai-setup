@@ -160,6 +160,20 @@
   }
 }
 
+/* ── Waving hand ── */
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(10deg); }
+}
+.animate-wave {
+  animation: wave 2.5s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
 /* ── Scramble dud characters ── */
 .scramble-dud {
   color: hsl(var(--muted-foreground));
