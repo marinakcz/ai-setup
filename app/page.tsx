@@ -175,14 +175,14 @@ export default function Home() {
               <h1 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground stagger-2">
                 Od nápadu k produktu
               </h1>
-              <p className="font-body font-black text-[clamp(2.5rem,6vw,5rem)] leading-[1.0] tracking-[0.02em] text-foreground stagger-2">
-                Levou zadní.
+              <p className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3.5rem)] leading-[1.3] tracking-[0.04em] text-foreground stagger-2">
+                levou zadní.
               </p>
             </div>
 
             {/* Mascot */}
             <div className="flex justify-center mb-20 stagger-3" ref={logoParallax}>
-              <div className="relative w-[clamp(80px,10vw,130px)] aspect-[466/577] logo-float">
+              <div className="relative w-[clamp(140px,18vw,240px)] aspect-[466/577] logo-float">
                 <Image
                   src="/mascot.svg"
                   alt="Levou Zadní maskot"
