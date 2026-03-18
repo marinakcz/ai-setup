@@ -680,7 +680,7 @@ export default function AiStudioPage() {
           </div>
 
           {/* Mac Mini image */}
-          <div className="max-w-sm mx-auto mb-6">
+          <div className="max-w-xs mx-auto mb-6">
             <img
               src="/mac-mini.png"
               alt="Mac mini M4"
