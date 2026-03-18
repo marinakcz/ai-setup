@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Link from "next/link"
 import { SiteFooter } from "@/components/site-footer"
 
@@ -13,8 +13,39 @@ const INTERESTS = [
   "Něco jiného",
 ]
 
+function formatPhone(value: string): string {
+  // Strip everything except digits and leading +
+  const hasPlus = value.startsWith("+")
+  const digits = value.replace(/\D/g, "")
+  if (!digits) return hasPlus ? "+" : ""
+
+  // Format: +420 777 888 999 or 777 888 999
+  let formatted = ""
+  let d = digits
+
+  if (hasPlus) {
+    // Country code (first 3 digits) then groups of 3
+    const cc = d.slice(0, 3)
+    d = d.slice(3)
+    formatted = `+${cc}`
+    if (d.length > 0) formatted += " "
+  }
+
+  // Split remaining into groups of 3
+  for (let i = 0; i < d.length; i++) {
+    if (i > 0 && i % 3 === 0) formatted += " "
+    formatted += d[i]
+  }
+
+  return formatted
+}
+
 export default function InquiryPage() {
   const [selected, setSelected] = useState<Set<string>>(new Set())
+  const [phone, setPhone] = useState("")
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [submitted, setSubmitted] = useState(false)
+  const formStart = useRef(Date.now())
 
   const toggle = (interest: string) => {
     setSelected((prev) => {
@@ -23,6 +54,58 @@ export default function InquiryPage() {
       else next.add(interest)
       return next
     })
+  }
+
+  const validate = (form: FormData) => {
+    const errs: Record<string, string> = {}
+    const name = (form.get("name") as string || "").trim()
+    const email = (form.get("email") as string || "").trim()
+
+    if (!name) errs.name = "Vyplňte jméno"
+    if (!email) errs.email = "Vyplňte e-mail"
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.email = "Neplatný e-mail"
+
+    // Bot detection: honeypot filled or form submitted too fast (<3s)
+    const honeypot = form.get("website") as string
+    if (honeypot) errs._bot = "bot"
+    if (Date.now() - formStart.current < 3000) errs._bot = "bot"
+
+    return errs
+  }
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = new FormData(e.currentTarget)
+    const errs = validate(form)
+
+    if (errs._bot) {
+      // Silently pretend success for bots
+      setSubmitted(true)
+      return
+    }
+
+    setErrors(errs)
+    if (Object.keys(errs).length > 0) return
+
+    // TODO: send form data to API
+    setSubmitted(true)
+  }
+
+  if (submitted) {
+    return (
+      <div className="relative min-h-screen flex flex-col">
+        <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-32 pb-24 w-full">
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ SPOJME SE</p>
+          <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-4">
+            Díky!
+          </h1>
+          <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground">
+            Ozvu se co nejdřív.
+          </p>
+        </main>
+        <SiteFooter />
+      </div>
+    )
   }
 
   return (
@@ -42,7 +125,12 @@ export default function InquiryPage() {
         </div>
 
         {/* Form */}
-        <form className="max-w-2xl">
+        <form className="max-w-2xl" onSubmit={handleSubmit} noValidate>
+
+          {/* Honeypot — hidden from humans */}
+          <div className="absolute -left-[9999px]" aria-hidden="true">
+            <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+          </div>
 
           {/* Contact fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -55,8 +143,10 @@ export default function InquiryPage() {
                 id="name"
                 name="name"
                 required
-                className="w-full px-4 py-3 rounded-xl border border-border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
+                autoComplete="name"
+                className={`w-full px-4 py-3 rounded-xl border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors ${errors.name ? "border-red-500/60" : "border-border"}`}
               />
+              {errors.name && <p className="font-mono text-xs text-red-400 mt-1">{errors.name}</p>}
             </div>
             <div>
               <label htmlFor="email" className="block font-mono text-xs text-muted-foreground mb-2">
@@ -67,9 +157,11 @@ export default function InquiryPage() {
                 id="email"
                 name="email"
                 required
+                autoComplete="email"
                 placeholder="vas@email.cz"
-                className="w-full px-4 py-3 rounded-xl border border-border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
+                className={`w-full px-4 py-3 rounded-xl border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors ${errors.email ? "border-red-500/60" : "border-border"}`}
               />
+              {errors.email && <p className="font-mono text-xs text-red-400 mt-1">{errors.email}</p>}
             </div>
             <div>
               <label htmlFor="phone" className="block font-mono text-xs text-muted-foreground mb-2">Telefon (volitelné)</label>
@@ -77,7 +169,11 @@ export default function InquiryPage() {
                 type="tel"
                 id="phone"
                 name="phone"
+                inputMode="tel"
+                autoComplete="tel"
                 placeholder="+420"
+                value={phone}
+                onChange={(e) => setPhone(formatPhone(e.target.value))}
                 className="w-full px-4 py-3 rounded-xl border border-border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
               />
             </div>
