@@ -3,72 +3,10 @@
 import { useState, useEffect, useRef } from "react"
 import { SiteFooter } from "@/components/site-footer"
 
-const FINAL_NUMBER = "10"
-const SLOT_SPEED = [120, 150] // ms per tick for each digit
-const SLOT_DURATION = [2800, 3400] // how long each digit spins before settling
+const NUMBERS = [3, 5, 10, 20, 50, 100]
 
-function RollingDigit({ digit, prev }: { digit: string; prev: string }) {
-  const changed = digit !== prev
-  return (
-    <span className="inline-block relative overflow-hidden text-center" style={{ height: "1.2em", width: "0.65em" }}>
-      <span
-        className="absolute inset-x-0 transition-all duration-400 ease-out"
-        style={{
-          transform: changed ? "translateY(-120%)" : "translateY(0)",
-          opacity: changed ? 0 : 1,
-          filter: changed ? "blur(4px)" : "blur(0px)",
-        }}
-      >
-        {prev}
-      </span>
-      <span
-        className="absolute inset-x-0 transition-all duration-400 ease-out"
-        style={{
-          transform: changed ? "translateY(0)" : "translateY(120%)",
-          opacity: changed ? 1 : 0,
-          filter: changed ? "blur(0px)" : "blur(4px)",
-        }}
-      >
-        {digit}
-      </span>
-    </span>
-  )
-}
-
-function SlotDigit({ finalDigit, speed, duration }: { finalDigit: string; speed: number; duration: number }) {
-  const [display, setDisplay] = useState<[string, string]>([finalDigit, finalDigit])
-  const settledRef = useRef(false)
-  const mounted = useRef(false)
-
-  useEffect(() => {
-    mounted.current = true
-    settledRef.current = false
-    const startTime = Date.now()
-    let last = finalDigit
-
-    const interval = setInterval(() => {
-      const elapsed = Date.now() - startTime
-
-      if (elapsed > duration && !settledRef.current) {
-        settledRef.current = true
-        setDisplay([finalDigit, last])
-        clearInterval(interval)
-        return
-      }
-
-      const next = String(Math.floor(Math.random() * 10))
-      setDisplay([next, last])
-      last = next
-    }, speed)
-
-    return () => clearInterval(interval)
-  }, [finalDigit, speed, duration])
-
-  return <RollingDigit digit={display[0]} prev={display[1]} />
-}
-
-function RotatingWord() {
-  const [key, setKey] = useState(0)
+function RotatingNumber() {
+  const [index, setIndex] = useState(0)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => { setMounted(true) }, [])
@@ -76,24 +14,22 @@ function RotatingWord() {
   useEffect(() => {
     if (!mounted) return
     const interval = setInterval(() => {
-      setKey((k) => k + 1)
-    }, 8000)
+      setIndex((prev) => (prev + 1) % NUMBERS.length)
+    }, 3000)
     return () => clearInterval(interval)
   }, [mounted])
 
-  if (!mounted) return <span className="inline-flex text-primary font-semibold font-mono">{FINAL_NUMBER}</span>
+  if (!mounted) return <span className="text-primary font-semibold">{NUMBERS[0]}</span>
 
+  const NumberFlow = require("@number-flow/react").default
   return (
-    <span className="inline-flex text-primary font-semibold font-mono" key={key}>
-      {FINAL_NUMBER.split("").map((char, i) => (
-        <SlotDigit
-          key={`${key}-${i}`}
-          finalDigit={char}
-          speed={SLOT_SPEED[i]}
-          duration={SLOT_DURATION[i]}
-        />
-      ))}
-    </span>
+    <NumberFlow
+      value={NUMBERS[index]}
+      className="text-primary font-semibold"
+      transformTiming={{ duration: 700, easing: "cubic-bezier(0.16, 1, 0.3, 1)" }}
+      spinTiming={{ duration: 700, easing: "cubic-bezier(0.16, 1, 0.3, 1)" }}
+      opacityTiming={{ duration: 400, easing: "ease-out" }}
+    />
   )
 }
 
@@ -702,7 +638,7 @@ export default function AiStudioPage() {
               Tady bydlí AI studio.
             </h2>
             <p className="font-body font-normal text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.7] text-muted-foreground mt-2">
-              Malý. Ale maká za <RotatingWord />.
+              Malý. Ale maká za <RotatingNumber />.
             </p>
           </div>
 
