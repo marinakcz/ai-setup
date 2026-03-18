@@ -50,7 +50,7 @@ export default function AboutPage() {
 
         {/* What I do — big statement */}
         <section className="mb-32 reveal-group" ref={whatRef}>
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item">/ CELOU DOBU DĚLÁM JEDNO</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item">/ STÁLE SE SNAŽÍM O JEDNO</p>
           <div className="space-y-1 mb-10">
             <p className="font-body font-extrabold text-[clamp(2rem,5vw,4.5rem)] leading-[1.1] text-foreground reveal-item" style={{ transitionDelay: "100ms" }}>
               Pochopit problém.
