@@ -36,47 +36,52 @@ function RollingDigit({ digit, prev }: { digit: string; prev: string }) {
 }
 
 function SlotDigit({ finalDigit, speed, duration }: { finalDigit: string; speed: number; duration: number }) {
-  const [current, setCurrent] = useState("0")
-  const [prev, setPrev] = useState("0")
-  const settled = useRef(false)
+  const [display, setDisplay] = useState<[string, string]>([finalDigit, finalDigit])
+  const settledRef = useRef(false)
+  const mounted = useRef(false)
 
   useEffect(() => {
-    let tick = 0
+    mounted.current = true
+    settledRef.current = false
     const startTime = Date.now()
+    let last = finalDigit
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime
 
-      if (elapsed > duration && !settled.current) {
-        settled.current = true
-        setPrev(current)
-        setCurrent(finalDigit)
+      if (elapsed > duration && !settledRef.current) {
+        settledRef.current = true
+        setDisplay([finalDigit, last])
         clearInterval(interval)
         return
       }
 
-      tick++
-      const randomDigit = String(Math.floor(Math.random() * 10))
-      setPrev(current)
-      setCurrent(randomDigit)
+      const next = String(Math.floor(Math.random() * 10))
+      setDisplay([next, last])
+      last = next
     }, speed)
 
     return () => clearInterval(interval)
   }, [finalDigit, speed, duration])
 
-  return <RollingDigit digit={current} prev={prev} />
+  return <RollingDigit digit={display[0]} prev={display[1]} />
 }
 
 function RotatingWord() {
   const [key, setKey] = useState(0)
+  const [mounted, setMounted] = useState(false)
 
-  // Re-trigger the slot machine every 8 seconds
+  useEffect(() => { setMounted(true) }, [])
+
   useEffect(() => {
+    if (!mounted) return
     const interval = setInterval(() => {
       setKey((k) => k + 1)
     }, 8000)
     return () => clearInterval(interval)
-  }, [])
+  }, [mounted])
+
+  if (!mounted) return <span className="inline-flex text-primary font-semibold font-mono">{FINAL_NUMBER}</span>
 
   return (
     <span className="inline-flex text-primary font-semibold font-mono" key={key}>
