@@ -41,7 +41,11 @@ export default function AboutPage() {
 
         {/* The problem — contrast block */}
         <section className="mb-32">
-          <div className="py-16 md:py-24 -mx-6 px-6 md:px-16 rounded-2xl bg-card/60">
+          <div className="py-16 md:py-24 -mx-6 px-6 md:px-16 rounded-2xl bg-card/60 border border-border/60 relative overflow-hidden">
+            {/* Accent bar */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/60 via-primary to-primary/60" />
+
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6">/ REALITA</p>
             <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.2] text-foreground mb-4">
               Ale spousta dobrých nápadů
             </h2>
