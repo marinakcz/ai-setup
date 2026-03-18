@@ -3,7 +3,7 @@ import Link from "next/link"
 import { SiteFooter } from "@/components/site-footer"
 
 export const metadata: Metadata = {
-  title: "O projektu",
+  title: "O studiu",
   description: "Kdo za AI Studiem stojí a proč vzniklo.",
 }
 
@@ -15,7 +15,7 @@ export default function AboutPage() {
 
         {/* Intro */}
         <section className="mb-24">
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ O PROJEKTU</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ O STUDIU</p>
           <h1 className="font-body font-bold text-3xl sm:text-4xl text-foreground leading-tight mb-6">
             Ahoj, jsem Pavel.
           </h1>

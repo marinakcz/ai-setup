@@ -9,7 +9,7 @@ export function SiteFooter() {
           <span className="font-mono text-xs text-muted-foreground">Built with AI. Humans safe.</span>
         </div>
         <div className="flex gap-4 font-mono text-xs text-muted-foreground">
-          <Link href="/o-projektu" className="hover:text-foreground transition-colors">O projektu</Link>
+          <Link href="/o-projektu" className="hover:text-foreground transition-colors">O studiu</Link>
           <span className="text-border">/</span>
           <Link href="/ochrana-udaju" className="hover:text-foreground transition-colors">Ochrana osobních údajů</Link>
           <span className="text-border">/</span>
