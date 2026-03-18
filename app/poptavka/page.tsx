@@ -231,30 +231,23 @@ export default function ContactPage() {
 
           <div className="mb-16">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-4">/ PŘÍMO</p>
-            <a href="mailto:marinak@marinak.cz" className="block font-body font-semibold text-xl text-foreground hover:text-primary transition-colors mb-3">
-              marinak@marinak.cz
-            </a>
-            <a href="tel:+420776120555" className="block font-body font-semibold text-xl text-foreground hover:text-primary transition-colors">
-              +420 776 120 555
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-10">
+              <a href="mailto:marinak@marinak.cz" className="font-body font-semibold text-xl text-foreground hover:text-primary transition-colors">
+                marinak@marinak.cz
+              </a>
+              <a href="tel:+420776120555" className="font-body font-semibold text-xl text-foreground hover:text-primary transition-colors">
+                +420 776 120 555
+              </a>
+            </div>
           </div>
 
           {/* Billing */}
-          <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-16" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h2 className="font-body font-semibold text-lg text-foreground leading-snug">
-                Identifikační<br />a fakturační údaje
-              </h2>
-            </div>
-            <div className="space-y-1 text-sm text-muted-foreground">
-              <p className="text-foreground font-medium">Mgr. Pavel Martinovský</p>
-              <p>Hlavenec 177, 294 76 Praha-východ</p>
-            </div>
-            <div className="space-y-1 text-sm text-muted-foreground">
-              <p>IČO: 06054251, Nejsem plátce DPH.</p>
-              <p>Jsem zapsán v Živnostenském rejstříku Městského úřadu v Brandýse nad Labem.</p>
-            </div>
+          <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-12" />
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 font-mono text-xs text-muted-foreground">
+            <span className="text-foreground font-medium">Mgr. Pavel Martinovský</span>
+            <span>Hlavenec 177, 294 76 Praha-východ</span>
+            <span>IČO: 06054251</span>
+            <span>Nejsem plátce DPH</span>
           </div>
         </div>
       </main>
