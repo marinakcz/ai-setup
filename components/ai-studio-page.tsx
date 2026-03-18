@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { SiteFooter } from "@/components/site-footer"
-import { MacMini3D } from "@/components/mac-mini-3d"
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
@@ -609,8 +608,15 @@ export default function AiStudioPage() {
             subtitle="Všechno běží lokálně na jednom stroji. Cloud jen pro deploy a databázi."
           />
 
-          {/* 3D Mac Mini */}
-          <MacMini3D />
+          {/* Mac Mini image */}
+          <div className="max-w-xl mx-auto mb-12">
+            <img
+              src="/mac-mini.jpg"
+              alt="Mac mini M4"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
 
           {/* Hardware labels */}
           <div className="flex items-center justify-center gap-8 font-mono text-xs text-muted-foreground">
