@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { SiteFooter } from "@/components/site-footer"
 
 const FINAL_NUMBER = "10"
