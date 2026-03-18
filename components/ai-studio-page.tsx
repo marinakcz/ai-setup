@@ -5,8 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
-// SVG logo components — monochrome, inherit color via currentColor
-function NodejsLogo() {
+// Legacy SVG logo components below — no longer referenced, kept for reference
+function _REMOVED_NodejsLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" aria-hidden="true">
       <path d="M12 2l9.2 5.3v10.6L12 23.2 2.8 17.9V7.3L12 2z" fill="currentColor" opacity={0.12} />
@@ -169,29 +169,35 @@ function SentryLogo() {
   )
 }
 
-const SOFTWARE_LOGOS: Record<string, () => React.ReactNode> = {
-  "Node.js": NodejsLogo,
-  "Docker": DockerLogo,
-  "Claude Agent SDK": AgentSdkLogo,
-  "Claude Sonnet 4": ClaudeLogo,
-  "Claude Code CLI": ClaudeLogo,
-  "Gemini 2.0 Flash": GeminiLogo,
-  "GPT-4o-mini": OpenAILogo,
-  "Firecrawl": FirecrawlLogo,
-  "Supabase": SupabaseLogo,
-  "Resend": ResendLogo,
-  "GitHub CLI": GitHubLogo,
-  "Vercel CLI": VercelLogo,
-  "Qwen3-8B": QwenLogo,
-  "Obsidian": ObsidianLogo,
-  "Telegram Bot": TelegramLogo,
-  "Figma": FigmaLogo,
-  "Playwright": PlaywrightLogo,
-  "Lighthouse": LighthouseLogo,
-  "A11y": A11yLogo,
-  "Sentry": SentryLogo,
-  "GitHub": GitHubLogo,
-  "Vercel": VercelLogo,
+const ICON_MAP: Record<string, string> = {
+  "Node.js": "/icons/nodejs.svg",
+  "Docker": "/icons/docker.svg",
+  "Claude Agent SDK": "/icons/claude.svg",
+  "Claude Sonnet 4": "/icons/claude.svg",
+  "Claude Code CLI": "/icons/claude.svg",
+  "Gemini 2.0 Flash": "/icons/gemini.svg",
+  "GPT-4o-mini": "/icons/openai.svg",
+  "Firecrawl": "/icons/nodejs.svg",
+  "Supabase": "/icons/supabase.svg",
+  "Resend": "/icons/resend.svg",
+  "GitHub CLI": "/icons/github.svg",
+  "Vercel CLI": "/icons/vercel.svg",
+  "Qwen3-8B": "/icons/openai.svg",
+  "Obsidian": "/icons/obsidian.svg",
+  "Telegram Bot": "/icons/telegram.svg",
+  "Figma": "/icons/figma.svg",
+  "Playwright": "/icons/playwright.svg",
+  "Lighthouse": "/icons/nodejs.svg",
+  "A11y": "/icons/playwright.svg",
+  "Sentry": "/icons/sentry.svg",
+  "GitHub": "/icons/github.svg",
+  "Vercel": "/icons/vercel.svg",
+}
+
+function SvglIcon({ name }: { name: string }) {
+  const src = ICON_MAP[name]
+  if (!src) return null
+  return <img src={src} alt="" className="w-5 h-5" />
 }
 
 const SOFTWARE_CATEGORIES = [
@@ -304,14 +310,11 @@ function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEG
 
         {/* Logo strip */}
         <div className="flex items-center gap-2.5 flex-1 min-w-0">
-          {category.items.map((sw, i) => {
-            const LogoComponent = SOFTWARE_LOGOS[sw.name]
-            return LogoComponent ? (
+          {category.items.map((sw, i) => (
               <LogoWithTooltip key={i} name={sw.name}>
-                <LogoComponent />
+                <SvglIcon name={sw.name} />
               </LogoWithTooltip>
-            ) : null
-          })}
+          ))}
         </div>
 
         {/* Chevron */}
@@ -341,17 +344,15 @@ function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEG
             <div className="h-px bg-border/40 mb-4" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {category.items.map((sw, i) => {
-                const LogoComponent = SOFTWARE_LOGOS[sw.name]
+                const iconSrc = ICON_MAP[sw.name]
                 return (
                   <div
                     key={i}
                     className="flex items-start gap-3 p-3.5 rounded-xl hover:bg-background/50 transition-colors"
                   >
-                    {LogoComponent && (
-                      <div className="w-9 h-9 rounded-lg border border-border/60 bg-background flex items-center justify-center shrink-0 mt-0.5 text-primary [&_svg]:!opacity-100">
-                        <div className="w-5 h-5 flex items-center justify-center [&>svg]:w-5 [&>svg]:h-5">
-                          <LogoComponent />
-                        </div>
+                    {iconSrc && (
+                      <div className="w-9 h-9 rounded-lg border border-border/60 bg-background flex items-center justify-center shrink-0 mt-0.5">
+                        <img src={iconSrc} alt="" className="w-5 h-5" />
                       </div>
                     )}
                     <div className="min-w-0">
@@ -609,12 +610,12 @@ export default function AiStudioPage() {
 
           {/* 3D Mac Mini */}
           <div className="max-w-3xl mx-auto mb-12">
-            <div style={{ width: "100%", aspectRatio: "16/10", borderRadius: "12px", overflow: "hidden" }}>
+            <div style={{ width: "100%", aspectRatio: "16/10" }}>
               <iframe
                 title="Apple Mac mini M4 pro"
                 allow="autoplay; fullscreen; xr-spatial-tracking"
                 allowFullScreen
-                src="https://sketchfab.com/models/c0f11a5cfc05448bbefa8c721e5fb0fd/embed?autostart=1&preload=1&ui_hint=0&ui_infos=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=1&ui_annotations=0&dnt=1"
+                src="https://sketchfab.com/models/c0f11a5cfc05448bbefa8c721e5fb0fd/embed?autostart=1&preload=1&transparent=1&ui_hint=0&ui_infos=0&ui_watermark=0&ui_watermark_link=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&ui_stop=0&ui_inspector=0&ui_controls=0&dnt=1"
                 style={{ width: "100%", height: "100%", border: "none", display: "block" }}
               />
             </div>
