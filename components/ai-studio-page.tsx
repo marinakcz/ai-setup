@@ -609,7 +609,7 @@ export default function AiStudioPage() {
           />
 
           {/* 3D Mac Mini */}
-          <div className="max-w-3xl mx-auto mb-12">
+          <div className="max-w-3xl mx-auto mb-12 relative">
             <div style={{ width: "100%", aspectRatio: "16/10" }}>
               <iframe
                 title="Apple Mac mini M4 pro"
@@ -619,6 +619,9 @@ export default function AiStudioPage() {
                 style={{ width: "100%", height: "100%", border: "none", display: "block" }}
               />
             </div>
+            {/* Cover Sketchfab branding at bottom-left and hint overlay */}
+            <div className="absolute bottom-0 left-0 w-20 h-12 bg-background pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-20 h-12 bg-background pointer-events-none" />
           </div>
 
           {/* Hardware labels */}
