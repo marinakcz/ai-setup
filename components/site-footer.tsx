@@ -14,8 +14,6 @@ export function SiteFooter() {
           <span className="text-border">/</span>
           <Link href="/ochrana-udaju" className="hover:text-foreground transition-colors">Ochrana osobních údajů</Link>
           <span className="text-border">/</span>
-          <Link href="/kontakty" className="hover:text-foreground transition-colors">Kontakt</Link>
-          <span className="text-border">/</span>
           <Link href="/poptavka" className="hover:text-foreground transition-colors">Spojme se</Link>
           <span className="text-border">/</span>
           <Link href="/setup" className="hover:text-foreground transition-colors" title="Setup">π</Link>

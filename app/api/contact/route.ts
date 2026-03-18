@@ -1,7 +1,7 @@
 import { Resend } from "resend"
 import { NextRequest, NextResponse } from "next/server"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 const TO_EMAIL = "marinak@marinak.cz"
 const FROM_EMAIL = "studio@levouzadni.cz" // needs verified domain in Resend
 
@@ -54,6 +54,11 @@ export async function POST(req: NextRequest) {
     ]
       .filter(Boolean)
       .join("\n")
+
+    if (!resend) {
+      console.error("RESEND_API_KEY not configured")
+      return NextResponse.json({ error: "E-mail služba není nakonfigurována." }, { status: 500 })
+    }
 
     await resend.emails.send({
       from: FROM_EMAIL,

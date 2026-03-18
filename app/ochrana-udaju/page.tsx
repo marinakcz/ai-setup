@@ -48,7 +48,7 @@ export default function PrivacyPage() {
             <h2 className="font-body font-semibold text-foreground mb-2">Máte dotaz?</h2>
             <p className="font-body font-light text-muted-foreground leading-[1.8]">
               Ozvěte se přes{" "}
-              <Link href="/kontakty" className="text-primary hover:underline">kontaktní stránku</Link>.
+              <Link href="/poptavka" className="text-primary hover:underline">kontaktní stránku</Link>.
             </p>
           </div>
         </div>

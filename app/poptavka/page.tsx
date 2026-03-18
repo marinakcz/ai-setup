@@ -19,7 +19,6 @@ function formatPhone(value: string): string {
   if (!digits) return hasPlus ? "+" : ""
 
   if (hasPlus) {
-    // +420 XXX XXX XXX — max 12 digits (3 cc + 9 number)
     digits = digits.slice(0, 12)
     const cc = digits.slice(0, 3)
     const rest = digits.slice(3)
@@ -31,7 +30,6 @@ function formatPhone(value: string): string {
     return formatted
   }
 
-  // Without prefix — max 9 digits, groups of 3
   digits = digits.slice(0, 9)
   let formatted = ""
   for (let i = 0; i < digits.length; i++) {
@@ -41,7 +39,7 @@ function formatPhone(value: string): string {
   return formatted
 }
 
-export default function InquiryPage() {
+export default function ContactPage() {
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [phone, setPhone] = useState("")
   const [errors, setErrors] = useState<Record<string, string>>({})
@@ -62,16 +60,12 @@ export default function InquiryPage() {
     const errs: Record<string, string> = {}
     const name = (form.get("name") as string || "").trim()
     const email = (form.get("email") as string || "").trim()
-
     if (!name) errs.name = "Vyplňte jméno"
     if (!email) errs.email = "Vyplňte e-mail"
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.email = "Neplatný e-mail"
-
-    // Bot detection: honeypot filled or form submitted too fast (<3s)
     const honeypot = form.get("website") as string
     if (honeypot) errs._bot = "bot"
     if (Date.now() - formStart.current < 3000) errs._bot = "bot"
-
     return errs
   }
 
@@ -79,18 +73,11 @@ export default function InquiryPage() {
     e.preventDefault()
     const form = new FormData(e.currentTarget)
     const errs = validate(form)
-
-    if (errs._bot) {
-      setStatus("sent")
-      return
-    }
-
+    if (errs._bot) { setStatus("sent"); return }
     setErrors(errs)
     if (Object.keys(errs).length > 0) return
-
     setStatus("sending")
     setServerError("")
-
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -104,14 +91,12 @@ export default function InquiryPage() {
           website: form.get("website"),
         }),
       })
-
       if (!res.ok) {
         const data = await res.json()
         setServerError(data.error || "Něco se pokazilo.")
         setStatus("error")
         return
       }
-
       setStatus("sent")
     } catch {
       setServerError("Nepodařilo se odeslat. Zkuste to znovu.")
@@ -154,24 +139,16 @@ export default function InquiryPage() {
 
         {/* Form */}
         <form className="max-w-2xl mx-auto" onSubmit={handleSubmit} noValidate>
-
-          {/* Honeypot — hidden from humans */}
           <div className="absolute -left-[9999px]" aria-hidden="true">
             <input type="text" name="website" tabIndex={-1} autoComplete="off" />
           </div>
 
-          {/* Contact fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div>
               <label htmlFor="name" className="block font-mono text-xs text-muted-foreground mb-2">
                 Jméno a příjmení <span className="text-primary">*</span>
               </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                autoComplete="name"
+              <input type="text" id="name" name="name" required autoComplete="name"
                 className={`w-full px-4 py-3 rounded-xl border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors ${errors.name ? "border-red-500/60" : "border-border"}`}
               />
               {errors.name && <p className="font-mono text-xs text-red-400 mt-1">{errors.name}</p>}
@@ -180,28 +157,15 @@ export default function InquiryPage() {
               <label htmlFor="email" className="block font-mono text-xs text-muted-foreground mb-2">
                 E-mail <span className="text-primary">*</span>
               </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                autoComplete="email"
-                placeholder="vas@email.cz"
+              <input type="email" id="email" name="email" required autoComplete="email" placeholder="vas@email.cz"
                 className={`w-full px-4 py-3 rounded-xl border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors ${errors.email ? "border-red-500/60" : "border-border"}`}
               />
               {errors.email && <p className="font-mono text-xs text-red-400 mt-1">{errors.email}</p>}
             </div>
             <div>
               <label htmlFor="phone" className="block font-mono text-xs text-muted-foreground mb-2">Telefon (volitelné)</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                inputMode="tel"
-                autoComplete="tel"
-                placeholder="+420"
-                value={phone}
-                onChange={(e) => setPhone(formatPhone(e.target.value))}
+              <input type="tel" id="phone" name="phone" inputMode="tel" autoComplete="tel" placeholder="+420"
+                value={phone} onChange={(e) => setPhone(formatPhone(e.target.value))}
                 className="w-full px-4 py-3 rounded-xl border border-border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
               />
             </div>
@@ -209,23 +173,17 @@ export default function InquiryPage() {
 
           <div className="h-px bg-gradient-to-r from-border/60 to-transparent mb-8" />
 
-          {/* Interests — multi-select */}
           <div className="mb-8">
             <p className="font-mono text-xs text-muted-foreground mb-4">Co řešíte?</p>
             <div className="flex flex-wrap gap-2">
               {INTERESTS.map((interest) => (
-                <button
-                  key={interest}
-                  type="button"
-                  onClick={() => toggle(interest)}
+                <button key={interest} type="button" onClick={() => toggle(interest)}
                   className={`px-4 py-2.5 rounded-xl border font-mono text-xs transition-all duration-200 ${
                     selected.has(interest)
                       ? "border-primary/50 bg-primary/10 text-primary"
                       : "border-border bg-card/50 text-muted-foreground hover:border-primary/30 hover:text-foreground"
                   }`}
-                >
-                  {interest}
-                </button>
+                >{interest}</button>
               ))}
             </div>
             <input type="hidden" name="interests" value={Array.from(selected).join(", ")} />
@@ -233,21 +191,14 @@ export default function InquiryPage() {
 
           <div className="h-px bg-gradient-to-r from-border/60 to-transparent mb-8" />
 
-          {/* Description */}
           <div className="mb-10">
             <label htmlFor="description" className="block font-mono text-xs text-muted-foreground mb-2">Krátce popište, o co jde</label>
-            <textarea
-              id="description"
-              name="description"
-              rows={5}
+            <textarea id="description" name="description" rows={5}
               className="w-full px-4 py-3 rounded-xl border border-border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors resize-none"
             />
           </div>
 
-          {/* Submit */}
-          <button
-            type="submit"
-            disabled={status === "sending"}
+          <button type="submit" disabled={status === "sending"}
             className="px-8 py-3 rounded-xl bg-primary text-primary-foreground font-mono text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
           >
             {status === "sending" ? (
@@ -273,6 +224,61 @@ export default function InquiryPage() {
             </Link>.
           </p>
         </form>
+
+        {/* ── Contact info ── */}
+        <div className="max-w-2xl mx-auto mt-24">
+          <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-16" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <div>
+              <p className="font-mono text-xs tracking-[0.2em] text-primary mb-4">/ PŘÍMO</p>
+              <a href="mailto:marinak@marinak.cz" className="block font-body font-semibold text-xl text-foreground hover:text-primary transition-colors mb-3">
+                marinak@marinak.cz
+              </a>
+              <a href="tel:+420776120555" className="block font-body font-semibold text-xl text-foreground hover:text-primary transition-colors">
+                +420 776 120 555
+              </a>
+            </div>
+            <div>
+              <p className="font-mono text-xs tracking-[0.2em] text-primary mb-4">/ ONLINE</p>
+              <div className="space-y-3">
+                <a href="https://linkedin.com/in/martinovsky" target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-body text-foreground hover:text-primary transition-colors">
+                  LinkedIn
+                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M7 17L17 7M7 7h10v10" />
+                  </svg>
+                </a>
+                <br />
+                <a href="https://twitter.com/martinovsky" target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-body text-foreground hover:text-primary transition-colors">
+                  Twitter
+                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M7 17L17 7M7 7h10v10" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Billing */}
+          <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-16" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h2 className="font-body font-semibold text-lg text-foreground leading-snug">
+                Identifikační<br />a fakturační údaje
+              </h2>
+            </div>
+            <div className="space-y-1 text-sm text-muted-foreground">
+              <p className="text-foreground font-medium">Mgr. Pavel Martinovský</p>
+              <p>Hlavenec 177, 294 76 Praha-východ</p>
+            </div>
+            <div className="space-y-1 text-sm text-muted-foreground">
+              <p>IČO: 06054251, Nejsem plátce DPH.</p>
+              <p>Jsem zapsán v Živnostenském rejstříku Městského úřadu v Brandýse nad Labem.</p>
+            </div>
+          </div>
+        </div>
       </main>
 
       <SiteFooter />
