@@ -378,7 +378,7 @@ function SoftwareCategory({ category, index }: { category: typeof SOFTWARE_CATEG
 
 export default function AiStudioPage() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen flex flex-col">
 
       {/* ── HERO ────────────────────────────────────────────────── */}
       <main>

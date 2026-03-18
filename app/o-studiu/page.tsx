@@ -34,7 +34,7 @@ export default function AboutPage() {
   const authorRef = useReveal()
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen flex flex-col">
       <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-32 pb-24">
 
         {/* Hero intro */}

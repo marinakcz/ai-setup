@@ -162,7 +162,7 @@ export default function Home() {
   const ctaRef = useReveal()
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen flex flex-col">
       <main>
         {/* Hero */}
         <section className="relative z-10 pt-32 pb-24 min-h-[95vh] flex flex-col justify-center">

@@ -23,7 +23,7 @@ const STATUS_MAP = {
 
 export default function ProjectsPage() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen flex flex-col">
       <main className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24">
         <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ PROJEKTY</p>
         <h1 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground mb-4">
