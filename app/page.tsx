@@ -177,14 +177,24 @@ export default function Home() {
               </h1>
             </div>
 
-            {/* Logo with parallax */}
-            <div className="flex justify-center mb-24 stagger-3" ref={logoParallax}>
-              <div className="relative w-[clamp(120px,18vw,220px)] aspect-[466/577] logo-float">
+            {/* Mascot + logotype */}
+            <div className="flex flex-col items-center mb-24 stagger-3" ref={logoParallax}>
+              <div className="relative w-[clamp(100px,14vw,180px)] aspect-[466/577] logo-float mb-6">
                 <Image
                   src="/mascot.svg"
                   alt="Levou Zadní maskot"
                   fill
                   className="object-contain drop-shadow-[0_0_40px_rgba(240,88,35,0.15)]"
+                  priority
+                />
+              </div>
+              <div className="relative w-[clamp(200px,30vw,420px)] h-auto">
+                <Image
+                  src="/logo-bw.svg"
+                  alt="Levou Zadní"
+                  width={420}
+                  height={420}
+                  className="w-full h-auto"
                   priority
                 />
               </div>
