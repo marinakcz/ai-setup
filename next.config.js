@@ -4,11 +4,11 @@ const nextConfig = {
     turbopackFileSystemCacheForDev: true,
     browserDebugInfoInTerminal: true,
   },
-  reactStrictMode: false,
+  reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true,
   },
-  images: { unoptimized: true },
+  images: {},
   async headers() {
     return [
       {

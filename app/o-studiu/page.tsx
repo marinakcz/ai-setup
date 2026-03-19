@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { useMountEffect } from "@/hooks/use-mount-effect"
+import Image from "next/image"
 import Link from "next/link"
 import { SiteFooter } from "@/components/site-footer"
 
@@ -167,7 +168,7 @@ export default function AboutPage() {
         {/* Author */}
         <section className="mb-20 reveal-group" ref={authorRef}>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 reveal-item">
-            <img src="/pavel.png" alt="Pavel Martinovský" className="w-24 h-24 rounded-full shrink-0" />
+            <Image src="/pavel.png" alt="Pavel Martinovský" width={96} height={96} className="w-24 h-24 rounded-full shrink-0" />
             <div>
               <div className="font-body font-bold text-2xl text-foreground">Pavel Martinovský</div>
               <div className="font-mono text-sm text-muted-foreground mt-1">Senior UX Designer @ J&T Banka</div>
