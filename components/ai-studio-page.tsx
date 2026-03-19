@@ -1,6 +1,7 @@
 "use client"
 
 import { SiteFooter } from "@/components/site-footer"
+import { ScrambleTag } from "@/components/scramble-tag"
 
 const ICON_MAP: Record<string, string> = {
   "AI modely": "/icons/claude.svg",
@@ -25,7 +26,9 @@ export default function AiStudioPage() {
       <section className="relative z-10 pt-32 pb-24">
         <div className="max-w-[1408px] mx-auto px-6 w-full">
           <div className="text-center mb-16">
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ POD KAPOTOU</p>
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
+              <ScrambleTag text="/ POD KAPOTOU" delay={200} />
+            </p>
             <h1 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground mb-4">
               Autonomní AI studio
             </h1>
@@ -42,7 +45,9 @@ export default function AiStudioPage() {
       <section className="relative z-10 py-24 md:py-32">
         <div className="max-w-[1408px] mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ JAK TO FUNGUJE</p>
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
+              <ScrambleTag text="/ JAK TO FUNGUJE" delay={400} />
+            </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
               Zázraky na počkání. Doslova.
             </h2>
@@ -67,7 +72,9 @@ export default function AiStudioPage() {
               },
             ].map((item, i) => (
               <div key={i}>
-                <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ {item.tag}</p>
+                <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
+                  <ScrambleTag text={`/ ${item.tag}`} delay={600 + i * 200} />
+                </p>
                 <h3 className="font-body font-semibold text-[clamp(1.25rem,1.6vw,1.75rem)] leading-snug text-foreground mb-3">
                   {item.title}
                 </h3>
@@ -82,97 +89,71 @@ export default function AiStudioPage() {
 
       <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      {/* ── ARCHITECTURE ── */}
+      {/* ── ARCHITECTURE — clean boxes ── */}
       <section className="relative z-10 py-24 md:py-32">
         <div className="max-w-[1408px] mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ ARCHITEKTURA</p>
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
+              <ScrambleTag text="/ ARCHITEKTURA" delay={300} />
+            </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
               Jak to spolupracuje
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_2fr_auto_1fr] gap-6 md:gap-0 items-center max-w-5xl mx-auto">
+          {/* Flow: Designér → Studio → Produkt */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 max-w-4xl mx-auto mb-8">
 
-            {/* LEFT — Input */}
-            <div className="text-center md:text-right p-6 group cursor-default relative">
-              <h3 className="font-body font-semibold text-lg text-foreground group-hover:text-primary transition-colors">Designér</h3>
-              <span className="pointer-events-none absolute -top-6 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
+            {/* Designér */}
+            <div className="group relative px-6 py-4 rounded-xl border border-border hover:border-primary/40 transition-colors cursor-default shrink-0">
+              <span className="font-body font-semibold text-foreground group-hover:text-primary transition-colors">Designér</span>
+              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
                 Brief, směr, schválení
               </span>
             </div>
 
-            {/* Arrow → */}
-            <div className="hidden md:flex items-center px-4">
-              <svg viewBox="0 0 40 24" className="w-8 h-5 text-primary/40" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M0 12h34M26 5l8 7-8 7" />
-              </svg>
-            </div>
+            {/* Arrow */}
+            <svg viewBox="0 0 30 24" className="w-6 h-4 text-primary/30 shrink-0 hidden md:block" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 12h24M18 6l6 6-6 6" /></svg>
+            <svg viewBox="0 0 24 30" className="w-4 h-6 text-primary/30 shrink-0 md:hidden" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M12 0v24M6 18l6 6 6-6" /></svg>
 
-            {/* CENTER — Studio engine */}
-            <div className="relative p-8 rounded-2xl border border-primary/20 bg-primary/[0.02]">
-              <div className="text-center mb-6">
-                <p className="font-mono text-xs tracking-[0.15em] text-primary font-medium">AI STUDIO</p>
-              </div>
-
-              {/* Simple circular flow */}
-              <div className="relative w-full max-w-[240px] mx-auto aspect-square">
-                {/* Center */}
-                <div className="absolute inset-0 flex items-center justify-center z-10">
-                  <div className="font-mono text-xs text-primary font-medium">Orchestrátor</div>
+            {/* Studio — 5 boxes */}
+            <div className="flex flex-wrap items-center justify-center gap-2 p-5 rounded-2xl border border-primary/20 bg-primary/[0.02] shrink-0">
+              {[
+                { label: "Orchestrátor", tip: "Plánuje, deleguje, rozhoduje" },
+                { label: "Agenti", tip: "Izolovaní specialisté v kontejnerech" },
+                { label: "Paměť", tip: "Databáze, vektory, naučené znalosti" },
+                { label: "Nástroje", tip: "Figma, GitHub, Playwright, Vercel..." },
+                { label: "Pipeline", tip: "Automatický build, test, deploy" },
+              ].map((item, i) => (
+                <div key={i} className="group relative px-3 py-2 rounded-lg border border-border/60 hover:border-primary/40 transition-colors cursor-default">
+                  <span className="font-mono text-xs text-foreground group-hover:text-primary transition-colors">{item.label}</span>
+                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
+                    {item.tip}
+                  </span>
                 </div>
-
-                {/* Ring */}
-                <svg viewBox="0 0 200 200" className="w-full h-full" aria-hidden="true">
-                  <circle cx="100" cy="100" r="85" fill="none" stroke="hsl(var(--border))" strokeWidth="0.5" strokeDasharray="3 6" className="animate-[spin_30s_linear_infinite] origin-center" />
-                </svg>
-
-                {/* Labels */}
-                {[
-                  { label: "Agenti", tip: "Izolovaní specialisté v kontejnerech", x: "50%", y: "0%" },
-                  { label: "Pipeline", tip: "Automatický build, test a deploy", x: "100%", y: "50%" },
-                  { label: "Paměť", tip: "Databáze, vektory, naučené znalosti", x: "50%", y: "100%" },
-                  { label: "Nástroje", tip: "Figma, GitHub, Playwright, Vercel...", x: "0%", y: "50%" },
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 cursor-default group"
-                    style={{ left: item.x, top: item.y }}
-                  >
-                    <span className="font-mono text-xs text-foreground group-hover:text-primary transition-colors">{item.label}</span>
-                    <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
-                      {item.tip}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
 
-            {/* Arrow → */}
-            <div className="hidden md:flex items-center px-4">
-              <svg viewBox="0 0 40 24" className="w-8 h-5 text-primary/40" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M0 12h34M26 5l8 7-8 7" />
-              </svg>
-            </div>
+            {/* Arrow */}
+            <svg viewBox="0 0 30 24" className="w-6 h-4 text-primary/30 shrink-0 hidden md:block" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 12h24M18 6l6 6-6 6" /></svg>
+            <svg viewBox="0 0 24 30" className="w-4 h-6 text-primary/30 shrink-0 md:hidden" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M12 0v24M6 18l6 6 6-6" /></svg>
 
-            {/* RIGHT — Output */}
-            <div className="text-center md:text-left p-6 group cursor-default relative">
-              <h3 className="font-body font-semibold text-lg text-foreground group-hover:text-primary transition-colors">Produkt</h3>
-              <span className="pointer-events-none absolute -top-6 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
-                Web, aplikace, prototyp. Nasazený a sledovaný.
+            {/* Produkt */}
+            <div className="group relative px-6 py-4 rounded-xl border border-border hover:border-primary/40 transition-colors cursor-default shrink-0">
+              <span className="font-body font-semibold text-foreground group-hover:text-primary transition-colors">Produkt</span>
+              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
+                Web, aplikace, prototyp
               </span>
             </div>
           </div>
 
-          {/* Feedback loop */}
-          <div className="max-w-5xl mx-auto mt-4 hidden md:block">
-            <div className="flex items-center justify-center gap-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/20 to-primary/20" />
-              <span className="font-mono text-[10px] text-primary/40 shrink-0">zpětná smyčka</span>
-              <svg viewBox="0 0 20 12" className="w-4 h-3 text-primary/30 shrink-0 rotate-180" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M0 6h16M10 1l6 5-6 5" />
-              </svg>
-              <div className="flex-1 h-px bg-gradient-to-l from-transparent via-primary/20 to-primary/20" />
+          {/* Feedback */}
+          <div className="max-w-4xl mx-auto hidden md:block">
+            <div className="flex items-center justify-center gap-3">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/15 to-primary/15" />
+              <span className="font-mono text-[10px] text-primary/30">zpětná smyčka</span>
+              <svg viewBox="0 0 20 12" className="w-4 h-3 text-primary/20 rotate-180" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 6h16M10 1l6 5-6 5" /></svg>
+              <div className="flex-1 h-px bg-gradient-to-l from-transparent via-primary/15 to-primary/15" />
             </div>
           </div>
         </div>
@@ -184,7 +165,9 @@ export default function AiStudioPage() {
       <section className="relative z-10 py-24">
         <div className="max-w-[1408px] mx-auto px-6">
           <div className="text-center mb-14">
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ NÁSTROJE</p>
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
+              <ScrambleTag text="/ NÁSTROJE" delay={300} />
+            </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
               Vendor-agnostic
             </h2>
@@ -225,7 +208,9 @@ export default function AiStudioPage() {
       <section className="relative z-10 py-24">
         <div className="max-w-[1408px] mx-auto px-6">
           <div className="text-center mb-14">
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ HARDWARE</p>
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
+              <ScrambleTag text="/ HARDWARE" delay={300} />
+            </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
               Běží lokálně.
             </h2>
@@ -247,7 +232,9 @@ export default function AiStudioPage() {
       <section className="relative z-10 py-24 md:py-32">
         <div className="max-w-[1408px] mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ PRINCIPY</p>
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
+              <ScrambleTag text="/ PRINCIPY" delay={300} />
+            </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
               Na čem to stojí
             </h2>

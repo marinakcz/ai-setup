@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import Link from "next/link"
 import { SiteFooter } from "@/components/site-footer"
+import { ScrambleTag } from "@/components/scramble-tag"
 import { PrimaryButton } from "@/components/primary-button"
 
 function useReveal() {
@@ -39,7 +40,7 @@ export default function AboutPage() {
 
         {/* Hero intro */}
         <section className="mb-32 hero-stagger">
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 stagger-1">/ O STUDIU A O MNĚ</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 stagger-1"><ScrambleTag text="/ O STUDIU A O MNĚ" delay={200} /></p>
           <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-8 stagger-2">
             Ahoj, jsem Pavel. <span className="inline-block animate-wave">👋</span>
           </h1>
@@ -50,7 +51,7 @@ export default function AboutPage() {
 
         {/* What I do — big statement */}
         <section className="mb-32 reveal-group" ref={whatRef}>
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item">/ STÁLE SE SNAŽÍM O JEDNO</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item"><ScrambleTag text="/ STÁLE SE SNAŽÍM O JEDNO" /></p>
           <div className="space-y-1 mb-10">
             <p className="font-body font-extrabold text-[clamp(2rem,5vw,4.5rem)] leading-[1.1] text-foreground reveal-item" style={{ transitionDelay: "100ms" }}>
               Pochopit problém.
@@ -70,7 +71,7 @@ export default function AboutPage() {
         {/* The problem — contrast block */}
         <section className="mb-32 reveal-group" ref={problemRef}>
           <div className="reveal-item">
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6">/ REALITA</p>
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6"><ScrambleTag text="/ REALITA" /></p>
             <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.2] text-muted-foreground mb-4">
               Ale spousta dobrých nápadů
             </h2>
@@ -104,7 +105,7 @@ export default function AboutPage() {
 
         {/* New reality */}
         <section className="mb-32 reveal-group" ref={realityRef}>
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item">/ NOVÁ REALITA</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item"><ScrambleTag text="/ NOVÁ REALITA" /></p>
           <div>
             <h2 className="font-body font-extrabold text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.4] text-foreground mb-3 reveal-item" style={{ transitionDelay: "100ms" }}>
               Rychlejší realizace neznamená méně přemýšlení.<br />
@@ -143,7 +144,7 @@ export default function AboutPage() {
 
         {/* Why this exists */}
         <section className="mb-32 reveal-group" ref={whyRef}>
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item">/ PROTO VZNIKLO</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item"><ScrambleTag text="/ PROTO VZNIKLO" /></p>
           <h2 className="font-body font-black text-[clamp(2.5rem,6vw,5rem)] leading-[1.0] text-foreground mb-10 reveal-item" style={{ transitionDelay: "100ms" }}>
             Levou zadní.
           </h2>
