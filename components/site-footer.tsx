@@ -18,7 +18,7 @@ export function SiteFooter() {
         </nav>
         <div className="flex flex-col items-center gap-1 font-mono text-xs text-muted-foreground">
           <span>Levou zadní / AI studio pro digitální produkty</span>
-          <span>Copyright © 2026</span>
+          <span>© 2026</span>
         </div>
       </div>
     </footer>
