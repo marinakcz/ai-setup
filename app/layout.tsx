@@ -36,11 +36,11 @@ const hkGroteskWide = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://levouzadni.cz"),
   title: {
-    default: "Levou zadní — AI studio",
-    template: "%s — Levou zadní",
+    default: "AI studio pro digitální produkty | Levou zadní",
+    template: "%s | Levou zadní",
   },
   description:
-    "Experimentální AI studio. Od nápadu k produktu. Weby, aplikace, prototypy, experimenty.",
+    "Experimentální AI studio. Od nápadu k funkčnímu produktu. Weby, aplikace, prototypy.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Levou zadní — AI studio",
-    description: "Experimentální AI studio. Od nápadu k produktu.",
+    title: "AI studio pro digitální produkty | Levou zadní",
+    description: "Experimentální AI studio. Od nápadu k funkčnímu produktu.",
     type: "website",
     locale: "cs_CZ",
     siteName: "Levou zadní",

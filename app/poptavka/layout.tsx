@@ -2,10 +2,10 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Spojme se",
-  description: "Máte nápad? Projekt? Napište mi. E-mail, telefon, formulář.",
+  description: "Máte nápad nebo projekt? Ozvěte se.",
   openGraph: {
-    title: "Spojme se — Levou zadní",
-    description: "Máte nápad? Projekt? Napište mi.",
+    title: "Spojme se | Levou zadní",
+    description: "Máte nápad? Projekt? Ozvěte se.",
   },
   alternates: { canonical: "/poptavka" },
 }
