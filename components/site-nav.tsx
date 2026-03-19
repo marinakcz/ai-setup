@@ -84,7 +84,6 @@ export function SiteNav() {
               <a href="mailto:studio@levouzadni.cz" className="text-foreground hover:text-primary transition-colors">studio@levouzadni.cz</a>
               <a href="tel:+420776120555" className="text-foreground hover:text-primary transition-colors">+420 776 120 555</a>
             </div>
-            <a href="https://www.linkedin.com/in/pavelmartinovsky/" target="_blank" rel="noopener noreferrer" className="font-mono text-sm text-foreground hover:text-primary transition-colors">LinkedIn ↗</a>
           </div>
         </div>
       </div>
