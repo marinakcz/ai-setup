@@ -102,7 +102,7 @@ export default function AiStudioPage() {
             </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.3] tracking-[0.06em] text-foreground">
               Vyladěná spolupráce.<br />
-              <span className="text-muted-foreground">Člověk × AI.</span>
+              <span className="text-muted-foreground">Designér × AI.</span>
             </h2>
           </div>
 
