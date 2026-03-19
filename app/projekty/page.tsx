@@ -53,7 +53,7 @@ export default function ProjectsPage() {
                 <div className={`absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full -translate-x-[5.5px] ${status.color}`} />
                 <div className="flex items-center gap-3 mb-2">
                   <span className="font-mono text-xs text-muted-foreground">{update.date}</span>
-                  <span className="font-mono text-[10px] tracking-[0.1em] text-primary/80 px-2 py-0.5 rounded-full border border-primary/20">
+                  <span className="font-mono text-xs tracking-[0.1em] text-primary/80 px-2 py-0.5 rounded-full border border-primary/20">
                     {status.label}
                   </span>
                 </div>

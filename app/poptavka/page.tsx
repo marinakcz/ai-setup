@@ -199,7 +199,7 @@ export default function ContactPage() {
           </div>
 
           <button type="submit" disabled={status === "sending"}
-            className="px-8 py-3 rounded-xl bg-primary text-primary-foreground font-mono text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
+            className="px-8 py-3 rounded-xl bg-primary text-background font-mono text-sm font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
           >
             {status === "sending" ? (
               <>
@@ -217,9 +217,9 @@ export default function ContactPage() {
 
           <div className="h-px bg-gradient-to-r from-border/60 to-transparent mt-10 mb-6" />
 
-          <p className="text-xs text-muted-foreground/60 leading-relaxed">
+          <p className="text-xs text-muted-foreground leading-relaxed">
             Odesláním souhlasíte se zpracováním údajů pro vyřízení zprávy.{" "}
-            <Link href="/ochrana-udaju" className="text-muted-foreground hover:text-primary hover:underline transition-colors">
+            <Link href="/ochrana-udaju" className="text-primary underline underline-offset-2 hover:opacity-80 transition-opacity">
               Ochrana osobních údajů
             </Link>.
           </p>

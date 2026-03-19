@@ -16,7 +16,7 @@ export function SiteFooter() {
           <span className="text-border">/</span>
           <Link href="/ochrana-udaju" className="hover:text-foreground transition-colors"><span className="hidden sm:inline">Ochrana osobních údajů</span><span className="sm:hidden">Ochrana údajů</span></Link>
         </div>
-        <span className="font-mono text-[10px] text-muted-foreground/50">
+        <span className="font-mono text-xs text-muted-foreground">
           Copyright © 2026 levouzadni.cz
         </span>
       </div>

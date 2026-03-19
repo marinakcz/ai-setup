@@ -126,7 +126,7 @@ export default function AiStudioPage() {
 
                 {/* Content */}
                 <div className="flex-1 group">
-                  <span className="font-mono text-[10px] text-primary/50 group-hover:text-primary transition-colors">{item.num}</span>
+                  <span className="font-mono text-xs text-primary/60 group-hover:text-primary transition-colors">{item.num}</span>
                   <h3 className="font-body font-semibold text-foreground group-hover:text-primary transition-colors mt-1">{item.label}</h3>
                   <p className="font-mono text-xs text-muted-foreground mt-1">{item.desc}</p>
                 </div>
@@ -171,7 +171,7 @@ export default function AiStudioPage() {
                 <img src={ICON_MAP[item.icon]} alt="" className="w-5 h-5 shrink-0" />
                 <div>
                   <div className="font-mono text-xs font-medium text-foreground">{item.icon}</div>
-                  <div className="font-mono text-[10px] text-muted-foreground">{item.note}</div>
+                  <div className="font-mono text-xs text-muted-foreground">{item.note}</div>
                 </div>
               </div>
             ))}

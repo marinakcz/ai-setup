@@ -10,7 +10,7 @@ export function PrimaryButton({ href, children, arrow = false }: PrimaryButtonPr
   return (
     <Link
       href={href}
-      className="group inline-flex items-center gap-3 px-8 py-3 rounded-xl bg-primary text-primary-foreground font-mono text-sm font-medium hover:opacity-90 transition-opacity"
+      className="group inline-flex items-center gap-3 px-8 py-3 rounded-xl bg-primary text-background font-mono text-sm font-semibold hover:opacity-90 transition-opacity"
     >
       {children}
       {arrow && (
