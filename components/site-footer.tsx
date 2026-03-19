@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="flex gap-4 font-mono text-xs text-muted-foreground">
           <Link href="/o-studiu" className="hover:text-foreground transition-colors">O studiu</Link>
           <span className="text-border">/</span>
-          <Link href="/setup" className="hover:text-foreground transition-colors">Pod kapotou</Link>
+          <Link href="/pod-kapotou" className="hover:text-foreground transition-colors">Pod kapotou</Link>
           <span className="text-border">/</span>
           <Link href="/poptavka" className="hover:text-foreground transition-colors">Spojme se</Link>
           <span className="text-border">/</span>
