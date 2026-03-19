@@ -189,10 +189,10 @@ export default function AiStudioPage() {
               <ScrambleTag text="/ NÁSTROJE" delay={300} />
             </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
-              Bez závislostí
+              Na čem to stavíme
             </h2>
             <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground mt-3 max-w-xl mx-auto">
-              Každý nástroj jde vyměnit. Nic nás nezamkne k jednomu dodavateli.
+              Nejlepší nástroje, které dnes existují. Otevřené, flexibilní, prověřené.
             </p>
           </div>
 
@@ -271,7 +271,7 @@ export default function AiStudioPage() {
               <ScrambleTag text="/ CÍLE" delay={300} />
             </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
-              Na co cílíme
+              Kam to směřujeme
             </h2>
           </div>
 
