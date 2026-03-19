@@ -245,15 +245,6 @@ export default function AiStudioPage() {
       {/* ── PRINCIPLES ── */}
       <section className="relative z-10 py-24 md:py-32">
         <div className="max-w-[1408px] mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
-              <ScrambleTag text="/ PRINCIPY" delay={300} />
-            </p>
-            <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
-              Na čem to stojí
-            </h2>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
               { num: "01", title: "Nezávislost", desc: "Každou část jde vyměnit. AI model, hosting, databáze, coding assistant." },
