@@ -34,13 +34,13 @@ const hkGroteskWide = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ai-setup-alpha.vercel.app"),
+  metadataBase: new URL("https://levouzadni.cz"),
   title: {
-    default: "AI Studio — Autonomní systém AI agentů",
-    template: "%s — AI Studio",
+    default: "Levou zadní — AI studio",
+    template: "%s — Levou zadní",
   },
   description:
-    "Zadejte úkol, AI Studio ho naplánuje, napíše kód, verzuje v Gitu a nasadí na Vercel — zcela automaticky.",
+    "Experimentální AI studio. Od nápadu k produktu. Weby, aplikace, prototypy, experimenty.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -51,11 +51,14 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "AI Studio — Autonomní systém AI agentů",
-    description:
-      "Zadejte úkol, AI Studio ho naplánuje, napíše kód, verzuje v Gitu a nasadí na Vercel — zcela automaticky.",
+    title: "Levou zadní — AI studio",
+    description: "Experimentální AI studio. Od nápadu k produktu.",
     type: "website",
     locale: "cs_CZ",
+    siteName: "Levou zadní",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
   robots: {
     index: true,
@@ -73,6 +76,52 @@ export default function RootLayout({
 }) {
   return (
     <html lang="cs">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  name: "Levou zadní",
+                  url: "https://levouzadni.cz",
+                  logo: "https://levouzadni.cz/logo-color.svg",
+                  founder: {
+                    "@type": "Person",
+                    name: "Pavel Martinovský",
+                    jobTitle: "Senior UX Designer",
+                    sameAs: "https://www.linkedin.com/in/pavelmartinovsky/",
+                  },
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    email: "studio@levouzadni.cz",
+                    telephone: "+420776120555",
+                    contactType: "customer service",
+                    availableLanguage: ["cs", "en"],
+                  },
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "Hlavenec 177",
+                    addressLocality: "Hlavenec",
+                    postalCode: "294 76",
+                    addressCountry: "CZ",
+                  },
+                  taxID: "06054251",
+                },
+                {
+                  "@type": "WebSite",
+                  name: "Levou zadní",
+                  url: "https://levouzadni.cz",
+                  inLanguage: "cs",
+                  publisher: { "@type": "Organization", name: "Levou zadní" },
+                },
+              ],
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${jetbrainsMono.variable} ${hkGroteskWide.variable} ${caveat.variable} antialiased`}
         suppressHydrationWarning={true}

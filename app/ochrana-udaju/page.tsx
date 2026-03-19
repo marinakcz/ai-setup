@@ -4,7 +4,12 @@ import { SiteFooter } from "@/components/site-footer"
 
 export const metadata: Metadata = {
   title: "Ochrana osobních údajů",
-  description: "Informace o zpracování osobních údajů na webu AI Studio.",
+  description: "Informace o zpracování osobních údajů na webu levouzadni.cz.",
+  openGraph: {
+    title: "Ochrana osobních údajů — Levou zadní",
+    description: "Informace o zpracování osobních údajů.",
+  },
+  alternates: { canonical: "/ochrana-udaju" },
 }
 
 export default function PrivacyPage() {

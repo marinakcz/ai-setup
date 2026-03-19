@@ -15,6 +15,10 @@ const ICON_MAP: Record<string, string> = {
   "E-maily": "/icons/resend.svg",
   "Kontejnery": "/icons/docker.svg",
   "Monitoring": "/icons/sentry.svg",
+  "Scraping": "/icons/nodejs.svg",
+  "Poznámky": "/icons/obsidian.svg",
+  "Notifikace": "/icons/telegram.svg",
+  "Lokální AI": "/icons/openai.svg",
 }
 
 export default function AiStudioPage() {
@@ -211,6 +215,10 @@ export default function AiStudioPage() {
               { icon: "Testy", note: "Playwright" },
               { icon: "Monitoring", note: "Sentry" },
               { icon: "E-maily", note: "Resend" },
+              { icon: "Scraping", note: "Firecrawl" },
+              { icon: "Poznámky", note: "Obsidian" },
+              { icon: "Notifikace", note: "Telegram" },
+              { icon: "Lokální AI", note: "Qwen, Llama..." },
             ].map((item, i) => (
               <div key={i} className="group relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border hover:border-primary/30 transition-colors cursor-default">
                 <img src={ICON_MAP[item.icon]} alt="" className="w-4 h-4 shrink-0" />
