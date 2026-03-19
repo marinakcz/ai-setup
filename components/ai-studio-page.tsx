@@ -33,9 +33,15 @@ export default function AiStudioPage() {
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
               <ScrambleTag text="/ POD KAPOTOU" delay={200} />
             </p>
-            <h1 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground mb-4">
-              AI studio / Levou zadní
-            </h1>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <h1 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
+                AI studio / Levou zadní
+              </h1>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/30 bg-primary/[0.06] font-mono text-xs text-primary shrink-0">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                v experimentu
+              </span>
+            </div>
             <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground max-w-2xl mx-auto">
               Modulární systém AI agentů, paměti a nástrojů. Zadáte záměr, systém naplánuje postup, sestaví tým agentů a vytvoří funkční produkt. Weby, aplikace, prototypy, experimenty.
             </p>
