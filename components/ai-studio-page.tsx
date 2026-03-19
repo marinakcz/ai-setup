@@ -2,6 +2,7 @@
 
 import { SiteFooter } from "@/components/site-footer"
 import { ScrambleTag } from "@/components/scramble-tag"
+import { ArchitectureDiagram } from "@/components/architecture-diagram"
 
 const ICON_MAP: Record<string, string> = {
   "AI modely": "/icons/claude.svg",
@@ -101,38 +102,7 @@ export default function AiStudioPage() {
             </h2>
           </div>
 
-          {/* Flow — minimal timeline */}
-          <div className="max-w-3xl mx-auto relative">
-
-            {/* Vertical line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/30 via-border to-primary/30 -translate-x-1/2" />
-
-            {[
-              { num: "01", label: "Designér", desc: "Brief, záměr, podklady, schválení", side: "left" },
-              { num: "02", label: "Orchestrátor", desc: "Plánuje postup, rozdělí úkoly, řídí agenty", side: "right" },
-              { num: "03", label: "Agenti", desc: "Izolovaní specialisté. Kód, design, testy, obsah.", side: "left" },
-              { num: "04", label: "Paměť + Nástroje", desc: "Databáze, vektory, MCP servery, API", side: "right" },
-              { num: "05", label: "Pipeline", desc: "Automatický build, test a deploy", side: "left" },
-              { num: "06", label: "Produkt", desc: "Nasazený, sledovaný, vylepšovaný", side: "right" },
-              { num: "07", label: "Zpětná smyčka", desc: "Monitoring, učení, optimalizace. Cyklus se opakuje.", side: "left" },
-            ].map((item, i) => (
-              <div key={i} className={`relative flex items-center gap-6 mb-8 ${item.side === "right" ? "md:flex-row-reverse md:text-right" : ""}`}>
-
-                {/* Dot on line */}
-                <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-background border-2 border-primary -translate-x-1/2 z-10" />
-
-                {/* Spacer for line */}
-                <div className="w-12 md:w-1/2 shrink-0" />
-
-                {/* Content */}
-                <div className="flex-1 group">
-                  <span className="font-mono text-xs text-primary/60 group-hover:text-primary transition-colors">{item.num}</span>
-                  <h3 className="font-body font-semibold text-foreground group-hover:text-primary transition-colors mt-1">{item.label}</h3>
-                  <p className="font-mono text-xs text-muted-foreground mt-1">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ArchitectureDiagram />
         </div>
       </section>
 
