@@ -101,59 +101,73 @@ export default function AiStudioPage() {
             </h2>
           </div>
 
-          {/* Flow: Designér → Studio → Produkt */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 max-w-4xl mx-auto mb-8">
+          {/* Flow diagram */}
+          <div className="max-w-4xl mx-auto">
 
-            {/* Designér */}
-            <div className="group relative px-6 py-4 rounded-xl border border-border hover:border-primary/40 transition-colors cursor-default shrink-0">
-              <span className="font-body font-semibold text-foreground group-hover:text-primary transition-colors">Designér</span>
-              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
-                Brief, směr, schválení
-              </span>
-            </div>
+            {/* Main flow: Designér → Studio → Produkt */}
+            <div className="flex flex-col md:flex-row items-stretch gap-6 mb-6">
 
-            {/* Arrow */}
-            <svg viewBox="0 0 30 24" className="w-6 h-4 text-primary/30 shrink-0 hidden md:block" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 12h24M18 6l6 6-6 6" /></svg>
-            <svg viewBox="0 0 24 30" className="w-4 h-6 text-primary/30 shrink-0 md:hidden" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M12 0v24M6 18l6 6 6-6" /></svg>
+              {/* Designér */}
+              <div className="flex-1 p-6 rounded-xl border border-border text-center">
+                <p className="font-mono text-xs tracking-[0.15em] text-primary mb-2">VSTUP</p>
+                <h3 className="font-body font-semibold text-lg text-foreground mb-2">Designér</h3>
+                <p className="font-mono text-xs text-muted-foreground">Brief, směr, schválení</p>
+              </div>
 
-            {/* Studio — 5 boxes */}
-            <div className="flex flex-wrap items-center justify-center gap-2 p-5 rounded-2xl border border-primary/20 bg-primary/[0.02] shrink-0">
-              {[
-                { label: "Orchestrátor", tip: "Plánuje, deleguje, rozhoduje" },
-                { label: "Agenti", tip: "Izolovaní specialisté v kontejnerech" },
-                { label: "Paměť", tip: "Databáze, vektory, naučené znalosti" },
-                { label: "Nástroje", tip: "Figma, GitHub, Playwright, Vercel..." },
-                { label: "Pipeline", tip: "Automatický build, test, deploy" },
-              ].map((item, i) => (
-                <div key={i} className="group relative px-3 py-2 rounded-lg border border-border/60 hover:border-primary/40 transition-colors cursor-default">
-                  <span className="font-mono text-xs text-foreground group-hover:text-primary transition-colors">{item.label}</span>
-                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
-                    {item.tip}
-                  </span>
+              {/* Arrow */}
+              <div className="hidden md:flex items-center">
+                <svg viewBox="0 0 40 24" className="w-8 h-5 text-primary/30" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 12h34M26 5l8 7-8 7" /></svg>
+              </div>
+              <div className="flex md:hidden justify-center">
+                <svg viewBox="0 0 24 30" className="w-5 h-6 text-primary/30" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M12 0v24M6 18l6 6 6-6" /></svg>
+              </div>
+
+              {/* Studio */}
+              <div className="flex-[2] p-6 rounded-xl border border-primary/25 bg-primary/[0.02]">
+                <p className="font-mono text-xs tracking-[0.15em] text-primary mb-4 text-center">AI STUDIO</p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {[
+                    { label: "Orchestrátor", tip: "Plánuje, deleguje, rozhoduje" },
+                    { label: "Agenti", tip: "Izolovaní specialisté v kontejnerech" },
+                    { label: "Paměť", tip: "Databáze, vektory, naučené znalosti" },
+                    { label: "Nástroje", tip: "Figma, GitHub, Playwright, Vercel..." },
+                    { label: "Pipeline", tip: "Build, test, deploy" },
+                    { label: "Učení", tip: "Zpětná vazba a optimalizace" },
+                  ].map((item, i) => (
+                    <div key={i} className="group relative px-3 py-2.5 rounded-lg border border-border/50 hover:border-primary/40 transition-colors cursor-default text-center">
+                      <span className="font-mono text-xs text-foreground group-hover:text-primary transition-colors">{item.label}</span>
+                      <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
+                        {item.tip}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Arrow */}
+              <div className="hidden md:flex items-center">
+                <svg viewBox="0 0 40 24" className="w-8 h-5 text-primary/30" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 12h34M26 5l8 7-8 7" /></svg>
+              </div>
+              <div className="flex md:hidden justify-center">
+                <svg viewBox="0 0 24 30" className="w-5 h-6 text-primary/30" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M12 0v24M6 18l6 6 6-6" /></svg>
+              </div>
+
+              {/* Produkt */}
+              <div className="flex-1 p-6 rounded-xl border border-border text-center">
+                <p className="font-mono text-xs tracking-[0.15em] text-primary mb-2">VÝSTUP</p>
+                <h3 className="font-body font-semibold text-lg text-foreground mb-2">Produkt</h3>
+                <p className="font-mono text-xs text-muted-foreground">Web, aplikace, prototyp</p>
+              </div>
             </div>
 
-            {/* Arrow */}
-            <svg viewBox="0 0 30 24" className="w-6 h-4 text-primary/30 shrink-0 hidden md:block" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 12h24M18 6l6 6-6 6" /></svg>
-            <svg viewBox="0 0 24 30" className="w-4 h-6 text-primary/30 shrink-0 md:hidden" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M12 0v24M6 18l6 6 6-6" /></svg>
-
-            {/* Produkt */}
-            <div className="group relative px-6 py-4 rounded-xl border border-border hover:border-primary/40 transition-colors cursor-default shrink-0">
-              <span className="font-body font-semibold text-foreground group-hover:text-primary transition-colors">Produkt</span>
-              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
-                Web, aplikace, prototyp
-              </span>
-            </div>
-          </div>
-
-          {/* Feedback */}
-          <div className="max-w-4xl mx-auto hidden md:block">
-            <div className="flex items-center justify-center gap-3">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/15 to-primary/15" />
-              <span className="font-mono text-[10px] text-primary/30">zpětná smyčka</span>
-              <svg viewBox="0 0 20 12" className="w-4 h-3 text-primary/20 rotate-180" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 6h16M10 1l6 5-6 5" /></svg>
-              <div className="flex-1 h-px bg-gradient-to-l from-transparent via-primary/15 to-primary/15" />
+            {/* Feedback loop — visible */}
+            <div className="rounded-xl border border-dashed border-primary/20 p-4 flex items-center justify-center gap-4">
+              <svg viewBox="0 0 20 12" className="w-4 h-3 text-primary/40 rotate-180 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 6h16M10 1l6 5-6 5" /></svg>
+              <div className="text-center">
+                <p className="font-mono text-xs text-foreground">Zpětná smyčka</p>
+                <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Monitoring, učení, vylepšování. Produkt se zlepšuje sám.</p>
+              </div>
+              <svg viewBox="0 0 20 12" className="w-4 h-3 text-primary/40 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 6h16M10 1l6 5-6 5" /></svg>
             </div>
           </div>
         </div>
