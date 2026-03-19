@@ -43,7 +43,7 @@ export default function AboutPage() {
         <section className="mb-16 md:mb-32 hero-stagger">
           <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 stagger-1"><ScrambleTag text="/ O STUDIU A O MNĚ" delay={200} /></p>
           <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-8 stagger-2">
-            Ahoj, jsem Pavel. <span className="inline-block animate-wave">👋</span>
+            Ahoj, jsem Pavel.
           </h1>
           <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-2xl stagger-3">
             Digitální produkty navrhuju od roku 1999.
@@ -64,9 +64,6 @@ export default function AboutPage() {
           <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-2xl reveal-item" style={{ transitionDelay: "300ms" }}>
             Na tom se nic nezměnilo.
           </p>
-          <svg className="w-[min(100%,13.5rem)] h-3 mt-1 text-primary reveal-item" style={{ transitionDelay: "400ms" }} viewBox="0 0 250 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M2 8 C 40 2, 70 12, 110 6 S 180 3, 220 7 S 240 5, 248 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" className="hand-drawn-line" />
-          </svg>
         </section>
 
         {/* The problem — contrast block */}
