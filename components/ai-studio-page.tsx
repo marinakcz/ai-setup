@@ -117,48 +117,34 @@ export default function AiStudioPage() {
                 <p className="font-mono text-xs tracking-[0.15em] text-primary font-medium">AI STUDIO</p>
               </div>
 
-              {/* Circular flow */}
-              <div className="relative w-full max-w-[320px] mx-auto aspect-square">
-                {/* Center — Orchestrátor */}
+              {/* Simple circular flow */}
+              <div className="relative w-full max-w-[240px] mx-auto aspect-square">
+                {/* Center */}
                 <div className="absolute inset-0 flex items-center justify-center z-10">
-                  <div className="text-center px-4 py-3 rounded-xl border border-primary/30 bg-background">
-                    <div className="font-mono text-xs text-primary font-medium">Orchestrátor</div>
-                  </div>
+                  <div className="font-mono text-xs text-primary font-medium">Orchestrátor</div>
                 </div>
 
-                {/* Rotating ring */}
+                {/* Ring */}
                 <svg viewBox="0 0 200 200" className="w-full h-full" aria-hidden="true">
-                  {/* Outer dashed circle — rotates */}
-                  <circle cx="100" cy="100" r="90" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeDasharray="3 6" opacity="0.3" className="animate-[spin_25s_linear_infinite] origin-center" />
-                  {/* Inner solid circle */}
-                  <circle cx="100" cy="100" r="88" fill="none" stroke="hsl(var(--border))" strokeWidth="0.5" />
-                  {/* Dots at layer positions */}
-                  {[
-                    [100, 10],  // top
-                    [185, 72],  // right-top
-                    [155, 178], // right-bottom
-                    [45, 178],  // left-bottom
-                    [15, 72],   // left-top
-                  ].map(([cx, cy], i) => (
-                    <circle key={i} cx={cx} cy={cy} r="3" fill="hsl(var(--primary))" opacity="0.5" />
-                  ))}
+                  <circle cx="100" cy="100" r="85" fill="none" stroke="hsl(var(--border))" strokeWidth="0.5" strokeDasharray="3 6" className="animate-[spin_30s_linear_infinite] origin-center" />
                 </svg>
 
-                {/* Layer labels — positioned outside the circle */}
+                {/* Labels */}
                 {[
-                  { label: "Agenti", sub: "izolovaní specialisté", x: "50%", y: "-4%" },
-                  { label: "Pipeline", sub: "build, test, deploy", x: "105%", y: "32%" },
-                  { label: "Paměť", sub: "data a znalosti", x: "90%", y: "95%" },
-                  { label: "Nástroje", sub: "MCP a API", x: "10%", y: "95%" },
-                  { label: "Učení", sub: "zpětná vazba", x: "-5%", y: "32%" },
+                  { label: "Agenti", tip: "Izolovaní specialisté v kontejnerech", x: "50%", y: "0%" },
+                  { label: "Pipeline", tip: "Automatický build, test a deploy", x: "100%", y: "50%" },
+                  { label: "Paměť", tip: "Databáze, vektory, naučené znalosti", x: "50%", y: "100%" },
+                  { label: "Nástroje", tip: "Figma, GitHub, Playwright, Vercel...", x: "0%", y: "50%" },
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 text-center cursor-default group"
+                    className="absolute -translate-x-1/2 -translate-y-1/2 cursor-default group"
                     style={{ left: item.x, top: item.y }}
                   >
-                    <div className="font-mono text-xs text-foreground font-medium group-hover:text-primary transition-colors">{item.label}</div>
-                    <div className="font-mono text-[10px] text-muted-foreground/60">{item.sub}</div>
+                    <span className="font-mono text-xs text-foreground group-hover:text-primary transition-colors">{item.label}</span>
+                    <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
+                      {item.tip}
+                    </span>
                   </div>
                 ))}
               </div>
