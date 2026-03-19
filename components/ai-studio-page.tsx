@@ -163,6 +163,11 @@ export default function AiStudioPage() {
               <div className="mt-2 px-4 py-2 rounded-lg border border-dashed border-border/40">
                 <span className="font-mono text-xs text-muted-foreground">↻ zpětná smyčka · monitoring · učení</span>
               </div>
+
+              {/* Human note */}
+              <div className="mt-4 text-center">
+                <span className="font-mono text-xs text-primary/60">Člověk je součástí každého kroku. Schvaluje, směřuje, rozhoduje.</span>
+              </div>
             </div>
 
             {/* Descriptions — mobile only */}
