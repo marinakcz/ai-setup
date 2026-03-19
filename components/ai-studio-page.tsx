@@ -39,6 +39,12 @@ export default function AiStudioPage() {
             <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground max-w-2xl mx-auto">
               Modulární systém AI agentů, paměti a nástrojů. Zadáte záměr, systém naplánuje postup, sestaví tým agentů a vytvoří funkční produkt. Weby, aplikace, prototypy, experimenty.
             </p>
+            <div className="mt-4">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/25 bg-primary/[0.04] font-mono text-xs text-primary">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                Aktivně vyvíjíme
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -263,14 +269,6 @@ export default function AiStudioPage() {
           </div>
         </div>
       </section>
-
-      {/* Status badge */}
-      <div className="relative z-10 pb-16 text-center">
-        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/25 bg-primary/[0.04] font-mono text-xs text-primary">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          Aktivně vyvíjíme
-        </span>
-      </div>
 
       </main>
       <SiteFooter />
