@@ -2,7 +2,6 @@
 
 import { SiteFooter } from "@/components/site-footer"
 import { ScrambleTag } from "@/components/scramble-tag"
-import { ArchitectureDiagram } from "@/components/architecture-diagram"
 
 const ICON_MAP: Record<string, string> = {
   "AI modely": "/icons/claude.svg",
@@ -102,21 +101,75 @@ export default function AiStudioPage() {
             </h2>
           </div>
 
-          <ArchitectureDiagram />
+          {/* Static flow diagram */}
+          <div className="max-w-4xl mx-auto">
 
-          {/* Legend under diagram */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 max-w-4xl mx-auto">
-            {[
-              { label: "Orchestrátor", desc: "Rozloží úkol, vybere agenty, koordinuje" },
-              { label: "Agenti", desc: "Izolovaní specialisté na kód, design, testy" },
-              { label: "Paměť", desc: "Databáze, vektory, naučené znalosti" },
-              { label: "Pipeline", desc: "Automatický build, test a deploy" },
-            ].map((item, i) => (
-              <div key={i} className="text-center">
-                <p className="font-mono text-xs text-foreground font-medium">{item.label}</p>
-                <p className="font-mono text-xs text-muted-foreground mt-1">{item.desc}</p>
+            {/* Main horizontal flow */}
+            <div className="flex flex-col items-center gap-3">
+
+              {/* Row 1: Designér → Orchestrátor */}
+              <div className="flex items-center gap-4 w-full justify-center">
+                <div className="px-5 py-3 rounded-xl border border-border/60 bg-card/30">
+                  <span className="font-mono text-xs text-muted-foreground">Designér</span>
+                </div>
+                <span className="font-mono text-xs text-primary/40">→</span>
+                <div className="px-5 py-3 rounded-xl border border-primary/30 bg-primary/[0.03]">
+                  <span className="font-mono text-xs text-primary font-medium">Orchestrátor</span>
+                </div>
               </div>
-            ))}
+
+              <span className="font-mono text-primary/30">↓</span>
+
+              {/* Row 2: Agenti + Paměť + Nástroje */}
+              <div className="flex items-center gap-3 w-full justify-center flex-wrap">
+                <div className="px-5 py-3 rounded-xl border border-primary/30 bg-primary/[0.03]">
+                  <span className="font-mono text-xs text-foreground">Agenti</span>
+                </div>
+                <span className="font-mono text-xs text-muted-foreground/30">+</span>
+                <div className="px-5 py-3 rounded-xl border border-border/40">
+                  <span className="font-mono text-xs text-muted-foreground">Paměť</span>
+                </div>
+                <span className="font-mono text-xs text-muted-foreground/30">+</span>
+                <div className="px-5 py-3 rounded-xl border border-border/40">
+                  <span className="font-mono text-xs text-muted-foreground">Nástroje</span>
+                </div>
+              </div>
+
+              <span className="font-mono text-primary/30">↓</span>
+
+              {/* Row 3: Pipeline → Produkt */}
+              <div className="flex items-center gap-4 w-full justify-center">
+                <div className="px-5 py-3 rounded-xl border border-primary/30 bg-primary/[0.03]">
+                  <span className="font-mono text-xs text-foreground">Pipeline</span>
+                </div>
+                <span className="font-mono text-xs text-primary/40">→</span>
+                <div className="px-5 py-3 rounded-xl border border-border/60 bg-card/30">
+                  <span className="font-mono text-xs text-muted-foreground">Produkt</span>
+                </div>
+              </div>
+
+              {/* Feedback loop */}
+              <div className="mt-2 px-4 py-2 rounded-lg border border-dashed border-border/40">
+                <span className="font-mono text-xs text-muted-foreground">↻ zpětná smyčka · monitoring · učení</span>
+              </div>
+            </div>
+
+            {/* Descriptions */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12">
+              {[
+                { label: "Orchestrátor", desc: "Rozloží úkol na kroky. Vybere agenty. Koordinuje celý proces." },
+                { label: "Agenti", desc: "Izolovaní specialisté. Kód, design, testy, obsah. Každý má svou roli." },
+                { label: "Paměť + Nástroje", desc: "Databáze, vektory, MCP servery. Agenti si odsud čtou kontext." },
+                { label: "Pipeline", desc: "Automatický build, test a deploy. Bez lidského zásahu." },
+                { label: "Zpětná smyčka", desc: "Sleduje výkon a chyby. Učí se. Navrhuje vylepšení." },
+                { label: "Produkt", desc: "Nasazený web, aplikace nebo prototyp. Živý a sledovaný." },
+              ].map((item, i) => (
+                <div key={i}>
+                  <p className="font-mono text-xs text-foreground font-medium mb-1">{item.label}</p>
+                  <p className="font-mono text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
