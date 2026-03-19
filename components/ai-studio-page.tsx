@@ -92,17 +92,27 @@ export default function AiStudioPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
+          <div className="max-w-md mx-auto">
             {[
-              { label: "Orchestrátor", desc: "Plánuje, deleguje, rozhoduje" },
-              { label: "Agenti", desc: "Izolovaní specialisté" },
-              { label: "Paměť", desc: "Databáze, vektory, znalosti" },
-              { label: "Nástroje", desc: "MCP servery, API" },
-              { label: "Pipeline", desc: "Build, test, deploy" },
-            ].map((item, i) => (
-              <div key={i} className="text-center p-5 rounded-xl border border-border hover:border-primary/30 transition-colors">
-                <div className="font-mono text-xs font-medium text-foreground mb-1">{item.label}</div>
-                <div className="font-mono text-[10px] text-muted-foreground">{item.desc}</div>
+              { label: "Orchestrátor", desc: "Plánuje, deleguje, rozhoduje", icon: "⚡" },
+              { label: "Agenti", desc: "Izolovaní specialisté v kontejnerech", icon: "🤖" },
+              { label: "Paměť", desc: "Databáze, vektory, naučené znalosti", icon: "🧠" },
+              { label: "Nástroje", desc: "Figma, GitHub, Playwright, Vercel...", icon: "🔧" },
+              { label: "Pipeline", desc: "Automatický build, test, deploy", icon: "🚀" },
+            ].map((item, i, arr) => (
+              <div key={i}>
+                <div className="group flex items-center gap-5 p-5 rounded-xl border border-border hover:border-primary/40 hover:bg-primary/[0.02] transition-all duration-300 relative">
+                  <span className="text-2xl w-10 text-center shrink-0 group-hover:scale-110 transition-transform duration-300">{item.icon}</span>
+                  <div>
+                    <div className="font-body font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{item.label}</div>
+                    <div className="font-mono text-xs text-muted-foreground mt-0.5">{item.desc}</div>
+                  </div>
+                </div>
+                {i < arr.length - 1 && (
+                  <div className="flex justify-center py-1">
+                    <div className="w-px h-6 bg-gradient-to-b from-border to-border/30" />
+                  </div>
+                )}
               </div>
             ))}
           </div>
