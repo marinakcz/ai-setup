@@ -1,17 +1,51 @@
 "use client"
 
-import { useCallback } from "react"
+import { useState, useCallback } from "react"
 import {
   ReactFlow,
   Background,
   type Node,
   type Edge,
+  type NodeProps,
   Position,
   MarkerType,
+  Handle,
 } from "@xyflow/react"
 import "@xyflow/react/dist/style.css"
 
-const nodeStyle = {
+// Custom node with tooltip
+function TooltipNode({ data }: NodeProps) {
+  const [hover, setHover] = useState(false)
+  const style = data.nodeStyle as React.CSSProperties
+
+  return (
+    <div
+      style={style}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      className="relative"
+    >
+      {data.targetPos && <Handle type="target" position={data.targetPos as Position} style={{ opacity: 0 }} />}
+      {data.sourcePos && <Handle type="source" position={data.sourcePos as Position} style={{ opacity: 0 }} />}
+      {data.label as string}
+      {data.tip && (
+        <div
+          className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-white text-[#0d0d0d] text-[10px] font-mono whitespace-nowrap transition-all duration-200"
+          style={{
+            opacity: hover ? 1 : 0,
+            transform: hover ? "translateX(-50%) scale(1)" : "translateX(-50%) scale(0.95)",
+          }}
+        >
+          {data.tip as string}
+        </div>
+      )}
+    </div>
+  )
+}
+
+const nodeTypes = { tooltip: TooltipNode }
+
+const base = {
   background: "#1a1a1a",
   border: "1px solid #2e2e2e",
   borderRadius: "12px",
@@ -20,116 +54,91 @@ const nodeStyle = {
   fontSize: "13px",
   fontFamily: "var(--font-body), system-ui, sans-serif",
   fontWeight: 600,
+  cursor: "default",
 }
 
-const studioNodeStyle = {
-  ...nodeStyle,
+const studioStyle = {
+  ...base,
   border: "1px solid rgba(240, 88, 35, 0.3)",
   background: "rgba(240, 88, 35, 0.04)",
 }
 
-const labelStyle = {
-  ...nodeStyle,
+const inputStyle = {
+  ...base,
+  border: "1px solid rgba(140, 140, 140, 0.4)",
+  background: "#222",
+  color: "#bbb",
+}
+
+const feedbackStyle = {
+  ...base,
   fontSize: "10px",
   fontFamily: "var(--font-mono), monospace",
   fontWeight: 400,
-  color: "#8c8c8c",
-  padding: "6px 12px",
+  color: "#666",
+  padding: "6px 14px",
+  border: "1px dashed #333",
+  background: "transparent",
 }
 
 const nodes: Node[] = [
   {
-    id: "designer",
-    data: { label: "Designér" },
-    position: { x: 0, y: 150 },
-    style: nodeStyle,
-    sourcePosition: Position.Right,
+    id: "designer", type: "tooltip", position: { x: 0, y: 150 },
+    data: { label: "Designér", tip: "Brief, záměr, schválení", nodeStyle: inputStyle, sourcePos: Position.Right },
   },
   {
-    id: "orchestrator",
-    data: { label: "Orchestrátor" },
-    position: { x: 220, y: 150 },
-    style: { ...studioNodeStyle, fontSize: "14px" },
-    sourcePosition: Position.Right,
-    targetPosition: Position.Left,
+    id: "orchestrator", type: "tooltip", position: { x: 250, y: 150 },
+    data: { label: "Orchestrátor", tip: "Plánuje postup, deleguje úkoly, řídí agenty", nodeStyle: { ...studioStyle, fontSize: "14px" }, sourcePos: Position.Right, targetPos: Position.Left },
   },
   {
-    id: "agents",
-    data: { label: "Agenti" },
-    position: { x: 440, y: 60 },
-    style: studioNodeStyle,
-    targetPosition: Position.Left,
-    sourcePosition: Position.Right,
+    id: "agents", type: "tooltip", position: { x: 500, y: 50 },
+    data: { label: "Agenti", tip: "Izolovaní specialisté v kontejnerech", nodeStyle: studioStyle, targetPos: Position.Left, sourcePos: Position.Right },
   },
   {
-    id: "memory",
-    data: { label: "Paměť" },
-    position: { x: 440, y: 150 },
-    style: studioNodeStyle,
-    targetPosition: Position.Left,
+    id: "memory", type: "tooltip", position: { x: 500, y: 150 },
+    data: { label: "Paměť", tip: "Databáze, vektory, naučené znalosti", nodeStyle: studioStyle, targetPos: Position.Left },
   },
   {
-    id: "tools",
-    data: { label: "Nástroje" },
-    position: { x: 440, y: 240 },
-    style: studioNodeStyle,
-    targetPosition: Position.Left,
+    id: "tools", type: "tooltip", position: { x: 500, y: 250 },
+    data: { label: "Nástroje", tip: "Figma, GitHub, Playwright, Vercel...", nodeStyle: studioStyle, targetPos: Position.Left },
   },
   {
-    id: "pipeline",
-    data: { label: "Pipeline" },
-    position: { x: 660, y: 150 },
-    style: studioNodeStyle,
-    targetPosition: Position.Left,
-    sourcePosition: Position.Right,
+    id: "pipeline", type: "tooltip", position: { x: 730, y: 150 },
+    data: { label: "Pipeline", tip: "Automatický build, test a deploy", nodeStyle: studioStyle, targetPos: Position.Left, sourcePos: Position.Right },
   },
   {
-    id: "product",
-    data: { label: "Produkt" },
-    position: { x: 880, y: 150 },
-    style: nodeStyle,
-    targetPosition: Position.Left,
-    sourcePosition: Position.Bottom,
+    id: "product", type: "tooltip", position: { x: 960, y: 150 },
+    data: { label: "Produkt", tip: "Web, aplikace, prototyp", nodeStyle: inputStyle, targetPos: Position.Left, sourcePos: Position.Bottom },
   },
   {
-    id: "feedback-label",
-    data: { label: "zpětná smyčka" },
-    position: { x: 420, y: 340 },
-    style: labelStyle,
-    targetPosition: Position.Right,
-    sourcePosition: Position.Left,
+    id: "feedback", type: "tooltip", position: { x: 470, y: 360 },
+    data: { label: "zpětná smyčka", tip: "Monitoring, učení, optimalizace", nodeStyle: feedbackStyle, targetPos: Position.Right, sourcePos: Position.Left },
   },
 ]
 
-const edgeStyle = {
-  stroke: "#2e2e2e",
-  strokeWidth: 1.5,
-}
-
-const primaryEdgeStyle = {
-  stroke: "rgba(240, 88, 35, 0.4)",
-  strokeWidth: 1.5,
-}
+const orange = "rgba(240, 88, 35, 0.4)"
+const grey = "#2e2e2e"
 
 const edges: Edge[] = [
-  { id: "e1", source: "designer", target: "orchestrator", style: primaryEdgeStyle, markerEnd: { type: MarkerType.ArrowClosed, color: "rgba(240, 88, 35, 0.4)" } },
-  { id: "e2", source: "orchestrator", target: "agents", style: primaryEdgeStyle, markerEnd: { type: MarkerType.ArrowClosed, color: "rgba(240, 88, 35, 0.4)" } },
-  { id: "e3", source: "orchestrator", target: "memory", style: edgeStyle },
-  { id: "e4", source: "orchestrator", target: "tools", style: edgeStyle },
-  { id: "e5", source: "agents", target: "pipeline", style: primaryEdgeStyle, markerEnd: { type: MarkerType.ArrowClosed, color: "rgba(240, 88, 35, 0.4)" } },
-  { id: "e6", source: "pipeline", target: "product", style: primaryEdgeStyle, markerEnd: { type: MarkerType.ArrowClosed, color: "rgba(240, 88, 35, 0.4)" } },
-  { id: "e7", source: "product", target: "feedback-label", style: { ...edgeStyle, strokeDasharray: "6 4" }, type: "smoothstep" },
-  { id: "e8", source: "feedback-label", target: "orchestrator", style: { ...edgeStyle, strokeDasharray: "6 4" }, type: "smoothstep", markerEnd: { type: MarkerType.ArrowClosed, color: "#2e2e2e" } },
+  { id: "e1", source: "designer", target: "orchestrator", style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
+  { id: "e2", source: "orchestrator", target: "agents", style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
+  { id: "e3", source: "orchestrator", target: "memory", style: { stroke: grey, strokeWidth: 1.5 } },
+  { id: "e4", source: "orchestrator", target: "tools", style: { stroke: grey, strokeWidth: 1.5 } },
+  { id: "e5", source: "agents", target: "pipeline", style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
+  { id: "e6", source: "pipeline", target: "product", style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
+  { id: "e7", source: "product", target: "feedback", type: "smoothstep", style: { stroke: grey, strokeWidth: 1, strokeDasharray: "6 4" } },
+  { id: "e8", source: "feedback", target: "orchestrator", type: "smoothstep", style: { stroke: grey, strokeWidth: 1, strokeDasharray: "6 4" }, markerEnd: { type: MarkerType.ArrowClosed, color: grey } },
 ]
 
 export function ArchitectureDiagram() {
   return (
-    <div className="w-full max-w-4xl mx-auto rounded-2xl border border-border overflow-hidden" style={{ height: 420 }}>
+    <div className="w-full" style={{ height: 450 }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
+        nodeTypes={nodeTypes}
         fitView
-        fitViewOptions={{ padding: 0.3 }}
+        fitViewOptions={{ padding: 0.2 }}
         panOnDrag={false}
         zoomOnScroll={false}
         zoomOnPinch={false}
@@ -140,7 +149,7 @@ export function ArchitectureDiagram() {
         proOptions={{ hideAttribution: true }}
         style={{ background: "#0d0d0d" }}
       >
-        <Background color="#1a1a1a" gap={20} size={1} />
+        <Background color="#1a1a1a" gap={24} size={1} />
       </ReactFlow>
     </div>
   )
