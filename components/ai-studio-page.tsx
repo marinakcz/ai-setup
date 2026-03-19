@@ -42,7 +42,7 @@ export default function AiStudioPage() {
             <div className="mt-4">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/25 bg-primary/[0.04] font-mono text-xs text-primary">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                Aktivně vyvíjíme
+                Ve stavu aktivního vývoje a ladění
               </span>
             </div>
           </div>
