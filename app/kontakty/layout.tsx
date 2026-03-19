@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Spojme se",
+  title: "Kontakty",
   description: "Máte nápad nebo projekt? Ozvěte se.",
   openGraph: {
-    title: "Spojme se | Levou zadní",
+    title: "Kontakty | Levou zadní",
     description: "Máte nápad? Projekt? Ozvěte se.",
   },
-  alternates: { canonical: "/poptavka" },
+  alternates: { canonical: "/kontakty" },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Domů", item: "https://levouzadni.cz" },
-          { "@type": "ListItem", position: 2, name: "Spojme se", item: "https://levouzadni.cz/poptavka" },
+          { "@type": "ListItem", position: 2, name: "Spojme se", item: "https://levouzadni.cz/kontakty" },
         ],
       })}} />
       {children}

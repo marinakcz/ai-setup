@@ -53,7 +53,7 @@ export default function PrivacyPage() {
             <h2 className="font-body font-semibold text-[clamp(1.125rem,1.4vw,1.5rem)] leading-snug text-foreground mb-2">Správce údajů</h2>
             <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] text-muted-foreground leading-[1.8]">
               Mgr. Pavel Martinovský, IČO: 06054251, Hlavenec 177, 294 76 Praha-východ.
-              Kontakt: <Link href="/poptavka" className="text-primary hover:underline">studio@levouzadni.cz</Link>.
+              Kontakt: <Link href="/kontakty" className="text-primary hover:underline">studio@levouzadni.cz</Link>.
             </p>
           </div>
 
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
             <h2 className="font-body font-semibold text-[clamp(1.125rem,1.4vw,1.5rem)] leading-snug text-foreground mb-2">Máte dotaz?</h2>
             <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] text-muted-foreground leading-[1.8]">
               Ozvěte se přes{" "}
-              <Link href="/poptavka" className="text-primary hover:underline">kontaktní stránku</Link>.
+              <Link href="/kontakty" className="text-primary hover:underline">kontaktní stránku</Link>.
             </p>
           </div>
         </div>

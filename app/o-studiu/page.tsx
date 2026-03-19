@@ -191,7 +191,7 @@ export default function AboutPage() {
 
         {/* CTA */}
         <div className="text-center py-8">
-          <PrimaryButton href="/poptavka">Pojďme se spojit</PrimaryButton>
+          <PrimaryButton href="/kontakty">Pojďme se spojit</PrimaryButton>
         </div>
       </main>
 

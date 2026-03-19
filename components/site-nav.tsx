@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { href: "/", label: "Domů" },
   { href: "/o-studiu", label: "O studiu" },
   { href: "/pod-kapotou", label: "Pod kapotou" },
-  { href: "/poptavka", label: "Spojme se" },
+  { href: "/kontakty", label: "Spojme se" },
 ]
 
 export function SiteNav() {

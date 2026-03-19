@@ -179,7 +179,7 @@ export default function Home() {
               <span className="text-foreground">místo pro dobré nápady.</span>
             </h2>
             <div className="reveal-item" style={{ transitionDelay: "200ms" }}>
-              <PrimaryButton href="/poptavka">Pojďme se spojit</PrimaryButton>
+              <PrimaryButton href="/kontakty">Pojďme se spojit</PrimaryButton>
             </div>
           </div>
         </section>
