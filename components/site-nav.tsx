@@ -5,10 +5,10 @@ import Image from "next/image"
 import Link from "next/link"
 
 const NAV_LINKS = [
-  { href: "/", label: "/Domů" },
-  { href: "/o-studiu", label: "/O studiu" },
-  { href: "/pod-kapotou", label: "/Pod kapotou" },
-  { href: "/kontakty", label: "/Spojme se" },
+  { href: "/", label: "Domů" },
+  { href: "/o-studiu", label: "O studiu" },
+  { href: "/pod-kapotou", label: "Pod kapotou" },
+  { href: "/kontakty", label: "Spojme se" },
 ]
 
 export function SiteNav() {
@@ -69,7 +69,7 @@ export function SiteNav() {
                     fontSize: "clamp(2.5rem, 6vw, 5rem)",
                   }}
                 >
-                  {link.label}
+                  <span className="text-[0.6em] text-muted-foreground font-light mr-2">/</span>{link.label}
                 </Link>
               ))}
             </div>
