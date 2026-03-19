@@ -227,10 +227,10 @@ export default function AiStudioPage() {
               <ScrambleTag text="/ HARDWARE" delay={300} />
             </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
-              Běží lokálně.
+              Tady bydlí AI studio.
             </h2>
             <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground mt-2">
-              Dedikovaný Mac mini. Cloud jen pro deploy a databázi.
+              Malý. Ale maká jako ďas, pane profesore.
             </p>
           </div>
 
