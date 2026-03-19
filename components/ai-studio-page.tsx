@@ -241,8 +241,20 @@ export default function AiStudioPage() {
             </p>
           </div>
 
-          <div className="max-w-xs mx-auto mb-4">
+          <div
+            className="max-w-xs mx-auto mb-4 relative group cursor-default"
+            onMouseEnter={(e) => { const t = e.currentTarget.querySelector('[role=tooltip]') as HTMLElement; if (t) { t.style.opacity = '1'; t.style.transform = 'scale(1)' } }}
+            onMouseLeave={(e) => { const t = e.currentTarget.querySelector('[role=tooltip]') as HTMLElement; if (t) { t.style.opacity = '0'; t.style.transform = 'scale(0.95)' } }}
+          >
             <img src="/mac-mini.png" alt="Mac mini M4" className="w-full h-auto" loading="lazy" />
+            <span
+              role="tooltip"
+              className="pointer-events-none absolute -top-12 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-xl bg-card border border-border shadow-xl transition-all duration-200 whitespace-nowrap"
+              style={{ opacity: 0, transform: 'scale(0.95)' }}
+            >
+              <span className="font-mono text-xs text-muted-foreground">Až jednou vyrostu, budu </span>
+              <span className="font-mono text-xs text-primary font-medium">Mac Studio</span>
+            </span>
           </div>
           <p className="text-center font-mono text-xs text-muted-foreground mb-6">+ NAS Synology pro zálohy</p>
         </div>
