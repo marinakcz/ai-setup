@@ -17,7 +17,7 @@ export function SiteFooter() {
           <Link href="/ochrana-udaju" aria-label="Ochrana osobních údajů" className="py-2 px-3 hover:text-foreground transition-colors"><span className="hidden sm:inline">Ochrana osobních údajů</span><span className="sm:hidden">Ochrana údajů</span></Link>
         </nav>
         <span className="font-mono text-xs text-muted-foreground">
-          Copyright © 2026 levouzadni.cz
+          Copyright © 2026 Levou zadní / AI studio pro digitální produkty
         </span>
       </div>
     </footer>
