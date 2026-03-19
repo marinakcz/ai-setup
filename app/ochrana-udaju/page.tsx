@@ -50,6 +50,35 @@ export default function PrivacyPage() {
           </div>
 
           <div>
+            <h2 className="font-body font-semibold text-foreground mb-2">Správce údajů</h2>
+            <p className="font-body font-light text-muted-foreground leading-[1.8]">
+              Mgr. Pavel Martinovský, IČO: 06054251, Hlavenec 177, 294 76 Praha-východ.
+              Kontakt: <Link href="/poptavka" className="text-primary hover:underline">studio@levouzadni.cz</Link>.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-body font-semibold text-foreground mb-2">Právní základ</h2>
+            <p className="font-body font-light text-muted-foreground leading-[1.8]">
+              Údaje zpracováváme na základě oprávněného zájmu (odpověď na váš dotaz) a vašeho souhlasu (odeslání formuláře).
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-body font-semibold text-foreground mb-2">Vaše práva</h2>
+            <p className="font-body font-light text-muted-foreground leading-[1.8]">
+              Máte právo na přístup ke svým údajům, jejich opravu, výmaz nebo přenositelnost. Stačí nám napsat a vyřídíme to.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-body font-semibold text-foreground mb-2">Doba uchovávání</h2>
+            <p className="font-body font-light text-muted-foreground leading-[1.8]">
+              Údaje z formuláře uchováváme jen po dobu nezbytnou k vyřízení dotazu, maximálně 1 rok. Poté je smažeme.
+            </p>
+          </div>
+
+          <div>
             <h2 className="font-body font-semibold text-foreground mb-2">Máte dotaz?</h2>
             <p className="font-body font-light text-muted-foreground leading-[1.8]">
               Ozvěte se přes{" "}
