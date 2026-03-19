@@ -101,60 +101,37 @@ export default function AiStudioPage() {
             </h2>
           </div>
 
-          {/* Flow diagram */}
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-stretch gap-6 mb-6">
-              <div className="flex-1 p-6 rounded-xl border border-border text-center">
-                <p className="font-mono text-xs tracking-[0.15em] text-primary mb-2">VSTUP</p>
-                <h3 className="font-body font-semibold text-lg text-foreground mb-2">Designér</h3>
-                <p className="font-mono text-xs text-muted-foreground">Brief, směr, schválení</p>
-              </div>
-              <div className="hidden md:flex items-center">
-                <svg viewBox="0 0 40 24" className="w-8 h-5 text-primary/30" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 12h34M26 5l8 7-8 7" /></svg>
-              </div>
-              <div className="flex md:hidden justify-center">
-                <svg viewBox="0 0 24 30" className="w-5 h-6 text-primary/30" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M12 0v24M6 18l6 6 6-6" /></svg>
-              </div>
-              <div className="flex-[2] p-6 rounded-xl border border-primary/25 bg-primary/[0.02]">
-                <p className="font-mono text-xs tracking-[0.15em] text-primary mb-4 text-center">AI STUDIO</p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  {[
-                    { label: "Orchestrátor", tip: "Plánuje, deleguje, rozhoduje" },
-                    { label: "Agenti", tip: "Izolovaní specialisté v kontejnerech" },
-                    { label: "Paměť", tip: "Databáze, vektory, naučené znalosti" },
-                    { label: "Nástroje", tip: "Figma, GitHub, Playwright, Vercel..." },
-                    { label: "Pipeline", tip: "Build, test, deploy" },
-                    { label: "Učení", tip: "Zpětná vazba a optimalizace" },
-                  ].map((item, i) => (
-                    <div key={i} className="group relative px-3 py-2.5 rounded-lg border border-border/50 hover:border-primary/40 transition-colors cursor-default text-center">
-                      <span className="font-mono text-xs text-foreground group-hover:text-primary transition-colors">{item.label}</span>
-                      <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
-                        {item.tip}
-                      </span>
-                    </div>
-                  ))}
+          {/* Flow — minimal timeline */}
+          <div className="max-w-3xl mx-auto relative">
+
+            {/* Vertical line */}
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/30 via-border to-primary/30 -translate-x-1/2" />
+
+            {[
+              { num: "01", label: "Designér", desc: "Brief, záměr, podklady, schválení", side: "left" },
+              { num: "02", label: "Orchestrátor", desc: "Plánuje postup, rozdělí úkoly, řídí agenty", side: "right" },
+              { num: "03", label: "Agenti", desc: "Izolovaní specialisté. Kód, design, testy, obsah.", side: "left" },
+              { num: "04", label: "Paměť + Nástroje", desc: "Databáze, vektory, MCP servery, API", side: "right" },
+              { num: "05", label: "Pipeline", desc: "Automatický build, test a deploy", side: "left" },
+              { num: "06", label: "Produkt", desc: "Nasazený, sledovaný, vylepšovaný", side: "right" },
+              { num: "07", label: "Zpětná smyčka", desc: "Monitoring, učení, optimalizace. Cyklus se opakuje.", side: "left" },
+            ].map((item, i) => (
+              <div key={i} className={`relative flex items-center gap-6 mb-8 ${item.side === "right" ? "md:flex-row-reverse md:text-right" : ""}`}>
+
+                {/* Dot on line */}
+                <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-background border-2 border-primary -translate-x-1/2 z-10" />
+
+                {/* Spacer for line */}
+                <div className="w-12 md:w-1/2 shrink-0" />
+
+                {/* Content */}
+                <div className="flex-1 group">
+                  <span className="font-mono text-[10px] text-primary/50 group-hover:text-primary transition-colors">{item.num}</span>
+                  <h3 className="font-body font-semibold text-foreground group-hover:text-primary transition-colors mt-1">{item.label}</h3>
+                  <p className="font-mono text-xs text-muted-foreground mt-1">{item.desc}</p>
                 </div>
               </div>
-              <div className="hidden md:flex items-center">
-                <svg viewBox="0 0 40 24" className="w-8 h-5 text-primary/30" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 12h34M26 5l8 7-8 7" /></svg>
-              </div>
-              <div className="flex md:hidden justify-center">
-                <svg viewBox="0 0 24 30" className="w-5 h-6 text-primary/30" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M12 0v24M6 18l6 6 6-6" /></svg>
-              </div>
-              <div className="flex-1 p-6 rounded-xl border border-border text-center">
-                <p className="font-mono text-xs tracking-[0.15em] text-primary mb-2">VÝSTUP</p>
-                <h3 className="font-body font-semibold text-lg text-foreground mb-2">Produkt</h3>
-                <p className="font-mono text-xs text-muted-foreground">Web, aplikace, prototyp</p>
-              </div>
-            </div>
-            <div className="rounded-xl border border-dashed border-primary/20 p-4 flex items-center justify-center gap-4">
-              <svg viewBox="0 0 20 12" className="w-4 h-3 text-primary/40 rotate-180 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 6h16M10 1l6 5-6 5" /></svg>
-              <div className="text-center">
-                <p className="font-mono text-xs text-foreground">Zpětná smyčka</p>
-                <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Monitoring, učení, vylepšování. Produkt se zlepšuje sám.</p>
-              </div>
-              <svg viewBox="0 0 20 12" className="w-4 h-3 text-primary/40 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M0 6h16M10 1l6 5-6 5" /></svg>
-            </div>
+            ))}
           </div>
         </div>
       </section>
