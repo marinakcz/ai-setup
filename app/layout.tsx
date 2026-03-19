@@ -21,13 +21,13 @@ const jetbrainsMono = JetBrains_Mono({
 
 const hkGroteskWide = localFont({
   src: [
-    { path: "../public/fonts/HKGroteskWide-Light.otf", weight: "300", style: "normal" },
-    { path: "../public/fonts/HKGroteskWide-Regular.otf", weight: "400", style: "normal" },
-    { path: "../public/fonts/HKGroteskWide-Medium.otf", weight: "500", style: "normal" },
-    { path: "../public/fonts/HKGroteskWide-SemiBold.otf", weight: "600", style: "normal" },
-    { path: "../public/fonts/HKGroteskWide-Bold.otf", weight: "700", style: "normal" },
-    { path: "../public/fonts/HKGroteskWide-ExtraBold.otf", weight: "800", style: "normal" },
-    { path: "../public/fonts/HKGroteskWide-Black.otf", weight: "900", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-Light.woff2", weight: "300", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-ExtraBold.woff2", weight: "800", style: "normal" },
+    { path: "../public/fonts/HKGroteskWide-Black.woff2", weight: "900", style: "normal" },
   ],
   variable: "--font-body",
   display: "swap",

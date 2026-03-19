@@ -105,86 +105,67 @@ export default function AiStudioPage() {
             </h2>
           </div>
 
-          {/* Static flow diagram */}
-          <div className="max-w-4xl mx-auto">
+          {/* Layered diagram — top to bottom */}
+          <div className="max-w-2xl mx-auto space-y-0">
 
-            {/* Main horizontal flow */}
-            <div className="flex flex-col items-center gap-3">
-
-              {/* Row 1: Designér → Orchestrátor */}
-              <div className="flex items-center gap-4 w-full justify-center">
-                <div className="group relative px-5 py-3 rounded-xl border border-border/60 bg-card/30 cursor-default">
-                  <span className="font-mono text-xs text-muted-foreground">Designér</span>
-                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Zadá brief, schválí plán, řídí směr</span>
-                </div>
-                <span className="font-mono text-xs text-primary/40">→</span>
-                <div className="group relative px-5 py-3 rounded-xl border border-primary/30 bg-primary/[0.03] cursor-default">
-                  <span className="font-mono text-xs text-primary font-medium">Orchestrátor</span>
-                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Rozloží úkol, vybere agenty, koordinuje</span>
-                </div>
-              </div>
-
-              <span className="font-mono text-primary/30">↓</span>
-
-              {/* Row 2: Agenti + Paměť + Nástroje */}
-              <div className="flex items-center gap-3 w-full justify-center flex-wrap">
-                <div className="group relative px-5 py-3 rounded-xl border border-primary/30 bg-primary/[0.03] cursor-default">
-                  <span className="font-mono text-xs text-foreground">Agenti</span>
-                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Izolovaní specialisté na kód, design, testy</span>
-                </div>
-                <span className="font-mono text-xs text-muted-foreground/30">+</span>
-                <div className="group relative px-5 py-3 rounded-xl border border-border/40 cursor-default">
-                  <span className="font-mono text-xs text-muted-foreground">Paměť</span>
-                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Databáze, vektory, naučené znalosti</span>
-                </div>
-                <span className="font-mono text-xs text-muted-foreground/30">+</span>
-                <div className="group relative px-5 py-3 rounded-xl border border-border/40 cursor-default">
-                  <span className="font-mono text-xs text-muted-foreground">Nástroje</span>
-                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">MCP servery, Figma, GitHub, Playwright...</span>
-                </div>
-              </div>
-
-              <span className="font-mono text-primary/30">↓</span>
-
-              {/* Row 3: Pipeline → Produkt */}
-              <div className="flex items-center gap-4 w-full justify-center">
-                <div className="group relative px-5 py-3 rounded-xl border border-primary/30 bg-primary/[0.03] cursor-default">
-                  <span className="font-mono text-xs text-foreground">Pipeline</span>
-                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Build, test, deploy bez zásahu</span>
-                </div>
-                <span className="font-mono text-xs text-primary/40">→</span>
-                <div className="group relative px-5 py-3 rounded-xl border border-border/60 bg-card/30 cursor-default">
-                  <span className="font-mono text-xs text-muted-foreground">Produkt</span>
-                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Web, aplikace, prototyp. Nasazený a živý.</span>
-                </div>
-              </div>
-
-              {/* Feedback loop */}
-              <div className="mt-2 px-4 py-2 rounded-lg border border-dashed border-border/40">
-                <span className="font-mono text-xs text-muted-foreground">↻ zpětná smyčka · monitoring · učení</span>
-              </div>
-
-              {/* Human note */}
-              <div className="mt-4 text-center">
-                <span className="font-mono text-xs text-primary/60">Člověk je součástí každého kroku. Schvaluje, směřuje, rozhoduje.</span>
-              </div>
+            {/* Layer 1: Designér */}
+            <div className="p-5 rounded-t-2xl border border-border/60 bg-card/20 text-center">
+              <p className="font-mono text-xs text-muted-foreground/60 mb-1">VRSTVA 1</p>
+              <p className="font-body font-semibold text-foreground">Designér</p>
+              <p className="font-mono text-xs text-muted-foreground mt-1">Brief, směr, schválení. Člověk rozhoduje.</p>
             </div>
 
-            {/* Descriptions — mobile only */}
-            <div className="grid grid-cols-2 gap-6 mt-12 md:hidden">
-              {[
-                { label: "Orchestrátor", desc: "Rozloží úkol, vybere agenty, koordinuje" },
-                { label: "Agenti", desc: "Izolovaní specialisté na kód, design, testy" },
-                { label: "Paměť + Nástroje", desc: "Databáze, vektory, MCP servery" },
-                { label: "Pipeline", desc: "Build, test, deploy bez zásahu" },
-                { label: "Zpětná smyčka", desc: "Monitoring, učení, vylepšování" },
-                { label: "Produkt", desc: "Nasazený a sledovaný" },
-              ].map((item, i) => (
-                <div key={i}>
-                  <p className="font-mono text-xs text-foreground font-medium mb-1">{item.label}</p>
-                  <p className="font-mono text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
+            {/* Connector */}
+            <div className="flex justify-center"><div className="w-px h-4 bg-primary/30" /></div>
+
+            {/* Layer 2: Orchestrátor */}
+            <div className="p-5 border border-primary/30 bg-primary/[0.03] text-center">
+              <p className="font-mono text-xs text-primary/60 mb-1">VRSTVA 2</p>
+              <p className="font-body font-semibold text-primary">Orchestrátor</p>
+              <p className="font-mono text-xs text-muted-foreground mt-1">Rozloží úkol na kroky. Vybere agenty. Koordinuje.</p>
+            </div>
+
+            {/* Connector */}
+            <div className="flex justify-center"><div className="w-px h-4 bg-primary/30" /></div>
+
+            {/* Layer 3: Agenti + podpora */}
+            <div className="p-5 border border-primary/20 bg-primary/[0.02] text-center">
+              <p className="font-mono text-xs text-primary/60 mb-1">VRSTVA 3</p>
+              <div className="flex flex-wrap justify-center gap-3 mb-2">
+                <span className="font-body font-semibold text-foreground">Agenti</span>
+                <span className="text-border">·</span>
+                <span className="font-body text-muted-foreground">Paměť</span>
+                <span className="text-border">·</span>
+                <span className="font-body text-muted-foreground">Nástroje</span>
+              </div>
+              <p className="font-mono text-xs text-muted-foreground">Izolovaní specialisté + databáze + MCP servery</p>
+            </div>
+
+            {/* Connector */}
+            <div className="flex justify-center"><div className="w-px h-4 bg-primary/30" /></div>
+
+            {/* Layer 4: Pipeline */}
+            <div className="p-5 border border-primary/20 bg-primary/[0.02] text-center">
+              <p className="font-mono text-xs text-primary/60 mb-1">VRSTVA 4</p>
+              <p className="font-body font-semibold text-foreground">Pipeline</p>
+              <p className="font-mono text-xs text-muted-foreground mt-1">Build, test, deploy. Automaticky.</p>
+            </div>
+
+            {/* Connector */}
+            <div className="flex justify-center"><div className="w-px h-4 bg-primary/30" /></div>
+
+            {/* Layer 5: Produkt */}
+            <div className="p-5 rounded-b-2xl border border-border/60 bg-card/20 text-center">
+              <p className="font-mono text-xs text-muted-foreground/60 mb-1">VRSTVA 5</p>
+              <p className="font-body font-semibold text-foreground">Produkt</p>
+              <p className="font-mono text-xs text-muted-foreground mt-1">Nasazený, sledovaný, vylepšovaný.</p>
+            </div>
+
+            {/* Feedback */}
+            <div className="flex justify-center pt-4">
+              <div className="px-5 py-2.5 rounded-xl border border-dashed border-primary/20 text-center">
+                <p className="font-mono text-xs text-muted-foreground">↻ zpětná smyčka — monitoring, učení, optimalizace</p>
+              </div>
             </div>
           </div>
         </div>
