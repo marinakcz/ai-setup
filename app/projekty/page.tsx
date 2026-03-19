@@ -4,6 +4,12 @@ import { SiteFooter } from "@/components/site-footer"
 export const metadata: Metadata = {
   title: "Projekty",
   description: "Co se chystá a jaké máme aktuálně kapacity.",
+  openGraph: {
+    title: "Projekty | Levou zadní",
+    description: "Co se chystá a jaké máme aktuálně kapacity.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Levou zadní — AI studio" }],
+  },
+  alternates: { canonical: "/projekty" },
 }
 
 const UPDATES = [
