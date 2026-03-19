@@ -34,7 +34,7 @@ export default function AiStudioPage() {
               Jak to celé funguje
             </h1>
             <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground max-w-xl mx-auto">
-              Designér, AI a sada nástrojů. Od prvního nápadu po živý web.
+              Designér, AI agenti a sada nástrojů. Od nápadu po hotový produkt. Weby, aplikace, prototypy, experimenty.
             </p>
           </div>
         </div>
@@ -50,17 +50,17 @@ export default function AiStudioPage() {
               {
                 tag: "POCHOPENÍ",
                 title: "Nejdřív problém",
-                desc: "Každý projekt začíná otázkou proč. UX research, wireframy, rozhovory. Bez pochopení problému nemá smysl nic stavět.",
+                desc: "Každý projekt začíná otázkou proč. Research, rozhovory, wireframy. Bez pochopení problému nemá smysl nic stavět.",
               },
               {
                 tag: "TVORBA",
-                title: "AI jako parťák",
-                desc: "AI pomáhá s kódem, testováním, analýzou. Není to autopilot. Je to zkušený kolega, který nikdy nespí.",
+                title: "AI agenti tvoří",
+                desc: "Specializovaní AI agenti generují kód, testují, analyzují a nasazují. Člověk řídí směr a kontroluje kvalitu.",
               },
               {
                 tag: "NASAZENÍ",
                 title: "Rychle ven",
-                desc: "Kód na GitHubu, web na Vercelu. Místo měsíců plánování iterace po dnech. Zpětná vazba od prvního dne.",
+                desc: "Automatický build, testy a deploy. Místo měsíců plánování iterace po dnech. Zpětná vazba od prvního dne.",
               },
             ].map((item, i) => (
               <div key={i}>
@@ -94,15 +94,15 @@ export default function AiStudioPage() {
             <div className="p-8 rounded-2xl border border-primary/30 bg-primary/[0.02]">
               <div className="flex items-center gap-3 mb-8">
                 <span className="w-2.5 h-2.5 rounded-full bg-primary" />
-                <span className="font-mono text-xs tracking-[0.15em] text-primary font-medium">DNES</span>
+                <span className="font-mono text-xs tracking-[0.15em] text-primary font-medium">ZÁKLAD</span>
               </div>
               <div className="space-y-4">
                 {[
-                  { icon: "Claude", label: "AI asistent", note: "Kód, analýza, nasazení" },
+                  { icon: "Claude", label: "AI agenti", note: "Kód, analýza, testy" },
                   { icon: "Figma", label: "Design", note: "Wireframy, prototypy" },
                   { icon: "Next.js", label: "Framework", note: "React, SSR, API" },
-                  { icon: "Vercel", label: "Hosting", note: "Deploy, preview, CDN" },
-                  { icon: "GitHub", label: "Kód", note: "Verzování, spolupráce" },
+                  { icon: "Vercel", label: "Deploy", note: "Hosting, preview, CDN" },
+                  { icon: "GitHub", label: "Kód", note: "Verzování, CI/CD" },
                   { icon: "Supabase", label: "Data", note: "Databáze, auth" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
@@ -113,7 +113,7 @@ export default function AiStudioPage() {
                 ))}
               </div>
               <p className="font-mono text-[10px] text-muted-foreground mt-6 pt-4 border-t border-border/40">
-                Člověk řídí, AI zrychluje
+                Člověk navrhuje, AI agenti realizují
               </p>
             </div>
 
@@ -133,16 +133,16 @@ export default function AiStudioPage() {
             <div className="p-8 rounded-2xl border border-border border-dashed">
               <div className="flex items-center gap-3 mb-8">
                 <span className="w-2.5 h-2.5 rounded-full border-2 border-muted-foreground" />
-                <span className="font-mono text-xs tracking-[0.15em] text-muted-foreground">KAM MÍŘÍM</span>
+                <span className="font-mono text-xs tracking-[0.15em] text-muted-foreground">ROZŠIŘUJEME</span>
               </div>
               <div className="space-y-4">
                 {[
-                  { icon: "Docker", label: "Sandbox", note: "Izolované buildy" },
+                  { icon: "Docker", label: "Sandbox", note: "Izolované prostředí" },
                   { icon: "Playwright", label: "Auto-testy", note: "QA bez zásahu" },
                   { icon: "Sentry", label: "Monitoring", note: "Hlídání 24/7" },
                   { icon: "GitHub", label: "Orchestrace", note: "Úkol → plán → výsledek" },
-                  { icon: "Vercel", label: "Durable workflows", note: "Přežijí restart" },
-                  { icon: "Supabase", label: "AI agenti", note: "Nezávislí na poskytovateli" },
+                  { icon: "Vercel", label: "Trvalé workflow", note: "Přežijí výpadek" },
+                  { icon: "Supabase", label: "Multi-model AI", note: "Nezávislost na poskytovateli" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 opacity-50">
                     <img src={ICON_MAP[item.icon]} alt="" className="w-5 h-5 shrink-0" />
@@ -152,7 +152,7 @@ export default function AiStudioPage() {
                 ))}
               </div>
               <p className="font-mono text-[10px] text-muted-foreground mt-6 pt-4 border-t border-border/40">
-                Méně rutiny, víc prostoru na to, co potřebuje člověka
+                Víc autonomie, víc prostoru pro tvůrčí práci
               </p>
             </div>
           </div>
@@ -195,10 +195,10 @@ export default function AiStudioPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {[
-              { title: "Nezávislost", desc: "Žádný vendor lock-in. AI model, hosting i databáze se dají vyměnit." },
-              { title: "Transparentnost", desc: "Každý krok je sledovatelný. Žádná černá skříňka." },
-              { title: "Člověk rozhoduje", desc: "AI navrhuje, ale finální slovo má vždy člověk." },
-              { title: "Postupně", desc: "Každá část funguje samostatně. Nemusí být hotové vše najednou." },
+              { title: "Nezávislost", desc: "Žádný vendor lock-in. AI model, hosting i databáze jdou kdykoliv vyměnit." },
+              { title: "Transparentnost", desc: "Každý krok je sledovatelný a vysvětlitelný. Žádná černá skříňka." },
+              { title: "Člověk rozhoduje", desc: "AI agenti navrhují a realizují. Směr a finální slovo má vždy člověk." },
+              { title: "Iterace", desc: "Malé kroky, rychlá zpětná vazba. Funkční prototyp za dny, ne za měsíce." },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0" />
