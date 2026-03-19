@@ -18,8 +18,21 @@ function isRateLimited(ip: string): boolean {
   return false
 }
 
+const ALLOWED_ORIGINS = ["https://levouzadni.cz", "https://www.levouzadni.cz"]
+const MAX_LEN = { name: 200, email: 254, phone: 30, interests: 500, description: 2000 }
+
+function truncate(val: unknown, max: number): string {
+  return typeof val === "string" ? val.slice(0, max).trim() : ""
+}
+
 export async function POST(req: NextRequest) {
   try {
+    // Origin check (skip in dev)
+    const origin = req.headers.get("origin")
+    if (process.env.NODE_ENV === "production" && origin && !ALLOWED_ORIGINS.includes(origin)) {
+      return NextResponse.json({ error: "Neplatný požadavek." }, { status: 403 })
+    }
+
     const ip = req.headers.get("x-forwarded-for") || "unknown"
 
     if (isRateLimited(ip)) {
@@ -27,15 +40,21 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json()
-    const { name, email, phone, interests, description, website } = body
+    const { website } = body
 
     // Honeypot check
     if (website) {
       return NextResponse.json({ ok: true }) // fake success for bots
     }
 
-    // Validation
-    if (!name?.trim() || !email?.trim()) {
+    // Truncate & validate
+    const name = truncate(body.name, MAX_LEN.name)
+    const email = truncate(body.email, MAX_LEN.email)
+    const phone = truncate(body.phone, MAX_LEN.phone)
+    const interests = truncate(body.interests, MAX_LEN.interests)
+    const description = truncate(body.description, MAX_LEN.description)
+
+    if (!name || !email) {
       return NextResponse.json({ error: "Vyplňte jméno a e-mail." }, { status: 400 })
     }
 
@@ -70,7 +89,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ok: true })
   } catch (error) {
-    console.error("Contact form error:", error)
+    console.error("Contact form error:", error instanceof Error ? error.message : "unknown")
     return NextResponse.json({ error: "Něco se pokazilo. Zkuste to znovu." }, { status: 500 })
   }
 }
