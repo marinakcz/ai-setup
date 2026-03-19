@@ -61,7 +61,7 @@ export default function AiStudioPage() {
             {[
               {
                 tag: "ZADÁNÍ",
-                title: "Popíšete co potřebujete",
+                title: "Popíšete, co potřebujete",
                 desc: "Brief v přirozené řeči. Cíl, představa, podklady, omezení. Orchestrátor vytvoří strukturovaný plán a navrhne postup.",
               },
               {

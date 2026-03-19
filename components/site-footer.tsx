@@ -8,13 +8,13 @@ export function SiteFooter() {
       <div className="max-w-[1408px] mx-auto px-6 flex flex-col items-center gap-6">
         <Image src="/logo-bw.svg" alt="Levou Zadní" width={32} height={32} className="h-7 w-7 opacity-40" />
         <nav className="flex flex-wrap justify-center items-center gap-y-3 font-mono text-xs text-muted-foreground">
-          <Link href="/o-studiu" className="py-1 px-3 hover:text-foreground transition-colors">O studiu</Link>
+          <Link href="/o-studiu" className="py-2 px-3 hover:text-foreground transition-colors">O studiu</Link>
           <span className="text-border leading-none">/</span>
-          <Link href="/pod-kapotou" className="py-1 px-3 hover:text-foreground transition-colors">Pod kapotou</Link>
+          <Link href="/pod-kapotou" className="py-2 px-3 hover:text-foreground transition-colors">Pod kapotou</Link>
           <span className="text-border leading-none">/</span>
-          <Link href="/poptavka" className="py-1 px-3 hover:text-foreground transition-colors">Spojme se</Link>
+          <Link href="/poptavka" className="py-2 px-3 hover:text-foreground transition-colors">Spojme se</Link>
           <span className="text-border leading-none">/</span>
-          <Link href="/ochrana-udaju" className="py-1 px-3 hover:text-foreground transition-colors"><span className="hidden sm:inline">Ochrana osobních údajů</span><span className="sm:hidden">Ochrana údajů</span></Link>
+          <Link href="/ochrana-udaju" aria-label="Ochrana osobních údajů" className="py-2 px-3 hover:text-foreground transition-colors"><span className="hidden sm:inline">Ochrana osobních údajů</span><span className="sm:hidden">Ochrana údajů</span></Link>
         </nav>
         <span className="font-mono text-xs text-muted-foreground">
           Copyright © 2026 levouzadni.cz

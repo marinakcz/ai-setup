@@ -121,6 +121,7 @@ export default function RootLayout({
             }),
           }}
         />
+        <noscript><style>{`.reveal-group .reveal-item, .hero-stagger .stagger-1, .hero-stagger .stagger-2, .hero-stagger .stagger-3, .hero-stagger .stagger-4, .hero-stagger .stagger-5 { opacity: 1 !important; transform: none !important; animation: none !important; }`}</style></noscript>
       </head>
       <body
         className={`${jetbrainsMono.variable} ${hkGroteskWide.variable} ${caveat.variable} antialiased`}

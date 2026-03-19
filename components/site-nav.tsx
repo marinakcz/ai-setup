@@ -37,7 +37,7 @@ export function SiteNav() {
         {/* Hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          className="relative w-10 h-10 flex items-center justify-center"
+          className="relative w-11 h-11 flex items-center justify-center"
           aria-expanded={open}
           aria-label="Menu"
         >
