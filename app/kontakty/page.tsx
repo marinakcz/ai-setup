@@ -107,14 +107,37 @@ export default function ContactPage() {
   if (status === "sent") {
     return (
       <div className="relative min-h-screen flex flex-col">
-        <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24 w-full text-center">
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ SPOJME SE</p>
-          <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-4">
-            Díky!
-          </h1>
-          <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground">
-            Ozvu se co nejdřív.
-          </p>
+        <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24 w-full flex-1 flex items-center justify-center">
+          <div className="text-center max-w-lg">
+            <div className="w-16 h-16 mx-auto mb-8 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+              <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-4">/ ODESLÁNO</p>
+            <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-4">
+              Díky, mám to!
+            </h1>
+            <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground mb-10">
+              Zprávu jsem dostal. Ozvu se co nejdřív,<br className="hidden sm:block" />
+              většinou do 24 hodin.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 font-mono text-sm text-primary hover:text-foreground transition-colors"
+              >
+                <span aria-hidden="true">&larr;</span> Zpět na hlavní
+              </Link>
+              <span className="hidden sm:block text-border">|</span>
+              <a
+                href="mailto:studio@levouzadni.cz"
+                className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                studio@levouzadni.cz
+              </a>
+            </div>
+          </div>
         </main>
         <SiteFooter />
       </div>
