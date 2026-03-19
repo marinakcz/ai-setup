@@ -16,10 +16,9 @@ export function SiteFooter() {
           <span className="text-border leading-none">/</span>
           <Link href="/ochrana-udaju" aria-label="Ochrana osobních údajů" className="py-2 px-3 hover:text-foreground transition-colors"><span className="hidden sm:inline">Ochrana osobních údajů</span><span className="sm:hidden">Ochrana údajů</span></Link>
         </nav>
-        <div className="flex flex-col items-center gap-1 font-mono text-xs text-muted-foreground">
-          <span>Levou zadní / AI studio pro digitální produkty</span>
-          <span>© 2026</span>
-        </div>
+        <span className="font-mono text-xs text-muted-foreground">
+          Levou zadní © 2026
+        </span>
       </div>
     </footer>
   )
