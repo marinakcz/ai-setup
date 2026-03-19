@@ -109,12 +109,14 @@ export default function AiStudioPage() {
 
               {/* Row 1: Designér → Orchestrátor */}
               <div className="flex items-center gap-4 w-full justify-center">
-                <div className="px-5 py-3 rounded-xl border border-border/60 bg-card/30">
+                <div className="group relative px-5 py-3 rounded-xl border border-border/60 bg-card/30 cursor-default">
                   <span className="font-mono text-xs text-muted-foreground">Designér</span>
+                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Zadá brief, schválí plán, řídí směr</span>
                 </div>
                 <span className="font-mono text-xs text-primary/40">→</span>
-                <div className="px-5 py-3 rounded-xl border border-primary/30 bg-primary/[0.03]">
+                <div className="group relative px-5 py-3 rounded-xl border border-primary/30 bg-primary/[0.03] cursor-default">
                   <span className="font-mono text-xs text-primary font-medium">Orchestrátor</span>
+                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Rozloží úkol, vybere agenty, koordinuje</span>
                 </div>
               </div>
 
@@ -122,16 +124,19 @@ export default function AiStudioPage() {
 
               {/* Row 2: Agenti + Paměť + Nástroje */}
               <div className="flex items-center gap-3 w-full justify-center flex-wrap">
-                <div className="px-5 py-3 rounded-xl border border-primary/30 bg-primary/[0.03]">
+                <div className="group relative px-5 py-3 rounded-xl border border-primary/30 bg-primary/[0.03] cursor-default">
                   <span className="font-mono text-xs text-foreground">Agenti</span>
+                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Izolovaní specialisté na kód, design, testy</span>
                 </div>
                 <span className="font-mono text-xs text-muted-foreground/30">+</span>
-                <div className="px-5 py-3 rounded-xl border border-border/40">
+                <div className="group relative px-5 py-3 rounded-xl border border-border/40 cursor-default">
                   <span className="font-mono text-xs text-muted-foreground">Paměť</span>
+                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Databáze, vektory, naučené znalosti</span>
                 </div>
                 <span className="font-mono text-xs text-muted-foreground/30">+</span>
-                <div className="px-5 py-3 rounded-xl border border-border/40">
+                <div className="group relative px-5 py-3 rounded-xl border border-border/40 cursor-default">
                   <span className="font-mono text-xs text-muted-foreground">Nástroje</span>
+                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">MCP servery, Figma, GitHub, Playwright...</span>
                 </div>
               </div>
 
@@ -139,12 +144,14 @@ export default function AiStudioPage() {
 
               {/* Row 3: Pipeline → Produkt */}
               <div className="flex items-center gap-4 w-full justify-center">
-                <div className="px-5 py-3 rounded-xl border border-primary/30 bg-primary/[0.03]">
+                <div className="group relative px-5 py-3 rounded-xl border border-primary/30 bg-primary/[0.03] cursor-default">
                   <span className="font-mono text-xs text-foreground">Pipeline</span>
+                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Build, test, deploy bez zásahu</span>
                 </div>
                 <span className="font-mono text-xs text-primary/40">→</span>
-                <div className="px-5 py-3 rounded-xl border border-border/60 bg-card/30">
+                <div className="group relative px-5 py-3 rounded-xl border border-border/60 bg-card/30 cursor-default">
                   <span className="font-mono text-xs text-muted-foreground">Produkt</span>
+                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Web, aplikace, prototyp. Nasazený a živý.</span>
                 </div>
               </div>
 
@@ -154,15 +161,15 @@ export default function AiStudioPage() {
               </div>
             </div>
 
-            {/* Descriptions */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12">
+            {/* Descriptions — mobile only */}
+            <div className="grid grid-cols-2 gap-6 mt-12 md:hidden">
               {[
-                { label: "Orchestrátor", desc: "Rozloží úkol na kroky. Vybere agenty. Koordinuje celý proces." },
-                { label: "Agenti", desc: "Izolovaní specialisté. Kód, design, testy, obsah. Každý má svou roli." },
-                { label: "Paměť + Nástroje", desc: "Databáze, vektory, MCP servery. Agenti si odsud čtou kontext." },
-                { label: "Pipeline", desc: "Automatický build, test a deploy. Bez lidského zásahu." },
-                { label: "Zpětná smyčka", desc: "Sleduje výkon a chyby. Učí se. Navrhuje vylepšení." },
-                { label: "Produkt", desc: "Nasazený web, aplikace nebo prototyp. Živý a sledovaný." },
+                { label: "Orchestrátor", desc: "Rozloží úkol, vybere agenty, koordinuje" },
+                { label: "Agenti", desc: "Izolovaní specialisté na kód, design, testy" },
+                { label: "Paměť + Nástroje", desc: "Databáze, vektory, MCP servery" },
+                { label: "Pipeline", desc: "Build, test, deploy bez zásahu" },
+                { label: "Zpětná smyčka", desc: "Monitoring, učení, vylepšování" },
+                { label: "Produkt", desc: "Nasazený a sledovaný" },
               ].map((item, i) => (
                 <div key={i}>
                   <p className="font-mono text-xs text-foreground font-medium mb-1">{item.label}</p>
@@ -191,26 +198,24 @@ export default function AiStudioPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
             {[
               { icon: "AI modely", note: "Claude, GPT, Gemini..." },
               { icon: "Coding assistant", note: "Claude Code, Codex..." },
               { icon: "Design", note: "Figma" },
-              { icon: "Framework", note: "Next.js, React" },
+              { icon: "Framework", note: "Next.js" },
               { icon: "Deploy", note: "Vercel, Netlify..." },
-              { icon: "Kód", note: "GitHub, GitLab..." },
+              { icon: "Kód", note: "GitHub" },
               { icon: "Data", note: "Supabase, Neon..." },
               { icon: "Kontejnery", note: "Docker" },
               { icon: "Testy", note: "Playwright" },
               { icon: "Monitoring", note: "Sentry" },
               { icon: "E-maily", note: "Resend" },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-3 p-4 rounded-xl border border-border hover:border-primary/30 transition-colors">
-                <img src={ICON_MAP[item.icon]} alt="" className="w-5 h-5 shrink-0" />
-                <div>
-                  <div className="font-mono text-xs font-medium text-foreground">{item.icon}</div>
-                  <div className="font-mono text-xs text-muted-foreground">{item.note}</div>
-                </div>
+              <div key={i} className="group relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border hover:border-primary/30 transition-colors cursor-default">
+                <img src={ICON_MAP[item.icon]} alt="" className="w-4 h-4 shrink-0" />
+                <span className="font-mono text-xs text-foreground">{item.icon}</span>
+                <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">{item.note}</span>
               </div>
             ))}
           </div>
