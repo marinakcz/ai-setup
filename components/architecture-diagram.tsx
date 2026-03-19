@@ -15,7 +15,7 @@ import "@xyflow/react/dist/style.css"
 
 // Custom node with tooltip
 function TooltipNode({ data }: NodeProps) {
-  const [hover, setHover] = useState(false)
+  const [show, setShow] = useState(false)
   const style = data.nodeStyle as React.CSSProperties
 
   return (
@@ -23,22 +23,20 @@ function TooltipNode({ data }: NodeProps) {
       style={{
         ...style,
         transition: "border-color 0.2s, background 0.2s",
-        ...(hover ? { borderColor: "rgba(240, 88, 35, 0.6)", background: "rgba(240, 88, 35, 0.08)" } : {}),
+        ...(show ? { borderColor: "rgba(240, 88, 35, 0.6)", background: "rgba(240, 88, 35, 0.08)" } : {}),
       }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      className="relative cursor-default"
+      onMouseEnter={() => setShow(true)}
+      onMouseLeave={() => setShow(false)}
+      onClick={() => setShow(!show)}
+      className="relative cursor-pointer"
     >
       {data.targetPos && <Handle type="target" position={data.targetPos as Position} style={{ opacity: 0 }} />}
       {data.sourcePos && <Handle type="source" position={data.sourcePos as Position} style={{ opacity: 0 }} />}
       {data.label as string}
-      {data.tip && (
+      {data.tip && show && (
         <div
-          className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-white text-[#0d0d0d] text-[10px] font-mono whitespace-nowrap transition-all duration-200"
-          style={{
-            opacity: hover ? 1 : 0,
-            transform: hover ? "translateX(-50%) scale(1)" : "translateX(-50%) scale(0.95)",
-          }}
+          className="absolute -top-12 left-1/2 z-[100] px-3 py-2 rounded-lg bg-white text-[#0d0d0d] text-xs font-mono whitespace-nowrap shadow-lg"
+          style={{ transform: "translateX(-50%)" }}
         >
           {data.tip as string}
         </div>
