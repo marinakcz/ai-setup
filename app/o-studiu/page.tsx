@@ -41,8 +41,8 @@ export default function AboutPage() {
 
         {/* Hero intro */}
         <section className="mb-10 md:mb-32 hero-stagger">
-          <p className="font-body text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold md:font-normal mb-2 stagger-1">/ O STUDIU A O MNĚ</p>
-          <h1 className="font-body font-extrabold text-2xl md:text-[clamp(1.75rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-3 md:mb-8 stagger-2">
+          <p className="text-sm md:text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold mb-2 stagger-1">/ O studiu a o mně</p>
+          <h1 className="font-body font-extrabold text-xl md:text-[clamp(1.75rem,4vw,3.5rem)] leading-[1.3] text-foreground mb-3 md:mb-8 stagger-2">
             Ahoj, jsem Pavel.
           </h1>
           <p className="font-body font-light text-base md:text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-2xl stagger-3">
@@ -52,27 +52,22 @@ export default function AboutPage() {
 
         {/* What I do — big statement */}
         <section className="mb-10 md:mb-32 reveal-group" ref={whatRef}>
-          <p className="font-body text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold md:font-normal mb-2 reveal-item">/ STÁLE SE SNAŽÍM O JEDNO</p>
-          <div className="mb-4 md:mb-10">
-            <p className="font-body font-extrabold text-xl md:text-[clamp(1.5rem,5vw,4.5rem)] leading-[1.2] md:leading-[1.15] text-foreground reveal-item" style={{ transitionDelay: "100ms" }}>
-              Pochopit problém. Navrhnout řešení.
-            </p>
-          </div>
+          <p className="text-sm md:text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold mb-2 reveal-item">/ Stále se snažím o jedno</p>
+          <p className="font-body font-extrabold text-xl md:text-[clamp(1.5rem,5vw,4.5rem)] leading-[1.3] md:leading-[1.15] text-foreground mb-4 md:mb-10 reveal-item" style={{ transitionDelay: "100ms" }}>
+            Pochopit problém. Navrhnout řešení.
+          </p>
           <p className="font-body font-light text-base md:text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-2xl reveal-item" style={{ transitionDelay: "300ms" }}>
             Na tom se nic nezměnilo.
           </p>
         </section>
 
-        {/* The problem + AI — merged on mobile for better flow */}
+        {/* The problem */}
         <section className="mb-10 md:mb-32 reveal-group" ref={problemRef}>
           <div className="reveal-item">
-            <p className="font-body text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold md:font-normal mb-2 ">/ REALITA</p>
-            <h2 className="font-body font-extrabold text-xl md:text-[clamp(1.25rem,3.5vw,3rem)] leading-[1.3] text-muted-foreground">
-              Ale spousta dobrých nápadů
-            </h2>
-            <h2 className="font-body font-extrabold text-xl md:text-[clamp(1.25rem,3.5vw,3rem)] leading-[1.3] text-foreground mb-3 md:mb-8">
-              končí v šuplíku.
-            </h2>
+            <p className="text-sm md:text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold mb-2">/ Realita</p>
+            <p className="font-body font-extrabold text-xl md:text-[clamp(1.25rem,3.5vw,3rem)] leading-[1.3] text-foreground mb-3 md:mb-8">
+              <span className="text-muted-foreground">Ale spousta dobrých nápadů</span> končí v šuplíku.
+            </p>
             <p className="font-body font-light text-base md:text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-xl">
               Protože na realizaci chybí čas nebo zdroje.
             </p>
@@ -83,11 +78,11 @@ export default function AboutPage() {
         <section className="mb-10 md:mb-32 reveal-group" ref={aiRef}>
           <div className="md:grid md:grid-cols-[1fr_2fr] md:gap-20 md:items-start">
             <div className="reveal-item">
-              <h2 className="font-body font-black text-3xl md:text-[clamp(2.5rem,8vw,7rem)] leading-[0.9] text-primary mb-4 md:mb-0">
+              <h2 className="font-body font-black text-2xl md:text-[clamp(2.5rem,8vw,7rem)] leading-[0.9] text-primary mb-4 md:mb-0">
                 Přišla AI.
               </h2>
             </div>
-            <div className="flex flex-col justify-center reveal-item" style={{ transitionDelay: "150ms" }}>
+            <div className="reveal-item" style={{ transitionDelay: "150ms" }}>
               <p className="font-body font-semibold text-base md:text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.5] text-foreground mb-3 md:mb-6">
                 A změnila pravidla hry.
               </p>
@@ -98,25 +93,23 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* New reality — simplified */}
+        {/* New reality */}
         <section className="mb-10 md:mb-32 reveal-group" ref={realityRef}>
-          <p className="font-body text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold md:font-normal mb-2 reveal-item">/ NOVÁ REALITA</p>
-          <div>
-            <p className="font-body font-extrabold text-base md:text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.5] text-foreground reveal-item" style={{ transitionDelay: "100ms" }}>
-              Rychlejší realizace neznamená méně přemýšlení. Znamená víc prostoru přemýšlet správně.
-            </p>
-            <p className="font-body font-light text-base md:text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground mt-4 md:mt-8 reveal-item" style={{ transitionDelay: "200ms" }}>
-              A právě proto mě tenhle způsob práce dnes baví ještě víc.
-            </p>
-          </div>
+          <p className="text-sm md:text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold mb-2 reveal-item">/ Nová realita</p>
+          <p className="font-body font-bold text-base md:text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.5] text-foreground reveal-item" style={{ transitionDelay: "100ms" }}>
+            Rychlejší realizace neznamená méně přemýšlení. Znamená víc prostoru přemýšlet správně.
+          </p>
+          <p className="font-body font-light text-base md:text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground mt-4 md:mt-8 reveal-item" style={{ transitionDelay: "200ms" }}>
+            A právě proto mě tenhle způsob práce dnes baví ještě víc.
+          </p>
         </section>
 
         <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10 md:mb-32" />
 
         {/* Why this exists */}
         <section className="mb-10 md:mb-32 reveal-group" ref={whyRef}>
-          <p className="font-body text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold md:font-normal mb-2 reveal-item">/ PROTO VZNIKLO</p>
-          <h2 className="font-body font-black text-2xl md:text-[clamp(2rem,6vw,5rem)] leading-[1.0] text-foreground mb-4 md:mb-10 reveal-item" style={{ transitionDelay: "100ms" }}>
+          <p className="text-sm md:text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold mb-2 reveal-item">/ Proto vzniklo</p>
+          <h2 className="font-body font-black text-xl md:text-[clamp(2rem,6vw,5rem)] leading-[1.1] text-foreground mb-4 md:mb-10 reveal-item" style={{ transitionDelay: "100ms" }}>
             Levou zadní.
           </h2>
           <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-12 max-w-4xl">
