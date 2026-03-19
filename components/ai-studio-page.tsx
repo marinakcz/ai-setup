@@ -1,6 +1,5 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
 import { SiteFooter } from "@/components/site-footer"
 
 // ─── Data ───────────────────────────────────────────────────────────────────
@@ -13,19 +12,18 @@ const ICON_MAP: Record<string, string> = {
   "GitHub": "/icons/github.svg",
   "Figma": "/icons/figma.svg",
   "Playwright": "/icons/playwright.svg",
-  "Lighthouse": "/icons/nodejs.svg",
   "Supabase": "/icons/supabase.svg",
   "Resend": "/icons/resend.svg",
 }
 
 const TOOLS = [
-  { name: "Claude Code", desc: "AI asistent — kód, analýza, nasazení" },
+  { name: "Claude Code", desc: "AI asistent pro kód, analýzu a nasazení" },
   { name: "Claude Sonnet", desc: "AI model pro generování a rozhodování" },
   { name: "Next.js", desc: "Framework pro web" },
   { name: "Vercel", desc: "Hosting a deploy" },
   { name: "GitHub", desc: "Verzování a spolupráce" },
   { name: "Figma", desc: "Design a prototypy" },
-  { name: "Supabase", desc: "Databáze a auth" },
+  { name: "Supabase", desc: "Databáze a autentizace" },
   { name: "Resend", desc: "E-maily" },
 ]
 
@@ -48,7 +46,7 @@ export default function AiStudioPage() {
               Jak to funguje
             </h1>
             <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground max-w-xl mx-auto">
-              Designér + AI. Používám nástroje, které mi umožňují pracovat rychleji a lépe — od návrhu přes kód až po nasazení.
+              Designér + AI. Nástroje, které mi umožňují pracovat rychleji a lépe. Od návrhu přes kód až po nasazení.
             </p>
           </div>
         </div>
@@ -56,30 +54,20 @@ export default function AiStudioPage() {
 
       <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      {/* ── APPROACH ── */}
-      <section className="relative z-10 py-24">
+      {/* ── APPROACH — same layout as HP pillars ── */}
+      <section className="relative z-10 py-24 md:py-32">
         <div className="max-w-[1408px] mx-auto px-6">
-          <div className="text-center mb-14">
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ PŘÍSTUP</p>
-            <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
-              Člověk řídí, AI zrychluje
-            </h2>
-            <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground mt-3 max-w-2xl mx-auto">
-              Každý projekt začíná pochopením problému. AI pomáhá s realizací — generuje kód, testuje, nasazuje. Ale rozhodnutí a směr je vždy na mně.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
             {[
               { tag: "NÁVRH", title: "Pochopím problém", desc: "UX research, wireframy, prototypy. Než se napíše řádek kódu, musí být jasné co a proč." },
-              { tag: "REALIZACE", title: "AI generuje", desc: "Claude Code píše kód, testuje, opravuje. Já kontroluji kvalitu a směr." },
-              { tag: "NASAZENÍ", title: "Rychle ven", desc: "GitHub → Vercel → živý web. Iterace místo měsíců plánování." },
+              { tag: "REALIZACE", title: "AI pomáhá tvořit", desc: "Claude Code píše kód, testuje, opravuje. Kontroluji kvalitu a směr." },
+              { tag: "NASAZENÍ", title: "Rychle ven", desc: "GitHub, Vercel, živý web. Iterace místo měsíců plánování." },
             ].map((item, i) => (
               <div key={i}>
                 <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ {item.tag}</p>
-                <h3 className="font-body font-semibold text-[clamp(1.25rem,1.6vw,1.75rem)] leading-snug text-foreground mb-3">
+                <h2 className="font-body font-semibold text-[clamp(1.25rem,1.6vw,1.75rem)] leading-snug text-foreground mb-3">
                   {item.title}
-                </h3>
+                </h2>
                 <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground">
                   {item.desc}
                 </p>
@@ -116,11 +104,11 @@ export default function AiStudioPage() {
             })}
           </div>
 
-          {/* MCP */}
           <div className="max-w-3xl mx-auto text-center">
             <p className="font-mono text-xs text-muted-foreground">
-              <span className="text-foreground font-medium">MCP servery</span>{" — "}
-              {MCP_SERVERS.join(", ")}
+              <span className="text-foreground font-medium">MCP servery</span>
+              {" · "}
+              {MCP_SERVERS.join(" · ")}
             </p>
           </div>
         </div>
@@ -144,7 +132,65 @@ export default function AiStudioPage() {
           <div className="max-w-xs mx-auto mb-4">
             <img src="/mac-mini.png" alt="Mac mini M4" className="w-full h-auto" loading="lazy" />
           </div>
-          <p className="text-center font-mono text-xs text-muted-foreground mb-6">+ NAS Synology — zálohy</p>
+          <p className="text-center font-mono text-xs text-muted-foreground mb-6">+ NAS Synology pro zálohy</p>
+        </div>
+      </section>
+
+      <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
+      {/* ── FUTURE ── */}
+      <section className="relative z-10 py-24 md:py-32">
+        <div className="max-w-[1408px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ CO CHYSTÁME</p>
+            <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
+              Kam to směřuje
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-4xl mx-auto">
+            {/* NOW */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+                <span className="font-mono text-xs tracking-[0.15em] text-primary">DNES</span>
+              </div>
+              <div className="space-y-4">
+                {[
+                  "Designér + AI jako tým",
+                  "Každý projekt řídím osobně",
+                  "AI generuje, člověk rozhoduje",
+                  "Ruční kontrola kvality",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="w-1 h-1 rounded-full bg-muted-foreground mt-2.5 shrink-0" />
+                    <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* FUTURE */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground" />
+                <span className="font-mono text-xs tracking-[0.15em] text-muted-foreground">PŘIPRAVUJEME</span>
+              </div>
+              <div className="space-y-4">
+                {[
+                  "Větší automatizace rutinních kroků",
+                  "AI agenti pro testování a monitoring",
+                  "Rychlejší cesta od nápadu k prototypu",
+                  "Víc prostoru na to, co potřebuje člověka",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="w-1 h-1 rounded-full bg-muted-foreground/50 mt-2.5 shrink-0" />
+                    <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground/70">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
