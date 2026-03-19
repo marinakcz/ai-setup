@@ -148,47 +148,71 @@ export default function AiStudioPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-0 max-w-4xl mx-auto items-start">
             {/* NOW */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
+            <div className="p-8 rounded-2xl border border-primary/30 bg-primary/[0.02]">
+              <div className="flex items-center gap-3 mb-8">
                 <span className="w-2.5 h-2.5 rounded-full bg-primary" />
-                <span className="font-mono text-xs tracking-[0.15em] text-primary">DNES</span>
+                <span className="font-mono text-xs tracking-[0.15em] text-primary font-medium">AKTUÁLNÍ SETUP</span>
               </div>
               <div className="space-y-4">
                 {[
-                  "Designér + AI jako tým",
-                  "Každý projekt řídím osobně",
-                  "AI generuje, člověk rozhoduje",
-                  "Ruční kontrola kvality",
+                  { icon: "/icons/claude.svg", label: "Claude Code + Sonnet", note: "AI asistent a model" },
+                  { icon: "/icons/figma.svg", label: "Figma", note: "Design" },
+                  { icon: "/icons/nodejs.svg", label: "Next.js", note: "Framework" },
+                  { icon: "/icons/vercel.svg", label: "Vercel", note: "Deploy" },
+                  { icon: "/icons/github.svg", label: "GitHub", note: "Kód" },
+                  { icon: "/icons/supabase.svg", label: "Supabase", note: "Data" },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <span className="w-1 h-1 rounded-full bg-muted-foreground mt-2.5 shrink-0" />
-                    <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground">{item}</p>
+                  <div key={i} className="flex items-center gap-3">
+                    <img src={item.icon} alt="" className="w-5 h-5 shrink-0" />
+                    <span className="font-mono text-xs text-foreground">{item.label}</span>
+                    <span className="font-mono text-[10px] text-muted-foreground ml-auto">{item.note}</span>
                   </div>
                 ))}
               </div>
+              <p className="font-mono text-[10px] text-muted-foreground mt-6 pt-4 border-t border-border/40">
+                Člověk řídí, AI zrychluje
+              </p>
+            </div>
+
+            {/* Arrow */}
+            <div className="hidden md:flex items-center justify-center px-6 pt-20">
+              <svg viewBox="0 0 60 24" className="w-14 h-6 text-muted-foreground/30" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M0 12h54M46 5l8 7-8 7" />
+              </svg>
+            </div>
+            <div className="flex md:hidden items-center justify-center">
+              <svg viewBox="0 0 24 40" className="w-6 h-10 text-muted-foreground/30" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M12 0v34M5 26l7 8 7-8" />
+              </svg>
             </div>
 
             {/* FUTURE */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground" />
+            <div className="p-8 rounded-2xl border border-border border-dashed">
+              <div className="flex items-center gap-3 mb-8">
+                <span className="w-2.5 h-2.5 rounded-full border-2 border-muted-foreground" />
                 <span className="font-mono text-xs tracking-[0.15em] text-muted-foreground">PŘIPRAVUJEME</span>
               </div>
               <div className="space-y-4">
                 {[
-                  "Větší automatizace rutinních kroků",
-                  "AI agenti pro testování a monitoring",
-                  "Rychlejší cesta od nápadu k prototypu",
-                  "Víc prostoru na to, co potřebuje člověka",
+                  { icon: "/icons/claude.svg", label: "Agent SDK", note: "Orchestrace" },
+                  { icon: "/icons/docker.svg", label: "Docker", note: "Sandbox" },
+                  { icon: "/icons/playwright.svg", label: "Auto-testing", note: "QA" },
+                  { icon: "/icons/vercel.svg", label: "Workflow DevKit", note: "Durable tasks" },
+                  { icon: "/icons/nodejs.svg", label: "Monitoring", note: "24/7" },
+                  { icon: "/icons/claude.svg", label: "Více agentů", note: "Autonomie" },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <span className="w-1 h-1 rounded-full bg-muted-foreground/50 mt-2.5 shrink-0" />
-                    <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground/70">{item}</p>
+                  <div key={i} className="flex items-center gap-3 opacity-50">
+                    <img src={item.icon} alt="" className="w-5 h-5 shrink-0" />
+                    <span className="font-mono text-xs text-foreground">{item.label}</span>
+                    <span className="font-mono text-[10px] text-muted-foreground ml-auto">{item.note}</span>
                   </div>
                 ))}
               </div>
+              <p className="font-mono text-[10px] text-muted-foreground mt-6 pt-4 border-t border-border/40">
+                Víc automatizace, víc prostoru na člověka
+              </p>
             </div>
           </div>
         </div>
