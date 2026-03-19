@@ -197,7 +197,7 @@ export default function ContactPage() {
         </div>
 
         {/* Form */}
-        <form className="max-w-2xl mx-auto" onSubmit={handleSubmit}>
+        <form className="max-w-2xl mx-auto" onSubmit={handleSubmit} noValidate>
           <div className="absolute -left-[9999px]" aria-hidden="true">
             <input type="text" name="website" tabIndex={-1} autoComplete="off" />
           </div>
@@ -208,6 +208,7 @@ export default function ContactPage() {
                 Jméno a příjmení <span className="text-primary">*</span>
               </label>
               <input type="text" id="name" name="name" required autoComplete="name"
+                onChange={() => errors.name && setErrors((prev) => { const { name: _, ...rest } = prev; return rest })}
                 className={`w-full px-4 py-3 rounded-xl border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors ${errors.name ? "border-red-500/60" : "border-border"}`}
               />
               {errors.name && <p className="font-mono text-xs text-red-400 mt-1">{errors.name}</p>}
@@ -217,6 +218,7 @@ export default function ContactPage() {
                 E-mail <span className="text-primary">*</span>
               </label>
               <input type="email" id="email" name="email" required autoComplete="email" placeholder="vas@email.cz"
+                onChange={() => errors.email && setErrors((prev) => { const { email: _, ...rest } = prev; return rest })}
                 className={`w-full px-4 py-3 rounded-xl border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors ${errors.email ? "border-red-500/60" : "border-border"}`}
               />
               {errors.email && <p className="font-mono text-xs text-red-400 mt-1">{errors.email}</p>}
