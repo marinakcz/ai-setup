@@ -100,8 +100,9 @@ export default function AiStudioPage() {
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
               <ScrambleTag text="/ ARCHITEKTURA" delay={300} />
             </p>
-            <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
-              Jak to spolupracuje
+            <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.3] tracking-[0.06em] text-foreground">
+              Vyladěná spolupráce.<br />
+              <span className="text-muted-foreground">Člověk × AI.</span>
             </h2>
           </div>
 
