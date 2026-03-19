@@ -31,8 +31,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             mainEntity: {
               "@type": "Person",
               name: "Pavel Martinovský",
-              jobTitle: "Senior UX Designer",
-              worksFor: { "@type": "Organization", name: "J&T Banka" },
+              jobTitle: "UX Designer",
               sameAs: "https://www.linkedin.com/in/pavelmartinovsky/",
             },
           },
