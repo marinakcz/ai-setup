@@ -173,7 +173,7 @@ export default function AboutPage() {
             <img src="/pavel.png" alt="Pavel Martinovský" className="w-20 h-20 rounded-full shrink-0" />
             <div>
               <div className="font-body font-bold text-xl text-foreground">Pavel Martinovský</div>
-              <div className="font-mono text-sm text-muted-foreground mt-1">Senior UX Designer @ J&T Banka (aktuálně)</div>
+              <div className="font-mono text-sm text-muted-foreground mt-1">Senior UX Designer @ J&T Banka ❤️</div>
               <a
                 href="https://www.linkedin.com/in/pavelmartinovsky/"
                 target="_blank"
