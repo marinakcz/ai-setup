@@ -76,10 +76,10 @@ export default function Home() {
     <div className="relative min-h-screen flex flex-col">
       <main>
         {/* Hero */}
-        <section className="relative z-10 pt-32 pb-24 min-h-[80vh] md:min-h-[95vh] flex flex-col justify-center">
+        <section className="relative z-10 pt-24 pb-16 md:pt-32 md:pb-24 min-h-[70vh] md:min-h-[95vh] flex flex-col justify-center">
           <div className="max-w-[1408px] mx-auto px-6 w-full">
             {/* Tag + Headline */}
-            <div className="text-center mb-20 hero-stagger">
+            <div className="text-center mb-12 md:mb-20 hero-stagger">
               <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 stagger-1">
                 <ScrambleTag text="/ AI STUDIO" delay={300} />
               </p>
@@ -92,7 +92,7 @@ export default function Home() {
             </div>
 
             {/* Mascot */}
-            <div className="flex justify-center mb-20 stagger-3" ref={logoParallax}>
+            <div className="flex justify-center mb-12 md:mb-20 stagger-3" ref={logoParallax}>
               <div className="relative w-[clamp(140px,18vw,240px)] aspect-[466/577] logo-float">
                 <Image
                   src="/mascot.svg"
@@ -168,7 +168,7 @@ export default function Home() {
         <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
         {/* CTA */}
-        <section className="relative z-10 py-28 md:py-40">
+        <section className="relative z-10 py-16 md:py-40">
           <div
             className="max-w-[1408px] mx-auto px-6 text-center reveal-group"
             ref={ctaRef}

@@ -36,10 +36,10 @@ export default function AboutPage() {
 
   return (
     <div className="relative min-h-screen flex flex-col">
-      <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-32 pb-24">
+      <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24">
 
         {/* Hero intro */}
-        <section className="mb-32 hero-stagger">
+        <section className="mb-16 md:mb-32 hero-stagger">
           <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 stagger-1"><ScrambleTag text="/ O STUDIU A O MNĚ" delay={200} /></p>
           <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-8 stagger-2">
             Ahoj, jsem Pavel. <span className="inline-block animate-wave">👋</span>
@@ -50,7 +50,7 @@ export default function AboutPage() {
         </section>
 
         {/* What I do — big statement */}
-        <section className="mb-32 reveal-group" ref={whatRef}>
+        <section className="mb-16 md:mb-32 reveal-group" ref={whatRef}>
           <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item"><ScrambleTag text="/ STÁLE SE SNAŽÍM O JEDNO" /></p>
           <div className="space-y-1 mb-10">
             <p className="font-body font-extrabold text-[clamp(2rem,5vw,4.5rem)] leading-[1.1] text-foreground reveal-item" style={{ transitionDelay: "100ms" }}>
@@ -69,7 +69,7 @@ export default function AboutPage() {
         </section>
 
         {/* The problem — contrast block */}
-        <section className="mb-32 reveal-group" ref={problemRef}>
+        <section className="mb-16 md:mb-32 reveal-group" ref={problemRef}>
           <div className="reveal-item">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6"><ScrambleTag text="/ REALITA" /></p>
             <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.2] text-muted-foreground mb-4">
@@ -85,7 +85,7 @@ export default function AboutPage() {
         </section>
 
         {/* AI changed everything — the break */}
-        <section className="mb-32 reveal-group" ref={aiRef}>
+        <section className="mb-16 md:mb-32 reveal-group" ref={aiRef}>
           <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-12 md:gap-20 items-start">
             <div className="reveal-item">
               <h2 className="font-body font-black text-[clamp(3rem,8vw,7rem)] leading-[0.9] text-primary">
@@ -104,7 +104,7 @@ export default function AboutPage() {
         </section>
 
         {/* New reality */}
-        <section className="mb-32 reveal-group" ref={realityRef}>
+        <section className="mb-16 md:mb-32 reveal-group" ref={realityRef}>
           <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item"><ScrambleTag text="/ NOVÁ REALITA" /></p>
           <div>
             <h2 className="font-body font-extrabold text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.4] text-foreground mb-3 reveal-item" style={{ transitionDelay: "100ms" }}>
@@ -140,10 +140,10 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-32" />
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-16 md:mb-32" />
 
         {/* Why this exists */}
-        <section className="mb-32 reveal-group" ref={whyRef}>
+        <section className="mb-16 md:mb-32 reveal-group" ref={whyRef}>
           <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item"><ScrambleTag text="/ PROTO VZNIKLO" /></p>
           <h2 className="font-body font-black text-[clamp(2.5rem,6vw,5rem)] leading-[1.0] text-foreground mb-10 reveal-item" style={{ transitionDelay: "100ms" }}>
             Levou zadní.

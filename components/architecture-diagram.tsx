@@ -88,35 +88,35 @@ const feedbackStyle = {
 const nodes: Node[] = [
   {
     id: "designer", type: "tooltip", position: { x: 0, y: 150 },
-    data: { label: "Designér", tip: "Brief, záměr, schválení", nodeStyle: inputStyle, sourcePos: Position.Right },
+    data: { label: "Designér", tip: "Zadá brief. Schválí plán. Řídí směr.", nodeStyle: inputStyle, sourcePos: Position.Right },
   },
   {
     id: "orchestrator", type: "tooltip", position: { x: 250, y: 150 },
-    data: { label: "Orchestrátor", tip: "Plánuje postup, deleguje úkoly, řídí agenty", nodeStyle: { ...studioStyle, fontSize: "14px" }, sourcePos: Position.Right, targetPos: Position.Left },
+    data: { label: "Orchestrátor", tip: "Rozloží úkol na kroky. Vybere agenty. Koordinuje.", nodeStyle: { ...studioStyle, fontSize: "14px" }, sourcePos: Position.Right, targetPos: Position.Left },
   },
   {
     id: "agents", type: "tooltip", position: { x: 500, y: 50 },
-    data: { label: "Agenti", tip: "Izolovaní specialisté v kontejnerech", nodeStyle: studioStyle, targetPos: Position.Left, sourcePos: Position.Right },
+    data: { label: "Agenti", tip: "Každý má roli. Frontend, backend, QA, obsah. Běží izolovaně.", nodeStyle: studioStyle, targetPos: Position.Left, sourcePos: Position.Right },
   },
   {
     id: "memory", type: "tooltip", position: { x: 500, y: 150 },
-    data: { label: "Paměť", tip: "Databáze, vektory, naučené znalosti", nodeStyle: studioStyle, targetPos: Position.Left },
+    data: { label: "Paměť", tip: "Databáze, vektory, poznatky. Agenti si odsud čtou kontext.", nodeStyle: studioStyle, targetPos: Position.Left },
   },
   {
     id: "tools", type: "tooltip", position: { x: 500, y: 250 },
-    data: { label: "Nástroje", tip: "Figma, GitHub, Playwright, Vercel...", nodeStyle: studioStyle, targetPos: Position.Left },
+    data: { label: "Nástroje", tip: "MCP servery. Figma, GitHub, Playwright, Vercel, Sentry.", nodeStyle: studioStyle, targetPos: Position.Left },
   },
   {
     id: "pipeline", type: "tooltip", position: { x: 730, y: 150 },
-    data: { label: "Pipeline", tip: "Automatický build, test a deploy", nodeStyle: studioStyle, targetPos: Position.Left, sourcePos: Position.Right },
+    data: { label: "Pipeline", tip: "Build, testy, deploy. Automaticky, bez zásahu.", nodeStyle: studioStyle, targetPos: Position.Left, sourcePos: Position.Right },
   },
   {
     id: "product", type: "tooltip", position: { x: 960, y: 150 },
-    data: { label: "Produkt", tip: "Web, aplikace, prototyp", nodeStyle: inputStyle, targetPos: Position.Left, sourcePos: Position.Bottom },
+    data: { label: "Produkt", tip: "Hotový web, aplikace nebo prototyp. Nasazený a živý.", nodeStyle: inputStyle, targetPos: Position.Left, sourcePos: Position.Bottom },
   },
   {
     id: "feedback", type: "tooltip", position: { x: 470, y: 360 },
-    data: { label: "zpětná smyčka", tip: "Monitoring, učení, optimalizace", nodeStyle: feedbackStyle, targetPos: Position.Right, sourcePos: Position.Left },
+    data: { label: "zpětná smyčka", tip: "Sleduje chyby a výkon. Učí se. Navrhuje vylepšení.", nodeStyle: feedbackStyle, targetPos: Position.Right, sourcePos: Position.Left },
   },
 ]
 
@@ -136,7 +136,8 @@ const edges: Edge[] = [
 
 export function ArchitectureDiagram() {
   return (
-    <div className="w-full" style={{ height: 450 }}>
+    <div className="w-full overflow-x-auto" style={{ height: 450, minWidth: 0 }}>
+      <div style={{ minWidth: 700, height: 450 }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -155,6 +156,7 @@ export function ArchitectureDiagram() {
       >
         <Background color="#1a1a1a" gap={24} size={1} />
       </ReactFlow>
+      </div>
     </div>
   )
 }

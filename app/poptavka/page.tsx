@@ -178,7 +178,7 @@ export default function ContactPage() {
             <div className="flex flex-wrap gap-2">
               {INTERESTS.map((interest) => (
                 <button key={interest} type="button" onClick={() => toggle(interest)}
-                  className={`px-4 py-2.5 rounded-xl border font-mono text-xs transition-all duration-200 ${
+                  className={`px-4 py-3 rounded-xl border font-mono text-xs transition-all duration-200 ${
                     selected.has(interest)
                       ? "border-primary/50 bg-primary/10 text-primary"
                       : "border-border bg-card/50 text-muted-foreground hover:border-primary/30 hover:text-foreground"
