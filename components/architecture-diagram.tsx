@@ -93,16 +93,16 @@ const nodes: Node[] = [
     data: { label: "Orchestrátor", tip: "Rozloží úkol na kroky. Vybere agenty. Koordinuje.", nodeStyle: { ...studioStyle, fontSize: "14px" }, sourcePos: Position.Right, targetPos: Position.Left },
   },
   {
-    id: "agents", type: "tooltip", position: { x: 480, y: 30 },
+    id: "agents", type: "tooltip", position: { x: 480, y: 60 },
     data: { label: "Agenti", tip: "Každý má roli. Frontend, backend, QA, obsah. Běží izolovaně.", nodeStyle: studioStyle, targetPos: Position.Left, sourcePos: Position.Right },
   },
   {
-    id: "memory", type: "tooltip", position: { x: 560, y: 150 },
-    data: { label: "Paměť", tip: "Databáze, vektory, poznatky. Agenti si odsud čtou kontext.", nodeStyle: studioStyle, targetPos: Position.Top },
+    id: "memory", type: "tooltip", position: { x: 420, y: 200 },
+    data: { label: "Paměť", tip: "Databáze, vektory, poznatky. Agenti si odsud čtou kontext.", nodeStyle: studioStyle, targetPos: Position.Left },
   },
   {
-    id: "tools", type: "tooltip", position: { x: 560, y: 260 },
-    data: { label: "Nástroje", tip: "MCP servery. Figma, GitHub, Playwright, Vercel, Sentry.", nodeStyle: studioStyle, targetPos: Position.Top },
+    id: "tools", type: "tooltip", position: { x: 580, y: 200 },
+    data: { label: "Nástroje", tip: "MCP servery. Figma, GitHub, Playwright, Vercel, Sentry.", nodeStyle: studioStyle, targetPos: Position.Left },
   },
   {
     id: "pipeline", type: "tooltip", position: { x: 730, y: 150 },
@@ -124,8 +124,8 @@ const grey = "#2e2e2e"
 const edges: Edge[] = [
   { id: "e1", source: "designer", target: "orchestrator", animated: true, style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
   { id: "e2", source: "orchestrator", target: "agents", animated: true, style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
-  { id: "e3", source: "agents", target: "memory", style: { stroke: grey, strokeWidth: 1 } },
-  { id: "e4", source: "agents", target: "tools", style: { stroke: grey, strokeWidth: 1 } },
+  { id: "e3", source: "agents", target: "memory", type: "smoothstep", style: { stroke: grey, strokeWidth: 1 } },
+  { id: "e4", source: "agents", target: "tools", type: "smoothstep", style: { stroke: grey, strokeWidth: 1 } },
   { id: "e5", source: "agents", target: "pipeline", animated: true, style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
   { id: "e6", source: "pipeline", target: "product", animated: true, style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
   { id: "e7", source: "product", target: "feedback", type: "smoothstep", style: { stroke: grey, strokeWidth: 1, strokeDasharray: "6 4" } },
@@ -134,8 +134,8 @@ const edges: Edge[] = [
 
 export function ArchitectureDiagram() {
   return (
-    <div className="w-full overflow-x-auto" style={{ height: 450, minWidth: 0 }}>
-      <div style={{ minWidth: 700, height: 450 }}>
+    <div className="w-full overflow-x-auto" style={{ height: 500, minWidth: 0 }}>
+      <div style={{ minWidth: 700, height: 500 }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
