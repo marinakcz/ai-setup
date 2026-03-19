@@ -93,15 +93,15 @@ const nodes: Node[] = [
     data: { label: "Orchestrátor", tip: "Rozloží úkol na kroky. Vybere agenty. Koordinuje.", nodeStyle: { ...studioStyle, fontSize: "14px" }, sourcePos: Position.Right, targetPos: Position.Left },
   },
   {
-    id: "agents", type: "tooltip", position: { x: 500, y: 50 },
+    id: "agents", type: "tooltip", position: { x: 480, y: 30 },
     data: { label: "Agenti", tip: "Každý má roli. Frontend, backend, QA, obsah. Běží izolovaně.", nodeStyle: studioStyle, targetPos: Position.Left, sourcePos: Position.Right },
   },
   {
-    id: "memory", type: "tooltip", position: { x: 500, y: 150 },
+    id: "memory", type: "tooltip", position: { x: 560, y: 150 },
     data: { label: "Paměť", tip: "Databáze, vektory, poznatky. Agenti si odsud čtou kontext.", nodeStyle: studioStyle, targetPos: Position.Top },
   },
   {
-    id: "tools", type: "tooltip", position: { x: 500, y: 250 },
+    id: "tools", type: "tooltip", position: { x: 560, y: 260 },
     data: { label: "Nástroje", tip: "MCP servery. Figma, GitHub, Playwright, Vercel, Sentry.", nodeStyle: studioStyle, targetPos: Position.Top },
   },
   {
