@@ -262,19 +262,24 @@ export default function AiStudioPage() {
       {/* ── PRINCIPLES ── */}
       <section className="relative z-10 py-24 md:py-32">
         <div className="max-w-[1408px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ PRINCIPY</p>
+            <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
+              Na čem to stojí
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
-              { title: "Nezávislost", desc: "AI model, hosting, databáze, coding assistant. Vše jde vyměnit bez dopadu na zbytek." },
-              { title: "Transparentnost", desc: "Každý krok je zalogovaný a vysvětlitelný. Žádná černá skříňka." },
-              { title: "Člověk rozhoduje", desc: "Systém navrhuje a realizuje. Směr a finální slovo má vždy člověk." },
-              { title: "Klonovatelný", desc: "Celý systém jde naklonovat na jiný stroj jedním příkazem." },
+              { num: "01", title: "Nezávislost", desc: "Každou část jde vyměnit. AI model, hosting, databáze, coding assistant." },
+              { num: "02", title: "Transparentnost", desc: "Každý krok zalogovaný a vysvětlitelný. Žádná černá skříňka." },
+              { num: "03", title: "Člověk rozhoduje", desc: "Systém navrhuje a realizuje. Směr a finální slovo má člověk." },
+              { num: "04", title: "Klonovatelný", desc: "Celý systém na jiný stroj jedním příkazem. Git + Docker." },
             ].map((item, i) => (
-              <div key={i} className="flex items-start gap-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0" />
-                <div>
-                  <h3 className="font-body font-semibold text-foreground mb-1">{item.title}</h3>
-                  <p className="font-body font-light text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                </div>
+              <div key={i} className="p-6 rounded-xl border border-border hover:border-primary/30 transition-colors group">
+                <span className="font-mono text-xs text-primary/50 group-hover:text-primary transition-colors">{item.num}</span>
+                <h3 className="font-body font-semibold text-foreground mt-3 mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
+                <p className="font-body font-light text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
