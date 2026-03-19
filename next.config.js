@@ -9,6 +9,24 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: { unoptimized: true },
+  async redirects() {
+    return [
+      // Strip fbclid (Facebook)
+      {
+        source: "/:path*",
+        has: [{ type: "query", key: "fbclid" }],
+        destination: "/:path*",
+        permanent: true,
+      },
+      // Strip gclid (Google Ads)
+      {
+        source: "/:path*",
+        has: [{ type: "query", key: "gclid" }],
+        destination: "/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
