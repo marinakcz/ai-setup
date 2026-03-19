@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect, useCallback } from "react"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { SiteFooter } from "@/components/site-footer"
 
@@ -37,6 +38,77 @@ function formatPhone(value: string): string {
     formatted += digits[i]
   }
   return formatted
+}
+
+const REDIRECT_SECONDS = 10
+
+function SuccessScreen() {
+  const router = useRouter()
+  const [countdown, setCountdown] = useState(REDIRECT_SECONDS)
+
+  const goHome = useCallback(() => router.push("/"), [router])
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer)
+          goHome()
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+    return () => clearInterval(timer)
+  }, [goHome])
+
+  return (
+    <div className="relative min-h-screen flex flex-col">
+      <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24 w-full flex-1 flex items-center justify-center">
+        <div className="text-center max-w-lg">
+          <div className="w-16 h-16 mx-auto mb-8 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+            <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-4">/ ODESLÁNO</p>
+          <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-4">
+            Díky, mám to!
+          </h1>
+          <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground mb-10">
+            Ozvu se co nejdřív.<br className="hidden sm:block" />
+            Mezitím se klidně spojme i na LinkedInu.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+            <a
+              href="https://www.linkedin.com/in/pavelmartinovsky/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/30 bg-primary/5 font-mono text-sm text-primary hover:bg-primary/10 transition-colors"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+              LinkedIn
+            </a>
+            <a
+              href="mailto:studio@levouzadni.cz"
+              className="inline-flex items-center gap-2 font-mono text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              studio@levouzadni.cz
+            </a>
+          </div>
+          <p className="font-mono text-xs text-muted-foreground/60">
+            Přesměrování za {countdown} s&ensp;
+            <button onClick={goHome} className="text-primary hover:text-foreground transition-colors">
+              nebo hned &rarr;
+            </button>
+          </p>
+        </div>
+      </main>
+      <SiteFooter />
+    </div>
+  )
 }
 
 export default function ContactPage() {
@@ -105,43 +177,7 @@ export default function ContactPage() {
   }
 
   if (status === "sent") {
-    return (
-      <div className="relative min-h-screen flex flex-col">
-        <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24 w-full flex-1 flex items-center justify-center">
-          <div className="text-center max-w-lg">
-            <div className="w-16 h-16 mx-auto mb-8 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-              <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            </div>
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-4">/ ODESLÁNO</p>
-            <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-4">
-              Díky, mám to!
-            </h1>
-            <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground mb-10">
-              Zprávu jsem dostal. Ozvu se co nejdřív,<br className="hidden sm:block" />
-              většinou do 24 hodin.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 font-mono text-sm text-primary hover:text-foreground transition-colors"
-              >
-                <span aria-hidden="true">&larr;</span> Zpět na hlavní
-              </Link>
-              <span className="hidden sm:block text-border">|</span>
-              <a
-                href="mailto:studio@levouzadni.cz"
-                className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                studio@levouzadni.cz
-              </a>
-            </div>
-          </div>
-        </main>
-        <SiteFooter />
-      </div>
-    )
+    return <SuccessScreen />
   }
 
   return (
