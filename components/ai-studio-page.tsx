@@ -95,13 +95,11 @@ export default function AiStudioPage() {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_2fr_auto_1fr] gap-6 md:gap-0 items-center max-w-5xl mx-auto">
 
             {/* LEFT — Input */}
-            <div className="text-center md:text-right p-6">
-              <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ VSTUP</p>
-              <h3 className="font-body font-semibold text-lg text-foreground mb-2">Designér</h3>
-              <p className="font-mono text-xs text-muted-foreground leading-relaxed">
-                Brief, směr, schválení.<br />
-                Rozhoduje co a proč.
-              </p>
+            <div className="text-center md:text-right p-6 group cursor-default relative">
+              <h3 className="font-body font-semibold text-lg text-foreground group-hover:text-primary transition-colors">Designér</h3>
+              <span className="pointer-events-none absolute -top-6 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
+                Brief, směr, schválení
+              </span>
             </div>
 
             {/* Arrow → */}
@@ -158,23 +156,23 @@ export default function AiStudioPage() {
             </div>
 
             {/* RIGHT — Output */}
-            <div className="text-center md:text-left p-6">
-              <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ VÝSTUP</p>
-              <h3 className="font-body font-semibold text-lg text-foreground mb-2">Produkt</h3>
-              <p className="font-mono text-xs text-muted-foreground leading-relaxed">
-                Web, aplikace, prototyp.<br />
-                Nasazený, sledovaný, vylepšovaný.
-              </p>
+            <div className="text-center md:text-left p-6 group cursor-default relative">
+              <h3 className="font-body font-semibold text-lg text-foreground group-hover:text-primary transition-colors">Produkt</h3>
+              <span className="pointer-events-none absolute -top-6 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
+                Web, aplikace, prototyp. Nasazený a sledovaný.
+              </span>
             </div>
           </div>
 
           {/* Feedback loop */}
-          <div className="max-w-5xl mx-auto mt-6 px-16 hidden md:block">
-            <div className="relative h-10">
-              <svg viewBox="0 0 800 40" className="w-full h-full" fill="none" aria-hidden="true">
-                <path d="M700 4 C 750 4, 780 20, 780 20 C 780 20, 750 36, 700 36 L 100 36 C 50 36, 20 20, 20 20 C 20 20, 50 4, 100 4" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="6 4" fill="none" />
-                <text x="400" y="24" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="9" fontFamily="monospace" opacity="0.5">zpětná vazba · učení · vylepšování</text>
+          <div className="max-w-5xl mx-auto mt-4 hidden md:block">
+            <div className="flex items-center justify-center gap-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/20 to-primary/20" />
+              <span className="font-mono text-[10px] text-primary/40 shrink-0">zpětná smyčka</span>
+              <svg viewBox="0 0 20 12" className="w-4 h-3 text-primary/30 shrink-0 rotate-180" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M0 6h16M10 1l6 5-6 5" />
               </svg>
+              <div className="flex-1 h-px bg-gradient-to-l from-transparent via-primary/20 to-primary/20" />
             </div>
           </div>
         </div>
