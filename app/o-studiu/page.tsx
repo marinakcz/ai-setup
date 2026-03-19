@@ -41,7 +41,7 @@ export default function AboutPage() {
 
         {/* Hero intro */}
         <section className="mb-10 md:mb-32 hero-stagger">
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 hidden md:block stagger-1">/ O STUDIU A O MNĚ</p>
+          <p className="font-body text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold md:font-normal mb-2 stagger-1">/ O STUDIU A O MNĚ</p>
           <h1 className="font-body font-extrabold text-2xl md:text-[clamp(1.75rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-3 md:mb-8 stagger-2">
             Ahoj, jsem Pavel.
           </h1>
@@ -52,7 +52,7 @@ export default function AboutPage() {
 
         {/* What I do — big statement */}
         <section className="mb-10 md:mb-32 reveal-group" ref={whatRef}>
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 hidden md:block reveal-item">/ STÁLE SE SNAŽÍM O JEDNO</p>
+          <p className="font-body text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold md:font-normal mb-2 reveal-item">/ STÁLE SE SNAŽÍM O JEDNO</p>
           <div className="mb-4 md:mb-10">
             <p className="font-body font-extrabold text-xl md:text-[clamp(1.5rem,5vw,4.5rem)] leading-[1.2] md:leading-[1.15] text-foreground reveal-item" style={{ transitionDelay: "100ms" }}>
               Pochopit problém. Navrhnout řešení.
@@ -66,7 +66,7 @@ export default function AboutPage() {
         {/* The problem + AI — merged on mobile for better flow */}
         <section className="mb-10 md:mb-32 reveal-group" ref={problemRef}>
           <div className="reveal-item">
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 hidden md:block">/ REALITA</p>
+            <p className="font-body text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold md:font-normal mb-2 ">/ REALITA</p>
             <h2 className="font-body font-extrabold text-xl md:text-[clamp(1.25rem,3.5vw,3rem)] leading-[1.3] text-muted-foreground">
               Ale spousta dobrých nápadů
             </h2>
@@ -100,7 +100,7 @@ export default function AboutPage() {
 
         {/* New reality — simplified */}
         <section className="mb-10 md:mb-32 reveal-group" ref={realityRef}>
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 hidden md:block reveal-item">/ NOVÁ REALITA</p>
+          <p className="font-body text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold md:font-normal mb-2 reveal-item">/ NOVÁ REALITA</p>
           <div>
             <p className="font-body font-extrabold text-base md:text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.5] text-foreground reveal-item" style={{ transitionDelay: "100ms" }}>
               Rychlejší realizace neznamená méně přemýšlení. Znamená víc prostoru přemýšlet správně.
@@ -115,7 +115,7 @@ export default function AboutPage() {
 
         {/* Why this exists */}
         <section className="mb-10 md:mb-32 reveal-group" ref={whyRef}>
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 hidden md:block reveal-item">/ PROTO VZNIKLO</p>
+          <p className="font-body text-xs md:font-mono md:tracking-[0.2em] text-primary font-semibold md:font-normal mb-2 reveal-item">/ PROTO VZNIKLO</p>
           <h2 className="font-body font-black text-2xl md:text-[clamp(2rem,6vw,5rem)] leading-[1.0] text-foreground mb-4 md:mb-10 reveal-item" style={{ transitionDelay: "100ms" }}>
             Levou zadní.
           </h2>
