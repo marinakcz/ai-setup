@@ -1,7 +1,7 @@
 "use client"
 
 import { SiteFooter } from "@/components/site-footer"
-import { ScrambleTag } from "@/components/scramble-tag"
+
 
 const ICON_MAP: Record<string, string> = {
   "AI modely": "/icons/claude.svg",
@@ -31,7 +31,7 @@ export default function AiStudioPage() {
         <div className="max-w-[1408px] mx-auto px-6 w-full">
           <div className="text-center mb-12 md:mb-16">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
-              <ScrambleTag text="/ POD KAPOTOU" delay={200} />
+              / POD KAPOTOU
             </p>
             <h1 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground mb-4">
               AI studio / Levou zadní
@@ -56,7 +56,7 @@ export default function AiStudioPage() {
         <div className="max-w-[1408px] mx-auto px-6">
           <div className="text-center mb-12 md:mb-16">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
-              <ScrambleTag text="/ JAK TO FUNGUJE" delay={400} />
+              / JAK TO FUNGUJE
             </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
               Zázraky na počkání. Doslova.
@@ -83,7 +83,7 @@ export default function AiStudioPage() {
             ].map((item, i) => (
               <div key={i}>
                 <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
-                  <ScrambleTag text={`/ ${item.tag}`} delay={600 + i * 200} />
+                  {`/ ${item.tag}`}
                 </p>
                 <h3 className="font-body font-semibold text-[clamp(1.25rem,1.6vw,1.75rem)] leading-snug text-foreground mb-3">
                   {item.title}
@@ -104,7 +104,7 @@ export default function AiStudioPage() {
         <div className="max-w-[1408px] mx-auto px-6">
           <div className="text-center mb-12 md:mb-16">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
-              <ScrambleTag text="/ ARCHITEKTURA" delay={300} />
+              / ARCHITEKTURA
             </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.3] tracking-[0.06em] text-foreground">
               Vyladěná rovnice.<br />
@@ -186,7 +186,7 @@ export default function AiStudioPage() {
         <div className="max-w-[1408px] mx-auto px-6">
           <div className="text-center mb-14">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
-              <ScrambleTag text="/ NÁSTROJE" delay={300} />
+              / NÁSTROJE
             </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
               Na čem to stavíme
@@ -231,7 +231,7 @@ export default function AiStudioPage() {
         <div className="max-w-[1408px] mx-auto px-6">
           <div className="text-center mb-14">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
-              <ScrambleTag text="/ HARDWARE" delay={300} />
+              / HARDWARE
             </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
               Tady bydlí AI studio.
@@ -268,7 +268,7 @@ export default function AiStudioPage() {
         <div className="max-w-[1408px] mx-auto px-6">
           <div className="text-center mb-12">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
-              <ScrambleTag text="/ CÍLE" delay={300} />
+              / CÍLE
             </p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
               Kam to směřujeme

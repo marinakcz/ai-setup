@@ -4,7 +4,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { useRef, useCallback } from "react"
 import { useMountEffect } from "@/hooks/use-mount-effect"
-import { ScrambleTag } from "@/components/scramble-tag"
 import { PrimaryButton } from "@/components/primary-button"
 import { SiteFooter } from "@/components/site-footer"
 
@@ -82,7 +81,7 @@ export default function Home() {
             {/* Tag + Headline */}
             <div className="text-center mb-12 md:mb-20 hero-stagger">
               <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 stagger-1">
-                <ScrambleTag text="/ AI STUDIO" delay={300} />
+                / AI STUDIO
               </p>
               <h1 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground stagger-2">
                 Od nápadu k produktu
@@ -118,7 +117,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-5 md:gap-8 font-mono text-xs tracking-[0.15em] text-primary stagger-5">
               {TAGS.map((tag, i) => (
                 <span key={tag} className="hover:text-foreground transition-colors duration-300 cursor-default">
-                  <ScrambleTag text={`/ ${tag}`} delay={900 + i * 150} />
+                  {`/ ${tag}`}
                 </span>
               ))}
             </div>
@@ -150,7 +149,7 @@ export default function Home() {
                   style={{ transitionDelay: `${i * 150}ms` }}
                 >
                   <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
-                    <ScrambleTag text={`/ ${pillar.tag}`} delay={i * 200} />
+                    {`/ ${pillar.tag}`}
                   </p>
                   <h2 className="font-body font-semibold text-[clamp(1.25rem,1.6vw,1.75rem)] leading-snug text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
                     {pillar.title}
