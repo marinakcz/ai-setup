@@ -28,7 +28,7 @@ function TooltipNode({ data }: NodeProps) {
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
       onClick={() => setShow(!show)}
-      className="relative cursor-pointer"
+      className="relative cursor-pointer nopan"
     >
       {data.targetPos && <Handle type="target" position={data.targetPos as Position} style={{ opacity: 0 }} />}
       {data.sourcePos && <Handle type="source" position={data.sourcePos as Position} style={{ opacity: 0 }} />}
@@ -98,11 +98,11 @@ const nodes: Node[] = [
   },
   {
     id: "memory", type: "tooltip", position: { x: 500, y: 150 },
-    data: { label: "Paměť", tip: "Databáze, vektory, poznatky. Agenti si odsud čtou kontext.", nodeStyle: studioStyle, targetPos: Position.Left },
+    data: { label: "Paměť", tip: "Databáze, vektory, poznatky. Agenti si odsud čtou kontext.", nodeStyle: studioStyle, targetPos: Position.Top },
   },
   {
     id: "tools", type: "tooltip", position: { x: 500, y: 250 },
-    data: { label: "Nástroje", tip: "MCP servery. Figma, GitHub, Playwright, Vercel, Sentry.", nodeStyle: studioStyle, targetPos: Position.Left },
+    data: { label: "Nástroje", tip: "MCP servery. Figma, GitHub, Playwright, Vercel, Sentry.", nodeStyle: studioStyle, targetPos: Position.Top },
   },
   {
     id: "pipeline", type: "tooltip", position: { x: 730, y: 150 },
@@ -124,8 +124,8 @@ const grey = "#2e2e2e"
 const edges: Edge[] = [
   { id: "e1", source: "designer", target: "orchestrator", animated: true, style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
   { id: "e2", source: "orchestrator", target: "agents", animated: true, style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
-  { id: "e3", source: "orchestrator", target: "memory", style: { stroke: grey, strokeWidth: 1 } },
-  { id: "e4", source: "orchestrator", target: "tools", style: { stroke: grey, strokeWidth: 1 } },
+  { id: "e3", source: "agents", target: "memory", style: { stroke: grey, strokeWidth: 1 } },
+  { id: "e4", source: "agents", target: "tools", style: { stroke: grey, strokeWidth: 1 } },
   { id: "e5", source: "agents", target: "pipeline", animated: true, style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
   { id: "e6", source: "pipeline", target: "product", animated: true, style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
   { id: "e7", source: "product", target: "feedback", type: "smoothstep", style: { stroke: grey, strokeWidth: 1, strokeDasharray: "6 4" } },
@@ -149,6 +149,7 @@ export function ArchitectureDiagram() {
         nodesDraggable={false}
         nodesConnectable={false}
         elementsSelectable={false}
+        selectNodesOnDrag={false}
         proOptions={{ hideAttribution: true }}
         style={{ background: "#0d0d0d" }}
       >

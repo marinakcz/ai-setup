@@ -103,6 +103,21 @@ export default function AiStudioPage() {
           </div>
 
           <ArchitectureDiagram />
+
+          {/* Legend under diagram */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 max-w-4xl mx-auto">
+            {[
+              { label: "Orchestrátor", desc: "Rozloží úkol, vybere agenty, koordinuje" },
+              { label: "Agenti", desc: "Izolovaní specialisté na kód, design, testy" },
+              { label: "Paměť", desc: "Databáze, vektory, naučené znalosti" },
+              { label: "Pipeline", desc: "Automatický build, test a deploy" },
+            ].map((item, i) => (
+              <div key={i} className="text-center">
+                <p className="font-mono text-xs text-foreground font-medium">{item.label}</p>
+                <p className="font-mono text-xs text-muted-foreground mt-1">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
