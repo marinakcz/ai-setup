@@ -29,7 +29,7 @@ export function SiteNav() {
           className="hover:opacity-80 transition-opacity"
         >
           <span className="flex items-center gap-2.5 group">
-            <Image src="/logo-color.svg" alt="" width={56} height={56} className="h-10 w-10 transition-transform duration-300 group-hover:rotate-12" priority />
+            <Image src="/logo-color.svg" alt="Levou zadní" width={56} height={56} className="h-10 w-10 transition-transform duration-300 group-hover:rotate-12" priority />
             <span className="font-body font-bold text-base tracking-[0.04em] text-foreground group-hover:text-primary transition-colors duration-300 leading-none mt-2.5">levou zadní</span>
           </span>
         </Link>
