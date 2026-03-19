@@ -5,10 +5,10 @@ import Image from "next/image"
 import Link from "next/link"
 
 const NAV_LINKS = [
-  { href: "/", label: "Domů" },
-  { href: "/o-studiu", label: "O studiu" },
-  { href: "/pod-kapotou", label: "Pod kapotou" },
-  { href: "/kontakty", label: "Spojme se" },
+  { href: "/", label: "/Domů" },
+  { href: "/o-studiu", label: "/O studiu" },
+  { href: "/pod-kapotou", label: "/Pod kapotou" },
+  { href: "/kontakty", label: "/Spojme se" },
 ]
 
 export function SiteNav() {
@@ -73,19 +73,14 @@ export function SiteNav() {
                 </Link>
               ))}
             </div>
-          </div>
-        </div>
 
-        {/* Footer in menu */}
-        <div className="shrink-0">
-          <div className="h-px bg-gradient-to-r from-border/40 to-transparent" />
-          <div className="max-w-[1408px] mx-auto px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 font-mono text-sm">
-              <a href="mailto:studio@levouzadni.cz" className="text-foreground hover:text-primary transition-colors">studio@levouzadni.cz</a>
-              <a href="tel:+420776120555" className="text-foreground hover:text-primary transition-colors">+420 776 120 555</a>
+            <div className="flex flex-col gap-2 mt-8 font-mono text-sm">
+              <a href="mailto:studio@levouzadni.cz" className="text-muted-foreground hover:text-primary transition-colors">studio@levouzadni.cz</a>
+              <a href="tel:+420776120555" className="text-muted-foreground hover:text-primary transition-colors">+420 776 120 555</a>
             </div>
           </div>
         </div>
+
       </div>
     </nav>
   )
