@@ -80,14 +80,11 @@ export function SiteNav() {
         <div className="shrink-0">
           <div className="h-px bg-gradient-to-r from-border/40 to-transparent" />
           <div className="max-w-[1408px] mx-auto px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 font-mono text-xs text-muted-foreground">
-              <a href="mailto:studio@levouzadni.cz" className="hover:text-foreground transition-colors">studio@levouzadni.cz</a>
-              <a href="tel:+420776120555" className="hover:text-foreground transition-colors">+420 776 120 555</a>
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 font-mono text-sm">
+              <a href="mailto:studio@levouzadni.cz" className="text-foreground hover:text-primary transition-colors">studio@levouzadni.cz</a>
+              <a href="tel:+420776120555" className="text-foreground hover:text-primary transition-colors">+420 776 120 555</a>
             </div>
-            <div className="flex gap-4 font-mono text-xs text-muted-foreground">
-              <Link href="/ochrana-udaju" onClick={() => setOpen(false)} className="hover:text-foreground transition-colors">Ochrana údajů</Link>
-              <a href="https://www.linkedin.com/in/pavelmartinovsky/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
-            </div>
+            <a href="https://www.linkedin.com/in/pavelmartinovsky/" target="_blank" rel="noopener noreferrer" className="font-mono text-sm text-foreground hover:text-primary transition-colors">LinkedIn ↗</a>
           </div>
         </div>
       </div>
