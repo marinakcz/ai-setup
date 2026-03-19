@@ -44,7 +44,7 @@ export default function AiStudioPage() {
           <div className="text-center mb-16">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ JAK TO FUNGUJE</p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
-              Od briefu k produktu
+              Zázraky na počkání. Doslova.
             </h2>
           </div>
 
