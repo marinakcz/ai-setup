@@ -197,7 +197,7 @@ export default function ContactPage() {
         </div>
 
         {/* Form */}
-        <form className="max-w-2xl mx-auto" onSubmit={handleSubmit} noValidate>
+        <form className="max-w-2xl mx-auto" onSubmit={handleSubmit}>
           <div className="absolute -left-[9999px]" aria-hidden="true">
             <input type="text" name="website" tabIndex={-1} autoComplete="off" />
           </div>
