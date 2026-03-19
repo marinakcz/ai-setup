@@ -30,7 +30,7 @@ export default function AiStudioPage() {
               <ScrambleTag text="/ POD KAPOTOU" delay={200} />
             </p>
             <h1 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground mb-4">
-              Autonomní AI studio
+              AI studio: levou zadní
             </h1>
             <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground max-w-2xl mx-auto">
               Modulární systém AI agentů, paměti a nástrojů. Zadáte záměr, systém naplánuje postup, sestaví tým agentů a vytvoří funkční produkt. Weby, aplikace, prototypy, experimenty.
