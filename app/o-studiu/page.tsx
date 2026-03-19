@@ -98,7 +98,7 @@ export default function AboutPage() {
                 A změnila pravidla hry.
               </p>
               <p className="font-body font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.8] text-muted-foreground max-w-lg">
-                Tak rychlou změnu jsem za více než 25 let v digitálu ještě nezažil. Najednou se cesta od nápadu k realizaci dramaticky zkrátila.
+                Tak rychlou změnu jsem za 27 let v digitálu ještě nezažil. Najednou se cesta od nápadu k realizaci dramaticky zkrátila.
               </p>
             </div>
           </div>
