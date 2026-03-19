@@ -20,10 +20,14 @@ function TooltipNode({ data }: NodeProps) {
 
   return (
     <div
-      style={style}
+      style={{
+        ...style,
+        transition: "border-color 0.2s, background 0.2s",
+        ...(hover ? { borderColor: "rgba(240, 88, 35, 0.6)", background: "rgba(240, 88, 35, 0.08)" } : {}),
+      }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className="relative"
+      className="relative cursor-default"
     >
       {data.targetPos && <Handle type="target" position={data.targetPos as Position} style={{ opacity: 0 }} />}
       {data.sourcePos && <Handle type="source" position={data.sourcePos as Position} style={{ opacity: 0 }} />}
@@ -120,14 +124,14 @@ const orange = "rgba(240, 88, 35, 0.4)"
 const grey = "#2e2e2e"
 
 const edges: Edge[] = [
-  { id: "e1", source: "designer", target: "orchestrator", style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
-  { id: "e2", source: "orchestrator", target: "agents", style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
-  { id: "e3", source: "orchestrator", target: "memory", style: { stroke: grey, strokeWidth: 1.5 } },
-  { id: "e4", source: "orchestrator", target: "tools", style: { stroke: grey, strokeWidth: 1.5 } },
-  { id: "e5", source: "agents", target: "pipeline", style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
-  { id: "e6", source: "pipeline", target: "product", style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
+  { id: "e1", source: "designer", target: "orchestrator", animated: true, style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
+  { id: "e2", source: "orchestrator", target: "agents", animated: true, style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
+  { id: "e3", source: "orchestrator", target: "memory", style: { stroke: grey, strokeWidth: 1 } },
+  { id: "e4", source: "orchestrator", target: "tools", style: { stroke: grey, strokeWidth: 1 } },
+  { id: "e5", source: "agents", target: "pipeline", animated: true, style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
+  { id: "e6", source: "pipeline", target: "product", animated: true, style: { stroke: orange, strokeWidth: 1.5 }, markerEnd: { type: MarkerType.ArrowClosed, color: orange } },
   { id: "e7", source: "product", target: "feedback", type: "smoothstep", style: { stroke: grey, strokeWidth: 1, strokeDasharray: "6 4" } },
-  { id: "e8", source: "feedback", target: "orchestrator", type: "smoothstep", style: { stroke: grey, strokeWidth: 1, strokeDasharray: "6 4" }, markerEnd: { type: MarkerType.ArrowClosed, color: grey } },
+  { id: "e8", source: "feedback", target: "orchestrator", type: "smoothstep", animated: true, style: { stroke: grey, strokeWidth: 1, strokeDasharray: "6 4" }, markerEnd: { type: MarkerType.ArrowClosed, color: grey } },
 ]
 
 export function ArchitectureDiagram() {
