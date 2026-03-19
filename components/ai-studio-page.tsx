@@ -94,15 +94,15 @@ export default function AiStudioPage() {
 
           <div className="max-w-md mx-auto">
             {[
-              { label: "Orchestrátor", desc: "Plánuje, deleguje, rozhoduje", icon: "⚡" },
-              { label: "Agenti", desc: "Izolovaní specialisté v kontejnerech", icon: "🤖" },
-              { label: "Paměť", desc: "Databáze, vektory, naučené znalosti", icon: "🧠" },
-              { label: "Nástroje", desc: "Figma, GitHub, Playwright, Vercel...", icon: "🔧" },
-              { label: "Pipeline", desc: "Automatický build, test, deploy", icon: "🚀" },
+              { label: "Orchestrátor", desc: "Plánuje, deleguje, rozhoduje", num: "01" },
+              { label: "Agenti", desc: "Izolovaní specialisté v kontejnerech", num: "02" },
+              { label: "Paměť", desc: "Databáze, vektory, naučené znalosti", num: "03" },
+              { label: "Nástroje", desc: "Figma, GitHub, Playwright, Vercel...", num: "04" },
+              { label: "Pipeline", desc: "Automatický build, test, deploy", num: "05" },
             ].map((item, i, arr) => (
               <div key={i}>
                 <div className="group flex items-center gap-5 p-5 rounded-xl border border-border hover:border-primary/40 hover:bg-primary/[0.02] transition-all duration-300 relative">
-                  <span className="text-2xl w-10 text-center shrink-0 group-hover:scale-110 transition-transform duration-300">{item.icon}</span>
+                  <span className="font-mono text-xs text-primary/60 w-10 text-center shrink-0 group-hover:text-primary transition-colors duration-300">{item.num}</span>
                   <div>
                     <div className="font-body font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{item.label}</div>
                     <div className="font-mono text-xs text-muted-foreground mt-0.5">{item.desc}</div>
