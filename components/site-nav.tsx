@@ -54,19 +54,18 @@ export function SiteNav() {
         {/* Spacer for top bar */}
         <div className="h-14 shrink-0" />
 
-        {/* Main nav links — large flowing type */}
+        {/* Main nav links */}
         <div className="flex-1 flex items-center">
           <div className="max-w-[1408px] mx-auto px-6 w-full">
-            <div className="flex flex-wrap gap-x-[0.4em] gap-y-0 leading-[1.1]">
+            <div className="flex flex-col gap-3">
               {NAV_LINKS.map((link, i) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="font-body font-light text-foreground/80 hover:text-primary transition-colors duration-200"
+                  className="font-body font-extrabold text-foreground/90 hover:text-primary transition-colors duration-200 block"
                   style={{
-                    fontSize: "clamp(2.5rem, 8vw, 7rem)",
-                    animationDelay: `${i * 60}ms`,
+                    fontSize: "clamp(2.5rem, 6vw, 5rem)",
                   }}
                 >
                   {link.label}
@@ -77,11 +76,12 @@ export function SiteNav() {
         </div>
 
         {/* Footer in menu */}
-        <div className="shrink-0 border-t border-border/40">
+        <div className="shrink-0">
+          <div className="h-px bg-gradient-to-r from-border/40 to-transparent" />
           <div className="max-w-[1408px] mx-auto px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 font-mono text-xs text-muted-foreground">
-              <span>marinak@marinak.cz</span>
-              <span>+420 776 120 555</span>
+              <a href="mailto:studio@levouzadni.cz" className="hover:text-foreground transition-colors">studio@levouzadni.cz</a>
+              <a href="tel:+420776120555" className="hover:text-foreground transition-colors">+420 776 120 555</a>
             </div>
             <div className="flex gap-4 font-mono text-xs text-muted-foreground">
               <Link href="/ochrana-udaju" onClick={() => setOpen(false)} className="hover:text-foreground transition-colors">Ochrana údajů</Link>
