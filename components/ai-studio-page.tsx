@@ -109,63 +109,52 @@ export default function AiStudioPage() {
           {/* Layered diagram — top to bottom */}
           <div className="max-w-2xl mx-auto space-y-0">
 
-            {/* Layer 1: Designér */}
-            <div className="p-5 rounded-t-2xl border border-border/60 bg-card/20 text-center">
-              <p className="font-mono text-xs text-muted-foreground/60 mb-1">VRSTVA 1</p>
-              <p className="font-body font-semibold text-foreground">Designér</p>
-              <p className="font-mono text-xs text-muted-foreground mt-1">Brief, směr, schválení. Člověk rozhoduje.</p>
+            {/* Designér */}
+            <div className="p-6 rounded-t-2xl border-2 border-border bg-card/30 text-center">
+              <p className="font-body font-semibold text-lg text-foreground">Designér</p>
+              <p className="font-mono text-xs text-muted-foreground mt-1">Zadá brief. Schválí plán. Řídí směr.</p>
             </div>
 
-            {/* Connector */}
-            <div className="flex justify-center"><div className="w-px h-4 bg-primary/30" /></div>
+            <div className="flex justify-center"><div className="w-px h-5 bg-primary/40" /></div>
 
-            {/* Layer 2: Orchestrátor */}
-            <div className="p-5 border border-primary/30 bg-primary/[0.03] text-center">
-              <p className="font-mono text-xs text-primary/60 mb-1">VRSTVA 2</p>
-              <p className="font-body font-semibold text-primary">Orchestrátor</p>
-              <p className="font-mono text-xs text-muted-foreground mt-1">Rozloží úkol na kroky. Vybere agenty. Koordinuje.</p>
+            {/* Orchestrátor */}
+            <div className="p-6 border-2 border-primary/40 bg-primary/[0.04] text-center">
+              <p className="font-body font-semibold text-lg text-primary">Orchestrátor</p>
+              <p className="font-mono text-xs text-muted-foreground mt-1">Rozloží úkol. Vybere agenty. Koordinuje celý proces.</p>
             </div>
 
-            {/* Connector */}
-            <div className="flex justify-center"><div className="w-px h-4 bg-primary/30" /></div>
+            <div className="flex justify-center"><div className="w-px h-5 bg-primary/40" /></div>
 
-            {/* Layer 3: Agenti + podpora */}
-            <div className="p-5 border border-primary/20 bg-primary/[0.02] text-center">
-              <p className="font-mono text-xs text-primary/60 mb-1">VRSTVA 3</p>
-              <div className="flex flex-wrap justify-center gap-3 mb-2">
-                <span className="font-body font-semibold text-foreground">Agenti</span>
-                <span className="text-border">·</span>
-                <span className="font-body text-muted-foreground">Paměť</span>
-                <span className="text-border">·</span>
-                <span className="font-body text-muted-foreground">Nástroje</span>
+            {/* Agenti + Paměť + Nástroje */}
+            <div className="p-6 border-2 border-primary/30 bg-primary/[0.03] text-center">
+              <div className="flex flex-wrap justify-center gap-4 mb-2">
+                <span className="font-body font-semibold text-lg text-foreground">Agenti</span>
+                <span className="font-body text-lg text-muted-foreground">Paměť</span>
+                <span className="font-body text-lg text-muted-foreground">Nástroje</span>
               </div>
-              <p className="font-mono text-xs text-muted-foreground">Izolovaní specialisté + databáze + MCP servery</p>
+              <p className="font-mono text-xs text-muted-foreground">Specialisté v kontejnerech + databáze + MCP servery</p>
             </div>
 
-            {/* Connector */}
-            <div className="flex justify-center"><div className="w-px h-4 bg-primary/30" /></div>
+            <div className="flex justify-center"><div className="w-px h-5 bg-primary/40" /></div>
 
-            {/* Layer 4: Pipeline */}
-            <div className="p-5 border border-primary/20 bg-primary/[0.02] text-center">
-              <p className="font-mono text-xs text-primary/60 mb-1">VRSTVA 4</p>
-              <p className="font-body font-semibold text-foreground">Pipeline</p>
-              <p className="font-mono text-xs text-muted-foreground mt-1">Build, test, deploy. Automaticky.</p>
+            {/* Pipeline */}
+            <div className="p-6 border-2 border-primary/30 bg-primary/[0.03] text-center">
+              <p className="font-body font-semibold text-lg text-foreground">Pipeline</p>
+              <p className="font-mono text-xs text-muted-foreground mt-1">Build, test, deploy. Bez zásahu.</p>
             </div>
 
-            {/* Connector */}
-            <div className="flex justify-center"><div className="w-px h-4 bg-primary/30" /></div>
+            <div className="flex justify-center"><div className="w-px h-5 bg-primary/40" /></div>
 
-            {/* Layer 5: Produkt */}
-            <div className="p-5 rounded-b-2xl border border-border/60 bg-card/20 text-center">
-              <p className="font-mono text-xs text-muted-foreground/60 mb-1">VRSTVA 5</p>
-              <p className="font-body font-semibold text-foreground">Produkt</p>
-              <p className="font-mono text-xs text-muted-foreground mt-1">Nasazený, sledovaný, vylepšovaný.</p>
+            {/* Produkt */}
+            <div className="p-6 rounded-b-2xl border-2 border-border bg-card/30 text-center">
+              <p className="font-body font-semibold text-lg text-foreground">Produkt</p>
+              <p className="font-mono text-xs text-muted-foreground mt-1">Web, aplikace, prototyp. Nasazený a živý.</p>
             </div>
 
             {/* Feedback */}
-            <div className="flex justify-center pt-4">
-              <div className="px-5 py-2.5 rounded-xl border border-dashed border-primary/20 text-center">
-                <p className="font-mono text-xs text-muted-foreground">↻ zpětná smyčka — monitoring, učení, optimalizace</p>
+            <div className="flex justify-center pt-5">
+              <div className="px-6 py-3 rounded-xl border-2 border-dashed border-border/50 text-center">
+                <p className="font-mono text-xs text-muted-foreground">↻ zpětná smyčka · monitoring · učení · optimalizace</p>
               </div>
             </div>
           </div>
