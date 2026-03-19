@@ -192,16 +192,16 @@ export default function AiStudioPage() {
             <div className="p-8 rounded-2xl border border-border border-dashed">
               <div className="flex items-center gap-3 mb-8">
                 <span className="w-2.5 h-2.5 rounded-full border-2 border-muted-foreground" />
-                <span className="font-mono text-xs tracking-[0.15em] text-muted-foreground">PŘIPRAVUJEME</span>
+                <span className="font-mono text-xs tracking-[0.15em] text-muted-foreground">KAM MÍŘÍM</span>
               </div>
               <div className="space-y-4">
                 {[
-                  { icon: "/icons/claude.svg", label: "Agent SDK", note: "Orchestrace" },
-                  { icon: "/icons/docker.svg", label: "Docker", note: "Sandbox" },
-                  { icon: "/icons/playwright.svg", label: "Auto-testing", note: "QA" },
-                  { icon: "/icons/vercel.svg", label: "Workflow DevKit", note: "Durable tasks" },
-                  { icon: "/icons/nodejs.svg", label: "Monitoring", note: "24/7" },
-                  { icon: "/icons/claude.svg", label: "Více agentů", note: "Autonomie" },
+                  { icon: "/icons/docker.svg", label: "Izolovaný sandbox", note: "Bezpečné buildy" },
+                  { icon: "/icons/playwright.svg", label: "Automatické testování", note: "QA bez zásahu" },
+                  { icon: "/icons/nodejs.svg", label: "Orchestrace agentů", note: "Úkol → plán → výsledek" },
+                  { icon: "/icons/vercel.svg", label: "Durable workflows", note: "Přežijí restart" },
+                  { icon: "/icons/sentry.svg", label: "Monitoring 24/7", note: "Hlídání kvality" },
+                  { icon: "/icons/openai.svg", label: "Vendor-agnostic AI", note: "Nezávislost na poskytovateli" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 opacity-50">
                     <img src={item.icon} alt="" className="w-5 h-5 shrink-0" />
@@ -211,7 +211,7 @@ export default function AiStudioPage() {
                 ))}
               </div>
               <p className="font-mono text-[10px] text-muted-foreground mt-6 pt-4 border-t border-border/40">
-                Víc automatizace, víc prostoru na člověka
+                Méně rutiny, víc prostoru na to, co potřebuje člověka
               </p>
             </div>
           </div>
