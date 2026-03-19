@@ -88,33 +88,95 @@ export default function AiStudioPage() {
           <div className="text-center mb-16">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ ARCHITEKTURA</p>
             <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
-              Pět vrstev
+              Jak to spolupracuje
             </h2>
           </div>
 
-          <div className="max-w-md mx-auto">
-            {[
-              { label: "Orchestrátor", desc: "Plánuje, deleguje, rozhoduje", num: "01" },
-              { label: "Agenti", desc: "Izolovaní specialisté v kontejnerech", num: "02" },
-              { label: "Paměť", desc: "Databáze, vektory, naučené znalosti", num: "03" },
-              { label: "Nástroje", desc: "Figma, GitHub, Playwright, Vercel...", num: "04" },
-              { label: "Pipeline", desc: "Automatický build, test, deploy", num: "05" },
-            ].map((item, i, arr) => (
-              <div key={i}>
-                <div className="group flex items-center gap-5 p-5 rounded-xl border border-border hover:border-primary/40 hover:bg-primary/[0.02] transition-all duration-300 relative">
-                  <span className="font-mono text-xs text-primary/60 w-10 text-center shrink-0 group-hover:text-primary transition-colors duration-300">{item.num}</span>
-                  <div>
-                    <div className="font-body font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{item.label}</div>
-                    <div className="font-mono text-xs text-muted-foreground mt-0.5">{item.desc}</div>
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_2fr_auto_1fr] gap-6 md:gap-0 items-center max-w-5xl mx-auto">
+
+            {/* LEFT — Input */}
+            <div className="text-center md:text-right p-6">
+              <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ VSTUP</p>
+              <h3 className="font-body font-semibold text-lg text-foreground mb-2">Designér</h3>
+              <p className="font-mono text-xs text-muted-foreground leading-relaxed">
+                Brief, směr, schválení.<br />
+                Rozhoduje co a proč.
+              </p>
+            </div>
+
+            {/* Arrow → */}
+            <div className="hidden md:flex items-center px-4">
+              <svg viewBox="0 0 40 24" className="w-8 h-5 text-primary/40" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M0 12h34M26 5l8 7-8 7" />
+              </svg>
+            </div>
+
+            {/* CENTER — Studio engine */}
+            <div className="relative p-8 rounded-2xl border border-primary/20 bg-primary/[0.02]">
+              <div className="text-center mb-6">
+                <p className="font-mono text-xs tracking-[0.15em] text-primary font-medium">AI STUDIO</p>
+              </div>
+
+              {/* Circular flow */}
+              <div className="relative w-full max-w-[280px] mx-auto aspect-square">
+                {/* Center label */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="font-mono text-[10px] text-primary/60">Orchestrátor</div>
+                    <div className="font-mono text-[9px] text-muted-foreground">řídí cyklus</div>
                   </div>
                 </div>
-                {i < arr.length - 1 && (
-                  <div className="flex justify-center py-1">
-                    <div className="w-px h-6 bg-gradient-to-b from-border to-border/30" />
+
+                {/* Rotating ring */}
+                <svg viewBox="0 0 200 200" className="w-full h-full animate-[spin_30s_linear_infinite]" aria-hidden="true">
+                  <circle cx="100" cy="100" r="85" fill="none" stroke="hsl(var(--border))" strokeWidth="0.5" strokeDasharray="4 4" />
+                </svg>
+
+                {/* Layer labels positioned around the circle */}
+                {[
+                  { label: "Agenti", x: "50%", y: "2%" },
+                  { label: "Pipeline", x: "95%", y: "45%" },
+                  { label: "Paměť", x: "75%", y: "92%" },
+                  { label: "Nástroje", x: "25%", y: "92%" },
+                  { label: "Učení", x: "5%", y: "45%" },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="absolute font-mono text-[10px] text-muted-foreground -translate-x-1/2 -translate-y-1/2 hover:text-primary transition-colors cursor-default"
+                    style={{ left: item.x, top: item.y }}
+                  >
+                    {item.label}
                   </div>
-                )}
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Arrow → */}
+            <div className="hidden md:flex items-center px-4">
+              <svg viewBox="0 0 40 24" className="w-8 h-5 text-primary/40" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M0 12h34M26 5l8 7-8 7" />
+              </svg>
+            </div>
+
+            {/* RIGHT — Output */}
+            <div className="text-center md:text-left p-6">
+              <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ VÝSTUP</p>
+              <h3 className="font-body font-semibold text-lg text-foreground mb-2">Produkt</h3>
+              <p className="font-mono text-xs text-muted-foreground leading-relaxed">
+                Web, aplikace, prototyp.<br />
+                Nasazený, sledovaný, vylepšovaný.
+              </p>
+            </div>
+          </div>
+
+          {/* Feedback loop */}
+          <div className="max-w-5xl mx-auto mt-6 px-16 hidden md:block">
+            <div className="relative h-10">
+              <svg viewBox="0 0 800 40" className="w-full h-full" fill="none" aria-hidden="true">
+                <path d="M700 4 C 750 4, 780 20, 780 20 C 780 20, 750 36, 700 36 L 100 36 C 50 36, 20 20, 20 20 C 20 20, 50 4, 100 4" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="6 4" fill="none" />
+                <text x="400" y="24" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="9" fontFamily="monospace" opacity="0.5">zpětná vazba · učení · vylepšování</text>
+              </svg>
+            </div>
           </div>
         </div>
       </section>
