@@ -254,6 +254,7 @@ export default function AiStudioPage() {
             >
               <span className="font-mono text-xs text-muted-foreground">Až jednou vyrostu, budu </span>
               <span className="font-mono text-xs text-primary font-medium">Mac Studio</span>
+              <span className="inline-block animate-wave ml-1">🤞</span>
             </span>
           </div>
           <p className="text-center font-mono text-xs text-muted-foreground mb-6">+ NAS Synology pro zálohy</p>
