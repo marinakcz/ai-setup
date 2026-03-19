@@ -7,6 +7,7 @@ import Link from "next/link"
 const NAV_LINKS = [
   { href: "/", label: "Domů" },
   { href: "/o-studiu", label: "O studiu" },
+  { href: "/setup", label: "Pod kapotou" },
   { href: "/poptavka", label: "Spojme se" },
 ]
 

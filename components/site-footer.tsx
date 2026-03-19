@@ -10,11 +10,11 @@ export function SiteFooter() {
         <div className="flex gap-4 font-mono text-xs text-muted-foreground">
           <Link href="/o-studiu" className="hover:text-foreground transition-colors">O studiu</Link>
           <span className="text-border">/</span>
+          <Link href="/setup" className="hover:text-foreground transition-colors">Pod kapotou</Link>
+          <span className="text-border">/</span>
           <Link href="/poptavka" className="hover:text-foreground transition-colors">Spojme se</Link>
           <span className="text-border">/</span>
           <Link href="/ochrana-udaju" className="hover:text-foreground transition-colors"><span className="hidden sm:inline">Ochrana osobních údajů</span><span className="sm:hidden">Ochrana údajů</span></Link>
-          <span className="text-border">/</span>
-          <Link href="/setup" className="hover:text-foreground transition-colors" title="Setup">π</Link>
         </div>
         <span className="font-mono text-[10px] text-muted-foreground/50">
           Copyright © 2026 levouzadni.cz
