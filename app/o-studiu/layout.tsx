@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "O mně a studiu | Levou zadní",
     description: "Ahoj, jsem Pavel. Digitální produkty od roku 1999. Dnes s pomocí AI.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Levou zadní — AI studio" }],
   },
   alternates: { canonical: "/o-studiu" },
 }

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ochrana osobních údajů | Levou zadní",
     description: "Jak pracuji s vašimi údaji.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Levou zadní — AI studio" }],
   },
   alternates: { canonical: "/ochrana-udaju" },
 }
