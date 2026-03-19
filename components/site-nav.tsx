@@ -69,7 +69,7 @@ export function SiteNav() {
                     fontSize: "clamp(2.5rem, 6vw, 5rem)",
                   }}
                 >
-                  <span className="text-[0.6em] text-muted-foreground font-light mr-2">/</span>{link.label}
+                  <span className="inline-flex items-center"><span className="text-[0.6em] text-muted-foreground font-light mr-2 translate-y-[0.05em]">/</span>{link.label}</span>
                 </Link>
               ))}
             </div>
