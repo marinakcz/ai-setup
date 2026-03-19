@@ -107,7 +107,7 @@ export default function ContactPage() {
   if (status === "sent") {
     return (
       <div className="relative min-h-screen flex flex-col">
-        <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-32 pb-24 w-full text-center">
+        <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24 w-full text-center">
           <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ SPOJME SE</p>
           <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-4">
             Díky!
@@ -123,10 +123,10 @@ export default function ContactPage() {
 
   return (
     <div className="relative min-h-screen flex flex-col">
-      <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-32 pb-24 w-full">
+      <main className="relative z-10 max-w-[1408px] mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24 w-full">
 
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-12 md:mb-16 text-center">
           <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">/ NAPIŠTE MI</p>
           <h1 className="font-body font-extrabold text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] tracking-[0.02em] text-foreground mb-4">
             Spojme se
@@ -226,10 +226,10 @@ export default function ContactPage() {
         </form>
 
         {/* ── Contact info ── */}
-        <div className="max-w-2xl mx-auto mt-24">
-          <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-16" />
+        <div className="max-w-2xl mx-auto mt-16 md:mt-24">
+          <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-12 md:mb-16" />
 
-          <div className="mb-16">
+          <div className="mb-12 md:mb-16">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-4">/ PŘÍMO</p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-10">
               <a href="mailto:studio@levouzadni.cz" className="font-body font-semibold text-xl text-foreground hover:text-primary transition-colors">

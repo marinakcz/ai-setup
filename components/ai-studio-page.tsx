@@ -27,9 +27,9 @@ export default function AiStudioPage() {
       <main>
 
       {/* ── HERO ── */}
-      <section className="relative z-10 pt-32 pb-24">
+      <section className="relative z-10 pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="max-w-[1408px] mx-auto px-6 w-full">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
               <ScrambleTag text="/ POD KAPOTOU" delay={200} />
             </p>
@@ -54,7 +54,7 @@ export default function AiStudioPage() {
       {/* ── HOW IT WORKS ── */}
       <section className="relative z-10 py-24 md:py-32">
         <div className="max-w-[1408px] mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
               <ScrambleTag text="/ JAK TO FUNGUJE" delay={400} />
             </p>
@@ -102,7 +102,7 @@ export default function AiStudioPage() {
       {/* ── ARCHITECTURE — clean boxes ── */}
       <section className="relative z-10 py-24 md:py-32">
         <div className="max-w-[1408px] mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
               <ScrambleTag text="/ ARCHITEKTURA" delay={300} />
             </p>
@@ -182,7 +182,7 @@ export default function AiStudioPage() {
       <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       {/* ── TOOLS ── */}
-      <section className="relative z-10 py-24">
+      <section className="relative z-10 py-24 md:py-32">
         <div className="max-w-[1408px] mx-auto px-6">
           <div className="text-center mb-14">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
@@ -227,7 +227,7 @@ export default function AiStudioPage() {
       <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       {/* ── HARDWARE ── */}
-      <section className="relative z-10 py-24">
+      <section className="relative z-10 py-24 md:py-32">
         <div className="max-w-[1408px] mx-auto px-6">
           <div className="text-center mb-14">
             <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">

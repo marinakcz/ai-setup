@@ -52,7 +52,7 @@ export default function AboutPage() {
 
         {/* What I do — big statement */}
         <section className="mb-16 md:mb-32 reveal-group" ref={whatRef}>
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item"><ScrambleTag text="/ STÁLE SE SNAŽÍM O JEDNO" /></p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 reveal-item"><ScrambleTag text="/ STÁLE SE SNAŽÍM O JEDNO" /></p>
           <div className="space-y-1 mb-10">
             <p className="font-body font-extrabold text-[clamp(2rem,5vw,4.5rem)] leading-[1.1] text-foreground reveal-item" style={{ transitionDelay: "100ms" }}>
               Pochopit problém.
@@ -72,7 +72,7 @@ export default function AboutPage() {
         {/* The problem — contrast block */}
         <section className="mb-16 md:mb-32 reveal-group" ref={problemRef}>
           <div className="reveal-item">
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6"><ScrambleTag text="/ REALITA" /></p>
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2"><ScrambleTag text="/ REALITA" /></p>
             <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.2] text-muted-foreground mb-4">
               Ale spousta dobrých nápadů
             </h2>
@@ -106,7 +106,7 @@ export default function AboutPage() {
 
         {/* New reality */}
         <section className="mb-16 md:mb-32 reveal-group" ref={realityRef}>
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item"><ScrambleTag text="/ NOVÁ REALITA" /></p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 reveal-item"><ScrambleTag text="/ NOVÁ REALITA" /></p>
           <div>
             <h2 className="font-body font-extrabold text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.4] text-foreground mb-3 reveal-item" style={{ transitionDelay: "100ms" }}>
               Rychlejší realizace neznamená méně přemýšlení.<br />
@@ -145,7 +145,7 @@ export default function AboutPage() {
 
         {/* Why this exists */}
         <section className="mb-16 md:mb-32 reveal-group" ref={whyRef}>
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-6 reveal-item"><ScrambleTag text="/ PROTO VZNIKLO" /></p>
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2 reveal-item"><ScrambleTag text="/ PROTO VZNIKLO" /></p>
           <h2 className="font-body font-black text-[clamp(2.5rem,6vw,5rem)] leading-[1.0] text-foreground mb-10 reveal-item" style={{ transitionDelay: "100ms" }}>
             Levou zadní.
           </h2>
