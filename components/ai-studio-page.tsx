@@ -118,34 +118,47 @@ export default function AiStudioPage() {
               </div>
 
               {/* Circular flow */}
-              <div className="relative w-full max-w-[280px] mx-auto aspect-square">
-                {/* Center label */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="font-mono text-[10px] text-primary/60">Orchestrátor</div>
-                    <div className="font-mono text-[9px] text-muted-foreground">řídí cyklus</div>
+              <div className="relative w-full max-w-[320px] mx-auto aspect-square">
+                {/* Center — Orchestrátor */}
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <div className="text-center px-4 py-3 rounded-xl border border-primary/30 bg-background">
+                    <div className="font-mono text-xs text-primary font-medium">Orchestrátor</div>
                   </div>
                 </div>
 
                 {/* Rotating ring */}
-                <svg viewBox="0 0 200 200" className="w-full h-full animate-[spin_30s_linear_infinite]" aria-hidden="true">
-                  <circle cx="100" cy="100" r="85" fill="none" stroke="hsl(var(--border))" strokeWidth="0.5" strokeDasharray="4 4" />
+                <svg viewBox="0 0 200 200" className="w-full h-full" aria-hidden="true">
+                  {/* Outer dashed circle — rotates */}
+                  <circle cx="100" cy="100" r="90" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeDasharray="3 6" opacity="0.3" className="animate-[spin_25s_linear_infinite] origin-center" />
+                  {/* Inner solid circle */}
+                  <circle cx="100" cy="100" r="88" fill="none" stroke="hsl(var(--border))" strokeWidth="0.5" />
+                  {/* Dots at layer positions */}
+                  {[
+                    [100, 10],  // top
+                    [185, 72],  // right-top
+                    [155, 178], // right-bottom
+                    [45, 178],  // left-bottom
+                    [15, 72],   // left-top
+                  ].map(([cx, cy], i) => (
+                    <circle key={i} cx={cx} cy={cy} r="3" fill="hsl(var(--primary))" opacity="0.5" />
+                  ))}
                 </svg>
 
-                {/* Layer labels positioned around the circle */}
+                {/* Layer labels — positioned outside the circle */}
                 {[
-                  { label: "Agenti", x: "50%", y: "2%" },
-                  { label: "Pipeline", x: "95%", y: "45%" },
-                  { label: "Paměť", x: "75%", y: "92%" },
-                  { label: "Nástroje", x: "25%", y: "92%" },
-                  { label: "Učení", x: "5%", y: "45%" },
+                  { label: "Agenti", sub: "izolovaní specialisté", x: "50%", y: "-4%" },
+                  { label: "Pipeline", sub: "build, test, deploy", x: "105%", y: "32%" },
+                  { label: "Paměť", sub: "data a znalosti", x: "90%", y: "95%" },
+                  { label: "Nástroje", sub: "MCP a API", x: "10%", y: "95%" },
+                  { label: "Učení", sub: "zpětná vazba", x: "-5%", y: "32%" },
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="absolute font-mono text-[10px] text-muted-foreground -translate-x-1/2 -translate-y-1/2 hover:text-primary transition-colors cursor-default"
+                    className="absolute -translate-x-1/2 -translate-y-1/2 text-center cursor-default group"
                     style={{ left: item.x, top: item.y }}
                   >
-                    {item.label}
+                    <div className="font-mono text-xs text-foreground font-medium group-hover:text-primary transition-colors">{item.label}</div>
+                    <div className="font-mono text-[10px] text-muted-foreground/60">{item.sub}</div>
                   </div>
                 ))}
               </div>
