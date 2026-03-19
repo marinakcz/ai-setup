@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
+import { useMountEffect } from "@/hooks/use-mount-effect"
 import Link from "next/link"
 import { SiteFooter } from "@/components/site-footer"
 import { ScrambleTag } from "@/components/scramble-tag"
@@ -8,7 +9,7 @@ import { PrimaryButton } from "@/components/primary-button"
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null)
-  useEffect(() => {
+  useMountEffect(() => {
     const el = ref.current
     if (!el) return
     const observer = new IntersectionObserver(

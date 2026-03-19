@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useRef, useCallback } from "react"
+import { useRef, useCallback } from "react"
+import { useMountEffect } from "@/hooks/use-mount-effect"
 import { ScrambleTag } from "@/components/scramble-tag"
 import { PrimaryButton } from "@/components/primary-button"
 import { SiteFooter } from "@/components/site-footer"
@@ -30,7 +31,7 @@ const TAGS = ["PROTOTYPY", "MVP", "AI NÁSTROJE", "EXPERIMENTY"]
 
 function useParallax() {
   const ref = useRef<HTMLDivElement>(null)
-  useEffect(() => {
+  useMountEffect(() => {
     const el = ref.current
     if (!el) return
     const onScroll = () => {
@@ -49,7 +50,7 @@ function useParallax() {
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null)
-  useEffect(() => {
+  useMountEffect(() => {
     const el = ref.current
     if (!el) return
     const observer = new IntersectionObserver(
