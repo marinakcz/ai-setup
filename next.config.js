@@ -24,6 +24,17 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        // Legacy PHP forum URLs → 410 Gone (de-index from Google)
+        {
+          source: "/:path*.php",
+          destination: "/api/legacy-gone",
+        },
+      ],
+    };
+  },
   devIndicators: false,
   allowedDevOrigins: [
     "*.macaly.dev",
