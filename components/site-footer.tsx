@@ -14,6 +14,8 @@ export function SiteFooter() {
           <span className="text-border leading-none">/</span>
           <Link href="/kontakty" className="py-2 px-3 hover:text-foreground transition-colors">Spojme se</Link>
           <span className="text-border leading-none">/</span>
+          <a href="https://clientzone.levouzadni.cz/login" className="py-2 px-3 hover:text-foreground transition-colors">Přihlášení</a>
+          <span className="text-border leading-none">/</span>
           <Link href="/ochrana-udaju" aria-label="Ochrana osobních údajů" className="py-2 px-3 hover:text-foreground transition-colors"><span className="hidden sm:inline">Ochrana osobních údajů</span><span className="sm:hidden">Ochrana údajů</span></Link>
         </nav>
         <span className="font-mono text-xs text-muted-foreground">
