@@ -192,41 +192,6 @@ export default function AiStudioPage() {
 
       <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      {/* ── AGENTS ── */}
-      <section className="relative z-10 py-24 md:py-32">
-        <div className="max-w-[1408px] mx-auto px-6">
-          <div className="text-center mb-12 md:mb-16">
-            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
-              / AGENTI
-            </p>
-            <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
-              Tým specialistů
-            </h2>
-            <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground mt-3 max-w-xl mx-auto">
-              Každý agent má svou roli, vlastní nástroje a jasně definovanou odpovědnost.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {[
-              { role: "Pipeline", desc: "End-to-end orchestrace. Od briefu přes kód, review a testy až po deploy.", accent: true },
-              { role: "Planner", desc: "Rozloží zadání na plán, scope a rizika. Navrhne postup." },
-              { role: "Reviewer", desc: "Code review. Kontroluje kvalitu, bezpečnost a konzistenci." },
-              { role: "QA", desc: "E2E testy, smoke testy, UX kontrola. Playwright + Vitest." },
-              { role: "Ops", desc: "Deploy, infrastruktura, monitoring. Vercel, Cloudflare, Sentry." },
-              { role: "n8n Architect", desc: "Navrhuje a spravuje automatizační workflows v n8n." },
-            ].map((agent, i) => (
-              <div key={i} className={`p-5 rounded-xl border transition-colors ${agent.accent ? "border-primary/40 bg-primary/[0.04] hover:border-primary/60" : "border-border hover:border-primary/30"}`}>
-                <p className={`font-mono text-sm font-medium mb-2 ${agent.accent ? "text-primary" : "text-foreground"}`}>{agent.role}</p>
-                <p className="font-body font-light text-sm text-muted-foreground leading-relaxed">{agent.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-
       {/* ── TOOLS ── */}
       <section className="relative z-10 py-24 md:py-32">
         <div className="max-w-[1408px] mx-auto px-6">
