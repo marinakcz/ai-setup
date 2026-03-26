@@ -47,7 +47,7 @@ export default function AiStudioPage() {
             <div className="mt-4">
               <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary/40 bg-primary/[0.08] font-mono text-sm text-primary shadow-[0_0_20px_rgba(240,88,35,0.15)]">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(240,88,35,0.6)]" />
-                Aktivní studio — projekty v produkci
+                Aktivní experimenty — od prototypů po produkci
               </span>
             </div>
           </div>
