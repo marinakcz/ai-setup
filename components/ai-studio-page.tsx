@@ -142,19 +142,19 @@ export default function AiStudioPage() {
               <div className="absolute w-1.5 h-1.5 rounded-full bg-primary animate-pulse left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" />
             </div>
 
-            {/* Agenti + MCP + Paměť — three columns */}
-            <div className="grid grid-cols-3 gap-0 border-2 border-primary/30 bg-primary/[0.03] hover:border-primary/50 hover:bg-primary/[0.05] transition-colors">
-              <div className="p-5 text-center border-r border-primary/15">
+            {/* Agenti + MCP + Paměť — three columns, stack on mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-primary/30 bg-primary/[0.03] hover:border-primary/50 hover:bg-primary/[0.05] transition-colors">
+              <div className="p-5 text-center border-b md:border-b-0 md:border-r border-primary/15">
                 <p className="font-body font-semibold text-lg text-foreground">Agenti</p>
-                <p className="font-mono text-[10px] text-muted-foreground mt-1">Planner, Reviewer, QA, Ops...</p>
+                <p className="font-mono text-xs text-muted-foreground mt-1">Planner, Reviewer, QA, Ops...</p>
               </div>
-              <div className="p-5 text-center border-r border-primary/15">
+              <div className="p-5 text-center border-b md:border-b-0 md:border-r border-primary/15">
                 <p className="font-body font-semibold text-lg text-foreground">MCP</p>
-                <p className="font-mono text-[10px] text-muted-foreground mt-1">30+ serverů, napojení na svět</p>
+                <p className="font-mono text-xs text-muted-foreground mt-1">30+ serverů, napojení na svět</p>
               </div>
               <div className="p-5 text-center">
                 <p className="font-body font-semibold text-lg text-foreground">Paměť</p>
-                <p className="font-mono text-[10px] text-muted-foreground mt-1">Kontext, rozhodnutí, historie</p>
+                <p className="font-mono text-xs text-muted-foreground mt-1">Kontext, rozhodnutí, historie</p>
               </div>
             </div>
 
