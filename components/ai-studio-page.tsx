@@ -242,33 +242,50 @@ export default function AiStudioPage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-6">
             {[
-              { icon: "AI modely", note: "Claude, GPT, Gemini..." },
-              { icon: "Claude Code", note: "Coding agent + MCP" },
-              { icon: "Gemini", note: "Second opinion, multimodální" },
-              { icon: "Design", note: "Figma" },
-              { icon: "Framework", note: "Next.js, React" },
-              { icon: "Deploy", note: "Vercel" },
-              { icon: "Edge & DNS", note: "Cloudflare Workers, KV, R2" },
-              { icon: "Kód", note: "GitHub" },
-              { icon: "Data", note: "Supabase, Postgres" },
-              { icon: "Backend", note: "Convex" },
-              { icon: "Kontejnery", note: "Docker" },
-              { icon: "Testy", note: "Playwright, Vitest" },
-              { icon: "Performance", note: "Lighthouse, Core Web Vitals" },
-              { icon: "Monitoring", note: "Sentry" },
-              { icon: "E-maily", note: "Resend" },
-              { icon: "Scraping", note: "Firecrawl" },
-              { icon: "Automatizace", note: "n8n workflows" },
-              { icon: "Poznámky", note: "Obsidian" },
-              { icon: "Notifikace", note: "Telegram" },
-              { icon: "Lokální AI", note: "Qwen, Llama..." },
-            ].map((item, i) => (
-              <div key={i} className="group relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border hover:border-primary/30 transition-colors cursor-default">
-                <img src={ICON_MAP[item.icon]} alt="" className="w-4 h-4 shrink-0" />
-                <span className="font-mono text-xs text-foreground">{item.icon}</span>
-                <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">{item.note}</span>
+              { label: "AI", items: [
+                { icon: "AI modely", note: "Claude, GPT, Gemini..." },
+                { icon: "Claude Code", note: "Coding agent + MCP" },
+                { icon: "Gemini", note: "Second opinion, multimodální" },
+                { icon: "Lokální AI", note: "Qwen, Llama..." },
+              ]},
+              { label: "Vývoj", items: [
+                { icon: "Design", note: "Figma" },
+                { icon: "Framework", note: "Next.js, React" },
+                { icon: "Kód", note: "GitHub" },
+                { icon: "Data", note: "Supabase, Postgres" },
+                { icon: "Backend", note: "Convex" },
+              ]},
+              { label: "Infra", items: [
+                { icon: "Deploy", note: "Vercel" },
+                { icon: "Edge & DNS", note: "Cloudflare Workers, KV, R2" },
+                { icon: "Kontejnery", note: "Docker" },
+                { icon: "Automatizace", note: "n8n workflows" },
+              ]},
+              { label: "Kvalita", items: [
+                { icon: "Testy", note: "Playwright, Vitest" },
+                { icon: "Performance", note: "Lighthouse, Core Web Vitals" },
+                { icon: "Monitoring", note: "Sentry" },
+              ]},
+              { label: "Komunikace", items: [
+                { icon: "E-maily", note: "Resend" },
+                { icon: "Scraping", note: "Firecrawl" },
+                { icon: "Poznámky", note: "Obsidian" },
+                { icon: "Notifikace", note: "Telegram" },
+              ]},
+            ].map((group, gi) => (
+              <div key={gi}>
+                <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground/60 mb-2 text-center">{group.label}</p>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {group.items.map((item, i) => (
+                    <div key={i} className="group relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border hover:border-primary/30 transition-colors cursor-default">
+                      <img src={ICON_MAP[item.icon]} alt="" className="w-4 h-4 shrink-0" />
+                      <span className="font-mono text-xs text-foreground">{item.icon}</span>
+                      <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">{item.note}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
@@ -329,12 +346,13 @@ export default function AiStudioPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
             {[
               { num: "01", title: "Nezávislost", desc: "Každou část jde vyměnit. AI model, hosting, databáze, coding assistant." },
               { num: "02", title: "Transparentnost", desc: "Každý krok zalogovaný a vysvětlitelný. Žádná černá skříňka." },
               { num: "03", title: "Člověk rozhoduje", desc: "Systém navrhuje a realizuje. Směr a finální slovo má člověk." },
-              { num: "04", title: "Přenositelný", desc: "Celý systém na jiný stroj. Git, Docker, MCP konfigurace." },
+              { num: "04", title: "Bezpečnost", desc: "Žádné cookies, žádný tracking. CSP hlavičky, šifrovaná komunikace." },
+              { num: "05", title: "Přenositelný", desc: "Celý systém na jiný stroj. Git, Docker, MCP konfigurace." },
             ].map((item, i) => (
               <div key={i} className="p-6 rounded-xl border border-border hover:border-primary/30 transition-colors group">
                 <span className="font-mono text-xs text-primary/50 group-hover:text-primary transition-colors">{item.num}</span>
