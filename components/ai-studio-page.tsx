@@ -346,13 +346,12 @@ export default function AiStudioPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
               { num: "01", title: "Nezávislost", desc: "Každou část jde vyměnit. AI model, hosting, databáze, coding assistant." },
               { num: "02", title: "Transparentnost", desc: "Každý krok zalogovaný a vysvětlitelný. Žádná černá skříňka." },
               { num: "03", title: "Člověk rozhoduje", desc: "Systém navrhuje a realizuje. Směr a finální slovo má člověk." },
-              { num: "04", title: "Bezpečnost", desc: "Žádné cookies, žádný tracking. CSP hlavičky, šifrovaná komunikace." },
-              { num: "05", title: "Přenositelný", desc: "Celý systém na jiný stroj. Git, Docker, MCP konfigurace." },
+              { num: "04", title: "Přenositelný", desc: "Celý systém na jiný stroj. Git, Docker, MCP konfigurace." },
             ].map((item, i) => (
               <div key={i} className="p-6 rounded-xl border border-border hover:border-primary/30 transition-colors group">
                 <span className="font-mono text-xs text-primary/50 group-hover:text-primary transition-colors">{item.num}</span>
