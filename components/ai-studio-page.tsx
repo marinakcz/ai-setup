@@ -209,52 +209,35 @@ export default function AiStudioPage() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
             {[
-              { label: "AI", items: [
-                { icon: "AI modely", note: "Claude, GPT, Gemini..." },
-                { icon: "Claude Code", note: "Coding agent + MCP" },
-                { icon: "Gemini", note: "Second opinion, multimodální" },
-                { icon: "Lokální AI", note: "Qwen, Llama..." },
-              ]},
-              { label: "Vývoj", items: [
-                { icon: "Design", note: "Figma" },
-                { icon: "Framework", note: "Next.js, React" },
-                { icon: "Kód", note: "GitHub" },
-                { icon: "Data", note: "Supabase, Postgres" },
-                { icon: "Backend", note: "Convex" },
-              ]},
-              { label: "Infra", items: [
-                { icon: "Deploy", note: "Vercel" },
-                { icon: "Edge & DNS", note: "Cloudflare Workers, KV, R2" },
-                { icon: "Kontejnery", note: "Docker" },
-                { icon: "Automatizace", note: "n8n workflows" },
-              ]},
-              { label: "Kvalita", items: [
-                { icon: "Testy", note: "Playwright, Vitest" },
-                { icon: "Performance", note: "Lighthouse, Core Web Vitals" },
-                { icon: "Monitoring", note: "Sentry" },
+              { icon: "AI modely", note: "Claude, GPT, Gemini..." },
+              { icon: "Claude Code", note: "Coding agent + MCP" },
+              { icon: "Gemini", note: "Second opinion, multimodální" },
+              { icon: "Lokální AI", note: "Qwen, Llama..." },
+              { icon: "Design", note: "Figma" },
+              { icon: "Framework", note: "Next.js, React" },
+              { icon: "Kód", note: "GitHub" },
+              { icon: "Data", note: "Supabase, Postgres" },
+              { icon: "Backend", note: "Convex" },
+              { icon: "Deploy", note: "Vercel" },
+              { icon: "Edge & DNS", note: "Cloudflare Workers, KV, R2" },
+              { icon: "Kontejnery", note: "Docker" },
+              { icon: "Automatizace", note: "n8n workflows" },
+              { icon: "Testy", note: "Playwright, Vitest" },
+              { icon: "Performance", note: "Lighthouse, Core Web Vitals" },
+              { icon: "Monitoring", note: "Sentry" },
               { icon: "Přístupnost", note: "A11y audit" },
               { icon: "Analytika", note: "PostHog" },
-              ]},
-              { label: "Komunikace", items: [
-                { icon: "E-maily", note: "Resend" },
-                { icon: "Scraping", note: "Firecrawl" },
-                { icon: "Poznámky", note: "Obsidian" },
-                { icon: "Notifikace", note: "Telegram" },
-              ]},
-            ].map((group, gi) => (
-              <div key={gi}>
-                <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground/60 mb-2 text-center">{group.label}</p>
-                <div className="flex flex-wrap justify-center gap-3">
-                  {group.items.map((item, i) => (
-                    <div key={i} className="group relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border hover:border-primary/30 transition-colors cursor-default">
-                      <img src={ICON_MAP[item.icon]} alt="" className="w-4 h-4 shrink-0" />
-                      <span className="font-mono text-xs text-foreground">{item.icon}</span>
-                      <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">{item.note}</span>
-                    </div>
-                  ))}
-                </div>
+              { icon: "E-maily", note: "Resend" },
+              { icon: "Scraping", note: "Firecrawl" },
+              { icon: "Poznámky", note: "Obsidian" },
+              { icon: "Notifikace", note: "Telegram" },
+            ].map((item, i) => (
+              <div key={i} className="group relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border hover:border-primary/30 transition-colors cursor-default">
+                <img src={ICON_MAP[item.icon]} alt="" className="w-4 h-4 shrink-0" />
+                <span className="font-mono text-xs text-foreground">{item.icon}</span>
+                <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">{item.note}</span>
               </div>
             ))}
           </div>
