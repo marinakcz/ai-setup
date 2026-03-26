@@ -47,7 +47,7 @@ export default function AiStudioPage() {
             <div className="mt-4">
               <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary/40 bg-primary/[0.08] font-mono text-sm text-primary shadow-[0_0_20px_rgba(240,88,35,0.15)]">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(240,88,35,0.6)]" />
-                Ve stavu aktivního vývoje a ladění
+                Aktivní studio — projekty v produkci
               </span>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function AiStudioPage() {
               {
                 tag: "TVORBA",
                 title: "AI agenti realizují",
-                desc: "Specializovaní agenti pracují paralelně. Každý má svou roli, své nástroje a běží izolovaně. Výstupy se průběžně testují.",
+                desc: "Pipeline agent řídí celý cyklus: plán, kód, review, testy, deploy. Specializovaní agenti pracují paralelně, každý se svými nástroji. Výstupy se průběžně testují.",
               },
               {
                 tag: "VÝSLEDEK",
@@ -142,14 +142,20 @@ export default function AiStudioPage() {
               <div className="absolute w-1.5 h-1.5 rounded-full bg-primary animate-pulse left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" />
             </div>
 
-            {/* Agenti + Paměť + Nástroje */}
-            <div className="p-6 border-2 border-primary/30 bg-primary/[0.03] text-center hover:border-primary/50 hover:bg-primary/[0.05] transition-colors">
-              <div className="flex flex-wrap justify-center gap-4 mb-2">
-                <span className="font-body font-semibold text-lg text-foreground">Agenti</span>
-                <span className="font-body text-lg text-muted-foreground">Paměť</span>
-                <span className="font-body text-lg text-muted-foreground">Nástroje</span>
+            {/* Agenti + MCP + Paměť — three columns */}
+            <div className="grid grid-cols-3 gap-0 border-2 border-primary/30 bg-primary/[0.03] hover:border-primary/50 hover:bg-primary/[0.05] transition-colors">
+              <div className="p-5 text-center border-r border-primary/15">
+                <p className="font-body font-semibold text-lg text-foreground">Agenti</p>
+                <p className="font-mono text-[10px] text-muted-foreground mt-1">Planner, Reviewer, QA, Ops...</p>
               </div>
-              <p className="font-mono text-xs text-muted-foreground">Specialisté v kontejnerech + databáze + MCP servery</p>
+              <div className="p-5 text-center border-r border-primary/15">
+                <p className="font-body font-semibold text-lg text-foreground">MCP</p>
+                <p className="font-mono text-[10px] text-muted-foreground mt-1">30+ serverů, napojení na svět</p>
+              </div>
+              <div className="p-5 text-center">
+                <p className="font-body font-semibold text-lg text-foreground">Paměť</p>
+                <p className="font-mono text-[10px] text-muted-foreground mt-1">Kontext, rozhodnutí, historie</p>
+              </div>
             </div>
 
             <div className="flex justify-center relative">
@@ -180,6 +186,41 @@ export default function AiStudioPage() {
                 <p className="font-mono text-xs text-muted-foreground">↻ zpětná smyčka · monitoring · učení · optimalizace</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
+      {/* ── AGENTS ── */}
+      <section className="relative z-10 py-24 md:py-32">
+        <div className="max-w-[1408px] mx-auto px-6">
+          <div className="text-center mb-12 md:mb-16">
+            <p className="font-mono text-xs tracking-[0.2em] text-primary mb-2">
+              / AGENTI
+            </p>
+            <h2 className="font-body font-extrabold text-[clamp(1.5rem,2.8vw,2.5rem)] leading-[1.6] tracking-[0.06em] text-foreground">
+              Tým specialistů
+            </h2>
+            <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground mt-3 max-w-xl mx-auto">
+              Každý agent má svou roli, vlastní nástroje a jasně definovanou odpovědnost.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            {[
+              { role: "Pipeline", desc: "End-to-end orchestrace. Od briefu přes kód, review a testy až po deploy.", accent: true },
+              { role: "Planner", desc: "Rozloží zadání na plán, scope a rizika. Navrhne postup." },
+              { role: "Reviewer", desc: "Code review. Kontroluje kvalitu, bezpečnost a konzistenci." },
+              { role: "QA", desc: "E2E testy, smoke testy, UX kontrola. Playwright + Vitest." },
+              { role: "Ops", desc: "Deploy, infrastruktura, monitoring. Vercel, Cloudflare, Sentry." },
+              { role: "n8n Architect", desc: "Navrhuje a spravuje automatizační workflows v n8n." },
+            ].map((agent, i) => (
+              <div key={i} className={`p-5 rounded-xl border transition-colors ${agent.accent ? "border-primary/40 bg-primary/[0.04] hover:border-primary/60" : "border-border hover:border-primary/30"}`}>
+                <p className={`font-mono text-sm font-medium mb-2 ${agent.accent ? "text-primary" : "text-foreground"}`}>{agent.role}</p>
+                <p className="font-body font-light text-sm text-muted-foreground leading-relaxed">{agent.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -293,7 +334,7 @@ export default function AiStudioPage() {
               { num: "01", title: "Nezávislost", desc: "Každou část jde vyměnit. AI model, hosting, databáze, coding assistant." },
               { num: "02", title: "Transparentnost", desc: "Každý krok zalogovaný a vysvětlitelný. Žádná černá skříňka." },
               { num: "03", title: "Člověk rozhoduje", desc: "Systém navrhuje a realizuje. Směr a finální slovo má člověk." },
-              { num: "04", title: "Klonovatelný", desc: "Celý systém na jiný stroj jedním příkazem. Git + Docker." },
+              { num: "04", title: "Přenositelný", desc: "Celý systém na jiný stroj. Git, Docker, MCP konfigurace." },
             ].map((item, i) => (
               <div key={i} className="p-6 rounded-xl border border-border hover:border-primary/30 transition-colors group">
                 <span className="font-mono text-xs text-primary/50 group-hover:text-primary transition-colors">{item.num}</span>
