@@ -25,6 +25,7 @@ const ICON_MAP: Record<string, string> = {
   "Notifikace": "/icons/telegram.svg",
   "Lokální AI": "/icons/qwen.svg",
   "Přístupnost": "/icons/a11y.svg",
+  "Analytika": "/icons/posthog.svg",
 }
 
 export default function AiStudioPage() {
@@ -234,6 +235,7 @@ export default function AiStudioPage() {
                 { icon: "Performance", note: "Lighthouse, Core Web Vitals" },
                 { icon: "Monitoring", note: "Sentry" },
               { icon: "Přístupnost", note: "A11y audit" },
+              { icon: "Analytika", note: "PostHog" },
               ]},
               { label: "Komunikace", items: [
                 { icon: "E-maily", note: "Resend" },
