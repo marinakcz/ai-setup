@@ -121,34 +121,34 @@ export default function AiStudioPage() {
           <div className="max-w-2xl mx-auto space-y-0">
 
             {/* Designér */}
-            <div className="p-6 rounded-t-2xl border-2 border-border bg-card/30 text-center hover:border-border/80 transition-colors">
+            <div className="p-6 rounded-t-2xl border-2 border-border bg-card/30 text-center hover:border-primary/30 transition-colors">
               <p className="font-body font-semibold text-lg text-foreground">Designér</p>
               <p className="font-mono text-xs text-muted-foreground mt-1">Zadá brief. Schválí plán. Řídí směr.</p>
             </div>
 
             <div className="flex justify-center relative">
-              <div className="w-px h-5 bg-primary/20" />
+              <div className="w-px h-5 bg-border" />
               <div className="absolute w-1.5 h-1.5 rounded-full bg-primary animate-pulse left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" />
             </div>
 
             {/* Orchestrátor */}
-            <div className="p-6 border-2 border-primary/40 bg-primary/[0.04] text-center hover:border-primary/60 hover:bg-primary/[0.06] transition-colors">
-              <p className="font-body font-semibold text-lg text-primary">Orchestrátor</p>
+            <div className="p-6 border-2 border-border bg-card/30 text-center hover:border-primary/30 transition-colors">
+              <p className="font-body font-semibold text-lg text-foreground">Orchestrátor</p>
               <p className="font-mono text-xs text-muted-foreground mt-1">Rozloží úkol. Vybere agenty. Koordinuje celý proces.</p>
             </div>
 
             <div className="flex justify-center relative">
-              <div className="w-px h-5 bg-primary/20" />
+              <div className="w-px h-5 bg-border" />
               <div className="absolute w-1.5 h-1.5 rounded-full bg-primary animate-pulse left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" />
             </div>
 
             {/* Agenti + MCP + Paměť — three columns, stack on mobile */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-primary/30 bg-primary/[0.03] hover:border-primary/50 hover:bg-primary/[0.05] transition-colors">
-              <div className="p-5 text-center border-b md:border-b-0 md:border-r border-primary/15">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-border bg-card/30 hover:border-primary/30 transition-colors">
+              <div className="p-5 text-center border-b md:border-b-0 md:border-r border-border">
                 <p className="font-body font-semibold text-lg text-foreground">Agenti</p>
                 <p className="font-mono text-xs text-muted-foreground mt-1">Planner, Reviewer, QA, Ops...</p>
               </div>
-              <div className="p-5 text-center border-b md:border-b-0 md:border-r border-primary/15">
+              <div className="p-5 text-center border-b md:border-b-0 md:border-r border-border">
                 <p className="font-body font-semibold text-lg text-foreground">MCP</p>
                 <p className="font-mono text-xs text-muted-foreground mt-1">30+ serverů, napojení na svět</p>
               </div>
@@ -159,23 +159,23 @@ export default function AiStudioPage() {
             </div>
 
             <div className="flex justify-center relative">
-              <div className="w-px h-5 bg-primary/20" />
+              <div className="w-px h-5 bg-border" />
               <div className="absolute w-1.5 h-1.5 rounded-full bg-primary animate-pulse left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" />
             </div>
 
             {/* Pipeline */}
-            <div className="p-6 border-2 border-primary/30 bg-primary/[0.03] text-center hover:border-primary/50 hover:bg-primary/[0.05] transition-colors">
+            <div className="p-6 border-2 border-border bg-card/30 text-center hover:border-primary/30 transition-colors">
               <p className="font-body font-semibold text-lg text-foreground">Pipeline</p>
               <p className="font-mono text-xs text-muted-foreground mt-1">Build, test, deploy. Bez zásahu.</p>
             </div>
 
             <div className="flex justify-center relative">
-              <div className="w-px h-5 bg-primary/20" />
+              <div className="w-px h-5 bg-border" />
               <div className="absolute w-1.5 h-1.5 rounded-full bg-primary animate-pulse left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" />
             </div>
 
             {/* Produkt */}
-            <div className="p-6 rounded-b-2xl border-2 border-border bg-card/30 text-center hover:border-border/80 transition-colors">
+            <div className="p-6 rounded-b-2xl border-2 border-border bg-card/30 text-center hover:border-primary/30 transition-colors">
               <p className="font-body font-semibold text-lg text-foreground">Produkt</p>
               <p className="font-mono text-xs text-muted-foreground mt-1">Web, aplikace, prototyp. Nasazený a živý.</p>
             </div>
