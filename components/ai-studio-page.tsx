@@ -180,7 +180,7 @@ export default function AiStudioPage() {
                 <p className="font-mono text-xs text-muted-foreground mt-1">30+ serverů, napojení na svět</p>
               </div>
               <div className="p-5 text-center">
-                <p className="font-body font-semibold text-lg text-foreground">Zkušenosti</p>
+                <p className="font-body font-semibold text-lg text-foreground">Paměť</p>
                 <p className="font-mono text-xs text-muted-foreground mt-1">Co fungovalo, rozhodnutí, historie</p>
               </div>
             </div>
