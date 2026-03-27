@@ -46,16 +46,10 @@ export default function AiStudioPage() {
             <p className="font-body font-light text-[clamp(0.875rem,1.1vw,1.125rem)] leading-[1.7] text-muted-foreground max-w-2xl mx-auto">
               Modulární systém AI agentů, paměti a nástrojů. Zadáte záměr, systém naplánuje postup, sestaví tým agentů a vytvoří funkční produkt. Weby, aplikace, prototypy, experimenty.
             </p>
-            <div className="mt-4 flex flex-col items-center gap-3">
-              {/* Varianta A */}
-              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-emerald-500/40 bg-emerald-500/[0.08] font-mono text-sm text-emerald-400 text-center">
+            <div className="mt-4">
+              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-emerald-500/40 bg-emerald-500/[0.08] font-mono text-sm text-emerald-400">
                 <span className="w-2 h-2 shrink-0 rounded-full bg-emerald-500 animate-pulse" />
-                <span>V provozu. Pořád ladíme.</span>
-              </span>
-              {/* Varianta B */}
-              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-emerald-500/40 bg-emerald-500/[0.08] font-mono text-sm text-emerald-400 text-center">
-                <span className="w-2 h-2 shrink-0 rounded-full bg-emerald-500 animate-pulse" />
-                <span><span className="hidden sm:inline">Experimentální provoz</span><span className="sm:hidden">Experiment</span> — první projekty v produkci</span>
+                Stav: První projekty v produkci
               </span>
             </div>
           </div>
