@@ -165,6 +165,31 @@ export default function AiStudioPage() {
               <div className="absolute w-1.5 h-1.5 rounded-full bg-primary animate-pulse left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" />
             </div>
 
+            {/* Projektový kontext — Constrained Generation */}
+            <div className="p-6 border-2 border-border bg-card/30 hover:border-primary/30 transition-colors">
+              <p className="font-body font-semibold text-lg text-foreground text-center">Projektový kontext</p>
+              <p className="font-mono text-xs text-muted-foreground mt-1 text-center mb-4">Constrained Generation — agent negeneruje naslepo, pracuje s kontextem projektu.</p>
+              <div className="grid grid-cols-3 gap-3">
+                <div className="px-3 py-2 rounded-lg border border-border/50 text-center">
+                  <p className="font-mono text-[11px] text-primary font-medium">Registry</p>
+                  <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Existující komponenty</p>
+                </div>
+                <div className="px-3 py-2 rounded-lg border border-border/50 text-center">
+                  <p className="font-mono text-[11px] text-primary font-medium">Pravidla</p>
+                  <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Tech rules projektu</p>
+                </div>
+                <div className="px-3 py-2 rounded-lg border border-border/50 text-center">
+                  <p className="font-mono text-[11px] text-primary font-medium">Vzory</p>
+                  <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Patterns + slot-filling</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center relative">
+              <div className="w-px h-5 bg-border" />
+              <div className="absolute w-1.5 h-1.5 rounded-full bg-primary animate-pulse left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" />
+            </div>
+
             {/* Pipeline */}
             <div className="p-6 border-2 border-border bg-card/30 text-center hover:border-primary/30 transition-colors">
               <p className="font-body font-semibold text-lg text-foreground">Pipeline</p>
