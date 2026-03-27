@@ -168,19 +168,19 @@ export default function AiStudioPage() {
             {/* Projektový kontext — Constrained Generation */}
             <div className="p-6 border-2 border-border bg-card/30 hover:border-primary/30 transition-colors">
               <p className="font-body font-semibold text-lg text-foreground text-center">Projektový kontext</p>
-              <p className="font-mono text-xs text-muted-foreground mt-1 text-center mb-4">Constrained Generation — agent negeneruje naslepo, pracuje s kontextem projektu.</p>
+              <p className="font-mono text-xs text-muted-foreground mt-1 text-center mb-4">Agent negeneruje naslepo. Pracuje s kontextem projektu.</p>
               <div className="grid grid-cols-3 gap-3">
                 <div className="px-3 py-2 rounded-lg border border-border/50 text-center">
-                  <p className="font-mono text-[11px] text-primary font-medium">Registry</p>
-                  <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Existující komponenty</p>
+                  <p className="font-mono text-[11px] text-primary font-medium">Technický</p>
+                  <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Pravidla, stack, vzory</p>
                 </div>
                 <div className="px-3 py-2 rounded-lg border border-border/50 text-center">
-                  <p className="font-mono text-[11px] text-primary font-medium">Pravidla</p>
-                  <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Tech rules projektu</p>
+                  <p className="font-mono text-[11px] text-primary font-medium">Vizuální</p>
+                  <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Design systém, komponenty</p>
                 </div>
                 <div className="px-3 py-2 rounded-lg border border-border/50 text-center">
-                  <p className="font-mono text-[11px] text-primary font-medium">Vzory</p>
-                  <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Patterns + slot-filling</p>
+                  <p className="font-mono text-[11px] text-primary font-medium">Obsahový</p>
+                  <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Tón, cílová skupina, brand</p>
                 </div>
               </div>
             </div>
