@@ -122,28 +122,33 @@ export default function AiStudioPage() {
           {/* Layered diagram — top to bottom */}
           <div className="max-w-2xl mx-auto space-y-0">
 
-            {/* Designér + Projektový kontext — společná horní vrstva */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-0 rounded-t-2xl border-2 border-border bg-card/30 hover:border-primary/30 transition-colors">
-              <div className="p-6 text-center border-b md:border-b-0 md:border-r border-border">
-                <p className="font-body font-semibold text-lg text-foreground">Designér</p>
-                <p className="font-mono text-xs text-muted-foreground mt-1">Zadá brief. Schválí plán. Řídí směr.</p>
-              </div>
-              <div className="p-6">
-                <p className="font-body font-semibold text-lg text-foreground text-center">Projektový kontext</p>
-                <p className="font-mono text-xs text-muted-foreground mt-1 text-center mb-4">Agent negeneruje naslepo. Pracuje s kontextem projektu.</p>
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="px-3 py-2 rounded-lg border border-border/50 text-center">
-                    <p className="font-mono text-[11px] text-primary font-medium">Technický</p>
-                    <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Pravidla, stack, vzory</p>
-                  </div>
-                  <div className="px-3 py-2 rounded-lg border border-border/50 text-center">
-                    <p className="font-mono text-[11px] text-primary font-medium">Vizuální</p>
-                    <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Design systém, komponenty</p>
-                  </div>
-                  <div className="px-3 py-2 rounded-lg border border-border/50 text-center">
-                    <p className="font-mono text-[11px] text-primary font-medium">Obsahový</p>
-                    <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Tón, cílová skupina, brand</p>
-                  </div>
+            {/* Designér */}
+            <div className="p-6 rounded-t-2xl border-2 border-border bg-card/30 text-center hover:border-primary/30 transition-colors">
+              <p className="font-body font-semibold text-lg text-foreground">Designér</p>
+              <p className="font-mono text-xs text-muted-foreground mt-1">Zadá brief. Schválí plán. Řídí směr.</p>
+            </div>
+
+            <div className="flex justify-center relative">
+              <div className="w-px h-5 bg-border" />
+              <div className="absolute w-1.5 h-1.5 rounded-full bg-primary animate-pulse left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" />
+            </div>
+
+            {/* Projektový kontext */}
+            <div className="p-6 border-2 border-border bg-card/30 hover:border-primary/30 transition-colors">
+              <p className="font-body font-semibold text-lg text-foreground text-center">Projektový kontext</p>
+              <p className="font-mono text-xs text-muted-foreground mt-1 text-center mb-4">Agent negeneruje naslepo. Pracuje s kontextem projektu.</p>
+              <div className="grid grid-cols-3 gap-3">
+                <div className="px-3 py-2 rounded-lg border border-border/50 text-center">
+                  <p className="font-mono text-[11px] text-primary font-medium">Technický</p>
+                  <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Pravidla, stack, vzory</p>
+                </div>
+                <div className="px-3 py-2 rounded-lg border border-border/50 text-center">
+                  <p className="font-mono text-[11px] text-primary font-medium">Vizuální</p>
+                  <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Design systém, komponenty</p>
+                </div>
+                <div className="px-3 py-2 rounded-lg border border-border/50 text-center">
+                  <p className="font-mono text-[11px] text-primary font-medium">Obsahový</p>
+                  <p className="font-mono text-[10px] text-muted-foreground mt-0.5">Tón, cílová skupina, brand</p>
                 </div>
               </div>
             </div>
