@@ -47,9 +47,8 @@ export default function AiStudioPage() {
               Modulární systém AI agentů, paměti a nástrojů. Zadáte záměr, systém naplánuje postup, sestaví tým agentů a vytvoří funkční produkt. Weby, aplikace, prototypy, experimenty.
             </p>
             <div className="mt-4">
-              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-emerald-500/40 bg-emerald-500/[0.08] font-mono text-sm text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
-                Aktivní experimenty — od prototypů po produkci
+              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border font-mono text-sm text-muted-foreground">
+                Aktivní experimenty — od prototypů k produkci
               </span>
             </div>
           </div>
