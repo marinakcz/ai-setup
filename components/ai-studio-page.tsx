@@ -27,6 +27,7 @@ const ICON_MAP: Record<string, string> = {
   "Lokální AI": "/icons/qwen.svg",
   "Přístupnost": "/icons/a11y.svg",
   "Analytika": "/icons/posthog.svg",
+  "Cache": "/icons/redis.svg",
 }
 
 export default function AiStudioPage() {
@@ -238,6 +239,7 @@ export default function AiStudioPage() {
               { icon: "Deploy", note: "Vercel" },
               { icon: "Edge & DNS", note: "Cloudflare Workers, KV, R2" },
               { icon: "Kontejnery", note: "Docker" },
+              { icon: "Cache", note: "Redis — cache, fronty" },
               { icon: "Automatizace", note: "n8n — workflows, integrace, AI agenti" },
               { icon: "Testy", note: "Playwright, Vitest" },
               { icon: "Performance", note: "Lighthouse, Core Web Vitals" },
