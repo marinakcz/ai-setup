@@ -32,7 +32,7 @@ const faqSchema = [
   {
     question: "Jak probíhá spolupráce?",
     answer:
-      "Na začátku si potřebujeme ujasnit, co vlastně řešíme. Je to jako se stavbou. Nezačíná se kopáním, ale tím, co a kde chcete postavit. Nejdřív potřebuju pochopit situaci, cíle a co jde reálně udělat. Na tom stavím návrh. Bez té fáze se problémy vracejí.",
+      "Na začátku potřebuju pochopit, co opravdu řešíme. Ne zadání, ale problém za ním. Kdo to bude používat, co jim to přinese a kde to teď nefunguje. Teprve z toho navrhuju řešení. Pak pracujeme v iteracích: ukážu, dostanu zpětnou vazbu, posuneme se dál. Bez zbytečných kol schvalování, ale s jasnou stopou proč jdeme kudy jdeme.",
   },
   {
     question: "Jak do toho zapadá AI?",
