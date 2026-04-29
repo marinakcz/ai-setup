@@ -36,7 +36,8 @@
   * {
     @apply border-border;
   }
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
   }
   body {
@@ -46,31 +47,57 @@
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: hsl(var(--background)); }
-::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.5); }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
 
 /* Keyframes */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-
 @keyframes flow-pulse {
-  0%   { left: 0%; opacity: 0; }
-  5%   { opacity: 1; }
-  95%  { opacity: 1; }
-  100% { left: 80%; opacity: 0; }
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    left: 80%;
+    opacity: 0;
+  }
 }
 
 @keyframes step-glow {
-  0%, 100% {
+  0%,
+  100% {
     border-color: hsl(var(--border));
     box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
   }
-  15%, 30% {
+  15%,
+  30% {
     border-color: hsl(var(--primary) / 0.5);
     box-shadow: 0 0 16px 2px hsl(var(--primary) / 0.15);
   }
@@ -88,8 +115,12 @@
 
 /* ── Hand-drawn underline ── */
 @keyframes drawLine {
-  from { stroke-dashoffset: 1000; }
-  to   { stroke-dashoffset: 0; }
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 .hand-drawn-line {
   stroke-dasharray: 1000;
@@ -101,12 +132,25 @@
 
 /* ── Waving hand ── */
 @keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  15% { transform: rotate(14deg); }
-  30% { transform: rotate(-8deg); }
-  45% { transform: rotate(14deg); }
-  60% { transform: rotate(-4deg); }
-  75% { transform: rotate(10deg); }
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(14deg);
+  }
+  30% {
+    transform: rotate(-8deg);
+  }
+  45% {
+    transform: rotate(14deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
 }
 .animate-wave {
   animation: wave 2.5s ease-in-out infinite;
@@ -128,16 +172,31 @@
   transform: translateY(24px);
   animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.hero-stagger .stagger-1 { animation-delay: 0.1s; }
-.hero-stagger .stagger-2 { animation-delay: 0.25s; }
-.hero-stagger .stagger-3 { animation-delay: 0.45s; }
-.hero-stagger .stagger-4 { animation-delay: 0.65s; }
-.hero-stagger .stagger-5 { animation-delay: 0.85s; }
+.hero-stagger .stagger-1 {
+  animation-delay: 0.1s;
+}
+.hero-stagger .stagger-2 {
+  animation-delay: 0.25s;
+}
+.hero-stagger .stagger-3 {
+  animation-delay: 0.45s;
+}
+.hero-stagger .stagger-4 {
+  animation-delay: 0.65s;
+}
+.hero-stagger .stagger-5 {
+  animation-delay: 0.85s;
+}
 
 /* ── Logo breathe / float ── */
 @keyframes logoFloat {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 .logo-float {
   animation: logoFloat 5s ease-in-out infinite;
@@ -163,16 +222,17 @@
 .reveal-group .reveal-item {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal-group.revealed .reveal-item {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ── Smooth scroll ── */
-html {
+/* ── Smooth scroll (anchor only, not router navigation) ── */
+html:focus-within {
   scroll-behavior: smooth;
 }
 
