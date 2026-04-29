@@ -9,52 +9,52 @@ const FAQ_ITEMS = [
   {
     question: "Proč se mnou spolupracovat?",
     answer:
-      "Pokud hledáte někoho, kdo jen vezme zadání a nakreslí obrazovky, nejspíš si nebudeme sedět. Dívám se na věci v souvislostech — jak to funguje pro vaše zákazníky, co to znamená pro váš byznys a co je reálně možné postavit. Smyslem není dodat návrh, ale najít řešení, které obstojí v praxi. Mám za sebou víc než 25 let práce na digitálních produktech a aplikacích. Díky tomu dokážu rychle rozlišit, co je podstatné a co jen detail.",
+      "Pokud hledáte někoho, kdo vezme zadání a nakreslí obrazovky, nejspíš si nebudeme sedět. Zajímá mě, jak věci fungují pro vaše zákazníky, co to znamená pro byznys a co jde reálně postavit. Ne hezký návrh, ale řešení, které obstojí. Za 25 let v digitálních produktech jsem se naučil poznat, co je podstatné a co jen detail.",
   },
   {
     question: "S kým mi to funguje nejlépe?",
     answer:
-      "Nejlépe to funguje s lidmi, kteří chtějí věci posunout a jsou ochotní na tom spolupracovat. Nejde o model, kde zadáte a čekáte. Je potřeba si věci vyjasnit, vracet si zpětnou vazbu a občas upravit směr. Často pomáhám i s tím, co dává smysl řešit jako první. Dlouhodobě mi dávají smysl spolupráce, které mají přesah — ne jen rychlá dodávka, ale něco, co se může rozvíjet.",
+      "S lidmi, kteří chtějí věci posunout a jsou ochotní na tom pracovat. Nejde o to zadat a počkat. Je potřeba průběžně reagovat, říkat co funguje a co ne, a někdy změnit směr. Baví mě projekty s ambicí. Ne jednorázový výstup, ale věc, která má prostor růst.",
   },
   {
     question: "Kdy to nedává smysl?",
     answer:
-      "Pokud má být moje role čistě exekuční, není to dobrý fit. Stejně tak pokud není prostor otevřít věci, které nefungují, nebo se řeší něco, co nedává smysl z dlouhodobého nebo etického hlediska. V takovém případě to většinou skončí jen hezkým výsledkem bez dopadu. A to nikoho moc nebaví.",
+      "Pokud má být moje role čistě exekuční, není to dobrý fit. Stejně tak pokud není prostor otevřít věci, které nefungují, nebo jde o projekt, za nímž si sám nestojím. Většinou to skončí hezkým výsledkem bez dopadu. A to nikoho moc nebaví.",
   },
   {
     question: "Jak probíhá spolupráce?",
     answer:
-      "Na začátku si potřebujeme ujasnit, co vlastně řešíme. Je to podobné jako u stavby domu — nezačíná se kopáním, ale tím, že víte, co a kde chcete postavit. Stejně tak i tady potřebuji pochopit kontext, cíle a omezení. Na tom se pak staví návrh. Bez téhle fáze se to většinou dřív nebo později vrátí.",
+      "Na začátku si potřebujeme ujasnit, co vlastně řešíme. Je to jako se stavbou — nezačíná se kopáním, ale tím, co a kde chcete postavit. Nejdřív potřebuju pochopit situaci, cíle a co jde reálně udělat. Na tom stavím návrh. Bez té fáze se problémy vracejí.",
   },
   {
     question: "Jak do toho zapadá AI?",
     answer:
-      "AI beru jako nástroj, který mi pomáhá být rychlejší a jít víc do šířky. Pomůže projít víc variant, ověřit směr nebo urychlit některé části práce. Díky tomu se dá rychle dostat k prototypu nebo funkčnímu řešení. Pořád ale platí, že rozhodování zůstává na mně. AI je prostředek, ne autopilot.",
+      "AI beru jako nástroj, který mi pomáhá být rychlejší a jít víc do šířky. Projdu víc variant, ověřím směr, urychlím části práce. Díky tomu se dá dostat k prototypu nebo funkčnímu řešení rychleji. Rozhodování ale zůstává na mně. AI je prostředek, ne autopilot.",
   },
   {
     question: "Pracuji sám, nebo v týmu?",
     answer:
-      "Záleží na projektu a jeho rozsahu. Menší věci řeším sám. U větších dává smysl zapojit další lidi, ať už jde o vývoj, design nebo jiné specializace. Pracuju s lidmi, které znám a vím, co od nich čekat. Nemám problém říct, že něco přesahuje moje kapacity. V takové chvíli je lepší postavit tým než to tlačit silou.",
+      "Záleží na rozsahu. Menší věci řeším sám. U větších zapojím lidi, se kterými mám zkušenost — vývoj, design nebo jiné specializace. Nemám problém říct, když projekt potřebuje víc rukou. Pak složím tým a řídím to jako celek.",
   },
   {
     question: "Jaká je kapacita a cena?",
     answer:
-      "Záměrně pracuju jen na jednom nebo dvou projektech najednou. Díky tomu se tomu můžu věnovat naplno a neřešit věci napůl. Spolupráce může být na fixní cenu nebo hodinově, podle toho, co dává větší smysl. Konkrétní nastavení řešíme až ve chvíli, kdy je jasné zadání a rozsah práce.",
+      "Záměrně pracuju na jednom nebo dvou projektech najednou. Věnuju se tomu naplno, ne napůl. Spolupráce může být na fixní cenu nebo hodinově, záleží na projektu. Konkrétní čísla probereme, až bude jasné zadání.",
   },
   {
     question: "Co ode mě potřebujete na začátku?",
     answer:
-      "Stačí krátký kontext, abych věděl, o čem se bavíme. Ideálně pár vět o tom, co řešíte, v jaké jste fázi a co od toho čekáte. Nemusí to být nic složitého, spíš základní orientace. Čím konkrétnější to bude, tím rychleji se posuneme dál.",
+      "Stačí krátký kontext. Pár vět o tom, co řešíte, v jaké jste fázi a co od toho čekáte. Čím konkrétnější, tím rychleji se posuneme.",
   },
   {
     question: "Kde působím?",
     answer:
-      "Primárně pracuju v Praze a okolí. Většina spolupráce ale probíhá online, takže není problém fungovat odkudkoliv. Osobní setkání dává smysl tam, kde to projektu pomůže.",
+      "Primárně v Praze a okolí. Většina spolupráce probíhá online, takže místo není překážka. Na osobní setkání rád přijedu, když to pro projekt má přínos.",
   },
   {
     question: "Co ode mě můžete čekat?",
     answer:
-      "Přímý přístup a snahu věci opravdu pochopit. Nejde o to dodat výstup, ale posunout věc tak, aby dávala smysl — pro vás i pro lidi, kteří to budou používat. A ideálně tak, aby to fungovalo i za rok, ne jen při předání.",
+      "Přímý přístup a snahu věci opravdu pochopit. Ne jen výstup, ale posun — aby to fungovalo pro vás i pro lidi, kteří to budou používat. A ideálně i za rok, ne jen při předání.",
   },
 ];
 
