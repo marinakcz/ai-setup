@@ -22,12 +22,12 @@ const faqSchema = [
   {
     question: "Proč se mnou spolupracovat?",
     answer:
-      "Zajímá mě, jak věci fungují pro vaše zákazníky, co to znamená pro byznys a co jde reálně postavit. Ne hezký návrh, ale řešení, které obstojí. Za 25 let v digitálních produktech jsem se naučil poznat, co je podstatné a co jen detail.",
+      "Zajímá mě, jak věci fungují pro vaše zákazníky, co to znamená pro byznys a co jde reálně postavit. Ne hezký návrh, ale řešení, které obstojí. Víc jak 25 let stavím digitální produkty a naučil jsem se poznat, co je podstatné a co jen detail.",
   },
   {
     question: "S kým mi to funguje nejlépe?",
     answer:
-      "S lidmi, kteří chtějí věci posunout a jsou ochotní na tom pracovat. Nejde o to zadat a počkat. Je potřeba průběžně reagovat, říkat co funguje a co ne, a někdy změnit směr. Baví mě projekty s ambicí. Ne jednorázový výstup, ale věc, která má prostor růst.",
+      "S lidmi, kteří chtějí věci posunout a jsou ochotní na tom pracovat. Nejde o to zadat a počkat. Práci přiděluju na obou stranách. Potřebuju, abyste průběžně reagovali, říkali co funguje a co ne, a nebáli se změnit směr. Baví mě projekty s ambicí. Ne jednorázový výstup, ale věc, která má prostor růst.",
   },
   {
     question: "Kdy to nedává smysl?",
