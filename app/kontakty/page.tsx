@@ -55,6 +55,7 @@ export default function ContactPage() {
             {FAQ_ITEMS.map((item) => (
               <details
                 key={item.question}
+                name="faq"
                 className="group border-b border-border last:border-0"
               >
                 <summary className="group/summary py-6 flex items-center justify-between gap-4 cursor-pointer list-none">
