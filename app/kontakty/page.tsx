@@ -12,14 +12,9 @@ const FAQ_ITEMS = [
       "Zajímá mě, jak věci fungují pro vaše zákazníky, co to znamená pro byznys a co jde reálně postavit. Ne hezký návrh, ale řešení, které obstojí. Víc jak 25 let stavím digitální produkty a naučil jsem se poznat, co je podstatné a co jen detail.",
   },
   {
-    question: "S kým mi to funguje nejlépe?",
+    question: "S kým to funguje a kdy ne?",
     answer:
-      "S lidmi, kteří chtějí věci posunout a jsou ochotní na tom pracovat. Nejde o to zadat a počkat. Práci přiděluju na obou stranách. Potřebuju, abyste průběžně reagovali, říkali co funguje a co ne, a nebáli se změnit směr. Baví mě projekty s ambicí. Ne jednorázový výstup, ale věc, která má prostor růst.",
-  },
-  {
-    question: "Kdy to nedává smysl?",
-    answer:
-      "Když není prostor říct, co nefunguje, nebo jde o projekt, za nímž si sám nestojím. Většinou to skončí hezkým výsledkem bez dopadu. A to nikoho moc nebaví.",
+      "S lidmi, kteří chtějí věci posunout a jsou ochotní na tom pracovat. Nejde o to zadat a počkat. Práci přiděluju na obou stranách. Potřebuju, abyste průběžně reagovali, říkali co funguje a co ne, a nebáli se změnit směr. Baví mě projekty s ambicí, ne jednorázový výstup. Nefunguje to, když na tohle není prostor, nebo jde o projekt, za nímž si sám nestojím.",
   },
   {
     question: "Jak probíhá spolupráce?",
@@ -45,11 +40,6 @@ const FAQ_ITEMS = [
     question: "Co ode mě potřebujete na začátku?",
     answer:
       "Stačí krátký kontext. Pár vět o tom, co řešíte, v jaké jste fázi a co od toho čekáte. Čím konkrétnější, tím rychleji se posuneme.",
-  },
-  {
-    question: "Kde působím?",
-    answer:
-      "Primárně v Praze a okolí. Většina spolupráce probíhá online, takže místo není překážka. Na osobní setkání rád přijedu, když to pro projekt má přínos.",
   },
 ];
 
