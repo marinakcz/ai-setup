@@ -9,7 +9,12 @@ const FAQ_ITEMS = [
   {
     question: "S kým to funguje nejlépe?",
     answer:
-      "S founders a product owners startupů a digitálních produktů, kteří mají jasný cíl a nechají na mně směr i řešení. S firmami, které hledají partnera, ne jen dodavatele. Pokud chcete spoluúčast na směřování projektu — jste na správné adrese.",
+      "S founders a product owners startupů a digitálních produktů, kteří mají jasný cíl a nechají na mně směr i řešení. S firmami, které hledají partnera, ne jen dodavatele. Spolupráce není o tom, že zadáte práci a čekáte na výsledek — je to společný proces, kde potřebuji vaší zpětnou vazbu a zapojení.",
+  },
+  {
+    question: "Kdy to naopak nedává smysl?",
+    answer:
+      "Pokud hledáte čistou exekuci bez diskuse a nechcete otevírat věci, které nefungují — nebudeme si sedět. Stejně tak na projekty, které eticky nedávají smysl. Radši to říkám rovnou, než abychom ztráceli čas.",
   },
   {
     question: "Co si pod vaší prací konkrétně představit?",
@@ -20,6 +25,11 @@ const FAQ_ITEMS = [
     question: "Jak probíhá spolupráce?",
     answer:
       "Začneme krátkým hovorem bez závazku — kde se nacházíte, co řešíte, kam chcete. Rychle zjistíme, jestli to dává smysl. Pracuji samostatně, remote i osobně (Praha), pravidelně sdílím postup. Bez zbytečných meetingů, ale s jasným směrem. Na zprávy odpovídám do 24 hodin.",
+  },
+  {
+    question: "Pracujete sám nebo v týmu?",
+    answer:
+      "Záleží na rozsahu. Menší věci řeším celé sám. U větších projektů přizvu lidi, se kterými mám zkušenost a kteří projekt posunou. Nemám problém říct, když něco přesahuje to, co dává smysl dělat sólo.",
   },
   {
     question: "Jak přemýšlíte nad projektem?",
@@ -40,6 +50,11 @@ const FAQ_ITEMS = [
     question: "Co potřebuji připravit, než se ozvu?",
     answer:
       "Nic zvláštního. Stačí vědět, co chcete dosáhnout — nebo mít pocit, že něco nejde tak, jak by mělo. Technická specifikace, Figma soubory ani brief nejsou potřeba. Přijďte s problémem nebo nápadem, zbytek vyřešíme společně.",
+  },
+  {
+    question: "Co od spolupráce čekat?",
+    answer:
+      "Přímou komunikaci a otevřenou zpětnou vazbu. Pracuji jako partner, ne jako dodavatel — to znamená, že zpochybňuji věci, které nefungují, a říkám, co si myslím. Cílem není hezký výstup, ale věc, která funguje.",
   },
 ];
 
