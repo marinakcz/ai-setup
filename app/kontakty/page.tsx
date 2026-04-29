@@ -7,6 +7,11 @@ import { SiteFooter } from "@/components/site-footer";
 
 const FAQ_ITEMS = [
   {
+    question: "Proč spolupracovat právě s vámi?",
+    answer:
+      "Dívám se na věci očima vašich zákazníků a snažím se propojit tři světy, které se často řeší odděleně — uživatele, byznys a technologie. Smyslem není vytvořit hezký návrh, ale řešení, které má reálný dopad. Za 25+ let v digitálních produktech jsem se naučil vidět věci v širších souvislostech a vždy hledat přidanou hodnotu — ne jen výstup.",
+  },
+  {
     question: "S kým to funguje nejlépe?",
     answer:
       "S founders a product owners startupů a digitálních produktů, kteří mají jasný cíl a nechají na mně směr i řešení. S firmami, které hledají partnera, ne jen dodavatele. Spolupráce není o tom, že zadáte práci a čekáte na výsledek — je to společný proces, kde potřebuji vaší zpětnou vazbu a zapojení.",
@@ -47,9 +52,14 @@ const FAQ_ITEMS = [
       "Pracuji záměrně na jednom až dvou projektech najednou. Váš projekt dostane celého mě, ne výseč. Pracuji na bázi fixní ceny za projekt nebo denní sazby — podle toho, co dává smysl. Konkrétní čísla probereme hned na prvním hovoru.",
   },
   {
+    question: "Kde působíte?",
+    answer:
+      "Primárně v Praze a okolí. Většina spolupráce ale probíhá online, takže není problém pracovat na projektech odkudkoliv z Česka nebo Slovenska.",
+  },
+  {
     question: "Co potřebuji připravit, než se ozvu?",
     answer:
-      "Nic zvláštního. Stačí vědět, co chcete dosáhnout — nebo mít pocit, že něco nejde tak, jak by mělo. Technická specifikace, Figma soubory ani brief nejsou potřeba. Přijďte s problémem nebo nápadem, zbytek vyřešíme společně.",
+      "Stačí krátký popis — ideálně jedna až dvě věty o tom, co řešíte, v jaké jste fázi a co od spolupráce očekáváte. To mi pomůže rychle vyhodnotit, jestli to dává smysl a jak bych vám mohl pomoct. Technická specifikace ani Figma soubory nejsou potřeba.",
   },
   {
     question: "Co od spolupráce čekat?",
