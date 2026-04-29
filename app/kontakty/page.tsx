@@ -24,7 +24,7 @@ const FAQ_ITEMS = [
   {
     question: "Jak probíhá spolupráce?",
     answer:
-      "Na začátku si potřebujeme ujasnit, co vlastně řešíme. Je to jako se stavbou — nezačíná se kopáním, ale tím, co a kde chcete postavit. Nejdřív potřebuju pochopit situaci, cíle a co jde reálně udělat. Na tom stavím návrh. Bez té fáze se problémy vracejí.",
+      "Na začátku si potřebujeme ujasnit, co vlastně řešíme. Je to jako se stavbou. Nezačíná se kopáním, ale tím, co a kde chcete postavit. Nejdřív potřebuju pochopit situaci, cíle a co jde reálně udělat. Na tom stavím návrh. Bez té fáze se problémy vracejí.",
   },
   {
     question: "Jak do toho zapadá AI?",
@@ -34,7 +34,7 @@ const FAQ_ITEMS = [
   {
     question: "Pracuji sám, nebo v týmu?",
     answer:
-      "Záleží na rozsahu. Menší věci řeším sám. U větších zapojím lidi, se kterými mám zkušenost — vývoj, design nebo jiné specializace. Nemám problém říct, když projekt potřebuje víc rukou. Pak složím tým a řídím to jako celek.",
+      "Záleží na rozsahu. Menší věci řeším sám. U větších zapojím lidi, se kterými mám zkušenost: vývoj, design nebo jiné specializace. Nemám problém říct, když projekt potřebuje víc rukou. Pak složím tým a řídím to jako celek.",
   },
   {
     question: "Jaká je kapacita a cena?",
@@ -54,7 +54,7 @@ const FAQ_ITEMS = [
   {
     question: "Co ode mě můžete čekat?",
     answer:
-      "Přímý přístup a snahu věci opravdu pochopit. Ne jen výstup, ale posun — aby to fungovalo pro vás i pro lidi, kteří to budou používat. A ideálně i za rok, ne jen při předání.",
+      "Přímý přístup a snahu věci opravdu pochopit. Ne jen výstup, ale posun. Aby to fungovalo pro vás i pro lidi, kteří to budou používat. A ideálně i za rok, ne jen při předání.",
   },
 ];
 
