@@ -46,7 +46,7 @@ export default function Home() {
             </div>
 
             {/* Mascot */}
-            <ParallaxWrapper className="flex justify-center mb-12 md:mb-20 stagger-3">
+            <ParallaxWrapper className="flex justify-center mb-12 md:mb-20 mascot-entry">
               <div className="relative w-[clamp(140px,18vw,240px)] aspect-[466/577] logo-float">
                 <Image
                   src="/mascot.svg"

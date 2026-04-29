@@ -87,12 +87,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 name: "Kontakty",
                 url: "https://levouzadni.cz/kontakty",
                 description: "Máte nápad nebo projekt? Ozvěte se.",
-                mainEntity: {
-                  "@type": "Organization",
-                  name: "Levou zadní",
-                  email: "studio@levouzadni.cz",
-                  telephone: "+420776120555",
-                },
+                mainEntity: { "@id": "https://levouzadni.cz/#organization" },
               },
               {
                 "@type": "FAQPage",
