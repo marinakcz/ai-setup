@@ -64,11 +64,6 @@ const faqSchema = [
     answer:
       "Primárně v Praze a okolí. Většina spolupráce probíhá online, takže místo není překážka. Na osobní setkání rád přijedu, když to pro projekt má přínos.",
   },
-  {
-    question: "Co ode mě můžete čekat?",
-    answer:
-      "Přímý přístup a snahu věci opravdu pochopit. Ne jen výstup, ale posun. Aby to fungovalo pro vás i pro lidi, kteří to budou používat. A ideálně i za rok, ne jen při předání.",
-  },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
