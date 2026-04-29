@@ -37,7 +37,7 @@ const faqSchema = [
   {
     question: "Jak do toho zapadá AI?",
     answer:
-      "AI beru jako nástroj, který mi pomáhá být rychlejší a jít víc do šířky. Projdu víc variant, ověřím směr, urychlím části práce. Díky tomu se dá dostat k prototypu nebo funkčnímu řešení rychleji. Rozhodování ale zůstává na mně. AI je prostředek, ne autopilot.",
+      "Levou zadní do velké míry vzniklo díky AI. Cesta od nápadu k funkčnímu prototypu se dramaticky zkrátila. Věci, které dřív neměly šanci, dnes mají. V práci mi AI pomáhá projít víc variant, rychleji ověřit směr a urychlí rutinní části. Rozhodování a zkušenost zůstávají na mně. AI je násobič, ne náhrada.",
   },
   {
     question: "Pracuji sám, nebo v týmu?",
