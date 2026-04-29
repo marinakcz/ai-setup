@@ -244,7 +244,7 @@ export function ContactSection() {
                   return rest;
                 })
               }
-              className={`w-full px-4 py-3 rounded-xl border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors ${errors.name ? "border-red-500/60" : "border-border"}`}
+              className={`w-full px-4 py-3 rounded-xl border bg-card/50 text-foreground font-mono text-base placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors ${errors.name ? "border-red-500/60" : "border-border"}`}
             />
             {errors.name && (
               <p className="font-mono text-xs text-red-400 mt-1">
@@ -273,7 +273,7 @@ export function ContactSection() {
                   return rest;
                 })
               }
-              className={`w-full px-4 py-3 rounded-xl border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors ${errors.email ? "border-red-500/60" : "border-border"}`}
+              className={`w-full px-4 py-3 rounded-xl border bg-card/50 text-foreground font-mono text-base placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors ${errors.email ? "border-red-500/60" : "border-border"}`}
             />
             {errors.email && (
               <p className="font-mono text-xs text-red-400 mt-1">
@@ -297,7 +297,7 @@ export function ContactSection() {
               placeholder="+420"
               value={phone}
               onChange={(e) => setPhone(formatPhone(e.target.value))}
-              className="w-full px-4 py-3 rounded-xl border border-border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
+              className="w-full px-4 py-3 rounded-xl border border-border bg-card/50 text-foreground font-mono text-base placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
             />
           </div>
         </div>
@@ -314,7 +314,7 @@ export function ContactSection() {
                 key={interest}
                 type="button"
                 onClick={() => toggle(interest)}
-                className={`px-4 py-3 rounded-xl border font-mono text-xs transition-all duration-200 ${
+                className={`px-4 py-3.5 rounded-xl border font-mono text-xs transition-all duration-200 ${
                   selected.has(interest)
                     ? "border-primary/50 bg-primary/10 text-primary"
                     : "border-border bg-card/50 text-muted-foreground hover:border-primary/30 hover:text-foreground"
@@ -344,14 +344,14 @@ export function ContactSection() {
             id="description"
             name="description"
             rows={5}
-            className="w-full px-4 py-3 rounded-xl border border-border bg-card/50 text-foreground font-mono text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors resize-none"
+            className="w-full px-4 py-3 rounded-xl border border-border bg-card/50 text-foreground font-mono text-base placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors resize-none"
           />
         </div>
 
         <button
           type="submit"
           disabled={status === "sending"}
-          className="px-8 py-3 rounded-xl bg-primary text-background font-mono text-sm font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
+          className="w-full sm:w-auto px-8 py-3 rounded-xl bg-primary text-background font-mono text-sm font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {status === "sending" ? (
             <>

@@ -236,6 +236,11 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+/* ── Scroll padding for sticky nav ── */
+html {
+  scroll-padding-top: 5rem;
+}
+
 /* ── Mascot entry — transform only, no opacity delay (LCP safe) ── */
 @keyframes mascotEntry {
   from {
@@ -253,8 +258,10 @@ html:focus-within {
 details summary::-webkit-details-marker {
   display: none;
 }
-details[open] .faq-answer {
-  animation: faqOpen 0.25s ease-out;
+@media (prefers-reduced-motion: no-preference) {
+  details[open] .faq-answer {
+    animation: faqOpen 0.25s ease-out;
+  }
 }
 @keyframes faqOpen {
   from {
