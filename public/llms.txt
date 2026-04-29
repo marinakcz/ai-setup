@@ -1,0 +1,32 @@
+# Levou zadní — AI Studio
+
+> Experimentální AI studio Pavla Martinovského. Od nápadu k funkčnímu produktu. Weby, aplikace, prototypy s pomocí AI.
+
+## Pavel Martinovský
+- Senior UX Designer, digitální produkty od roku 1999
+- Zakladatel Levou zadní AI studia
+- Digital Experience team, J&T Banka
+- LinkedIn: https://www.linkedin.com/in/pavelmartinovsky/
+
+## Co děláme
+- AI-assisted vývoj webu a aplikací
+- UX design a produktový návrh
+- Prototypy a MVP
+- AI experimenty a nástroje na míru
+
+## Jak pracujeme
+Modulární AI agenti + orchestrátor + lidský dohled. Designer zadá brief, AI agenti realizují, člověk schvaluje výsledek. Weby, aplikace, prototypy.
+
+## Technologie
+Claude Code, Gemini, Next.js, Supabase, Vercel, Cloudflare, n8n, Playwright, Redis, Hetzner VPS
+
+## Kontakt
+studio@levouzadni.cz | +420 776 120 555
+IČO: 06054251 | Hlavenec 177, 294 76
+
+## Stránky
+- https://levouzadni.cz — Hlavní stránka
+- https://levouzadni.cz/o-studiu — O Pavlovi a studiu
+- https://levouzadni.cz/pod-kapotou — Jak studio funguje, nástroje, architektura
+- https://levouzadni.cz/projekty — Aktuální projekty a kapacity
+- https://levouzadni.cz/kontakty — Kontakt

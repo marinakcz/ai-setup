@@ -1,11 +1,9 @@
-"use client"
-
-import Image from "next/image"
-import Link from "next/link"
-import { useRef, useCallback } from "react"
-import { useMountEffect } from "@/hooks/use-mount-effect"
-import { PrimaryButton } from "@/components/primary-button"
-import { SiteFooter } from "@/components/site-footer"
+import Image from "next/image";
+import Link from "next/link";
+import { ParallaxWrapper } from "@/components/parallax-wrapper";
+import { RevealWrapper } from "@/components/reveal-wrapper";
+import { PrimaryButton } from "@/components/primary-button";
+import { SiteFooter } from "@/components/site-footer";
 
 const PILLARS = [
   {
@@ -23,55 +21,11 @@ const PILLARS = [
     title: "Rychlé experimenty",
     desc: "Nápady převádíme brzo do praxe, abychom rychle ověřili, co funguje.",
   },
-]
+];
 
-const TAGS = ["PROTOTYPY", "MVP", "AI NÁSTROJE", "EXPERIMENTY"]
-
-
-function useParallax() {
-  const ref = useRef<HTMLDivElement>(null)
-  useMountEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const onScroll = () => {
-      const rect = el.getBoundingClientRect()
-      const center = rect.top + rect.height / 2
-      const viewCenter = window.innerHeight / 2
-      const offset = (center - viewCenter) * 0.08
-      el.style.transform = `translateY(${offset}px)`
-    }
-    window.addEventListener("scroll", onScroll, { passive: true })
-    onScroll()
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
-  return ref
-}
-
-function useReveal() {
-  const ref = useRef<HTMLDivElement>(null)
-  useMountEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("revealed")
-          observer.unobserve(el)
-        }
-      },
-      { threshold: 0.15 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
-  return ref
-}
+const TAGS = ["PROTOTYPY", "MVP", "AI NÁSTROJE", "EXPERIMENTY"];
 
 export default function Home() {
-  const logoParallax = useParallax()
-  const pillarsRef = useReveal()
-  const ctaRef = useReveal()
-
   return (
     <div className="relative min-h-screen flex flex-col">
       <main>
@@ -92,7 +46,7 @@ export default function Home() {
             </div>
 
             {/* Mascot */}
-            <div className="flex justify-center mb-12 md:mb-20 stagger-3" ref={logoParallax}>
+            <ParallaxWrapper className="flex justify-center mb-12 md:mb-20 stagger-3">
               <div className="relative w-[clamp(140px,18vw,240px)] aspect-[466/577] logo-float">
                 <Image
                   src="/mascot.svg"
@@ -102,21 +56,28 @@ export default function Home() {
                   priority
                 />
               </div>
-            </div>
+            </ParallaxWrapper>
 
             {/* Subtitle */}
             <div className="text-center mb-6 stagger-4">
               <p className="font-body font-normal text-[clamp(1rem,1.8vw,2rem)] leading-[1.7]">
-                <span className="text-foreground">Experimentální AI studio, kde technologie násobí </span>
+                <span className="text-foreground">
+                  Experimentální AI studio, kde technologie násobí{" "}
+                </span>
                 <br className="hidden md:inline" />
-                <span className="text-muted-foreground">lidské zkušenosti a expertízu.</span>
+                <span className="text-muted-foreground">
+                  lidské zkušenosti a expertízu.
+                </span>
               </p>
             </div>
 
             {/* Tags */}
             <div className="flex flex-wrap items-center justify-center gap-5 md:gap-8 font-mono text-xs tracking-[0.15em] text-primary stagger-5">
-              {TAGS.map((tag, i) => (
-                <span key={tag} className="hover:text-foreground transition-colors duration-300 cursor-default">
+              {TAGS.map((tag) => (
+                <span
+                  key={tag}
+                  className="hover:text-foreground transition-colors duration-300 cursor-default"
+                >
                   {`/ ${tag}`}
                 </span>
               ))}
@@ -124,23 +85,22 @@ export default function Home() {
 
             {/* About link */}
             <div className="text-center mt-8 stagger-5">
-              <Link href="/o-studiu" className="font-mono text-xs tracking-[0.1em] text-muted-foreground hover:text-primary transition-colors duration-300">
+              <Link
+                href="/o-studiu"
+                className="font-mono text-xs tracking-[0.1em] text-muted-foreground hover:text-primary transition-colors duration-300"
+              >
                 Více o studiu →
               </Link>
             </div>
           </div>
         </section>
 
-
         {/* Divider */}
         <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
         {/* Three pillars */}
         <section className="relative z-10 py-24 md:py-32">
-          <div
-            className="max-w-[1408px] mx-auto px-6 reveal-group"
-            ref={pillarsRef}
-          >
+          <RevealWrapper className="max-w-[1408px] mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
               {PILLARS.map((pillar, i) => (
                 <div
@@ -160,31 +120,28 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </RevealWrapper>
         </section>
-
 
         {/* Divider */}
         <div className="w-screen relative left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
         {/* CTA */}
         <section className="relative z-10 py-16 md:py-40">
-          <div
-            className="max-w-[1408px] mx-auto px-6 text-center reveal-group"
-            ref={ctaRef}
-          >
+          <RevealWrapper className="max-w-[1408px] mx-auto px-6 text-center">
             <h2 className="font-body font-extrabold text-[clamp(1.75rem,3.5vw,3.5rem)] leading-[1.3] tracking-[0.04em] mb-10 reveal-item">
-              <span className="text-muted-foreground">Šuplík není</span><br />
+              <span className="text-muted-foreground">Šuplík není</span>
+              <br />
               <span className="text-foreground">místo pro dobré nápady.</span>
             </h2>
             <div className="reveal-item" style={{ transitionDelay: "200ms" }}>
               <PrimaryButton href="/kontakty">Pojďme se spojit</PrimaryButton>
             </div>
-          </div>
+          </RevealWrapper>
         </section>
       </main>
 
       <SiteFooter />
     </div>
-  )
+  );
 }

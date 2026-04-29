@@ -1,24 +1,3 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Pod kapotou",
-  description:
-    "Jak funguje AI studio Levou zadní. Člověk × AI, nástroje, principy.",
-  openGraph: {
-    title: "Pod kapotou | Levou zadní",
-    description: "Jak funguje AI studio. Člověk × AI.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Levou zadní — AI studio",
-      },
-    ],
-  },
-  alternates: { canonical: "/pod-kapotou" },
-};
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
@@ -40,20 +19,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   {
                     "@type": "ListItem",
                     position: 2,
-                    name: "Pod kapotou",
-                    item: "https://levouzadni.cz/pod-kapotou",
+                    name: "Projekty",
+                    item: "https://levouzadni.cz/projekty",
                   },
                 ],
               },
               {
                 "@type": "WebPage",
-                "@id": "https://levouzadni.cz/pod-kapotou#webpage",
-                name: "Pod kapotou",
-                url: "https://levouzadni.cz/pod-kapotou",
-                description:
-                  "Jak funguje AI studio Levou zadní. Člověk × AI, nástroje, principy.",
+                "@id": "https://levouzadni.cz/projekty#webpage",
+                name: "Projekty",
+                url: "https://levouzadni.cz/projekty",
+                description: "Co se chystá a jaké máme aktuálně kapacity.",
                 inLanguage: "cs",
                 isPartOf: { "@id": "https://levouzadni.cz/#website" },
+                publisher: { "@id": "https://levouzadni.cz/#organization" },
               },
             ],
           }),
