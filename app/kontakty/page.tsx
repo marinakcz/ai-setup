@@ -37,7 +37,7 @@ const FAQ_ITEMS = [
       "Záměrně pracuju na jednom nebo dvou projektech najednou. Věnuju se tomu naplno, ne napůl. Spolupráce může být na fixní cenu nebo hodinově, záleží na projektu. Konkrétní čísla probereme, až bude jasné zadání.",
   },
   {
-    question: "Co ode mě potřebujete na začátku?",
+    question: "Co od vás potřebuji na začátku?",
     answer:
       "Stačí krátký kontext. Pár vět o tom, co řešíte, v jaké jste fázi a co od toho čekáte. Čím konkrétnější, tím rychleji se posuneme.",
   },
