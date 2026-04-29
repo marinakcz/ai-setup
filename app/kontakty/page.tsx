@@ -58,13 +58,22 @@ const FAQ_ITEMS = [
   },
 ];
 
-function FaqItem({ question, answer }: { question: string; answer: string }) {
-  const [open, setOpen] = useState(false);
+function FaqItem({
+  question,
+  answer,
+  open,
+  onToggle,
+}: {
+  question: string;
+  answer: string;
+  open: boolean;
+  onToggle: () => void;
+}) {
   return (
     <div className="border-b border-border last:border-0">
       <button
         type="button"
-        onClick={() => setOpen(!open)}
+        onClick={onToggle}
         className="w-full text-left py-6 flex items-center justify-between gap-4 group"
         aria-expanded={open}
       >
@@ -230,6 +239,7 @@ export default function ContactPage() {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
   );
@@ -553,11 +563,13 @@ export default function ContactPage() {
             / ČASTÉ OTÁZKY
           </p>
           <div>
-            {FAQ_ITEMS.map((item) => (
+            {FAQ_ITEMS.map((item, i) => (
               <FaqItem
                 key={item.question}
                 question={item.question}
                 answer={item.answer}
+                open={openFaq === i}
+                onToggle={() => setOpenFaq(openFaq === i ? null : i)}
               />
             ))}
           </div>
