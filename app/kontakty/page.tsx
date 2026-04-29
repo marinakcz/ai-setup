@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
   {
     question: "Kdy to nedává smysl?",
     answer:
-      "Pokud má být moje role čistě exekuční, není to dobrý fit. Stejně tak pokud není prostor otevřít věci, které nefungují, nebo jde o projekt, za nímž si sám nestojím. Většinou to skončí hezkým výsledkem bez dopadu. A to nikoho moc nebaví.",
+      "Když není prostor říct, co nefunguje, nebo jde o projekt, za nímž si sám nestojím. Většinou to skončí hezkým výsledkem bez dopadu. A to nikoho moc nebaví.",
   },
   {
     question: "Jak probíhá spolupráce?",
