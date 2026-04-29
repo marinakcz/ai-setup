@@ -7,64 +7,54 @@ import { SiteFooter } from "@/components/site-footer";
 
 const FAQ_ITEMS = [
   {
-    question: "Proč spolupracovat právě s vámi?",
+    question: "Proč se mnou spolupracovat?",
     answer:
-      "Dívám se na věci očima vašich zákazníků a snažím se propojit tři světy, které se často řeší odděleně — uživatele, byznys a technologie. Smyslem není vytvořit hezký návrh, ale řešení, které má reálný dopad. Za 25+ let v digitálních produktech jsem se naučil vidět věci v širších souvislostech a vždy hledat přidanou hodnotu — ne jen výstup.",
+      "Pokud hledáte někoho, kdo jen vezme zadání a nakreslí obrazovky, nejspíš si nebudeme sedět. Dívám se na věci v souvislostech — jak to funguje pro vaše zákazníky, co to znamená pro váš byznys a co je reálně možné postavit. Smyslem není dodat návrh, ale najít řešení, které obstojí v praxi. Mám za sebou víc než 25 let práce na digitálních produktech a aplikacích. Díky tomu dokážu rychle rozlišit, co je podstatné a co jen detail.",
   },
   {
-    question: "S kým to funguje nejlépe?",
+    question: "S kým mi to funguje nejlépe?",
     answer:
-      "S founders a product owners startupů a digitálních produktů, kteří mají jasný cíl a nechají na mně směr i řešení. S firmami, které hledají partnera, ne jen dodavatele. Spolupráce není o tom, že zadáte práci a čekáte na výsledek — je to společný proces, kde potřebuji vaší zpětnou vazbu a zapojení.",
+      "Nejlépe to funguje s lidmi, kteří chtějí věci posunout a jsou ochotní na tom spolupracovat. Nejde o model, kde zadáte a čekáte. Je potřeba si věci vyjasnit, vracet si zpětnou vazbu a občas upravit směr. Často pomáhám i s tím, co dává smysl řešit jako první. Dlouhodobě mi dávají smysl spolupráce, které mají přesah — ne jen rychlá dodávka, ale něco, co se může rozvíjet.",
   },
   {
-    question: "Kdy to naopak nedává smysl?",
+    question: "Kdy to nedává smysl?",
     answer:
-      "Pokud hledáte čistou exekuci bez diskuse a nechcete otevírat věci, které nefungují — nebudeme si sedět. Stejně tak na projekty, které eticky nedávají smysl. Radši to říkám rovnou, než abychom ztráceli čas.",
-  },
-  {
-    question: "Co si pod vaší prací konkrétně představit?",
-    answer:
-      "Záleží na tom, co potřebujete. UX research a definice problému. Klikatelný prototyp za 3–5 dní. MVP design připravený k testování za 3–6 týdnů. Nebo celý produkt od konceptu po development handoff. Vždy výstup, se kterým se dá rovnou pracovat.",
+      "Pokud má být moje role čistě exekuční, není to dobrý fit. Stejně tak pokud není prostor otevřít věci, které nefungují, nebo se řeší něco, co nedává smysl z dlouhodobého nebo etického hlediska. V takovém případě to většinou skončí jen hezkým výsledkem bez dopadu. A to nikoho moc nebaví.",
   },
   {
     question: "Jak probíhá spolupráce?",
     answer:
-      "Začneme krátkým hovorem bez závazku — kde se nacházíte, co řešíte, kam chcete. Rychle zjistíme, jestli to dává smysl. Pracuji samostatně, remote i osobně (Praha), pravidelně sdílím postup. Bez zbytečných meetingů, ale s jasným směrem. Na zprávy odpovídám do 24 hodin.",
-  },
-  {
-    question: "Pracujete sám nebo v týmu?",
-    answer:
-      "Záleží na rozsahu. Menší věci řeším celé sám. U větších projektů přizvu lidi, se kterými mám zkušenost a kteří projekt posunou. Nemám problém říct, když něco přesahuje to, co dává smysl dělat sólo.",
-  },
-  {
-    question: "Jak přemýšlíte nad projektem?",
-    answer:
-      "Nezačínám řešením. Ani nástrojem, ani AI. Za 25+ let v digitálních produktech jsem si ověřil jedno: nejdřív musím pochopit, kde se věc opravdu láme. V průniku byznysu, uživatelů a technologie se ukáže, co dává smysl dělat. AI mi pak pomáhá to rychleji realizovat. Přemýšlení ale nenahrazuje.",
+      "Na začátku si potřebujeme ujasnit, co vlastně řešíme. Je to podobné jako u stavby domu — nezačíná se kopáním, ale tím, že víte, co a kde chcete postavit. Stejně tak i tady potřebuji pochopit kontext, cíle a omezení. Na tom se pak staví návrh. Bez téhle fáze se to většinou dřív nebo později vrátí.",
   },
   {
     question: "Jak do toho zapadá AI?",
     answer:
-      "AI mi pomáhá násobit to, co umím. Rychleji procházím varianty, testuji směry, zkracuji cestu od nápadu k funkčnímu řešení. Výsledek není AI na autopilotu — je to kombinace 25 let zkušenosti s digitálními produkty, kontextu vašeho projektu a správně zvolených nástrojů. Rozhoduju pořád já.",
+      "AI beru jako nástroj, který mi pomáhá být rychlejší a jít víc do šířky. Pomůže projít víc variant, ověřit směr nebo urychlit některé části práce. Díky tomu se dá rychle dostat k prototypu nebo funkčnímu řešení. Pořád ale platí, že rozhodování zůstává na mně. AI je prostředek, ne autopilot.",
   },
   {
-    question: "Jaká je vaše kapacita a co to stojí?",
+    question: "Pracuji sám, nebo v týmu?",
     answer:
-      "Pracuji záměrně na jednom až dvou projektech najednou. Váš projekt dostane celého mě, ne výseč. Pracuji na bázi fixní ceny za projekt nebo denní sazby — podle toho, co dává smysl. Konkrétní čísla probereme hned na prvním hovoru.",
+      "Záleží na projektu a jeho rozsahu. Menší věci řeším sám. U větších dává smysl zapojit další lidi, ať už jde o vývoj, design nebo jiné specializace. Pracuju s lidmi, které znám a vím, co od nich čekat. Nemám problém říct, že něco přesahuje moje kapacity. V takové chvíli je lepší postavit tým než to tlačit silou.",
   },
   {
-    question: "Kde působíte?",
+    question: "Jaká je kapacita a cena?",
     answer:
-      "Primárně v Praze a okolí. Většina spolupráce ale probíhá online, takže není problém pracovat na projektech odkudkoliv z Česka nebo Slovenska.",
+      "Záměrně pracuju jen na jednom nebo dvou projektech najednou. Díky tomu se tomu můžu věnovat naplno a neřešit věci napůl. Spolupráce může být na fixní cenu nebo hodinově, podle toho, co dává větší smysl. Konkrétní nastavení řešíme až ve chvíli, kdy je jasné zadání a rozsah práce.",
   },
   {
-    question: "Co potřebuji připravit, než se ozvu?",
+    question: "Co ode mě potřebujete na začátku?",
     answer:
-      "Stačí krátký popis — ideálně jedna až dvě věty o tom, co řešíte, v jaké jste fázi a co od spolupráce očekáváte. To mi pomůže rychle vyhodnotit, jestli to dává smysl a jak bych vám mohl pomoct. Technická specifikace ani Figma soubory nejsou potřeba.",
+      "Stačí krátký kontext, abych věděl, o čem se bavíme. Ideálně pár vět o tom, co řešíte, v jaké jste fázi a co od toho čekáte. Nemusí to být nic složitého, spíš základní orientace. Čím konkrétnější to bude, tím rychleji se posuneme dál.",
   },
   {
-    question: "Co od spolupráce čekat?",
+    question: "Kde působím?",
     answer:
-      "Přímou komunikaci a otevřenou zpětnou vazbu. Pracuji jako partner, ne jako dodavatel — to znamená, že zpochybňuji věci, které nefungují, a říkám, co si myslím. Cílem není hezký výstup, ale věc, která funguje.",
+      "Primárně pracuju v Praze a okolí. Většina spolupráce ale probíhá online, takže není problém fungovat odkudkoliv. Osobní setkání dává smysl tam, kde to projektu pomůže.",
+  },
+  {
+    question: "Co ode mě můžete čekat?",
+    answer:
+      "Přímý přístup a snahu věci opravdu pochopit. Nejde o to dodat výstup, ale posunout věc tak, aby dávala smysl — pro vás i pro lidi, kteří to budou používat. A ideálně tak, aby to fungovalo i za rok, ne jen při předání.",
   },
 ];
 
@@ -559,12 +549,8 @@ export default function ContactPage() {
         {/* FAQ */}
         <div className="max-w-2xl mx-auto mt-16 md:mt-24">
           <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-12 md:mb-16" />
-          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-3">
+          <p className="font-mono text-xs tracking-[0.2em] text-primary mb-8">
             / ČASTÉ OTÁZKY
-          </p>
-          <p className="font-body font-light text-[clamp(0.875rem,1vw,0.9375rem)] text-muted-foreground mb-10">
-            Pavel Martinovský — senior UX designer a zakladatel Levou zadní —
-            odpovídá na nejčastější otázky ke spolupráci.
           </p>
           <div>
             {FAQ_ITEMS.map((item) => (
