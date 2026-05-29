@@ -1,1 +1,0 @@
-/Users/marinak/ai-studio/agents/mobile-first.md
