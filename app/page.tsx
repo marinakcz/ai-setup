@@ -54,6 +54,7 @@ export default function Home() {
                   fill
                   className="object-contain drop-shadow-[0_0_40px_rgba(240,88,35,0.15)]"
                   priority
+                  fetchPriority="high"
                 />
               </div>
             </ParallaxWrapper>

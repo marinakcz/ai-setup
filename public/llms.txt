@@ -3,14 +3,14 @@
 > Experimentální AI studio Pavla Martinovského. Od nápadu k funkčnímu produktu. Weby, aplikace, prototypy s pomocí AI.
 
 ## Kdo jsme
-Levou zadní je experimentální AI studio Mgr. Pavla Martinovského, senior UX designera z Prahy s více než 25 lety zkušeností v digitálních produktech (od roku 1999). Studio propojuje UX expertízu s modulárními AI agenty pro tvorbu webů, aplikací, MVP a prototypů. Zakladatel přes den působí jako Senior UX Designer v J&T Bance, studio provozuje jako osobní experimentální prostor a přijímá jeden až dva projekty najednou. Nejde o agenturu ani outsourcingovou firmu — jde o jednoho člověka s AI.
+Levou zadní je experimentální AI studio Mgr. Pavla Martinovského, senior UX designera z Prahy, který digitální produkty navrhuje od roku 1999. Studio propojuje UX expertízu s modulárními AI agenty pro tvorbu webů, aplikací, MVP a prototypů. Zakladatel přes den působí jako Senior UX Designer v J&T Bance, studio provozuje jako osobní experimentální prostor a přijímá jeden až dva projekty najednou. Nejde o agenturu ani outsourcingovou firmu — jde o jednoho člověka s AI.
 
 ## Co nejsme
 Nejsme klasická digitální agentura ani development shop. Nepřijímáme projekty od klientů, kteří hledají levného exekutora zadání bez vlastního přemýšlení.
 
 ## Pavel Martinovský
 - Mgr. Pavel Martinovský, senior UX designer, Praha
-- Digitální produkty od roku 1999, 25+ let praxe
+- Digitální produkty navrhuje od roku 1999
 - Zakladatel Levou zadní AI studia
 - Digital Experience team, J&T Banka
 - LinkedIn: https://www.linkedin.com/in/pavelmartinovsky/
@@ -31,7 +31,11 @@ Claude Code, Gemini, Next.js, Supabase, Vercel, Cloudflare, n8n, Playwright, Red
 studio@levouzadni.cz | +420 776 120 555
 IČO: 06054251 | Hlavenec 177, 294 76
 
+## Cena a kapacita
+Cena se stanovuje podle rozsahu projektu, konkrétní číslo padne po ujasnění zadání. Studio pracuje na jednom až dvou projektech současně, aby každý dostal plnou pozornost.
+
 ## Stránky
 - https://levouzadni.cz — Hlavní stránka, AI studio pro digitální produkty
 - https://levouzadni.cz/o-studiu — O Pavlovi a studiu, příběh a přístup k práci
 - https://levouzadni.cz/kontakty — Kontakt, FAQ ke spolupráci a fakturační údaje
+- https://levouzadni.cz/ochrana-udaju — Zpracování osobních údajů

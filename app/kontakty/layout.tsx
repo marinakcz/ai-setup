@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kontakty",
-  description: "Máte nápad nebo projekt? Ozvěte se.",
+  title: "Kontakt a poptávka spolupráce",
+  description:
+    "Máte nápad na produkt, prototyp nebo MVP? Napište pár vět o projektu a ozvu se co nejdřív. Nezávazná konzultace zdarma.",
   openGraph: {
-    title: "Kontakty | Levou zadní",
-    description: "Máte nápad? Projekt? Ozvěte se.",
+    title: "Kontakt a poptávka spolupráce | Levou zadní",
+    description:
+      "Máte nápad na produkt, prototyp nebo MVP? Napište pár vět a ozvu se co nejdřív.",
     images: [
       {
         url: "/og-image.png",
@@ -22,7 +24,7 @@ const faqSchema = [
   {
     question: "Proč se mnou spolupracovat?",
     answer:
-      "Zajímá mě, jak věci fungují pro vaše zákazníky, co to znamená pro byznys a co jde reálně postavit. Ne hezký návrh, ale řešení, které obstojí. Víc jak 25 let stavím digitální produkty a naučil jsem se poznat, co je podstatné a co jen detail.",
+      "Zajímá mě, jak věci fungují pro vaše zákazníky, co to znamená pro byznys a co jde reálně postavit. Ne hezký návrh, ale řešení, které obstojí. Digitální produkty stavím od roku 1999 a naučil jsem se poznat, co je podstatné a co jen detail.",
   },
   {
     question: "S kým to funguje a kdy ne?",

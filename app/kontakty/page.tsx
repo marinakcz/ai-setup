@@ -5,7 +5,7 @@ const FAQ_ITEMS = [
   {
     question: "Proč se mnou spolupracovat?",
     answer:
-      "Zajímá mě, jak věci fungují pro vaše zákazníky, co to znamená pro byznys a co jde reálně postavit. Ne hezký návrh, ale řešení, které obstojí. Víc jak 25 let stavím digitální produkty a naučil jsem se poznat, co je podstatné a co jen detail.",
+      "Zajímá mě, jak věci fungují pro vaše zákazníky, co to znamená pro byznys a co jde reálně postavit. Ne hezký návrh, ale řešení, které obstojí. Digitální produkty stavím od roku 1999 a naučil jsem se poznat, co je podstatné a co jen detail.",
   },
   {
     question: "S kým to funguje a kdy ne?",
@@ -59,9 +59,9 @@ export default function ContactPage() {
                 className="group border-b border-border last:border-0"
               >
                 <summary className="group/summary py-6 flex items-center justify-between gap-4 cursor-pointer list-none">
-                  <span className="font-body font-medium text-[clamp(1rem,1.3vw,1.125rem)] leading-snug text-foreground group-hover/summary:text-primary transition-colors duration-200">
+                  <h3 className="font-body font-medium text-[clamp(1rem,1.3vw,1.125rem)] leading-snug text-foreground group-hover/summary:text-primary transition-colors duration-200">
                     {item.question}
-                  </span>
+                  </h3>
                   <svg
                     className="w-5 h-5 shrink-0 text-muted-foreground group-hover/summary:text-primary transition-all duration-300 group-open:rotate-45"
                     viewBox="0 0 24 24"

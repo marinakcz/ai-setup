@@ -2,15 +2,8 @@ import "./globals.css";
 
 import type { Metadata, Viewport } from "next";
 import { SiteNav } from "@/components/site-nav";
-import { JetBrains_Mono, Caveat } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
-
-const caveat = Caveat({
-  weight: ["400", "700"],
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-hand",
-  display: "swap",
-});
 
 const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
@@ -74,7 +67,7 @@ export const metadata: Metadata = {
     template: "%s | Levou zadní",
   },
   description:
-    "Experimentální AI studio. Od nápadu k funkčnímu produktu. Weby, aplikace, prototypy.",
+    "Sólo AI studio Pavla Martinovského. UX design, prototypy a MVP pro digitální produkty — od nápadu k funkčnímu řešení v řádu dnů, ne měsíců.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -86,7 +79,8 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   openGraph: {
     title: "AI studio pro digitální produkty | Levou zadní",
-    description: "Experimentální AI studio. Od nápadu k funkčnímu produktu.",
+    description:
+      "Sólo AI studio Pavla Martinovského. UX design, prototypy a MVP — od nápadu k funkčnímu řešení v řádu dnů, ne měsíců.",
     type: "website",
     url: "https://levouzadni.cz",
     locale: "cs_CZ",
@@ -158,7 +152,7 @@ const schema = {
       image: "https://levouzadni.cz/pavel.png",
       jobTitle: "Senior UX Designer",
       description:
-        "Mgr. Pavel Martinovský je senior UX designer z Prahy s více než 25 lety zkušeností v digitálních produktech (od roku 1999). Zakladatel experimentálního AI studia Levou zadní. Člen Digital Experience týmu J&T Banky.",
+        "Mgr. Pavel Martinovský je senior UX designer z Prahy, digitální produkty navrhuje od roku 1999. Zakladatel experimentálního AI studia Levou zadní. Člen Digital Experience týmu J&T Banky.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Praha",
@@ -226,7 +220,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body
-        className={`${jetbrainsMono.variable} ${hkGroteskWide.variable} ${caveat.variable} antialiased`}
+        className={`${jetbrainsMono.variable} ${hkGroteskWide.variable} antialiased`}
         suppressHydrationWarning={true}
       >
         <SiteNav />

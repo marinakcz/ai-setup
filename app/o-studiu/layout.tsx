@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "O mně a studiu",
+  title: "Pavel Martinovský — senior UX designer",
   description:
-    "Ahoj, jsem Pavel. Digitální produkty navrhuju od roku 1999. Dnes s pomocí AI.",
+    "Ahoj, jsem Pavel. Digitální produkty navrhuju od roku 1999, dnes s pomocí AI. Weby, aplikace a prototypy pro klienty v Praze i online.",
   openGraph: {
-    title: "O mně a studiu | Levou zadní",
+    title: "Pavel Martinovský — senior UX designer | Levou zadní",
     description:
-      "Ahoj, jsem Pavel. Digitální produkty od roku 1999. Dnes s pomocí AI.",
+      "Ahoj, jsem Pavel. Digitální produkty navrhuju od roku 1999, dnes s pomocí AI.",
     images: [
       {
         url: "/og-image.png",
