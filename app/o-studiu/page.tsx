@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { RevealWrapper } from "@/components/reveal-wrapper";
 import { TooltipCard } from "@/components/tooltip-card";
 import { PrimaryButton } from "@/components/primary-button";

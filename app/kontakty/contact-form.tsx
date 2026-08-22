@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -135,7 +135,8 @@ export function ContactSection() {
     "idle",
   );
   const [serverError, setServerError] = useState("");
-  const formStart = useRef(Date.now());
+  // Lazy init — Date.now() se vyhodnotí jen při prvním renderu (ne při každém)
+  const [formStart] = useState(() => Date.now());
 
   const toggle = (interest: string) => {
     setSelected((prev) => {
@@ -156,7 +157,7 @@ export function ContactSection() {
       errs.email = "Neplatný e-mail";
     const honeypot = form.get("website") as string;
     if (honeypot) errs._bot = "bot";
-    if (Date.now() - formStart.current < 3000) errs._bot = "bot";
+    if (Date.now() - formStart < 3000) errs._bot = "bot";
     return errs;
   };
 
@@ -240,7 +241,7 @@ export function ContactSection() {
               onChange={() =>
                 errors.name &&
                 setErrors((prev) => {
-                  const { name: _, ...rest } = prev;
+                  const { name: _removed, ...rest } = prev;
                   return rest;
                 })
               }
@@ -269,7 +270,7 @@ export function ContactSection() {
               onChange={() =>
                 errors.email &&
                 setErrors((prev) => {
-                  const { email: _, ...rest } = prev;
+                  const { email: _removed, ...rest } = prev;
                   return rest;
                 })
               }

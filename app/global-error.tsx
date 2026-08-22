@@ -24,6 +24,9 @@ export default function GlobalError({
             >
               Zkusit znovu
             </button>
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages --
+                global-error nahrazuje root layout při fatální chybě; router
+                context nemusí být k dispozici, proto plný reload přes <a>. */}
             <a
               href="/"
               className="font-mono text-sm text-[#f05823] hover:text-white transition-colors"

@@ -1,6 +1,6 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
 
-// eslint-disable-next-line react-hooks/exhaustive-deps
 export function useMountEffect(effect: () => void | (() => void)) {
-  useEffect(effect, [])
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- mount-only effect, deps jsou záměrně prázdné
+  useEffect(effect, []);
 }

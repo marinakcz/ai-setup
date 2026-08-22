@@ -58,7 +58,7 @@ export function SiteNav() {
         <div className="flex-1 flex items-center">
           <div className="max-w-[1408px] mx-auto px-6 w-full">
             <div className="flex flex-col gap-3">
-              {NAV_LINKS.map((link, i) => (
+              {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}

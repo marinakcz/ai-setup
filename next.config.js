@@ -76,7 +76,7 @@ const nextConfig = {
       },
     },
   },
-  webpack: (config, { dev, isServer }) => {
+  webpack: (config, { dev }) => {
     if (dev) {
       config.module.rules.unshift({
         test: /\.(jsx|tsx)$/,
