@@ -17,12 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${base}/pod-kapotou`,
-      lastModified: new Date("2026-04-29"),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
       url: `${base}/projekty`,
       lastModified: new Date("2026-04-01"),
       changeFrequency: "monthly",

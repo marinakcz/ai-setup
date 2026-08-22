@@ -10,8 +10,6 @@ export function SiteFooter() {
         <nav className="flex flex-wrap justify-center items-center gap-y-3 font-mono text-xs text-muted-foreground">
           <Link href="/o-studiu" className="py-2 px-3 hover:text-foreground transition-colors">O studiu</Link>
           <span className="text-border leading-none">/</span>
-          <Link href="/pod-kapotou" className="py-2 px-3 hover:text-foreground transition-colors">Pod kapotou</Link>
-          <span className="text-border leading-none">/</span>
           <Link href="/kontakty" className="py-2 px-3 hover:text-foreground transition-colors">Spojme se</Link>
           <span className="text-border leading-none">/</span>
           <a href="https://clientzone.levouzadni.cz/login" className="py-2 px-3 hover:text-foreground transition-colors">Přihlášení</a>

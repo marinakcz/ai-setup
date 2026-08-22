@@ -34,5 +34,4 @@ IČO: 06054251 | Hlavenec 177, 294 76
 ## Stránky
 - https://levouzadni.cz — Hlavní stránka, AI studio pro digitální produkty
 - https://levouzadni.cz/o-studiu — O Pavlovi a studiu, příběh a přístup k práci
-- https://levouzadni.cz/pod-kapotou — Jak studio funguje, nástroje a AI architektura
 - https://levouzadni.cz/kontakty — Kontakt, FAQ ke spolupráci a fakturační údaje
